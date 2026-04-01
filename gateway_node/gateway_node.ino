@@ -26,9 +26,9 @@
 
 // --- NETWORK CONFIGURATION ---
 // USER ACTION REQUIRED: Update these credentials before deployment.
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* mqtt_broker_ip = "YOUR_MQTT_BROKER_IP"; 
+const char* ssid = "afeez";
+const char* password = "afeeZ@123";
+const char* mqtt_broker_ip = "192.168.137.170"; 
 
 WiFiClient espClient;
 PubSubClient mqtt(espClient);
@@ -43,8 +43,22 @@ typedef struct SurvivorPayload {
 
 SurvivorPayload incomingTelemetry;
 volatile bool newDataReady = false; 
-
 unsigned long lastReconnectAttempt = 0;
+
+// --- V2.0 DTN RAM BATCHING & DELTA TRACKING ---
+#define RAM_BUFFER_SIZE 50 
+#define MAX_NODES 20 
+
+SurvivorPayload ramBuffer[RAM_BUFFER_SIZE];
+int ramBufferCount = 0;
+
+// Struct to hold the last known state of an Edge Node
+struct NodeState {
+    bool active = false;
+    uint8_t lastBattery = 0;
+    bool lastSos = false;
+};
+NodeState networkState[MAX_NODES];
 
 // ---------------------------------------------------------
 // Asynchronous Receiver Callback
@@ -62,15 +76,32 @@ void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
 // ---------------------------------------------------------
 // Delay-Tolerant Networking (DTN) Storage Module
 // ---------------------------------------------------------
-void saveToFlash(const char* jsonPayload) {
+void flushRamToFlash() {
+    if (ramBufferCount == 0) return;
+    
     File file = LittleFS.open("/void_buffer.txt", "a");
     if(!file) {
         Serial.println("[DTN] ERROR: Flash storage unavailable.");
         return;
     }
-    file.println(jsonPayload); 
+    
+    Serial.println("\n[DTN] --- EXECUTING BATCH FLASH WRITE ---");
+    for (int i = 0; i < ramBufferCount; i++) {
+        char jsonPayload[128];
+        snprintf(jsonPayload, sizeof(jsonPayload), 
+                  "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d}", 
+                  ramBuffer[i].nodeId, ramBuffer[i].batteryPct, 
+                  ramBuffer[i].cpuLoad, ramBuffer[i].isSosActive);
+        file.println(jsonPayload);
+    }
+    
     file.close();
-    Serial.println("[DTN] Network unreachable. Payload buffered to local flash.");
+    Serial.print("[DTN] Successfully batched ");
+    Serial.print(ramBufferCount);
+    Serial.println(" payloads to non-volatile flash memory.\n");
+    
+    // Reset the RAM buffer index
+    ramBufferCount = 0; 
 }
 
 void flushFlashBuffer() {
@@ -113,6 +144,8 @@ void reconnectMqtt() {
         
         if (mqtt.connect(clientId.c_str())) {
             Serial.println(" Established.");
+            // Flush any unwritten RAM payloads to Flash before attempting upload
+            if (ramBufferCount > 0) flushRamToFlash();
             flushFlashBuffer(); // Attempt to offload stale data upon reconnection
         } else {
             Serial.print(" Failed, rc=");
@@ -195,27 +228,69 @@ void setup() {
 // Main Execution Loop
 // ---------------------------------------------------------
 void loop() {
-    // Phase 1: Rapid-process incoming radio payloads
+    // Rapid-process incoming radio payloads
     if (newDataReady) {
         char jsonPayload[128];
         snprintf(jsonPayload, sizeof(jsonPayload), 
-                 "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d}", 
-                 incomingTelemetry.nodeId, 
-                 incomingTelemetry.batteryPct, 
-                 incomingTelemetry.cpuLoad, 
-                 incomingTelemetry.isSosActive);
+                  "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d}", 
+                  incomingTelemetry.nodeId, incomingTelemetry.batteryPct, 
+                  incomingTelemetry.cpuLoad, incomingTelemetry.isSosActive);
 
         if (mqtt.connected()) {
             Serial.print("[PUB] Live Stream: ");
             Serial.println(jsonPayload);
             mqtt.publish("void/telemetry", jsonPayload);
         } else {
-            saveToFlash(jsonPayload);
+            // --- V2.0 OFFLINE DELTA COMPRESSION ---
+            uint8_t id = incomingTelemetry.nodeId;
+            
+            if (id < MAX_NODES) {
+                bool criticalChange = false;
+                
+                // 1. Evaluate Delta
+                if (!networkState[id].active) {
+                    criticalChange = true; // First time seeing this node
+                    networkState[id].active = true;
+                } else {
+                    // Trigger if SOS newly activated
+                    if (incomingTelemetry.isSosActive && !networkState[id].lastSos) criticalChange = true;
+                    // Trigger if battery dropped by more than 5%
+                    if (networkState[id].lastBattery > incomingTelemetry.batteryPct + 5) criticalChange = true;
+                    // Trigger if battery went up (e.g. node was plugged into power)
+                    if (incomingTelemetry.batteryPct > networkState[id].lastBattery + 5) criticalChange = true;
+                }
+                
+                // 2. Route Data
+                if (criticalChange) {
+                    // Update state memory
+                    networkState[id].lastBattery = incomingTelemetry.batteryPct;
+                    networkState[id].lastSos = incomingTelemetry.isSosActive;
+                    
+                    // Push to Volatile RAM
+                    ramBuffer[ramBufferCount] = incomingTelemetry;
+                    ramBufferCount++;
+                    
+                    Serial.print("[DTN] State change detected for Node ");
+                    Serial.print(id);
+                    Serial.print(". Appended to RAM Buffer (");
+                    Serial.print(ramBufferCount);
+                    Serial.println("/50)");
+                    
+                    // Flush to physical flash only if RAM is full
+                    if (ramBufferCount >= RAM_BUFFER_SIZE) {
+                        flushRamToFlash();
+                    }
+                } else {
+                    Serial.print("[DTN] Node ");
+                    Serial.print(id);
+                    Serial.println(" telemetry redundant. Discarding to protect flash wear.");
+                }
+            }
         }
         newDataReady = false; 
     }
 
-    // Phase 2: Background process upstream connectivity
+    // Background process upstream connectivity
     if (!mqtt.connected()) {
         reconnectMqtt();
     } else {
