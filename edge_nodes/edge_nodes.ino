@@ -135,8 +135,9 @@ void setup() {
 
     #elif defined(ESP8266)
         esp_now_set_self_role(ESP_NOW_ROLE_CONTROLLER);
-        
-        if (esp_now_add_peer(gatewayMacAddress, ESP_NOW_ROLE_SLAVE, 1, NULL, 0) != 0) {
+                 
+        // Inject the dynamic 'targetChannel' instead of hardcoding '1'
+        if (esp_now_add_peer(gatewayMacAddress, ESP_NOW_ROLE_SLAVE, targetChannel, NULL, 0) != 0) {
             Serial.println("[SYS] FATAL: Failed to register Gateway peer (ESP8266)");
             return;
         }
