@@ -8,27 +8,27 @@
 // Delay-Tolerant Networking (DTN) during network outages.
 
 #ifdef ESP32
-  #include <WiFi.h>
-  #include <esp_now.h>
-  #include <LittleFS.h>
+#include <WiFi.h>
+#include <esp_now.h>
+#include <LittleFS.h>
 #elif defined(ESP8266)
-  #include <ESP8266WiFi.h>
-  #include <espnow.h>
-  #include <LittleFS.h>
-  extern "C" {
+#include <ESP8266WiFi.h>
+#include <espnow.h>
+#include <LittleFS.h>
+extern "C" {
     #include <user_interface.h>
-  }
+}
 #else
-  #error "Architecture not supported. Target must be ESP8266 or ESP32."
+#error "Architecture not supported. Target must be ESP8266 or ESP32."
 #endif
 
 #include <PubSubClient.h>
+#include "secrets.h"
 
 // --- NETWORK CONFIGURATION ---
-// USER ACTION REQUIRED: Update these credentials before deployment.
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* mqtt_broker_ip = "YOUR_MQTT_BROKER_IP"; 
+const char* ssid = SECRET_WIFI_SSID;
+const char* password = SECRET_WIFI_PASS;
+const char* mqtt_broker_ip = SECRET_MQTT_BROKER_IP; 
 
 WiFiClient espClient;
 PubSubClient mqtt(espClient);
@@ -59,6 +59,9 @@ struct NodeState {
     bool lastSos = false;
 };
 NodeState networkState[MAX_NODES];
+
+// Explicit whitelist of authorized Edge Nodes for secure decryption
+uint8_t edgeNode1Mac[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; // YOUR EDGE NODE'S MAC 
 
 // ---------------------------------------------------------
 // Asynchronous Receiver Callback
@@ -213,6 +216,29 @@ void setup() {
         return;
     }
     
+    // Set the Primary Master Key
+    #ifdef ESP32
+        esp_now_set_pmk(PMK_KEY);
+    #elif defined(ESP8266)
+        esp_now_set_kok(PMK_KEY, 16);
+    #endif
+
+    // Register Authorized Edge Node manually to enable decryption
+    #ifdef ESP32
+        esp_now_peer_info_t peerInfo;
+        memset(&peerInfo, 0, sizeof(peerInfo));
+        
+        // Register Node 1
+        memcpy(peerInfo.peer_addr, edgeNode1Mac, 6);
+        peerInfo.channel = routerChannel;
+        peerInfo.encrypt = true;
+        memcpy(peerInfo.lmk, LMK_KEY, 16);
+        esp_now_add_peer(&peerInfo);
+        
+    #elif defined(ESP8266)
+        esp_now_add_peer(edgeNode1Mac, ESP_NOW_ROLE_SLAVE, routerChannel, LMK_KEY, 16);
+    #endif
+
     // Typecasting the callback ensures strict C++ compiler compliance across core versions
     #ifdef ESP32
         esp_now_register_recv_cb(OnDataRecv);

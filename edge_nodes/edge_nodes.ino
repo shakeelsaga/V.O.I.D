@@ -7,17 +7,19 @@
 // static channel configurations, before transmitting telemetry via ESP-NOW.
 
 #ifdef ESP32
-  #include <WiFi.h>
-  #include <esp_now.h>
+#include <WiFi.h>
+#include <esp_now.h>
 #elif defined(ESP8266)
-  #include <ESP8266WiFi.h>
-  #include <espnow.h>
-  extern "C" {
+#include <ESP8266WiFi.h>
+#include <espnow.h>
+extern "C" {
     #include <user_interface.h>
-  }
+}
 #else
-  #error "Architecture not supported. Target must be ESP8266 or ESP32."
+#error "Architecture not supported. Target must be ESP8266 or ESP32."
 #endif
+
+#include "secrets.h"
 
 // --- TARGET GATEWAY MAC ADDRESS ---
 uint8_t gatewayMacAddress[6] = {0, 0, 0, 0, 0, 0};
@@ -119,25 +121,34 @@ void setup() {
     }
     
     esp_now_register_send_cb(OnDataSent);
+    
+    // Set the Primary Master Key
+    #ifdef ESP32
+        esp_now_set_pmk(PMK_KEY);
+    #elif defined(ESP8266)
+        esp_now_set_kok(PMK_KEY, 16);
+    #endif
 
-    // 5. Peer Registration
+    // 5. Peer Registration (Encrypted)
     #ifdef ESP32
         esp_now_peer_info_t peerInfo;
-        memset(&peerInfo, 0, sizeof(peerInfo)); 
+        memset(&peerInfo, 0, sizeof(peerInfo));
         memcpy(peerInfo.peer_addr, gatewayMacAddress, 6);
-        peerInfo.channel = 0;      
-        peerInfo.encrypt = false;  
-
+        peerInfo.channel = targetChannel;
+        
+        // Enable Encryption and inject the LMK
+        peerInfo.encrypt = true; 
+        memcpy(peerInfo.lmk, LMK_KEY, 16);
+        
         if (esp_now_add_peer(&peerInfo) != ESP_OK) {
             Serial.println("[SYS] FATAL: Failed to register Gateway peer (ESP32)");
             return;
         }
-
     #elif defined(ESP8266)
         esp_now_set_self_role(ESP_NOW_ROLE_CONTROLLER);
-                 
-        // Inject the dynamic 'targetChannel' instead of hardcoding '1'
-        if (esp_now_add_peer(gatewayMacAddress, ESP_NOW_ROLE_SLAVE, targetChannel, NULL, 0) != 0) {
+        
+        // Pass the LMK and the key length (16) into the registration function
+        if (esp_now_add_peer(gatewayMacAddress, ESP_NOW_ROLE_SLAVE, targetChannel, LMK_KEY, 16) != 0) {
             Serial.println("[SYS] FATAL: Failed to register Gateway peer (ESP8266)");
             return;
         }

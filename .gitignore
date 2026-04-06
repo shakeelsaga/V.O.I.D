@@ -3,3 +3,9 @@
 /edge_nodes/.DS_Store
 /.DS_Store
 
+# Security:
+secrets.h
+**/secrets.h
+
+# Allowed templates
+!example_secrets.h
