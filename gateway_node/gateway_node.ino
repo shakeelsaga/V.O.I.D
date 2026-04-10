@@ -2,10 +2,6 @@
 // V.O.I.D. Gateway - Hardware Agnostic DTN & Bridge
 // ---------------------------------------------------------
 // Architecture: ESP32 / ESP8266 Compatible
-// Description: Acts as the central mesh receiver. Connects to the local network,
-// broadcasts a dynamic Lighthouse beacon for Edge Nodes, and bridges ESP-NOW 
-// telemetry payloads to an upstream MQTT broker. Implements LittleFS for 
-// Delay-Tolerant Networking (DTN) during network outages.
 
 #ifdef ESP32
 #include <WiFi.h>
@@ -24,6 +20,7 @@ extern "C" {
 
 #include <PubSubClient.h>
 #include "secrets.h"
+#include "node_registry.h"
 
 // --- NETWORK CONFIGURATION ---
 const char* ssid = SECRET_WIFI_SSID;
@@ -47,7 +44,7 @@ unsigned long lastReconnectAttempt = 0;
 
 // --- V2.0 DTN RAM BATCHING & DELTA TRACKING ---
 #define RAM_BUFFER_SIZE 50 
-#define MAX_NODES 20 
+#define MAX_NODES 256 // Expanded for dynamic MAC-derived IDs
 
 SurvivorPayload ramBuffer[RAM_BUFFER_SIZE];
 int ramBufferCount = 0;
@@ -60,14 +57,10 @@ struct NodeState {
 };
 NodeState networkState[MAX_NODES];
 
-// Explicit whitelist of authorized Edge Nodes for secure decryption
-uint8_t edgeNode1Mac[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}; // YOUR EDGE NODE'S MAC 
-
 // ---------------------------------------------------------
 // Asynchronous Receiver Callback
 // ---------------------------------------------------------
 #ifdef ESP32
-// Updated signature for ESP32 Arduino Core v3.x
 void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int len) {
 #elif defined(ESP8266)
 void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
@@ -103,7 +96,6 @@ void flushRamToFlash() {
     Serial.print(ramBufferCount);
     Serial.println(" payloads to non-volatile flash memory.\n");
     
-    // Reset the RAM buffer index
     ramBufferCount = 0; 
 }
 
@@ -125,7 +117,7 @@ void flushFlashBuffer() {
             mqtt.publish("void/telemetry", payload.c_str());
             Serial.print("[DTN] Flushed: ");
             Serial.println(payload);
-            delay(50); // Pacing prevents flooding the upstream MQTT broker
+            delay(50); 
         }
     }
     file.close();
@@ -147,9 +139,8 @@ void reconnectMqtt() {
         
         if (mqtt.connect(clientId.c_str())) {
             Serial.println(" Established.");
-            // Flush any unwritten RAM payloads to Flash before attempting upload
             if (ramBufferCount > 0) flushRamToFlash();
-            flushFlashBuffer(); // Attempt to offload stale data upon reconnection
+            flushFlashBuffer(); 
         } else {
             Serial.print(" Failed, rc=");
             Serial.print(mqtt.state());
@@ -165,7 +156,6 @@ void setup() {
     Serial.begin(115200);
     Serial.println("\n--- V.O.I.D. Gateway Initializing ---");
 
-    // 1. Initialize Flash File System
     #ifdef ESP32
         if(!LittleFS.begin(true)){
     #elif defined(ESP8266)
@@ -176,7 +166,6 @@ void setup() {
         }
     Serial.println("[SYS] Flash Storage Mounted.");
 
-    // 2. Upstream Wi-Fi Connection
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
@@ -185,28 +174,19 @@ void setup() {
     }
     Serial.println("\n[SYS] Upstream Wi-Fi Connected.");
 
-    // 3. Lighthouse Beacon Initialization (Auto-Discovery)
     int routerChannel = WiFi.channel();
     Serial.print("[SYS] Upstream Assigned Channel: ");
     Serial.println(routerChannel);
 
-    // Turn on the Lighthouse Beacon (With SSID Injection)
     WiFi.mode(WIFI_AP_STA); 
-    
-    // Fetch the true Station MAC and strip the colons
     String macStr = WiFi.macAddress();
     macStr.replace(":", ""); 
-    
-    // Combine them to create the dynamic Lighthouse name
     String lighthouseSSID = "VOID_" + macStr;
-    
-    // Broadcast the dynamic Lighthouse
     WiFi.softAP(lighthouseSSID.c_str(), "", routerChannel);
     
     Serial.print("[SYS] Lighthouse Beacon Active: ");
     Serial.println(lighthouseSSID);
 
-    // 4. ESP-NOW Mesh Setup
     #ifdef ESP8266
         esp_now_set_self_role(ESP_NOW_ROLE_COMBO);
     #endif
@@ -216,37 +196,36 @@ void setup() {
         return;
     }
     
-    // Set the Primary Master Key
     #ifdef ESP32
         esp_now_set_pmk(PMK_KEY);
     #elif defined(ESP8266)
         esp_now_set_kok(PMK_KEY, 16);
     #endif
 
-    // Register Authorized Edge Node manually to enable decryption
+    // Register Authorized Edge Nodes dynamically
     #ifdef ESP32
         esp_now_peer_info_t peerInfo;
         memset(&peerInfo, 0, sizeof(peerInfo));
-        
-        // Register Node 1
-        memcpy(peerInfo.peer_addr, edgeNode1Mac, 6);
         peerInfo.channel = routerChannel;
         peerInfo.encrypt = true;
         memcpy(peerInfo.lmk, LMK_KEY, 16);
-        esp_now_add_peer(&peerInfo);
         
+        for (int i = 0; i < numAuthorizedNodes; i++) {
+            memcpy(peerInfo.peer_addr, authorizedEdgeNodes[i], 6);
+            esp_now_add_peer(&peerInfo);
+        }
     #elif defined(ESP8266)
-        esp_now_add_peer(edgeNode1Mac, ESP_NOW_ROLE_SLAVE, routerChannel, LMK_KEY, 16);
+        for (int i = 0; i < numAuthorizedNodes; i++) {
+            esp_now_add_peer((uint8_t *)authorizedEdgeNodes[i], ESP_NOW_ROLE_SLAVE, routerChannel, (uint8_t *)LMK_KEY, 16);
+        }
     #endif
 
-    // Typecasting the callback ensures strict C++ compiler compliance across core versions
     #ifdef ESP32
         esp_now_register_recv_cb(OnDataRecv);
     #elif defined(ESP8266)
         esp_now_register_recv_cb(reinterpret_cast<esp_now_recv_cb_t>(OnDataRecv));
     #endif
 
-    // 5. MQTT Configuration
     mqtt.setServer(mqtt_broker_ip, 1883);
 }
 
@@ -254,7 +233,6 @@ void setup() {
 // Main Execution Loop
 // ---------------------------------------------------------
 void loop() {
-    // Rapid-process incoming radio payloads
     if (newDataReady) {
         char jsonPayload[128];
         snprintf(jsonPayload, sizeof(jsonPayload), 
@@ -273,26 +251,19 @@ void loop() {
             if (id < MAX_NODES) {
                 bool criticalChange = false;
                 
-                // 1. Evaluate Delta
                 if (!networkState[id].active) {
-                    criticalChange = true; // First time seeing this node
+                    criticalChange = true; 
                     networkState[id].active = true;
                 } else {
-                    // Trigger if SOS newly activated
                     if (incomingTelemetry.isSosActive && !networkState[id].lastSos) criticalChange = true;
-                    // Trigger if battery dropped by more than 5%
                     if (networkState[id].lastBattery > incomingTelemetry.batteryPct + 5) criticalChange = true;
-                    // Trigger if battery went up (e.g. node was plugged into power)
                     if (incomingTelemetry.batteryPct > networkState[id].lastBattery + 5) criticalChange = true;
                 }
                 
-                // 2. Route Data
                 if (criticalChange) {
-                    // Update state memory
                     networkState[id].lastBattery = incomingTelemetry.batteryPct;
                     networkState[id].lastSos = incomingTelemetry.isSosActive;
                     
-                    // Push to Volatile RAM
                     ramBuffer[ramBufferCount] = incomingTelemetry;
                     ramBufferCount++;
                     
@@ -302,7 +273,6 @@ void loop() {
                     Serial.print(ramBufferCount);
                     Serial.println("/50)");
                     
-                    // Flush to physical flash only if RAM is full
                     if (ramBufferCount >= RAM_BUFFER_SIZE) {
                         flushRamToFlash();
                     }
@@ -316,7 +286,6 @@ void loop() {
         newDataReady = false; 
     }
 
-    // Background process upstream connectivity
     if (!mqtt.connected()) {
         reconnectMqtt();
     } else {

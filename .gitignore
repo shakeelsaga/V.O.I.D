@@ -6,6 +6,7 @@
 # Security:
 secrets.h
 **/secrets.h
+**/node_registry.h
 
 # Allowed templates
 !example_secrets.h

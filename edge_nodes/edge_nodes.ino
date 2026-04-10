@@ -37,6 +37,15 @@ void parseMacString(String macText, uint8_t* macArray) {
 }
 
 // ---------------------------------------------------------
+// Utility: Derive a highly-unique Node ID from hardware MAC
+// ---------------------------------------------------------
+uint8_t deriveNodeId() {
+    String mac = WiFi.macAddress(); // e.g., "C4:5B:BE:55:4B:52"
+    String lastByteStr = mac.substring(15, 17); // Grabs the "52"
+    return (uint8_t) strtol(lastByteStr.c_str(), NULL, 16);
+}
+
+// ---------------------------------------------------------
 // Data Structures
 // ---------------------------------------------------------
 typedef struct SurvivorPayload {
@@ -47,6 +56,8 @@ typedef struct SurvivorPayload {
 } SurvivorPayload;
 
 SurvivorPayload outgoingTelemetry;
+
+uint8_t myNodeId = 0;
 
 // ---------------------------------------------------------
 // Asynchronous Transmission Callback
@@ -154,6 +165,11 @@ void setup() {
         }
     #endif
     
+    // Lock in the hardware-derived Node ID
+    myNodeId = deriveNodeId();
+    Serial.print("[SYS] Hardware-Derived Node ID: ");
+    Serial.println(myNodeId);
+
     Serial.println("[SYS] Node Armed. Telemetry sequence starting.");
 }
 
@@ -162,8 +178,8 @@ void setup() {
 // ---------------------------------------------------------
 void loop() {
     // 1. Simulate hardware sensor ingestion
-    outgoingTelemetry.nodeId = 1; 
-    outgoingTelemetry.batteryPct = random(10, 100); 
+    outgoingTelemetry.nodeId = myNodeId; 
+    outgoingTelemetry.batteryPct = random(10, 100);
     outgoingTelemetry.cpuLoad = random(0, 100);     
     outgoingTelemetry.isSosActive = (random(0, 10) > 8); 
 
