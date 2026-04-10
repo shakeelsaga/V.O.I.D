@@ -2,6 +2,10 @@
 // V.O.I.D. Gateway - Hardware Agnostic DTN & Bridge
 // ---------------------------------------------------------
 // Architecture: ESP32 / ESP8266 Compatible
+// Description: Acts as the central mesh receiver. Connects to the local network,
+// broadcasts a dynamic Lighthouse beacon for Edge Nodes, and bridges ESP-NOW 
+// telemetry payloads to an upstream MQTT broker. Implements LittleFS for 
+// Delay-Tolerant Networking (DTN) during network outages.
 
 #ifdef ESP32
 #include <WiFi.h>
@@ -18,7 +22,9 @@ extern "C" {
 #error "Architecture not supported. Target must be ESP8266 or ESP32."
 #endif
 
-#include <PubSubClient.h>
+#include <MQTT.h>
+WiFiClient espClient;
+MQTTClient mqtt(256); // Allocate a 256-byte buffer for QoS tracking
 #include "secrets.h"
 #include "node_registry.h"
 
@@ -26,9 +32,6 @@ extern "C" {
 const char* ssid = SECRET_WIFI_SSID;
 const char* password = SECRET_WIFI_PASS;
 const char* mqtt_broker_ip = SECRET_MQTT_BROKER_IP; 
-
-WiFiClient espClient;
-PubSubClient mqtt(espClient);
 
 // Payload structure must perfectly mirror the Edge Node definitions
 typedef struct SurvivorPayload {
@@ -38,13 +41,16 @@ typedef struct SurvivorPayload {
     bool isSosActive;    
 } SurvivorPayload;
 
-SurvivorPayload incomingTelemetry;
-volatile bool newDataReady = false; 
+// --- V2.0 ESP-NOW HARDWARE QUEUE ---
+#define QUEUE_SIZE 20
+SurvivorPayload rxQueue[QUEUE_SIZE];
+volatile int queueHead = 0; 
+volatile int queueTail = 0; 
 unsigned long lastReconnectAttempt = 0;
 
 // --- V2.0 DTN RAM BATCHING & DELTA TRACKING ---
 #define RAM_BUFFER_SIZE 50 
-#define MAX_NODES 256 // Expanded for dynamic MAC-derived IDs
+#define MAX_NODES 256 
 
 SurvivorPayload ramBuffer[RAM_BUFFER_SIZE];
 int ramBufferCount = 0;
@@ -65,8 +71,14 @@ void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int 
 #elif defined(ESP8266)
 void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
 #endif
-    memcpy((void*)&incomingTelemetry, incomingData, sizeof(incomingTelemetry));
-    newDataReady = true; 
+    // Calculate the next available slot in the line
+    int nextHead = (queueHead + 1) % QUEUE_SIZE;
+    
+    // If the queue isn't completely full, save the data and move the head
+    if (nextHead != queueTail) { 
+        memcpy((void*)&rxQueue[queueHead], incomingData, sizeof(SurvivorPayload));
+        queueHead = nextHead;
+    }
 }
 
 // ---------------------------------------------------------
@@ -96,6 +108,7 @@ void flushRamToFlash() {
     Serial.print(ramBufferCount);
     Serial.println(" payloads to non-volatile flash memory.\n");
     
+    // Reset the RAM buffer index
     ramBufferCount = 0; 
 }
 
@@ -109,21 +122,32 @@ void flushFlashBuffer() {
     }
 
     Serial.println("\n[DTN] --- INITIATING FLASH BUFFER FLUSH ---");
+    bool flushComplete = true; // Track if the entire file was successfully sent
+    
     while (file.available()) {
         String payload = file.readStringUntil('\n');
         payload.trim(); 
         
         if (payload.length() > 0) {
-            mqtt.publish("void/telemetry", payload.c_str());
-            Serial.print("[DTN] Flushed: ");
-            Serial.println(payload);
-            delay(50); 
+            // Check physical connection and explicitly use QoS 1
+            if (WiFi.status() == WL_CONNECTED && mqtt.publish("void/telemetry", payload.c_str(), false, 1)) {
+                Serial.print("[DTN] Flushed: ");
+                Serial.println(payload);
+                delay(50); // Pacing prevents flooding the upstream MQTT broker
+            } else {
+                Serial.println("[DTN] ERROR: Link severed mid-flush. Halting to protect data.");
+                flushComplete = false; 
+                break; // Stop reading the file!
+            }
         }
     }
     file.close();
     
-    LittleFS.remove("/void_buffer.txt");
-    Serial.println("[DTN] --- BUFFER FLUSH COMPLETE ---\n");
+    // Only delete the flash file if EVERY payload was successfully ACKed
+    if (flushComplete) {
+        LittleFS.remove("/void_buffer.txt");
+        Serial.println("[DTN] --- BUFFER FLUSH COMPLETE ---\n");
+    }
 }
 
 // ---------------------------------------------------------
@@ -142,8 +166,8 @@ void reconnectMqtt() {
             if (ramBufferCount > 0) flushRamToFlash();
             flushFlashBuffer(); 
         } else {
-            Serial.print(" Failed, rc=");
-            Serial.print(mqtt.state());
+            Serial.print(" Failed, error code=");
+            Serial.print(mqtt.lastError());
             Serial.println(" (Retrying asynchronously)");
         }
     }
@@ -156,6 +180,7 @@ void setup() {
     Serial.begin(115200);
     Serial.println("\n--- V.O.I.D. Gateway Initializing ---");
 
+    // Initialize Flash File System
     #ifdef ESP32
         if(!LittleFS.begin(true)){
     #elif defined(ESP8266)
@@ -166,6 +191,7 @@ void setup() {
         }
     Serial.println("[SYS] Flash Storage Mounted.");
 
+    // Upstream Wi-Fi Connection
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
@@ -174,19 +200,28 @@ void setup() {
     }
     Serial.println("\n[SYS] Upstream Wi-Fi Connected.");
 
+    // Lighthouse Beacon Initialization (Auto-Discovery)
     int routerChannel = WiFi.channel();
     Serial.print("[SYS] Upstream Assigned Channel: ");
     Serial.println(routerChannel);
 
+    // Turn on the Lighthouse Beacon (With SSID Injection)
     WiFi.mode(WIFI_AP_STA); 
+    
+    // Fetch the true Station MAC and strip the colons
     String macStr = WiFi.macAddress();
     macStr.replace(":", ""); 
+    
+    // Combine them to create the dynamic Lighthouse name
     String lighthouseSSID = "VOID_" + macStr;
+    
+    // Broadcast the dynamic Lighthouse
     WiFi.softAP(lighthouseSSID.c_str(), "", routerChannel);
     
     Serial.print("[SYS] Lighthouse Beacon Active: ");
     Serial.println(lighthouseSSID);
 
+    // ESP-NOW Mesh Setup
     #ifdef ESP8266
         esp_now_set_self_role(ESP_NOW_ROLE_COMBO);
     #endif
@@ -196,75 +231,109 @@ void setup() {
         return;
     }
     
+    // Set the Primary Master Key
     #ifdef ESP32
         esp_now_set_pmk(PMK_KEY);
     #elif defined(ESP8266)
         esp_now_set_kok(PMK_KEY, 16);
     #endif
 
-    // Register Authorized Edge Nodes dynamically
+    // Register Authorized Edge Nodes dynamically to enable decryption
     #ifdef ESP32
         esp_now_peer_info_t peerInfo;
         memset(&peerInfo, 0, sizeof(peerInfo));
+        
+        // Define static parameters once
         peerInfo.channel = routerChannel;
         peerInfo.encrypt = true;
         memcpy(peerInfo.lmk, LMK_KEY, 16);
         
+        // Loop through the registry
         for (int i = 0; i < numAuthorizedNodes; i++) {
             memcpy(peerInfo.peer_addr, authorizedEdgeNodes[i], 6);
             esp_now_add_peer(&peerInfo);
         }
+        
     #elif defined(ESP8266)
         for (int i = 0; i < numAuthorizedNodes; i++) {
+            // Using (uint8_t *) to cast away const-ness and satisfy the older ESP8266 API
             esp_now_add_peer((uint8_t *)authorizedEdgeNodes[i], ESP_NOW_ROLE_SLAVE, routerChannel, (uint8_t *)LMK_KEY, 16);
         }
     #endif
 
+    // Typecasting the callback ensures strict C++ compiler compliance across core versions
     #ifdef ESP32
         esp_now_register_recv_cb(OnDataRecv);
     #elif defined(ESP8266)
         esp_now_register_recv_cb(reinterpret_cast<esp_now_recv_cb_t>(OnDataRecv));
     #endif
 
-    mqtt.setServer(mqtt_broker_ip, 1883);
+    // MQTT Configuration
+    mqtt.begin(mqtt_broker_ip, 1883, espClient);
+    
+    // Set Options: keepAlive (5s), cleanSession (true), timeout (2000ms)
+    mqtt.setOptions(5, true, 2000);
 }
 
 // ---------------------------------------------------------
 // Main Execution Loop
 // ---------------------------------------------------------
 void loop() {
-    if (newDataReady) {
+    // Rapid-process all incoming radio payloads waiting in the queue
+    while (queueTail != queueHead) {
+        // Grab the oldest payload from the queue
+        SurvivorPayload currentPayload = rxQueue[queueTail];
+        
+        // Move the tail forward to "delete" it from the line
+        queueTail = (queueTail + 1) % QUEUE_SIZE;
+        
         char jsonPayload[128];
         snprintf(jsonPayload, sizeof(jsonPayload), 
                   "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d}", 
-                  incomingTelemetry.nodeId, incomingTelemetry.batteryPct, 
-                  incomingTelemetry.cpuLoad, incomingTelemetry.isSosActive);
+                  currentPayload.nodeId, currentPayload.batteryPct, 
+                  currentPayload.cpuLoad, currentPayload.isSosActive);
 
-        if (mqtt.connected()) {
-            Serial.print("[PUB] Live Stream: ");
-            Serial.println(jsonPayload);
-            mqtt.publish("void/telemetry", jsonPayload);
-        } else {
+        bool publishSuccess = false;
+
+        // Check physical Wi-Fi link AND logical MQTT link
+        if (WiFi.status() == WL_CONNECTED && mqtt.connected()) {
+            
+            // Attempt the publish with QoS 1 (Requires Server PUBACK)
+            // Parameters: topic, payload, retained, qos
+            publishSuccess = mqtt.publish("void/telemetry", jsonPayload, false, 1);
+            
+            if (publishSuccess) {
+                Serial.print("[PUB] Upstream ACK:");
+                Serial.println(jsonPayload);
+            } else {
+                Serial.println("[SYS] WARNING: Server failed to ACK. Rerouting to DTN.");
+            }
+        }
+
+        // Fallback: If disconnected OR if the publish failed, trigger the DTN
+        if (!publishSuccess) {
             // --- V2.0 OFFLINE DELTA COMPRESSION ---
-            uint8_t id = incomingTelemetry.nodeId;
+            uint8_t id = currentPayload.nodeId; 
             
             if (id < MAX_NODES) {
                 bool criticalChange = false;
                 
+                // Evaluate Delta
                 if (!networkState[id].active) {
                     criticalChange = true; 
                     networkState[id].active = true;
                 } else {
-                    if (incomingTelemetry.isSosActive && !networkState[id].lastSos) criticalChange = true;
-                    if (networkState[id].lastBattery > incomingTelemetry.batteryPct + 5) criticalChange = true;
-                    if (incomingTelemetry.batteryPct > networkState[id].lastBattery + 5) criticalChange = true;
+                    if (currentPayload.isSosActive && !networkState[id].lastSos) criticalChange = true;
+                    if (networkState[id].lastBattery > currentPayload.batteryPct + 5) criticalChange = true;
+                    if (currentPayload.batteryPct > networkState[id].lastBattery + 5) criticalChange = true;
                 }
                 
+                // Route Data
                 if (criticalChange) {
-                    networkState[id].lastBattery = incomingTelemetry.batteryPct;
-                    networkState[id].lastSos = incomingTelemetry.isSosActive;
+                    networkState[id].lastBattery = currentPayload.batteryPct;
+                    networkState[id].lastSos = currentPayload.isSosActive;
                     
-                    ramBuffer[ramBufferCount] = incomingTelemetry;
+                    ramBuffer[ramBufferCount] = currentPayload;
                     ramBufferCount++;
                     
                     Serial.print("[DTN] State change detected for Node ");
@@ -283,9 +352,9 @@ void loop() {
                 }
             }
         }
-        newDataReady = false; 
     }
 
+    // Background process upstream connectivity
     if (!mqtt.connected()) {
         reconnectMqtt();
     } else {
