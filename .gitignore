@@ -10,3 +10,5 @@ secrets.h
 
 # Allowed templates
 !example_secrets.h
+
+/diagnostics

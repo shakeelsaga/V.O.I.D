@@ -35,6 +35,7 @@ enum GatewayState { STATE_ELECTION, STATE_PRIMARY, STATE_SHADOW };
 GatewayState currentState = STATE_ELECTION;
 
 enum HaMessageType { HA_MSG_ELECTION_PING = 0, HA_MSG_HEARTBEAT = 1 };
+const uint8_t ACK_MSG_TYPE = 0xA1;
 
 const bool HA_PREEMPTION_ENABLED = false;
 const unsigned long HA_ELECTION_PING_INTERVAL_MS = 500;
@@ -60,19 +61,29 @@ typedef struct __attribute__((packed)) HaPayload {
 } HaPayload;
 
 // --- EDGE PAYLOAD STRUCTURE ---
-typedef struct SurvivorPayload {
+typedef struct __attribute__((packed)) SurvivorPayload {
     uint8_t nodeId;      
     uint8_t batteryPct;  
     uint8_t cpuLoad;     
-    bool isSosActive;    
+    bool isSosActive;
+    uint8_t sequence;
 } SurvivorPayload;
+
+typedef struct __attribute__((packed)) AckPayload {
+    uint8_t msgType;
+    uint8_t nodeId;
+    uint8_t sequence;
+} AckPayload;
 
 // --- V2.0 ESP-NOW HARDWARE QUEUE ---
 #define QUEUE_SIZE 20
-SurvivorPayload rxQueue[QUEUE_SIZE];
+typedef struct {
+    SurvivorPayload data;
+    uint8_t senderMac[6];
+} QueuedPayload;
+QueuedPayload rxQueue[QUEUE_SIZE];
 volatile int queueHead = 0; 
 volatile int queueTail = 0; 
-
 // --- V2.0 DTN RAM BATCHING & DELTA TRACKING ---
 #define RAM_BUFFER_SIZE 50 
 #define MAX_NODES 256 
@@ -98,11 +109,19 @@ void startElection();
 void reconnectMqtt();
 bool shouldYieldToRemotePrimary(const HaPayload& msg);
 bool configureEspNow(int channel);
+bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, bool verbose);
 #ifdef ESP32
 void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int len);
 #elif defined(ESP8266)
 void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len);
 #endif
+
+String formatMac(const uint8_t* mac) {
+    char macText[18];
+    snprintf(macText, sizeof(macText), "%02X:%02X:%02X:%02X:%02X:%02X",
+             mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+    return String(macText);
+}
 
 // ---------------------------------------------------------
 // HA MAC Comparison Utilities
@@ -181,6 +200,7 @@ bool configureEspNow(int channel) {
         esp_now_peer_info_t bcastPeer;
         memset(&bcastPeer, 0, sizeof(bcastPeer));
         bcastPeer.channel = channel;
+        bcastPeer.ifidx = (currentState == STATE_PRIMARY) ? WIFI_IF_AP : WIFI_IF_STA;
         bcastPeer.encrypt = false;
         memcpy(bcastPeer.peer_addr, broadcastMac, 6);
         esp_now_add_peer(&bcastPeer);
@@ -188,6 +208,7 @@ bool configureEspNow(int channel) {
         esp_now_peer_info_t peerInfo;
         memset(&peerInfo, 0, sizeof(peerInfo));
         peerInfo.channel = channel;
+        peerInfo.ifidx = (currentState == STATE_PRIMARY) ? WIFI_IF_AP : WIFI_IF_STA;
         peerInfo.encrypt = true;
         memcpy(peerInfo.lmk, LMK_KEY, 16);
         
@@ -210,6 +231,38 @@ bool configureEspNow(int channel) {
     Serial.print("[SYS] ESP-NOW Ready on Channel ");
     Serial.println(channel);
     return true;
+}
+
+bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, bool verbose) {
+    AckPayload ack;
+    ack.msgType = ACK_MSG_TYPE;
+    ack.nodeId = nodeId;
+    ack.sequence = sequence;
+
+    #ifdef ESP32
+        if (!esp_now_is_peer_exist(targetMac)) {
+            esp_now_peer_info_t peerInfo;
+            memset(&peerInfo, 0, sizeof(peerInfo));
+            memcpy(peerInfo.peer_addr, targetMac, 6);
+            peerInfo.channel = WiFi.channel();
+            peerInfo.ifidx = WIFI_IF_AP;
+            peerInfo.encrypt = true;
+            memcpy(peerInfo.lmk, LMK_KEY, 16);
+            esp_now_add_peer(&peerInfo);
+        }
+        bool sent = (esp_now_send(targetMac, (uint8_t *)&ack, sizeof(AckPayload)) == ESP_OK);
+    #elif defined(ESP8266)
+        bool sent = (esp_now_send((uint8_t*)targetMac, (uint8_t *)&ack, sizeof(AckPayload)) == 0);
+    #endif
+
+    if (!sent && verbose) {
+        Serial.print("[RADIO] ACK unicast failed for Node ");
+        Serial.print(nodeId);
+        Serial.print(" seq ");
+        Serial.println(sequence);
+    }
+
+    return sent;
 }
 
 void handleHaMessage(HaPayload msg) {
@@ -254,6 +307,11 @@ void startElection() {
         WiFi.softAPdisconnect(true);
     #endif
     WiFi.mode(WIFI_STA); // Ensure AP is off during election
+    #ifdef ESP32
+        WiFi.setSleep(false);
+    #elif defined(ESP8266)
+        WiFi.setSleepMode(WIFI_NONE_SLEEP);
+    #endif
     mqtt.disconnect();
     configureEspNow(meshChannel);
     
@@ -267,15 +325,25 @@ void promoteToPrimary() {
     Serial.println("\n[HA] *** CROWNED PRIMARY GATEWAY ***");
     
     WiFi.mode(WIFI_AP_STA); // Turn on Lighthouse routing capabilities
+    #ifdef ESP32
+        WiFi.setSleep(false);
+    #elif defined(ESP8266)
+        WiFi.setSleepMode(WIFI_NONE_SLEEP);
+    #endif
     
     String macStr = WiFi.macAddress();
-    macStr.replace(":", ""); 
+    macStr.replace(":", "");
     String lighthouseSSID = "VOID_" + macStr;
     WiFi.softAP(lighthouseSSID.c_str(), "", meshChannel);
     configureEspNow(meshChannel);
     
     Serial.print("[SYS] Lighthouse Beacon Active: ");
     Serial.println(lighthouseSSID);
+    String apMac = WiFi.softAPmacAddress();
+    Serial.print("[SYS] Edge Target MAC (AP): ");
+    Serial.println(apMac);
+    Serial.print("[SYS] Gateway STA MAC: ");
+    Serial.println(formatMac(myMac));
 
     sendHaMessage(HA_MSG_HEARTBEAT); // Collapse any late-joiner election immediately
     lastHeartbeatTx = millis();
@@ -288,6 +356,11 @@ void demoteToShadow() {
         Serial.println("\n[HA] *** DEMOTED TO SHADOW GATEWAY ***");
         WiFi.softAPdisconnect(true);
         WiFi.mode(WIFI_STA); // Terminate Lighthouse immediately
+        #ifdef ESP32
+            WiFi.setSleep(false);
+        #elif defined(ESP8266)
+            WiFi.setSleepMode(WIFI_NONE_SLEEP);
+        #endif
         mqtt.disconnect();
         configureEspNow(meshChannel);
     }
@@ -310,10 +383,21 @@ void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
     // Route incoming data based on struct payload size
     if (len == sizeof(SurvivorPayload)) {
         if (currentState == STATE_PRIMARY) {
+            SurvivorPayload payload;
+            memcpy(&payload, incomingData, sizeof(SurvivorPayload));
             int nextHead = (queueHead + 1) % QUEUE_SIZE;
             if (nextHead != queueTail) { 
-                memcpy((void*)&rxQueue[queueHead], incomingData, sizeof(SurvivorPayload));
+                rxQueue[queueHead].data = payload;
+#ifdef ESP32
+                memcpy(rxQueue[queueHead].senderMac, info->src_addr, 6);
+#elif defined(ESP8266)
+                memcpy(rxQueue[queueHead].senderMac, mac, 6);
+#endif
                 queueHead = nextHead;
+                Serial.print("[RADIO] Edge packet queued from Node ");
+                Serial.print(payload.nodeId);
+                Serial.print(" seq ");
+                Serial.println(payload.sequence);
             }
         }
     } 
@@ -399,9 +483,11 @@ void flushFlashBuffer() {
 // MQTT Connection Manager
 // ---------------------------------------------------------
 void reconnectMqtt() {
-    if (millis() - lastReconnectAttempt > 5000) {
+    if (millis() - lastReconnectAttempt > 15000) {
         lastReconnectAttempt = millis();
         Serial.print("[MQTT] Attempting connection...");
+        
+        espClient.setTimeout(1000); // Prevent prolonged TCP block
         
         String clientId = "VOID-Gateway-";
         clientId += String(random(0xffff), HEX);
@@ -436,13 +522,21 @@ void setup() {
     Serial.println("[SYS] Flash Storage Mounted.");
 
     WiFi.mode(WIFI_STA);
+    #ifdef ESP32
+        WiFi.setSleep(false);
+    #elif defined(ESP8266)
+        WiFi.setSleepMode(WIFI_NONE_SLEEP);
+    #endif
     WiFi.macAddress(myMac);
+    Serial.print("[SYS] Gateway STA MAC: ");
+    Serial.println(formatMac(myMac));
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
     }
     Serial.println("\n[SYS] Upstream Wi-Fi Connected.");
+    Serial.println(WiFi.localIP());
 
     int routerChannel = WiFi.channel();
     Serial.print("[SYS] Upstream Assigned Channel: ");
@@ -462,8 +556,12 @@ void setup() {
 // ---------------------------------------------------------
 void processPrimaryTasks() {
     while (queueTail != queueHead) {
-        SurvivorPayload currentPayload = rxQueue[queueTail];
+        QueuedPayload queued = rxQueue[queueTail];
+        SurvivorPayload currentPayload = queued.data;
         queueTail = (queueTail + 1) % QUEUE_SIZE;
+        
+        // Immediately dispatch ACK safely from main loop 
+        sendAckUnicast(currentPayload.nodeId, currentPayload.sequence, queued.senderMac, true);
         
         char jsonPayload[128];
         snprintf(jsonPayload, sizeof(jsonPayload), 
