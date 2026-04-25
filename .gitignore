@@ -12,3 +12,7 @@ secrets.h
 !example_secrets.h
 
 /diagnostics
+
+serial_monitor.py
+
+/logs

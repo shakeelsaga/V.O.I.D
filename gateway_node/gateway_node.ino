@@ -62,11 +62,13 @@ typedef struct __attribute__((packed)) HaPayload {
 
 // --- EDGE PAYLOAD STRUCTURE ---
 typedef struct __attribute__((packed)) SurvivorPayload {
-    uint8_t nodeId;      
-    uint8_t batteryPct;  
-    uint8_t cpuLoad;     
-    bool isSosActive;
-    uint8_t sequence;
+    uint8_t  nodeId;      // offset 0
+    uint8_t  batteryPct;  // offset 1
+    uint8_t  cpuLoad;     // offset 2
+    bool     isSosActive; // offset 3
+    uint32_t uptimeMs;    // offset 4  (4-byte aligned — must match edge_nodes.ino)
+    uint8_t  sequence;    // offset 8
+    uint8_t  ttl;         // offset 9
 } SurvivorPayload;
 
 typedef struct __attribute__((packed)) AckPayload {
@@ -76,7 +78,7 @@ typedef struct __attribute__((packed)) AckPayload {
 } AckPayload;
 
 // --- V2.0 ESP-NOW HARDWARE QUEUE ---
-#define QUEUE_SIZE 20
+#define QUEUE_SIZE 50
 typedef struct {
     SurvivorPayload data;
     uint8_t senderMac[6];
@@ -239,17 +241,24 @@ bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, 
     ack.nodeId = nodeId;
     ack.sequence = sequence;
 
+    int liveChannel = WiFi.channel();
+
     #ifdef ESP32
-        if (!esp_now_is_peer_exist(targetMac)) {
-            esp_now_peer_info_t peerInfo;
-            memset(&peerInfo, 0, sizeof(peerInfo));
-            memcpy(peerInfo.peer_addr, targetMac, 6);
-            peerInfo.channel = WiFi.channel();
-            peerInfo.ifidx = WIFI_IF_AP;
-            peerInfo.encrypt = true;
-            memcpy(peerInfo.lmk, LMK_KEY, 16);
-            esp_now_add_peer(&peerInfo);
+        // Always delete + re-add with the LIVE AP channel.
+        // configureEspNow() re-inits wipe all peers; the re-registered static
+        // peers use meshChannel which may differ from liveChannel after a router
+        // reassignment. A stale channel in the peer entry = silent ACK drop.
+        if (esp_now_is_peer_exist(targetMac)) {
+            esp_now_del_peer(targetMac);
         }
+        esp_now_peer_info_t peerInfo;
+        memset(&peerInfo, 0, sizeof(peerInfo));
+        memcpy(peerInfo.peer_addr, targetMac, 6);
+        peerInfo.channel = liveChannel;
+        peerInfo.ifidx = WIFI_IF_AP;
+        peerInfo.encrypt = true;
+        memcpy(peerInfo.lmk, LMK_KEY, 16);
+        esp_now_add_peer(&peerInfo);
         bool sent = (esp_now_send(targetMac, (uint8_t *)&ack, sizeof(AckPayload)) == ESP_OK);
     #elif defined(ESP8266)
         bool sent = (esp_now_send((uint8_t*)targetMac, (uint8_t *)&ack, sizeof(AckPayload)) == 0);
@@ -563,11 +572,12 @@ void processPrimaryTasks() {
         // Immediately dispatch ACK safely from main loop 
         sendAckUnicast(currentPayload.nodeId, currentPayload.sequence, queued.senderMac, true);
         
-        char jsonPayload[128];
-        snprintf(jsonPayload, sizeof(jsonPayload), 
-                  "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d}", 
-                  currentPayload.nodeId, currentPayload.batteryPct, 
-                  currentPayload.cpuLoad, currentPayload.isSosActive);
+        char jsonPayload[160];
+        snprintf(jsonPayload, sizeof(jsonPayload),
+                  "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d, \"seq\":%d, \"uptime_ms\":%lu}",
+                  currentPayload.nodeId, currentPayload.batteryPct,
+                  currentPayload.cpuLoad, currentPayload.isSosActive,
+                  currentPayload.sequence, (unsigned long)currentPayload.uptimeMs);
 
         bool publishSuccess = false;
 
