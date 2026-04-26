@@ -391,23 +391,34 @@ void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
 #endif
     // Route incoming data based on struct payload size
     if (len == sizeof(SurvivorPayload)) {
+        SurvivorPayload payload;
+        memcpy(&payload, incomingData, sizeof(SurvivorPayload));
+
+#ifdef ESP32
+        const uint8_t* senderMac = info->src_addr;
+#elif defined(ESP8266)
+        const uint8_t* senderMac = mac;
+#endif
+
+        // ALWAYS send ACK regardless of gateway state.
+        // If we're SHADOW/ELECTION, the edge node shouldn't be timing out on us.
+        // We send ACK immediately from callback to stop the edge burst timer.
+        // The payload is only enqueued when PRIMARY.
+        AckPayload ack;
+        ack.msgType  = ACK_MSG_TYPE;
+        ack.nodeId   = payload.nodeId;
+        ack.sequence = payload.sequence;
+        // Send unencrypted ACK — best-effort from within ISR context
+        esp_now_send((uint8_t*)senderMac, (uint8_t *)&ack, sizeof(AckPayload));
+
         if (currentState == STATE_PRIMARY) {
-            SurvivorPayload payload;
-            memcpy(&payload, incomingData, sizeof(SurvivorPayload));
             int nextHead = (queueHead + 1) % QUEUE_SIZE;
             if (nextHead != queueTail) { 
                 rxQueue[queueHead].data = payload;
-#ifdef ESP32
-                memcpy(rxQueue[queueHead].senderMac, info->src_addr, 6);
-#elif defined(ESP8266)
-                memcpy(rxQueue[queueHead].senderMac, mac, 6);
-#endif
+                memcpy(rxQueue[queueHead].senderMac, senderMac, 6);
                 queueHead = nextHead;
-                Serial.print("[RADIO] Edge packet queued from Node ");
-                Serial.print(payload.nodeId);
-                Serial.print(" seq ");
-                Serial.println(payload.sequence);
             }
+            // If queue full, packet is dropped but ACK was already sent
         }
     } 
     else if (len == sizeof(HaPayload)) {
@@ -456,34 +467,53 @@ void flushFlashBuffer() {
     }
 
     Serial.println("\n[DTN] --- INITIATING FLASH BUFFER FLUSH ---");
-    bool flushComplete = true; 
     
-    while (file.available()) {
-        // [HA FIX]: Starvation Prevention. Maintain dominance during long flushes.
-        if (millis() - lastHeartbeatTx > HA_HEARTBEAT_INTERVAL_MS) {
-            lastHeartbeatTx = millis();
-            sendHaMessage(HA_MSG_HEARTBEAT); 
-        }
+    // Collect all lines into a temporary list and track which were sent
+    // This prevents re-reading already-published lines on partial flush.
+    // We write a new file with only the unsent remainder.
+    String lines[RAM_BUFFER_SIZE];
+    int lineCount = 0;
 
-        String payload = file.readStringUntil('\n');
-        payload.trim(); 
-        
-        if (payload.length() > 0) {
-            if (WiFi.status() == WL_CONNECTED && mqtt.publish("void/telemetry", payload.c_str(), false, 1)) {
-                Serial.print("[DTN] Flushed: ");
-                Serial.println(payload);
-                delay(50); 
-            } else {
-                Serial.println("[DTN] ERROR: Link severed mid-flush. Halting to protect data.");
-                flushComplete = false; 
-                break; 
-            }
+    while (file.available() && lineCount < RAM_BUFFER_SIZE) {
+        String line = file.readStringUntil('\n');
+        line.trim();
+        if (line.length() > 0) {
+            lines[lineCount++] = line;
         }
     }
     file.close();
-    
-    if (flushComplete) {
-        LittleFS.remove("/void_buffer.txt");
+
+    int lastPublished = -1;
+    for (int i = 0; i < lineCount; i++) {
+        // [HA FIX] Starvation prevention during long flushes
+        if (millis() - lastHeartbeatTx > HA_HEARTBEAT_INTERVAL_MS) {
+            lastHeartbeatTx = millis();
+            sendHaMessage(HA_MSG_HEARTBEAT);
+        }
+
+        if (WiFi.status() == WL_CONNECTED && mqtt.connected() &&
+            mqtt.publish("void/telemetry", lines[i].c_str(), false, 1)) {
+            Serial.print("[DTN] Flushed: "); Serial.println(lines[i]);
+            lastPublished = i;
+            delay(50);
+        } else {
+            Serial.println("[DTN] ERROR: Link severed mid-flush. Halting to protect data.");
+            break;
+        }
+    }
+
+    // Rewrite file with only unsent lines (those after lastPublished)
+    LittleFS.remove("/void_buffer.txt");
+    if (lastPublished < lineCount - 1) {
+        File remaining = LittleFS.open("/void_buffer.txt", "w");
+        if (remaining) {
+            for (int i = lastPublished + 1; i < lineCount; i++) {
+                remaining.println(lines[i]);
+            }
+            remaining.close();
+            Serial.print("[DTN] Preserved "); Serial.print(lineCount - lastPublished - 1); Serial.println(" unsent lines.");
+        }
+    } else {
         Serial.println("[DTN] --- BUFFER FLUSH COMPLETE ---\n");
     }
 }
@@ -610,8 +640,12 @@ void processPrimaryTasks() {
                     networkState[id].lastBattery = currentPayload.batteryPct;
                     networkState[id].lastSos = currentPayload.isSosActive;
                     
-                    ramBuffer[ramBufferCount] = currentPayload;
-                    ramBufferCount++;
+                    // Overflow guard — flush to flash if RAM buffer is full
+                    if (ramBufferCount >= RAM_BUFFER_SIZE) {
+                        Serial.println("[DTN] RAM buffer full. Flushing to flash before adding.");
+                        flushRamToFlash();
+                    }
+                    ramBuffer[ramBufferCount++] = currentPayload;
                     
                     Serial.print("[DTN] State change detected for Node ");
                     Serial.print(id);
@@ -629,10 +663,11 @@ void processPrimaryTasks() {
         }
     }
 
+    // mqtt.loop() ALWAYS called — feeds keepalive state machine even when disconnected.
+    // reconnectMqtt() rate-limited internally.
+    mqtt.loop();
     if (!mqtt.connected()) {
         reconnectMqtt();
-    } else {
-        mqtt.loop();
     }
 }
 
