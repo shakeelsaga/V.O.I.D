@@ -416,7 +416,8 @@ bool huntForPeers(const SurvivorPayload& payload) {
             #endif
 
             unsigned long t = millis();
-            while (!ackReceived && millis() - t < MESH_PER_PEER_WAIT_MS) yield(); // if (ackReceived) {
+            while (!ackReceived && millis() - t < MESH_PER_PEER_WAIT_MS) yield();
+            if (ackReceived) {
                 lastKnownChannel = ch;
                 memcpy(preferredPeer, authorizedEdgeNodes[i], 6);
                 hasPreferredPeer = true;
@@ -448,7 +449,8 @@ bool huntForPeers(const SurvivorPayload& payload) {
             #endif
 
             unsigned long t = millis();
-            while (!ackReceived && millis() - t < MESH_PER_PEER_WAIT_MS) yield(); // if (ackReceived) {
+            while (!ackReceived && millis() - t < MESH_PER_PEER_WAIT_MS) yield();
+            if (ackReceived) {
                 memcpy(preferredPeer, authorizedEdgeNodes[i], 6);
                 hasPreferredPeer = true;
                 netlogln("[MESH] Extended retry ACK from " + formatMac(preferredPeer));
