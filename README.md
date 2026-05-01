@@ -1,12 +1,16 @@
 # V.O.I.D (Vital Offline Information Dispatch)
-
+ 
 V.O.I.D. is an edge-to-cloud telemetry pipeline and Delay-Tolerant Network (DTN) engineered for emergency disaster scenarios. When standard communication grids fail, the system utilizes low-power microcontrollers to autonomously form a survival mesh network, buffering telemetry and bridging it into a cloud-native Kubernetes observability stack upon infrastructure restoration.
 
 ## Core Architecture
 
 * **Hardware Agnostic:** Firmware compiles and executes dynamically across both ESP32 (Core v3.x compliant) and ESP8266 architectures.
 * **Lighthouse Auto-Discovery:** Implements Zero-Touch Provisioning via SSID injection. Edge nodes actively scan for the Gateway's dynamic MAC address and Wi-Fi channel, bypassing static network configurations.
-* **Delay-Tolerant Networking (DTN):** Utilizes LittleFS on the Gateway to buffer ESP-NOW payloads into local flash storage during upstream network outages, preventing data loss.
+* **Delay-Tolerant Networking (DTN):** Utilizes LittleFS on the Gateway to buffer ESP-NOW payloads into local flash storage during upstream network outages, preventing data loss. Includes RAM batching, delta-state filtering to protect flash wear, and mid-flush integrity protection to prevent duplicate publishes.
+* **Multi-Hop Mesh Routing:** Edge nodes operate as repeaters. When direct gateway range is unavailable, telemetry is forwarded through peer nodes via a multi-channel sweep across {11, 6, 1}, with a preferred-peer cache for fast reconnection and a 16-entry duplicate suppression cache to prevent relay loops.
+* **Highly Available (HA) Gateway:** Two gateway nodes participate in an Active-Passive auto-election. The Incumbent Rule (preemption disabled) selects the primary by uptime, with MAC address as a tiebreaker. If the primary fails, the shadow self-promotes within 7 seconds without any manual intervention.
+* **End-to-End Encryption:** ESP-NOW links are encrypted using a PMK/LMK two-key hierarchy. Credentials and node MAC whitelists are externalized into `secrets.h` and `node_registry.h`, which are excluded from the public repository.
+* **Adaptive RBE Telemetry:** Edge nodes transmit on exception, not on a fixed timer — immediately on SOS, battery drop, or CPU spike, and every 60 seconds as a heartbeat fallback. Unsent payloads are queued in RAM and flushed when a path is restored.
 * **Cloud-Native Observability:** Routes telemetry via a Mosquitto MQTT broker into a Telegraf and InfluxDB pipeline, visualized in real-time through a Grafana Command Center hosted on a K3s cluster.
 
 ---
@@ -48,10 +52,15 @@ The backend relies on a TIG stack (Telegraf, InfluxDB, Grafana) to provide a fau
 
 ---
 
-## Current State and Version 1.0 Limitations
+## Current State
+ 
+**Current stable release: `v2.2.0`** &nbsp;|&nbsp; In development: `v2.3.0` (hop-distance vector routing + RSSI peer scoring)
+ 
+V2.2 is a hardened, fully functional release. All core systems — zero-touch provisioning, DTN buffering, multi-hop relay, HA election, and encrypted unicast handshake — are implemented and verified against real hardware failure scenarios.
+ 
+**Known limitations in v2.2:**
+* **Simulated Hardware Metrics:** `batteryPct` and `cpuLoad` are generated via a software simulation loop to stress-test the pipeline. Physical sensor binding (e.g., LiPo voltage dividers) is planned for v3.0.
+* **Static Node Registry:** Authorised nodes must be compiled into `node_registry.h`. Dynamic onboarding without reflashing is not yet supported.
+* **Indoor Testing Only:** All experiments conducted at short range (~5 m). Outdoor RF propagation characteristics have not been evaluated.
 
-This repository represents Version 1.0 of the V.O.I.D. infrastructure. The current release focuses strictly on establishing the routing logic, auto-discovery protocols, and DTN architecture.
-
-**Notes on v1.0:**
-* **Simulated Hardware Metrics:** For this initial deployment, the `batteryPct` and `cpuLoad` metrics are generated via a randomized software simulation loop to stress-test the data pipeline. 
-* **Future Hardware Integration:** Version 2.0 will bind these variables to physical hardware sensors (e.g., analog voltage dividers for LiPo batteries).
+For full version history, see [CHANGELOG.md](CHANGELOG.md).
