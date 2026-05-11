@@ -9,49 +9,71 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [v2.3.0] — Unreleased
+## [v2.3.0] - 2026-05-11
 
-### Added — Hop-Distance Vector Routing
+### Added - Hop-Distance Vector Routing
 
-- **`hopDist` field in `SurvivorPayload`** ⚠️ Breaking — struct grows from 10 to 11 bytes. All nodes must be reflashed simultaneously.
+- **`hopDist` field in `SurvivorPayload`** ⚠️ Breaking - struct grows from 10 to 11 bytes. All nodes must be reflashed simultaneously.
   - Offset 10, `uint8_t`. Carries the originating node's estimated distance to the gateway in relay hops.
   - Gateway is the implicit root (`hopDist = 0`). Direct edge nodes report `hopDist = 1`. Each relay increments before forwarding.
   - Implements a passive distributed Bellman-Ford: no probe packets, no topology broadcasts. Routing data is piggybacked on regular telemetry.
 
 - **5-entry passive neighbor table** in `edge_nodes.ino`
-  - `struct Neighbor { mac[6], rssi, hopDist, lastSeenMs, valid }` — populated entirely from received packets inside `OnDataRecv` and `processRepeatPayload()`.
+  - `struct Neighbor { mac[6], rssi, hopDist, lastSeenMs, valid }` - populated entirely from received packets inside `processRepeatPayload()`.
   - Entries expire after 120 seconds (`NEIGHBOR_EXPIRY_MS`). Stale entries are evicted on next write.
-  - Zero probe overhead — the table builds itself from traffic that already exists.
+  - Zero probe overhead - the table builds itself from traffic that already exists.
 
 - **RSSI-composite peer scoring**
   - Formula: `score = rssi + (MAX_HOPS − hopDist) × HOPDIST_WEIGHT`
   - Higher RSSI (stronger signal) and lower `hopDist` (closer to gateway) both increase score.
-  - `RSSI_FLOOR = −80 dBm` — peers below this threshold are disqualified as relay candidates, matching Espressif ESP-WIFI-MESH parent-selection behaviour.
-  - `HOPDIST_WEIGHT = 10`, `MAX_HOPS = 10` — tunable constants at the top of `edge_nodes.ino`.
+  - `RSSI_FLOOR = −80 dBm` - peers below this threshold are disqualified as relay candidates, matching Espressif ESP-WIFI-MESH parent-selection behaviour.
+  - `HOPDIST_WEIGHT = 10`, `MAX_HOPS = 10` - tunable constants at the top of `edge_nodes.ino`.
 
 - **Neighbor table fast-path in `huntForPeers()`**
   - Before sweeping the full `authorizedEdgeNodes` list, the router checks the neighbor table for the highest-scored qualified peer and probes it first.
   - On success: `myHopDist` is updated to `best.hopDist + 1` and the peer is written to `preferredPeer` cache.
   - On miss: falls through to the existing cached-peer → channel-sweep → extended-retry chain unchanged.
 
+- **`updateHopDistFromRelay()` helper** - ensures `myHopDist` is updated across all four relay paths (neighbor table, cached peer, channel sweep, extended retry). Falls back to `myHopDist = 2` if the relay peer is not yet in the neighbor table.
+
 - **`myHopDist` global self-estimate** in `edge_nodes.ino`
   - Initialised to `HOPDIST_UNKNOWN (255)` at boot.
   - Set to `1` on first confirmed direct gateway transmission.
-  - Updated to `relay.hopDist + 1` on first confirmed relay transmission.
+  - Updated to `relay.hopDist + 1` on every confirmed relay transmission via any of the four discovery paths.
   - Carried in `hopDist` field of every outgoing `SurvivorPayload`.
 
 - **`"hops"` field in MQTT JSON output** in `gateway_node.ino`
   - `processPrimaryTasks()` now publishes: `{"node_id":…, "battery":…, "cpu":…, "sos_alert":…, "seq":…, "uptime_ms":…, "hops":…}`
-  - Enables per-packet hop-count tracking in InfluxDB and Grafana with zero additional broker configuration.
-  - Value `255` indicates the originating node had not yet confirmed its path distance — filterable in Grafana with a threshold panel.
+  - Value `255` indicates the originating node had not yet confirmed its path distance - filterable in Grafana with a threshold panel.
 
 - **`"hops"` field in DTN flash buffer JSON** in `gateway_node.ino`
-  - `flushRamToFlash()` now includes `"hops":%d` in the buffered JSON line.
-  - Hop-count is preserved through outages for post-hoc topology analysis — packets buffered during a disconnect carry the same topology information as live-published packets.
+  - Hop-count is preserved through outages for post-hoc topology analysis.
 
-- **`HOPDIST_UNKNOWN` (255) constant** — sentinel value distinguishing "path not yet confirmed" from any real hop count. Used in peer scoring to mark unroutable neighbors.
+- **ESP32 promiscuous RSSI sidecar** - intercepts raw 802.11 vendor-specific action frames in promiscuous mode to extract hardware RSSI from ESP-NOW packets (unavailable via the standard receive callback). Filters by frame type (0xD0 action), category (0x7F vendor-specific), and Espressif OUI (0x18FE34). Cached in an 8-entry ring buffer and looked up by MAC in `processRepeatPayload()`. Re-enabled after every `WiFi.begin()` call (which resets promiscuous state).
 
-- **`printNeighborTable()` debug utility** — callable from `loop()` or over serial to dump the full neighbor table with scores, RSSI, hop distances, and staleness flags.
+- **Periodic neighbor table dump** - `printNeighborTable()` called every 30 seconds from `loop()`, output via `netlogln()` for both serial and UDP visibility. Includes per-entry RSSI, hopDist, composite score, staleness, and platform-conditional promiscuous mode counters.
+
+- **Probabilistic Gossip Gate** in `processRepeatPayload()`
+  - Introduced `GOSSIP_PROB = 75`.
+  - Non-SOS packets are subjected to a random dice roll: 75% chance to forward, 25% chance to silently drop.
+  - Reduces redundant mesh flood traffic (where every relay forwards every packet) by ~25% with negligible impact on Packet Delivery Ratio (PDR), due to the existence of multiple overlapping relay paths.
+  - SOS packets bypass the gate and are always forwarded.
+
+- **`HOPDIST_UNKNOWN` (255) constant** - sentinel value distinguishing "path not yet confirmed" from any real hop count.
+
+- **Telemetry thresholds tuned** - battery drop exception widened to 4% (from 2%), heartbeat interval extended to 80s (from 60s), SOS probability threshold raised to 97% (from 95%). Reduces radio chatter on stable networks.
+
+### Fixed - Edge Node (`edge_nodes.ino`)
+
+- **ACK encryption mismatch in `processRepeatPayload()`** - relay ACKs were sent unencrypted (`NULL` key on ESP8266, `encrypt=false` on ESP32) while all other peer registrations used `LMK_KEY`. The originating node, which had the relay registered as encrypted, silently dropped the plaintext ACK. This caused every peer-to-peer relay attempt to fail with "All paths failed" despite both nodes being in range and receiving each other's payloads. Fixed by enforcing `LMK_KEY` encryption on all ACK peer registrations across both architectures.
+
+- **ESP8266 promiscuous mode causes total baseband deafness** - enabling `wifi_promiscuous_enable(1)` on ESP8266 intercepts all incoming packets at the hardware level, completely severing the ESP-NOW receive callback (making the node deaf to all peers) and crashing the Station interface (causing lwIP WDT resets). The RSSI extraction logic was proven to work in isolation (`diagnostics.ino`) but cannot coexist with a functioning ESP-NOW mesh on this hardware. Fixed by wrapping all ESP8266 promiscuous code in `#if 0` and implementing `enablePromiscuousRssi()` as a no-op stub. Neighbor table entries from ESP8266 nodes carry `rssi = 0`, which is above `RSSI_FLOOR (-80)`, causing peer scoring to degrade gracefully to pure `hopDist` ordering.
+
+- **Duplicate suppression blocks rebooted nodes** - the ACK was sent after the duplicate check. A rebooted node reuses sequence numbers from 0, and the relay's `dupCache` may still contain stale `(nodeId, seq)` entries from before the reboot. The relay would suppress the "duplicate" and never send an ACK, leaving the rebooted node retrying forever and unable to establish a relay path. Fixed by moving the ACK send before the duplicate check. Duplicate payloads are still suppressed for forwarding - only the ACK is guaranteed.
+
+- **`myHopDist` stuck at 1 after gateway loss** - only the neighbor table fast-path (path 1) updated `myHopDist`. The other three paths (cached peer, channel sweep, extended retry) returned `true` without ever touching it. A node that found the gateway at boot (`myHopDist = 1`) and later relayed through a peer would permanently report `hops: 1` in MQTT. Fixed by adding `updateHopDistFromRelay()` calls to all four relay paths.
+
+- **ESP8266 peer not registered before relay ACK** - on ESP8266, `esp_now_send()` requires the target to be registered as a peer. The relay ACK was sent without first calling `esp_now_add_peer()`, causing the ACK to be silently dropped. Fixed by adding `esp_now_del_peer()` + `esp_now_add_peer()` before the ACK send on ESP8266.
 
 ---
 
