@@ -66,6 +66,7 @@ const int MESH_CHANNEL_COUNT = 3;
 #define MAX_HOPS 10         // Maximum plausible hop count in the mesh
 #define RSSI_FLOOR -80      // dBm — peers below this are disqualified
 #define HOPDIST_WEIGHT 10   // Score bonus per hop closer to gateway
+#define GOSSIP_PROB 75      // 75% chance to forward non-SOS packets
 #define NEIGHBOR_EXPIRY_MS 120000UL // 2 minutes — evict stale neighbors
 
 // Neighbor table — populated passively from received payloads, zero probe
@@ -623,6 +624,12 @@ void processRepeatPayload() {
     return;
   }
   recordSeen(fwdPayload.nodeId, fwdPayload.sequence);
+
+  // Gossip gate: Probabilistic drop for non-SOS packets to reduce flood traffic
+  if (!fwdPayload.isSosActive && random(100) >= GOSSIP_PROB) {
+      netlogln("[REPEATER] Gossip gate: dropped non-SOS payload from Node " + String(fwdPayload.nodeId));
+      return;
+  }
 
   fwdPayload.ttl--;
   // NOTE: fwdPayload.hopDist is NOT modified — it represents the
