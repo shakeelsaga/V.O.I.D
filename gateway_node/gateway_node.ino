@@ -1,7 +1,14 @@
-// ---------------------------------------------------------
-// V.O.I.D. Gateway - HA Auto-Election & DTN Bridge (V2.0)
-// ---------------------------------------------------------
+// -------------------------------------------------------------------------
+// V.O.I.D. Gateway - HA Auto-Election & DTN Bridge (V2.3)
+// -------------------------------------------------------------------------
 // Architecture: ESP32 / ESP8266 Compatible
+//
+// V2.3 — Hop-Distance Vector Support:
+//   SurvivorPayload grows to 11 bytes (hopDist at offset 10).
+//   MUST be byte-identical to edge_nodes.ino — sizeof() = 11.
+//   "hops" field added to MQTT JSON and DTN flash buffer for
+//   per-packet hop-count tracking in InfluxDB and Grafana.
+// -------------------------------------------------------------------------
 
 #ifdef ESP32
 #include <WiFi.h>
@@ -20,15 +27,15 @@ extern "C" {
 
 #include <MQTT.h>
 WiFiClient espClient;
-MQTTClient mqtt(256); 
+MQTTClient mqtt(256);
 
 #include "secrets.h"
 #include "node_registry.h"
 
 // --- NETWORK CONFIGURATION ---
-const char* ssid = SECRET_WIFI_SSID;
-const char* password = SECRET_WIFI_PASS;
-const char* mqtt_broker_ip = SECRET_MQTT_BROKER_IP; 
+const char* ssid           = SECRET_WIFI_SSID;
+const char* password       = SECRET_WIFI_PASS;
+const char* mqtt_broker_ip = SECRET_MQTT_BROKER_IP;
 
 // --- HA PROTOCOL GLOBALS ---
 enum GatewayState { STATE_ELECTION, STATE_PRIMARY, STATE_SHADOW };
@@ -37,39 +44,51 @@ GatewayState currentState = STATE_ELECTION;
 enum HaMessageType { HA_MSG_ELECTION_PING = 0, HA_MSG_HEARTBEAT = 1 };
 const uint8_t ACK_MSG_TYPE = 0xA1;
 
-const bool HA_PREEMPTION_ENABLED = false;
+const bool HA_PREEMPTION_ENABLED              = false;
 const unsigned long HA_ELECTION_PING_INTERVAL_MS = 500;
-const unsigned long HA_HEARTBEAT_INTERVAL_MS = 1000;
-const unsigned long HA_HEARTBEAT_TIMEOUT_MS = 6000;
-const unsigned long HA_ELECTION_WINDOW_MIN_MS = 3500;
-const unsigned long HA_ELECTION_WINDOW_MAX_MS = 4500;
-const unsigned long HA_UPTIME_TIE_MARGIN_MS = 500;
+const unsigned long HA_HEARTBEAT_INTERVAL_MS     = 1000;
+const unsigned long HA_HEARTBEAT_TIMEOUT_MS      = 6000;
+const unsigned long HA_ELECTION_WINDOW_MIN_MS    = 3500;
+const unsigned long HA_ELECTION_WINDOW_MAX_MS    = 4500;
+const unsigned long HA_UPTIME_TIE_MARGIN_MS      = 500;
 
 uint8_t myMac[6];
 uint8_t broadcastMac[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 int meshChannel = 0;
 
-unsigned long stateStartTime = 0;
-unsigned long lastHeartbeatTx = 0;
-unsigned long lastHeartbeatRx = 0;
-unsigned long electionDuration = 0;
+unsigned long stateStartTime      = 0;
+unsigned long lastHeartbeatTx     = 0;
+unsigned long lastHeartbeatRx     = 0;
+unsigned long electionDuration    = 0;
+unsigned long lastReconnectAttempt = 0;
 
+// sizeof MUST differ from sizeof(SurvivorPayload) — OnDataRecv uses
+// the packet length to distinguish edge telemetry from HA heartbeats.
+// _pad ensures HaPayload = 12 bytes vs SurvivorPayload = 11 bytes.
 typedef struct __attribute__((packed)) HaPayload {
-    uint8_t msgType;
-    uint8_t mac[6];
+    uint8_t  msgType;
+    uint8_t  mac[6];
     uint32_t senderUptimeMs;
+    uint8_t  _pad;            // Disambiguator — keeps sizeof(HaPayload) != sizeof(SurvivorPayload)
 } HaPayload;
 
-// --- EDGE PAYLOAD STRUCTURE ---
+// =========================================================================
+// SURVIVORPAYLOAD — MUST be byte-identical to edge_nodes.ino.
+// The gateway uses sizeof(SurvivorPayload) in the len check inside
+// OnDataRecv. A mismatch causes all edge payloads to be silently
+// classified as HaPayload and dropped.
+// sizeof = 11 bytes.
+// =========================================================================
 typedef struct __attribute__((packed)) SurvivorPayload {
-    uint8_t  nodeId;      // offset 0
-    uint8_t  batteryPct;  // offset 1
-    uint8_t  cpuLoad;     // offset 2
-    bool     isSosActive; // offset 3
-    uint32_t uptimeMs;    // offset 4  (4-byte aligned — must match edge_nodes.ino)
-    uint8_t  sequence;    // offset 8
-    uint8_t  ttl;         // offset 9
-} SurvivorPayload;
+    uint8_t  nodeId;       // offset 0
+    uint8_t  batteryPct;   // offset 1
+    uint8_t  cpuLoad;      // offset 2
+    bool     isSosActive;  // offset 3
+    uint32_t uptimeMs;     // offset 4  (4-byte aligned — do not reorder)
+    uint8_t  sequence;     // offset 8
+    uint8_t  ttl;          // offset 9
+    uint8_t  hopDist;      // offset 10 — originating node's distance to GW
+} SurvivorPayload;         // sizeof = 11 bytes
 
 typedef struct __attribute__((packed)) AckPayload {
     uint8_t msgType;
@@ -84,26 +103,26 @@ typedef struct {
     uint8_t senderMac[6];
 } QueuedPayload;
 QueuedPayload rxQueue[QUEUE_SIZE];
-volatile int queueHead = 0; 
-volatile int queueTail = 0; 
-// --- V2.0 DTN RAM BATCHING & DELTA TRACKING ---
-#define RAM_BUFFER_SIZE 50 
-#define MAX_NODES 256 
+volatile int queueHead = 0;
+volatile int queueTail = 0;
+
+// --- DTN RAM BATCHING & DELTA TRACKING ---
+#define RAM_BUFFER_SIZE 50
+#define MAX_NODES 256
 
 SurvivorPayload ramBuffer[RAM_BUFFER_SIZE];
 int ramBufferCount = 0;
-unsigned long lastReconnectAttempt = 0;
 
 struct NodeState {
-    bool active = false;
+    bool    active      = false;
     uint8_t lastBattery = 0;
-    bool lastSos = false;
+    bool    lastSos     = false;
 };
 NodeState networkState[MAX_NODES];
 
-// ---------------------------------------------------------
+// =========================================================================
 // Forward Declarations
-// ---------------------------------------------------------
+// =========================================================================
 void sendHaMessage(uint8_t type);
 void demoteToShadow();
 void promoteToPrimary();
@@ -112,6 +131,10 @@ void reconnectMqtt();
 bool shouldYieldToRemotePrimary(const HaPayload& msg);
 bool configureEspNow(int channel);
 bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, bool verbose);
+void flushRamToFlash();
+void flushFlashBuffer();
+void processPrimaryTasks();
+
 #ifdef ESP32
 void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int len);
 #elif defined(ESP8266)
@@ -125,9 +148,9 @@ String formatMac(const uint8_t* mac) {
     return String(macText);
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // HA MAC Comparison Utilities
-// ---------------------------------------------------------
+// =========================================================================
 bool isMacEqual(const uint8_t* mac1, const uint8_t* mac2) {
     for (int i=0; i<6; i++) if (mac1[i] != mac2[i]) return false;
     return true;
@@ -145,41 +168,30 @@ bool shouldYieldToRemotePrimary(const HaPayload& msg) {
     if (HA_PREEMPTION_ENABLED) {
         return isMacLower(msg.mac, myMac);
     }
+    // Cast both sides to signed BEFORE subtraction to avoid uint32 wrap
+    int32_t remoteSigned = (int32_t)msg.senderUptimeMs;
+    int32_t localSigned  = (int32_t)millis();
+    int32_t uptimeDelta  = remoteSigned - localSigned;
 
-    // With preemption disabled, prefer the gateway that has been alive longer.
-    int32_t uptimeDelta = (int32_t)(msg.senderUptimeMs - millis());
-    if (uptimeDelta > (int32_t)HA_UPTIME_TIE_MARGIN_MS) {
-        return true;
-    }
-    if (uptimeDelta < -(int32_t)HA_UPTIME_TIE_MARGIN_MS) {
-        return false;
-    }
-
+    if (uptimeDelta >  (int32_t)HA_UPTIME_TIE_MARGIN_MS) return true;
+    if (uptimeDelta < -(int32_t)HA_UPTIME_TIE_MARGIN_MS) return false;
     return isMacLower(msg.mac, myMac);
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // HA Protocol Engine
-// ---------------------------------------------------------
+// =========================================================================
 void sendHaMessage(uint8_t type) {
     HaPayload msg;
-    msg.msgType = type;
+    msg.msgType        = type;
     memcpy(msg.mac, myMac, 6);
     msg.senderUptimeMs = millis();
-    
-    #ifdef ESP32
-        esp_now_send(broadcastMac, (uint8_t *)&msg, sizeof(HaPayload));
-    #elif defined(ESP8266)
-        esp_now_send(broadcastMac, (uint8_t *)&msg, sizeof(HaPayload));
-    #endif
+    esp_now_send(broadcastMac, (uint8_t *)&msg, sizeof(HaPayload));
 }
 
 bool configureEspNow(int channel) {
-    #ifdef ESP32
-        esp_now_deinit();
-    #elif defined(ESP8266)
-        esp_now_deinit();
-    #endif
+    esp_now_deinit();
+    delay(10);
 
     if (esp_now_init() != 0) {
         Serial.println("[SYS] FATAL: ESP-NOW initialization failed.");
@@ -189,20 +201,18 @@ bool configureEspNow(int channel) {
     #ifdef ESP8266
         esp_now_set_self_role(ESP_NOW_ROLE_COMBO);
     #endif
-    
+
     #ifdef ESP32
         esp_now_set_pmk(PMK_KEY);
     #elif defined(ESP8266)
         esp_now_set_kok(PMK_KEY, 16);
     #endif
 
-    // Rebuild peers after every Wi-Fi mode change. ESP-NOW state can be lost
-    // when the radio moves between STA and AP+STA.
     #ifdef ESP32
         esp_now_peer_info_t bcastPeer;
         memset(&bcastPeer, 0, sizeof(bcastPeer));
         bcastPeer.channel = channel;
-        bcastPeer.ifidx = (currentState == STATE_PRIMARY) ? WIFI_IF_AP : WIFI_IF_STA;
+        bcastPeer.ifidx   = (currentState == STATE_PRIMARY) ? WIFI_IF_AP : WIFI_IF_STA;
         bcastPeer.encrypt = false;
         memcpy(bcastPeer.peer_addr, broadcastMac, 6);
         esp_now_add_peer(&bcastPeer);
@@ -210,44 +220,36 @@ bool configureEspNow(int channel) {
         esp_now_peer_info_t peerInfo;
         memset(&peerInfo, 0, sizeof(peerInfo));
         peerInfo.channel = channel;
-        peerInfo.ifidx = (currentState == STATE_PRIMARY) ? WIFI_IF_AP : WIFI_IF_STA;
+        peerInfo.ifidx   = (currentState == STATE_PRIMARY) ? WIFI_IF_AP : WIFI_IF_STA;
         peerInfo.encrypt = true;
         memcpy(peerInfo.lmk, LMK_KEY, 16);
-        
         for (int i = 0; i < numAuthorizedNodes; i++) {
             memcpy(peerInfo.peer_addr, authorizedEdgeNodes[i], 6);
             esp_now_add_peer(&peerInfo);
         }
-
         esp_now_register_recv_cb(OnDataRecv);
     #elif defined(ESP8266)
         esp_now_add_peer(broadcastMac, ESP_NOW_ROLE_COMBO, channel, NULL, 0);
-
         for (int i = 0; i < numAuthorizedNodes; i++) {
             esp_now_add_peer((uint8_t *)authorizedEdgeNodes[i], ESP_NOW_ROLE_SLAVE, channel, (uint8_t *)LMK_KEY, 16);
         }
-
         esp_now_register_recv_cb(reinterpret_cast<esp_now_recv_cb_t>(OnDataRecv));
     #endif
 
-    Serial.print("[SYS] ESP-NOW Ready on Channel ");
-    Serial.println(channel);
+    Serial.print("[SYS] ESP-NOW Ready on Channel "); Serial.println(channel);
     return true;
 }
 
 bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, bool verbose) {
     AckPayload ack;
-    ack.msgType = ACK_MSG_TYPE;
-    ack.nodeId = nodeId;
+    ack.msgType  = ACK_MSG_TYPE;
+    ack.nodeId   = nodeId;
     ack.sequence = sequence;
 
     int liveChannel = WiFi.channel();
 
     #ifdef ESP32
-        // Always delete + re-add with the LIVE AP channel.
-        // configureEspNow() re-inits wipe all peers; the re-registered static
-        // peers use meshChannel which may differ from liveChannel after a router
-        // reassignment. A stale channel in the peer entry = silent ACK drop.
+        // Always delete + re-add with LIVE AP channel to prevent stale-channel ACK drops
         if (esp_now_is_peer_exist(targetMac)) {
             esp_now_del_peer(targetMac);
         }
@@ -255,7 +257,7 @@ bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, 
         memset(&peerInfo, 0, sizeof(peerInfo));
         memcpy(peerInfo.peer_addr, targetMac, 6);
         peerInfo.channel = liveChannel;
-        peerInfo.ifidx = WIFI_IF_AP;
+        peerInfo.ifidx   = WIFI_IF_AP;
         peerInfo.encrypt = true;
         memcpy(peerInfo.lmk, LMK_KEY, 16);
         esp_now_add_peer(&peerInfo);
@@ -265,12 +267,9 @@ bool sendAckUnicast(uint8_t nodeId, uint8_t sequence, const uint8_t* targetMac, 
     #endif
 
     if (!sent && verbose) {
-        Serial.print("[RADIO] ACK unicast failed for Node ");
-        Serial.print(nodeId);
-        Serial.print(" seq ");
-        Serial.println(sequence);
+        Serial.print("[RADIO] ACK unicast failed for Node "); Serial.print(nodeId);
+        Serial.print(" seq "); Serial.println(sequence);
     }
-
     return sent;
 }
 
@@ -280,42 +279,42 @@ void handleHaMessage(HaPayload msg) {
     if (msg.msgType == HA_MSG_ELECTION_PING) {
         if (currentState == STATE_ELECTION) {
             if (isMacLower(msg.mac, myMac)) {
-                demoteToShadow(); // Yield to superior MAC
+                demoteToShadow();
             }
         }
-    } 
+    }
     else if (msg.msgType == HA_MSG_HEARTBEAT) {
         if (currentState == STATE_ELECTION || currentState == STATE_SHADOW) {
             lastHeartbeatRx = millis();
             if (currentState == STATE_ELECTION) {
                 Serial.println("\n[HA] Active Primary detected. Yielding election.");
-                demoteToShadow(); // The "Incumbent Rule" (Preemption Disabled)
+                demoteToShadow();
             }
-        } 
+        }
         else if (currentState == STATE_PRIMARY) {
             if (shouldYieldToRemotePrimary(msg)) {
                 Serial.println("\n[HA] Split-Brain: Incumbent Primary retained. Demoting.");
                 demoteToShadow();
             } else {
-                sendHaMessage(HA_MSG_HEARTBEAT); // Assert dominance immediately
+                sendHaMessage(HA_MSG_HEARTBEAT);
             }
         }
     }
 }
 
 void startElection() {
-    currentState = STATE_ELECTION;
-    stateStartTime = millis();
-    lastHeartbeatTx = 0;
-    lastHeartbeatRx = 0;
+    currentState     = STATE_ELECTION;
+    stateStartTime   = millis();
+    lastHeartbeatTx  = 0;
+    lastHeartbeatRx  = 0;
     electionDuration = random((long)HA_ELECTION_WINDOW_MIN_MS, (long)HA_ELECTION_WINDOW_MAX_MS + 1);
-    
+
     #ifdef ESP32
         WiFi.softAPdisconnect(true);
     #elif defined(ESP8266)
         WiFi.softAPdisconnect(true);
     #endif
-    WiFi.mode(WIFI_STA); // Ensure AP is off during election
+    WiFi.mode(WIFI_STA);
     #ifdef ESP32
         WiFi.setSleep(false);
     #elif defined(ESP8266)
@@ -323,40 +322,34 @@ void startElection() {
     #endif
     mqtt.disconnect();
     configureEspNow(meshChannel);
-    
+
     Serial.print("\n[HA] Entering ELECTION mode for ");
-    Serial.print(electionDuration);
-    Serial.println("ms...");
+    Serial.print(electionDuration); Serial.println("ms...");
 }
 
 void promoteToPrimary() {
     currentState = STATE_PRIMARY;
     Serial.println("\n[HA] *** CROWNED PRIMARY GATEWAY ***");
-    
-    WiFi.mode(WIFI_AP_STA); // Turn on Lighthouse routing capabilities
+
+    WiFi.mode(WIFI_AP_STA);
     #ifdef ESP32
         WiFi.setSleep(false);
     #elif defined(ESP8266)
         WiFi.setSleepMode(WIFI_NONE_SLEEP);
     #endif
-    
+
     String macStr = WiFi.macAddress();
     macStr.replace(":", "");
     String lighthouseSSID = "VOID_" + macStr;
     WiFi.softAP(lighthouseSSID.c_str(), "", meshChannel);
     configureEspNow(meshChannel);
-    
-    Serial.print("[SYS] Lighthouse Beacon Active: ");
-    Serial.println(lighthouseSSID);
-    String apMac = WiFi.softAPmacAddress();
-    Serial.print("[SYS] Edge Target MAC (AP): ");
-    Serial.println(apMac);
-    Serial.print("[SYS] Gateway STA MAC: ");
-    Serial.println(formatMac(myMac));
 
-    sendHaMessage(HA_MSG_HEARTBEAT); // Collapse any late-joiner election immediately
+    Serial.print("[SYS] Lighthouse Beacon Active: "); Serial.println(lighthouseSSID);
+    Serial.print("[SYS] Edge Target MAC (AP): "); Serial.println(WiFi.softAPmacAddress());
+    Serial.print("[SYS] Gateway STA MAC: "); Serial.println(formatMac(myMac));
+
+    sendHaMessage(HA_MSG_HEARTBEAT);
     lastHeartbeatTx = millis();
-    
     reconnectMqtt();
 }
 
@@ -364,7 +357,7 @@ void demoteToShadow() {
     if (currentState == STATE_PRIMARY) {
         Serial.println("\n[HA] *** DEMOTED TO SHADOW GATEWAY ***");
         WiFi.softAPdisconnect(true);
-        WiFi.mode(WIFI_STA); // Terminate Lighthouse immediately
+        WiFi.mode(WIFI_STA);
         #ifdef ESP32
             WiFi.setSleep(false);
         #elif defined(ESP8266)
@@ -376,51 +369,43 @@ void demoteToShadow() {
     if (currentState == STATE_ELECTION) {
         Serial.println("[HA] Yielding election to peer gateway.");
     }
-    currentState = STATE_SHADOW;
+    currentState    = STATE_SHADOW;
     lastHeartbeatTx = 0;
     lastHeartbeatRx = millis();
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // Asynchronous Receiver Callback
-// ---------------------------------------------------------
+// =========================================================================
 #ifdef ESP32
 void OnDataRecv(const esp_now_recv_info *info, const uint8_t *incomingData, int len) {
+    const uint8_t* senderMac = info->src_addr;
 #elif defined(ESP8266)
 void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
+    const uint8_t* senderMac = mac;
 #endif
-    // Route incoming data based on struct payload size
     if (len == sizeof(SurvivorPayload)) {
         SurvivorPayload payload;
         memcpy(&payload, incomingData, sizeof(SurvivorPayload));
 
-#ifdef ESP32
-        const uint8_t* senderMac = info->src_addr;
-#elif defined(ESP8266)
-        const uint8_t* senderMac = mac;
-#endif
-
         // ALWAYS send ACK regardless of gateway state.
-        // If we're SHADOW/ELECTION, the edge node shouldn't be timing out on us.
-        // We send ACK immediately from callback to stop the edge burst timer.
+        // SHADOW/ELECTION gateways ACK immediately so the edge burst timer stops.
         // The payload is only enqueued when PRIMARY.
         AckPayload ack;
         ack.msgType  = ACK_MSG_TYPE;
         ack.nodeId   = payload.nodeId;
         ack.sequence = payload.sequence;
-        // Send unencrypted ACK — best-effort from within ISR context
         esp_now_send((uint8_t*)senderMac, (uint8_t *)&ack, sizeof(AckPayload));
 
         if (currentState == STATE_PRIMARY) {
             int nextHead = (queueHead + 1) % QUEUE_SIZE;
-            if (nextHead != queueTail) { 
+            if (nextHead != queueTail) {
                 rxQueue[queueHead].data = payload;
                 memcpy(rxQueue[queueHead].senderMac, senderMac, 6);
                 queueHead = nextHead;
             }
-            // If queue full, packet is dropped but ACK was already sent
         }
-    } 
+    }
     else if (len == sizeof(HaPayload)) {
         HaPayload haMsg;
         memcpy(&haMsg, incomingData, sizeof(HaPayload));
@@ -428,33 +413,33 @@ void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
     }
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // Delay-Tolerant Networking (DTN) Storage Module
-// ---------------------------------------------------------
+// =========================================================================
 void flushRamToFlash() {
     if (ramBufferCount == 0) return;
-    
+
     File file = LittleFS.open("/void_buffer.txt", "a");
-    if(!file) {
+    if (!file) {
         Serial.println("[DTN] ERROR: Flash storage unavailable.");
         return;
     }
-    
+
     Serial.println("\n[DTN] --- EXECUTING BATCH FLASH WRITE ---");
     for (int i = 0; i < ramBufferCount; i++) {
-        char jsonPayload[128];
-        snprintf(jsonPayload, sizeof(jsonPayload), 
-                  "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d}", 
-                  ramBuffer[i].nodeId, ramBuffer[i].batteryPct, 
-                  ramBuffer[i].cpuLoad, ramBuffer[i].isSosActive);
+        // Include hops in buffered JSON for post-hoc topology analysis
+        char jsonPayload[160];
+        snprintf(jsonPayload, sizeof(jsonPayload),
+                 "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d, \"hops\":%d}",
+                 ramBuffer[i].nodeId, ramBuffer[i].batteryPct,
+                 ramBuffer[i].cpuLoad, ramBuffer[i].isSosActive,
+                 ramBuffer[i].hopDist);
         file.println(jsonPayload);
     }
-    
+
     file.close();
-    Serial.print("[DTN] Successfully batched ");
-    Serial.print(ramBufferCount);
-    Serial.println(" payloads to non-volatile flash memory.\n");
-    ramBufferCount = 0; 
+    Serial.print("[DTN] Successfully batched "); Serial.print(ramBufferCount); Serial.println(" payloads.\n");
+    ramBufferCount = 0;
 }
 
 void flushFlashBuffer() {
@@ -467,10 +452,7 @@ void flushFlashBuffer() {
     }
 
     Serial.println("\n[DTN] --- INITIATING FLASH BUFFER FLUSH ---");
-    
-    // Collect all lines into a temporary list and track which were sent
-    // This prevents re-reading already-published lines on partial flush.
-    // We write a new file with only the unsent remainder.
+
     String lines[RAM_BUFFER_SIZE];
     int lineCount = 0;
 
@@ -485,7 +467,7 @@ void flushFlashBuffer() {
 
     int lastPublished = -1;
     for (int i = 0; i < lineCount; i++) {
-        // [HA FIX] Starvation prevention during long flushes
+        // HA starvation prevention during long flushes
         if (millis() - lastHeartbeatTx > HA_HEARTBEAT_INTERVAL_MS) {
             lastHeartbeatTx = millis();
             sendHaMessage(HA_MSG_HEARTBEAT);
@@ -518,23 +500,22 @@ void flushFlashBuffer() {
     }
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // MQTT Connection Manager
-// ---------------------------------------------------------
+// =========================================================================
 void reconnectMqtt() {
     if (millis() - lastReconnectAttempt > 15000) {
         lastReconnectAttempt = millis();
         Serial.print("[MQTT] Attempting connection...");
-        
-        espClient.setTimeout(1000); // Prevent prolonged TCP block
-        
+
+        espClient.setTimeout(1000);
         String clientId = "VOID-Gateway-";
         clientId += String(random(0xffff), HEX);
-        
+
         if (mqtt.connect(clientId.c_str())) {
             Serial.println(" Established.");
             if (ramBufferCount > 0) flushRamToFlash();
-            flushFlashBuffer(); 
+            flushFlashBuffer();
         } else {
             Serial.print(" Failed, error code=");
             Serial.print(mqtt.lastError());
@@ -543,17 +524,17 @@ void reconnectMqtt() {
     }
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // System Initialization
-// ---------------------------------------------------------
+// =========================================================================
 void setup() {
     Serial.begin(115200);
-    Serial.println("\n--- V.O.I.D. Gateway Initializing ---");
+    Serial.println("\n--- V.O.I.D. Gateway Initializing (V2.3) ---");
 
     #ifdef ESP32
-        if(!LittleFS.begin(true)){
+        if (!LittleFS.begin(true)) {
     #elif defined(ESP8266)
-        if(!LittleFS.begin()){
+        if (!LittleFS.begin()) {
     #endif
             Serial.println("[SYS] FATAL: LittleFS Mount Failed. Halting.");
             return;
@@ -567,8 +548,7 @@ void setup() {
         WiFi.setSleepMode(WIFI_NONE_SLEEP);
     #endif
     WiFi.macAddress(myMac);
-    Serial.print("[SYS] Gateway STA MAC: ");
-    Serial.println(formatMac(myMac));
+    Serial.print("[SYS] Gateway STA MAC: "); Serial.println(formatMac(myMac));
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
@@ -578,85 +558,85 @@ void setup() {
     Serial.println(WiFi.localIP());
 
     int routerChannel = WiFi.channel();
-    Serial.print("[SYS] Upstream Assigned Channel: ");
-    Serial.println(routerChannel);
-
+    Serial.print("[SYS] Upstream Assigned Channel: "); Serial.println(routerChannel);
     meshChannel = routerChannel;
 
     mqtt.begin(mqtt_broker_ip, 1883, espClient);
     mqtt.setOptions(5, true, 2000);
 
-    // Enter Election Phase
     startElection();
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // Primary Worker Task
-// ---------------------------------------------------------
+// =========================================================================
 void processPrimaryTasks() {
     while (queueTail != queueHead) {
-        QueuedPayload queued = rxQueue[queueTail];
+        QueuedPayload queued        = rxQueue[queueTail];
         SurvivorPayload currentPayload = queued.data;
         queueTail = (queueTail + 1) % QUEUE_SIZE;
-        
-        // Immediately dispatch ACK safely from main loop 
+
+        // Verified unicast ACK from main loop (in addition to the ISR best-effort ACK)
         sendAckUnicast(currentPayload.nodeId, currentPayload.sequence, queued.senderMac, true);
-        
-        char jsonPayload[160];
+
+        // =====================================================================
+        // "hops" field added to MQTT JSON payload.
+        // Enables per-packet hop-count tracking in InfluxDB/Grafana.
+        // hopDist==1: packet came direct from edge to gateway.
+        // hopDist>1:  at least one relay node was in the path.
+        // hopDist==255 (HOPDIST_UNKNOWN): node had not yet confirmed its
+        //   distance — logged as 255 for easy filtering.
+        // =====================================================================
+        char jsonPayload[200];
         snprintf(jsonPayload, sizeof(jsonPayload),
-                  "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d, \"seq\":%d, \"uptime_ms\":%lu}",
-                  currentPayload.nodeId, currentPayload.batteryPct,
-                  currentPayload.cpuLoad, currentPayload.isSosActive,
-                  currentPayload.sequence, (unsigned long)currentPayload.uptimeMs);
+                 "{\"node_id\":%d, \"battery\":%d, \"cpu\":%d, \"sos_alert\":%d,"
+                 " \"seq\":%d, \"uptime_ms\":%lu, \"hops\":%d}",
+                 currentPayload.nodeId, currentPayload.batteryPct,
+                 currentPayload.cpuLoad, currentPayload.isSosActive,
+                 currentPayload.sequence, (unsigned long)currentPayload.uptimeMs,
+                 currentPayload.hopDist);
 
         bool publishSuccess = false;
 
         if (WiFi.status() == WL_CONNECTED && mqtt.connected()) {
             publishSuccess = mqtt.publish("void/telemetry", jsonPayload, false, 1);
             if (publishSuccess) {
-                Serial.print("[PUB] Delivery Verified: ");
-                Serial.println(jsonPayload);
+                Serial.print("[PUB] Delivery Verified: "); Serial.println(jsonPayload);
             } else {
                 Serial.println("[SYS] WARNING: Server failed to ACK. Rerouting to DTN.");
             }
         }
 
         if (!publishSuccess) {
-            uint8_t id = currentPayload.nodeId; 
-            
+            uint8_t id = currentPayload.nodeId;
             if (id < MAX_NODES) {
                 bool criticalChange = false;
-                
                 if (!networkState[id].active) {
-                    criticalChange = true; 
+                    criticalChange = true;
                     networkState[id].active = true;
                 } else {
                     if (currentPayload.isSosActive && !networkState[id].lastSos) criticalChange = true;
                     if (networkState[id].lastBattery > currentPayload.batteryPct + 5) criticalChange = true;
                     if (currentPayload.batteryPct > networkState[id].lastBattery + 5) criticalChange = true;
                 }
-                
+
                 if (criticalChange) {
                     networkState[id].lastBattery = currentPayload.batteryPct;
-                    networkState[id].lastSos = currentPayload.isSosActive;
-                    
-                    // Overflow guard — flush to flash if RAM buffer is full
+                    networkState[id].lastSos     = currentPayload.isSosActive;
+
                     if (ramBufferCount >= RAM_BUFFER_SIZE) {
                         Serial.println("[DTN] RAM buffer full. Flushing to flash before adding.");
                         flushRamToFlash();
                     }
                     ramBuffer[ramBufferCount++] = currentPayload;
-                    
-                    Serial.print("[DTN] State change detected for Node ");
-                    Serial.print(id);
-                    Serial.print(". Appended to RAM Buffer (");
-                    Serial.print(ramBufferCount);
-                    Serial.println("/50)");
-                    
+
+                    Serial.print("[DTN] State change for Node "); Serial.print(id);
+                    Serial.print(" (hops="); Serial.print(currentPayload.hopDist); Serial.print(")");
+                    Serial.print(". Appended to RAM Buffer ("); Serial.print(ramBufferCount); Serial.println("/50)");
+
                     if (ramBufferCount >= RAM_BUFFER_SIZE) flushRamToFlash();
                 } else {
-                    Serial.print("[DTN] Node ");
-                    Serial.print(id);
+                    Serial.print("[DTN] Node "); Serial.print(id);
                     Serial.println(" telemetry redundant. Discarding to protect flash wear.");
                 }
             }
@@ -664,16 +644,15 @@ void processPrimaryTasks() {
     }
 
     // mqtt.loop() ALWAYS called — feeds keepalive state machine even when disconnected.
-    // reconnectMqtt() rate-limited internally.
     mqtt.loop();
     if (!mqtt.connected()) {
         reconnectMqtt();
     }
 }
 
-// ---------------------------------------------------------
+// =========================================================================
 // Main Execution Loop
-// ---------------------------------------------------------
+// =========================================================================
 void loop() {
     if (currentState == STATE_ELECTION) {
         if (millis() - lastHeartbeatTx > HA_ELECTION_PING_INTERVAL_MS) {
@@ -683,13 +662,13 @@ void loop() {
         if (millis() - stateStartTime > electionDuration) {
             promoteToPrimary();
         }
-    } 
+    }
     else if (currentState == STATE_SHADOW) {
         if (millis() - lastHeartbeatRx > HA_HEARTBEAT_TIMEOUT_MS) {
             Serial.println("\n[HA] Primary Heartbeat Timeout! Initiating failover.");
             startElection();
         }
-    } 
+    }
     else if (currentState == STATE_PRIMARY) {
         if (millis() - lastHeartbeatTx > HA_HEARTBEAT_INTERVAL_MS) {
             lastHeartbeatTx = millis();
