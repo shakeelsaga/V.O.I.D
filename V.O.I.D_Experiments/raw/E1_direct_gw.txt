@@ -1,0 +1,2024 @@
+
+ ====================================================================
+|    Trial-1 : Direct Single-Hop Baseline                            |
+ ====================================================================
+==================== Edge Nodes ====================
+[20:45:26.470] [NODE_157] [MESH] Direct gateway link confirmed. myHopDist=1
+[20:45:26.474] [NODE_157] [SYS] Node 157 armed. hopDist=1
+[20:45:31.175] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:31.180] [NODE_157] [RADIO] ACK seq=0 bat=97% hopDist=1
+[20:45:39.983] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:40.399] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:40.401] [NODE_157] [RADIO] ACK seq=2 bat=92% hopDist=1
+[20:45:41.824] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:41.828] [NODE_157] [RADIO] ACK seq=3 bat=92% hopDist=1
+[20:45:47.558] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:47.560] [NODE_157] [RADIO] ACK seq=4 bat=89% hopDist=1
+[20:45:50.425] [NODE_157] [NBR] --- Neighbor Table ---
+[20:45:50.427] [NODE_157] [NBR]   (empty)
+[20:45:50.429] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:45:50.630] [NODE_157] [NBR] -----------------------
+[20:45:51.654] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:51.656] [NODE_157] [RADIO] ACK seq=5 bat=87% hopDist=1
+[20:45:52.678] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:52.680] [NODE_157] [RADIO] ACK seq=6 bat=86% hopDist=1
+[20:45:53.907] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:53.909] [NODE_157] [RADIO] ACK seq=7 bat=86% hopDist=1
+[20:45:57.798] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:57.800] [NODE_157] [RADIO] ACK seq=8 bat=84% hopDist=1
+[20:45:58.413] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:58.414] [NODE_157] [RADIO] ACK seq=9 bat=83% hopDist=1
+[20:46:02.509] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:02.510] [NODE_157] [RADIO] ACK seq=10 bat=81% hopDist=1
+[20:46:05.171] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:05.173] [NODE_157] [RADIO] ACK seq=11 bat=80% hopDist=1
+[20:46:09.472] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:09.474] [NODE_157] [RADIO] ACK seq=12 bat=78% hopDist=1
+[20:46:09.475] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:09.676] [NODE_157] [RADIO] ACK seq=13 bat=78% hopDist=1
+[20:46:12.953] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:12.955] [NODE_157] [RADIO] ACK seq=14 bat=76% hopDist=1
+[20:46:20.336] [NODE_157] [NBR] --- Neighbor Table ---
+[20:46:20.534] [NODE_157] [NBR]   (empty)
+[20:46:20.536] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:46:20.538] [NODE_157] [NBR] -----------------------
+[20:46:22.375] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:22.377] [NODE_157] [RADIO] ACK seq=15 bat=71% hopDist=1
+[20:46:32.409] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:32.411] [NODE_157] [RADIO] ACK seq=16 bat=66% hopDist=1
+[20:46:32.819] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:32.821] [NODE_157] [RADIO] ACK seq=17 bat=66% hopDist=1
+[20:46:35.276] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:35.278] [NODE_157] [RADIO] ACK seq=18 bat=65% hopDist=1
+[20:46:44.493] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:44.500] [NODE_157] [RADIO] ACK seq=19 bat=60% hopDist=1
+[20:46:48.179] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:48.180] [NODE_157] [RADIO] ACK seq=20 bat=59% hopDist=1
+[20:46:50.432] [NODE_157] [NBR] --- Neighbor Table ---
+[20:46:50.433] [NODE_157] [NBR]   (empty)
+[20:46:50.436] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:46:50.636] [NODE_157] [NBR] -----------------------
+[20:46:55.142] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:55.145] [NODE_157] [RADIO] ACK seq=21 bat=55% hopDist=1
+[20:47:03.948] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:03.950] [NODE_157] [RADIO] ACK seq=22 bat=51% hopDist=1
+[20:47:09.887] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:09.890] [NODE_157] [RADIO] ACK seq=23 bat=48% hopDist=1
+[20:47:10.298] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:10.300] [NODE_157] [RADIO] ACK seq=24 bat=48% hopDist=1
+[20:47:12.157] [NODE_157] [RADIO] ACK seq=25 bat=47% hopDist=1
+[20:47:12.158] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:12.352] [NODE_157] [RADIO] ACK seq=26 bat=47% hopDist=1
+[20:47:12.550] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:12.552] [NODE_157] [RADIO] ACK seq=27 bat=46% hopDist=1
+[20:47:20.547] [NODE_157] [NBR] --- Neighbor Table ---
+[20:47:20.549] [NODE_157] [NBR]   (empty)
+[20:47:20.552] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:47:20.750] [NODE_157] [NBR] -----------------------
+[20:47:21.152] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:21.153] [NODE_157] [RADIO] ACK seq=28 bat=42% hopDist=1
+[20:47:21.567] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:21.579] [NODE_157] [RADIO] ACK seq=29 bat=42% hopDist=1
+[20:47:23.199] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:23.201] [NODE_157] [RADIO] ACK seq=30 bat=41% hopDist=1
+[20:47:27.913] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:27.915] [NODE_157] [RADIO] ACK seq=31 bat=39% hopDist=1
+[20:47:36.716] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:47:36.717] [NODE_157] [RADIO] ACK seq=32 bat=34% hopDist=1
+[20:47:39.583] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:39.585] [NODE_157] [RADIO] ACK seq=33 bat=33% hopDist=1
+[20:47:45.938] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:45.944] [NODE_157] [RADIO] ACK seq=34 bat=30% hopDist=1
+[20:47:50.645] [NODE_157] [NBR] --- Neighbor Table ---
+[20:47:50.646] [NODE_157] [NBR]   (empty)
+[20:47:50.647] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:47:50.847] [NODE_157] [NBR] -----------------------
+[20:47:54.738] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:54.740] [NODE_157] [RADIO] ACK seq=35 bat=25% hopDist=1
+[20:47:59.653] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:59.655] [NODE_157] [RADIO] ACK seq=36 bat=23% hopDist=1
+[20:48:01.701] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:01.703] [NODE_157] [RADIO] ACK seq=37 bat=22% hopDist=1
+[20:48:03.341] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:03.343] [NODE_157] [RADIO] ACK seq=38 bat=21% hopDist=1
+[20:48:12.359] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:12.360] [NODE_157] [RADIO] ACK seq=39 bat=17% hopDist=1
+[20:48:19.526] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:19.528] [NODE_157] [RADIO] ACK seq=40 bat=13% hopDist=1
+[20:48:20.747] [NODE_157] [NBR] --- Neighbor Table ---
+[20:48:20.749] [NODE_157] [NBR]   (empty)
+[20:48:20.750] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:48:20.952] [NODE_157] [NBR] -----------------------
+[20:48:21.568] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:21.569] [NODE_157] [RADIO] ACK seq=41 bat=12% hopDist=1
+[20:48:25.884] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:25.889] [NODE_157] [RADIO] ACK seq=42 bat=10% hopDist=1
+[20:48:25.889] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:26.072] [NODE_157] [RADIO] ACK seq=43 bat=10% hopDist=1
+[20:48:26.482] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:26.484] [NODE_157] [RADIO] ACK seq=44 bat=10% hopDist=1
+[20:48:27.712] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:27.715] [NODE_157] [RADIO] ACK seq=45 bat=9% hopDist=1
+[20:48:32.626] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:32.630] [NODE_157] [RADIO] ACK seq=46 bat=7% hopDist=1
+[20:48:40.818] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:48:40.823] [NODE_157] [RADIO] ACK seq=47 bat=2% hopDist=1
+[20:48:42.866] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:42.868] [NODE_157] [RADIO] ACK seq=48 bat=1% hopDist=1
+[20:48:47.167] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:47.168] [NODE_157] [RADIO] ACK seq=49 bat=99% hopDist=1
+[20:48:48.805] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:48.807] [NODE_157] [RADIO] ACK seq=50 bat=99% hopDist=1
+[20:48:49.624] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:49.625] [NODE_157] [RADIO] ACK seq=51 bat=98% hopDist=1
+[20:48:50.648] [NODE_157] [NBR] --- Neighbor Table ---
+[20:48:50.649] [NODE_157] [NBR]   (empty)
+[20:48:50.651] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:48:50.853] [NODE_157] [NBR] -----------------------
+[20:48:54.539] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:54.542] [NODE_157] [RADIO] ACK seq=52 bat=96% hopDist=1
+[20:48:54.949] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:54.951] [NODE_157] [RADIO] ACK seq=53 bat=95% hopDist=1
+[20:49:02.936] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:02.938] [NODE_157] [RADIO] ACK seq=54 bat=91% hopDist=1
+[20:49:04.574] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:04.576] [NODE_157] [RADIO] ACK seq=55 bat=91% hopDist=1
+[20:49:08.687] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:08.694] [NODE_157] [RADIO] ACK seq=56 bat=89% hopDist=1
+[20:49:09.899] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:09.901] [NODE_157] [RADIO] ACK seq=57 bat=88% hopDist=1
+[20:49:16.043] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:16.045] [NODE_157] [RADIO] ACK seq=58 bat=85% hopDist=1
+[20:49:18.720] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:18.731] [NODE_157] [RADIO] ACK seq=59 bat=84% hopDist=1
+[20:49:20.754] [NODE_157] [NBR] --- Neighbor Table ---
+[20:49:20.755] [NODE_157] [NBR]   (empty)
+[20:49:20.758] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:49:20.958] [NODE_157] [NBR] -----------------------
+[20:49:20.960] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:20.961] [NODE_157] [RADIO] ACK seq=60 bat=83% hopDist=1
+[20:49:21.778] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:21.781] [NODE_157] [RADIO] ACK seq=61 bat=82% hopDist=1
+[20:49:22.801] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:22.803] [NODE_157] [RADIO] ACK seq=62 bat=82% hopDist=1
+[20:49:23.213] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:23.215] [NODE_157] [RADIO] ACK seq=63 bat=81% hopDist=1
+[20:49:24.644] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:24.646] [NODE_157] [RADIO] ACK seq=64 bat=81% hopDist=1
+[20:49:28.126] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:28.129] [NODE_157] [RADIO] ACK seq=65 bat=79% hopDist=1
+[20:49:34.680] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:34.682] [NODE_157] [RADIO] ACK seq=66 bat=76% hopDist=1
+[20:49:41.438] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:41.442] [NODE_157] [RADIO] ACK seq=67 bat=72% hopDist=1
+[20:49:42.259] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:42.260] [NODE_157] [RADIO] ACK seq=68 bat=72% hopDist=1
+[20:49:45.329] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:45.331] [NODE_157] [RADIO] ACK seq=69 bat=70% hopDist=1
+[20:49:47.173] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:47.175] [NODE_157] [RADIO] ACK seq=70 bat=69% hopDist=1
+[20:49:50.859] [NODE_157] [NBR] --- Neighbor Table ---
+[20:49:50.860] [NODE_157] [NBR]   (empty)
+[20:49:50.862] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:49:51.063] [NODE_157] [NBR] -----------------------
+[20:49:57.208] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:49:57.210] [NODE_157] [RADIO] ACK seq=71 bat=64% hopDist=1
+[20:50:07.039] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:50:07.042] [NODE_157] [RADIO] ACK seq=72 bat=59% hopDist=1
+[20:50:09.291] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:09.293] [NODE_157] [RADIO] ACK seq=73 bat=58% hopDist=1
+[20:50:19.121] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:50:19.124] [NODE_157] [RADIO] ACK seq=74 bat=53% hopDist=1
+[20:50:20.759] [NODE_157] [NBR] --- Neighbor Table ---
+[20:50:20.760] [NODE_157] [NBR]   (empty)
+[20:50:20.762] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:50:20.967] [NODE_157] [NBR] -----------------------
+[20:50:24.856] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:24.860] [NODE_157] [RADIO] ACK seq=75 bat=51% hopDist=1
+[20:50:27.518] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:27.520] [NODE_157] [RADIO] ACK seq=76 bat=49% hopDist=1
+[20:50:32.638] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:32.642] [NODE_157] [RADIO] ACK seq=77 bat=47% hopDist=1
+[20:50:34.890] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:35.095] [NODE_157] [RADIO] ACK seq=78 bat=46% hopDist=1
+[20:50:41.854] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:41.857] [NODE_157] [RADIO] ACK seq=79 bat=42% hopDist=1
+[20:50:50.868] [NODE_157] [NBR] --- Neighbor Table ---
+[20:50:51.069] [NODE_157] [NBR]   (empty)
+[20:50:51.071] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:50:51.072] [NODE_157] [NBR] -----------------------
+[20:50:51.481] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:50:58.647] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:58.650] [NODE_157] [RADIO] ACK seq=81 bat=34% hopDist=1
+[20:51:03.566] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:03.767] [NODE_157] [RADIO] ACK seq=82 bat=31% hopDist=1
+[20:51:05.622] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:05.624] [NODE_157] [RADIO] ACK seq=83 bat=30% hopDist=1
+[20:51:07.863] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:07.865] [NODE_157] [RADIO] ACK seq=84 bat=29% hopDist=1
+[20:51:15.035] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:15.037] [NODE_157] [RADIO] ACK seq=85 bat=26% hopDist=1
+[20:51:16.058] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:16.061] [NODE_157] [RADIO] ACK seq=86 bat=25% hopDist=1
+[20:51:20.971] [NODE_157] [NBR] --- Neighbor Table ---
+[20:51:20.974] [NODE_157] [NBR]   (empty)
+[20:51:20.974] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:51:21.175] [NODE_157] [NBR] -----------------------
+[20:51:25.271] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:51:25.273] [NODE_157] [RADIO] ACK seq=87 bat=20% hopDist=1
+[20:51:29.778] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:29.782] [NODE_157] [RADIO] ACK seq=88 bat=18% hopDist=1
+[20:51:30.595] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:31.005] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:31.008] [NODE_157] [RADIO] ACK seq=90 bat=18% hopDist=1
+[20:51:34.282] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:34.284] [NODE_157] [RADIO] ACK seq=91 bat=16% hopDist=1
+[20:51:43.293] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:51:43.295] [NODE_157] [RADIO] ACK seq=92 bat=11% hopDist=1
+[20:51:45.760] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:45.760] [NODE_157] [RADIO] ACK seq=93 bat=10% hopDist=1
+[20:51:48.823] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:48.824] [NODE_157] [RADIO] ACK seq=94 bat=9% hopDist=1
+[20:51:51.075] [NODE_157] [NBR] --- Neighbor Table ---
+[20:51:51.077] [NODE_157] [NBR]   (empty)
+[20:51:51.079] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:51:51.280] [NODE_157] [NBR] -----------------------
+[20:51:51.282] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:51.284] [NODE_157] [RADIO] ACK seq=95 bat=8% hopDist=1
+[20:51:55.377] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:55.379] [NODE_157] [RADIO] ACK seq=96 bat=6% hopDist=1
+[20:51:59.063] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:59.064] [NODE_157] [RADIO] ACK seq=97 bat=4% hopDist=1
+[20:51:59.883] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:59.885] [NODE_157] [RADIO] ACK seq=98 bat=3% hopDist=1
+[20:52:02.954] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:02.955] [NODE_157] [RADIO] ACK seq=99 bat=2% hopDist=1
+[20:52:07.050] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:07.052] [NODE_157] [RADIO] ACK seq=100 bat=0% hopDist=1
+[20:52:12.580] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:12.581] [NODE_157] [RADIO] ACK seq=101 bat=97% hopDist=1
+[20:52:13.604] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:13.606] [NODE_157] [RADIO] ACK seq=102 bat=96% hopDist=1
+[20:52:18.929] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:18.930] [NODE_157] [RADIO] ACK seq=103 bat=94% hopDist=1
+[20:52:20.362] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:20.364] [NODE_157] [RADIO] ACK seq=104 bat=93% hopDist=1
+[20:52:21.181] [NODE_157] [NBR] --- Neighbor Table ---
+[20:52:21.184] [NODE_157] [NBR]   (empty)
+[20:52:21.184] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:52:21.386] [NODE_157] [NBR] -----------------------
+[20:52:23.434] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:23.437] [NODE_157] [RADIO] ACK seq=105 bat=92% hopDist=1
+[20:52:31.421] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:52:31.423] [NODE_157] [RADIO] ACK seq=106 bat=87% hopDist=1
+[20:52:32.256] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:32.257] [NODE_157] [RADIO] ACK seq=107 bat=87% hopDist=1
+[20:52:37.770] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:37.771] [NODE_157] [RADIO] ACK seq=108 bat=84% hopDist=1
+[20:52:40.432] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:40.434] [NODE_157] [RADIO] ACK seq=109 bat=83% hopDist=1
+[20:52:41.047] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:41.048] [NODE_157] [RADIO] ACK seq=110 bat=83% hopDist=1
+[20:52:41.251] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:41.253] [NODE_157] [RADIO] ACK seq=111 bat=83% hopDist=1
+[20:52:49.239] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:49.240] [NODE_157] [RADIO] ACK seq=112 bat=79% hopDist=1
+[20:52:51.082] [NODE_157] [NBR] --- Neighbor Table ---
+[20:52:51.083] [NODE_157] [NBR]   (empty)
+[20:52:51.084] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:52:51.286] [NODE_157] [NBR] -----------------------
+[20:52:57.636] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:52:57.640] [NODE_157] [RADIO] ACK seq=113 bat=74% hopDist=1
+[20:52:57.641] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:57.840] [NODE_157] [RADIO] ACK seq=114 bat=74% hopDist=1
+[20:53:05.214] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:53:05.218] [NODE_157] [RADIO] ACK seq=115 bat=71% hopDist=1
+[20:53:06.237] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:53:06.238] [NODE_157] [RADIO] ACK seq=116 bat=70% hopDist=1
+[20:45:16.651] [NODE_82] [MESH] Direct gateway link confirmed. myHopDist=1
+[20:45:16.848] [NODE_82] [SYS] Node 82 armed. hopDist=1
+[20:45:22.778] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:22.780] [NODE_82] [RADIO] ACK seq=0 bat=96% hopDist=1
+[20:45:24.006] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:24.008] [NODE_82] [RADIO] ACK seq=1 bat=96% hopDist=1
+[20:45:25.440] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:25.442] [NODE_82] [RADIO] ACK seq=2 bat=95% hopDist=1
+[20:45:34.658] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:45:34.660] [NODE_82] [RADIO] ACK seq=3 bat=90% hopDist=1
+[20:45:37.523] [NODE_82] [NBR] --- Neighbor Table ---
+[20:45:37.526] [NODE_82] [NBR]   (empty)
+[20:45:37.527] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:45:37.728] [NODE_82] [NBR] -----------------------
+[20:45:37.729] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:37.731] [NODE_82] [RADIO] ACK seq=4 bat=89% hopDist=1
+[20:45:40.408] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:40.597] [NODE_82] [RADIO] ACK seq=5 bat=88% hopDist=1
+[20:45:40.800] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:40.801] [NODE_82] [RADIO] ACK seq=6 bat=87% hopDist=1
+[20:45:42.029] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:42.030] [NODE_82] [RADIO] ACK seq=7 bat=87% hopDist=1
+[20:45:45.101] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:45:45.102] [NODE_82] [RADIO] ACK seq=8 bat=85% hopDist=1
+[20:45:54.726] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:45:54.728] [NODE_82] [RADIO] ACK seq=9 bat=80% hopDist=1
+[20:46:02.713] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:02.715] [NODE_82] [RADIO] ACK seq=10 bat=76% hopDist=1
+[20:46:07.629] [NODE_82] [NBR] --- Neighbor Table ---
+[20:46:07.631] [NODE_82] [NBR]   (empty)
+[20:46:07.632] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:46:07.833] [NODE_82] [NBR] -----------------------
+[20:46:12.749] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:12.752] [NODE_82] [RADIO] ACK seq=11 bat=71% hopDist=1
+[20:46:14.593] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:14.595] [NODE_82] [RADIO] ACK seq=12 bat=71% hopDist=1
+[20:46:22.784] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:22.789] [NODE_82] [RADIO] ACK seq=13 bat=66% hopDist=1
+[20:46:23.603] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:23.605] [NODE_82] [RADIO] ACK seq=14 bat=66% hopDist=1
+[20:46:23.607] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:23.808] [NODE_82] [RADIO] ACK seq=15 bat=66% hopDist=1
+[20:46:26.062] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:26.064] [NODE_82] [RADIO] ACK seq=16 bat=65% hopDist=1
+[20:46:26.066] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:26.266] [NODE_82] [RADIO] ACK seq=17 bat=65% hopDist=1
+[20:46:34.867] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:34.868] [NODE_82] [RADIO] ACK seq=18 bat=60% hopDist=1
+[20:46:37.734] [NODE_82] [NBR] --- Neighbor Table ---
+[20:46:37.735] [NODE_82] [NBR]   (empty)
+[20:46:37.737] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:46:37.939] [NODE_82] [NBR] -----------------------
+[20:46:44.906] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:46:44.907] [NODE_82] [RADIO] ACK seq=19 bat=55% hopDist=1
+[20:46:46.541] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:46.543] [NODE_82] [RADIO] ACK seq=20 bat=55% hopDist=1
+[20:46:51.461] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:51.463] [NODE_82] [RADIO] ACK seq=21 bat=52% hopDist=1
+[20:46:54.732] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:54.734] [NODE_82] [RADIO] ACK seq=22 bat=51% hopDist=1
+[20:46:56.781] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:56.782] [NODE_82] [RADIO] ACK seq=23 bat=50% hopDist=1
+[20:46:57.602] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:46:57.603] [NODE_82] [RADIO] ACK seq=24 bat=49% hopDist=1
+[20:47:01.287] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:01.491] [NODE_82] [RADIO] ACK seq=25 bat=47% hopDist=1
+[20:47:01.695] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:01.900] [NODE_82] [RADIO] ACK seq=26 bat=47% hopDist=1
+[20:47:07.634] [NODE_82] [NBR] --- Neighbor Table ---
+[20:47:07.639] [NODE_82] [NBR]   (empty)
+[20:47:07.642] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:47:07.839] [NODE_82] [NBR] -----------------------
+[20:47:08.864] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:08.867] [NODE_82] [RADIO] ACK seq=27 bat=43% hopDist=1
+[20:47:13.779] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:13.783] [NODE_82] [RADIO] ACK seq=28 bat=41% hopDist=1
+[20:47:15.007] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:15.009] [NODE_82] [RADIO] ACK seq=29 bat=40% hopDist=1
+[20:47:25.043] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:47:25.044] [NODE_82] [RADIO] ACK seq=30 bat=35% hopDist=1
+[20:47:29.548] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:29.549] [NODE_82] [RADIO] ACK seq=31 bat=33% hopDist=1
+[20:47:29.957] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:29.959] [NODE_82] [RADIO] ACK seq=32 bat=33% hopDist=1
+[20:47:37.740] [NODE_82] [NBR] --- Neighbor Table ---
+[20:47:37.741] [NODE_82] [NBR]   (empty)
+[20:47:37.743] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:47:37.944] [NODE_82] [NBR] -----------------------
+[20:47:37.946] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:37.947] [NODE_82] [RADIO] ACK seq=33 bat=29% hopDist=1
+[20:47:39.788] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:39.791] [NODE_82] [RADIO] ACK seq=34 bat=28% hopDist=1
+[20:47:49.007] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:47:49.010] [NODE_82] [RADIO] ACK seq=35 bat=23% hopDist=1
+[20:47:51.079] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:51.081] [NODE_82] [RADIO] ACK seq=36 bat=22% hopDist=1
+[20:47:52.895] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:52.896] [NODE_82] [RADIO] ACK seq=37 bat=22% hopDist=1
+[20:47:54.124] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:54.125] [NODE_82] [RADIO] ACK seq=38 bat=21% hopDist=1
+[20:47:56.377] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:56.378] [NODE_82] [RADIO] ACK seq=39 bat=20% hopDist=1
+[20:47:56.992] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:56.994] [NODE_82] [RADIO] ACK seq=40 bat=19% hopDist=1
+[20:47:57.196] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:57.197] [NODE_82] [RADIO] ACK seq=41 bat=19% hopDist=1
+[20:47:59.249] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:47:59.454] [NODE_82] [RADIO] ACK seq=42 bat=18% hopDist=1
+[20:48:00.678] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:00.680] [NODE_82] [RADIO] ACK seq=43 bat=18% hopDist=1
+[20:48:02.933] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:02.936] [NODE_82] [RADIO] ACK seq=44 bat=17% hopDist=1
+[20:48:07.845] [NODE_82] [NBR] --- Neighbor Table ---
+[20:48:07.846] [NODE_82] [NBR]   (empty)
+[20:48:07.848] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:48:08.050] [NODE_82] [NBR] -----------------------
+[20:48:11.123] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:48:11.127] [NODE_82] [RADIO] ACK seq=45 bat=12% hopDist=1
+[20:48:21.158] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:48:21.163] [NODE_82] [RADIO] ACK seq=46 bat=7% hopDist=1
+[20:48:21.772] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:21.773] [NODE_82] [RADIO] ACK seq=47 bat=7% hopDist=1
+[20:48:23.410] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:23.414] [NODE_82] [RADIO] ACK seq=48 bat=6% hopDist=1
+[20:48:24.233] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:24.234] [NODE_82] [RADIO] ACK seq=49 bat=6% hopDist=1
+[20:48:33.240] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:48:33.243] [NODE_82] [RADIO] ACK seq=50 bat=1% hopDist=1
+[20:48:36.927] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:36.931] [NODE_82] [RADIO] ACK seq=51 bat=0% hopDist=1
+[20:48:37.950] [NODE_82] [NBR] --- Neighbor Table ---
+[20:48:37.952] [NODE_82] [NBR]   (empty)
+[20:48:37.954] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:48:38.155] [NODE_82] [NBR] -----------------------
+[20:48:38.365] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:38.367] [NODE_82] [RADIO] ACK seq=52 bat=99% hopDist=1
+[20:48:39.999] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:40.000] [NODE_82] [RADIO] ACK seq=53 bat=98% hopDist=1
+[20:48:41.227] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:41.229] [NODE_82] [RADIO] ACK seq=54 bat=97% hopDist=1
+[20:48:50.855] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:50.856] [NODE_82] [RADIO] ACK seq=55 bat=93% hopDist=1
+[20:48:51.467] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:48:51.469] [NODE_82] [RADIO] ACK seq=56 bat=92% hopDist=1
+[20:49:01.298] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:49:01.301] [NODE_82] [RADIO] ACK seq=57 bat=87% hopDist=1
+[20:49:03.554] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:03.755] [NODE_82] [RADIO] ACK seq=58 bat=86% hopDist=1
+[20:49:04.369] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:04.371] [NODE_82] [RADIO] ACK seq=59 bat=86% hopDist=1
+[20:49:07.442] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:07.443] [NODE_82] [RADIO] ACK seq=60 bat=84% hopDist=1
+[20:49:07.851] [NODE_82] [NBR] --- Neighbor Table ---
+[20:49:07.852] [NODE_82] [NBR]   (empty)
+[20:49:07.854] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:49:08.056] [NODE_82] [NBR] -----------------------
+[20:49:10.514] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:10.517] [NODE_82] [RADIO] ACK seq=61 bat=83% hopDist=1
+[20:49:12.766] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:12.768] [NODE_82] [RADIO] ACK seq=62 bat=82% hopDist=1
+[20:49:17.272] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:17.273] [NODE_82] [RADIO] ACK seq=63 bat=79% hopDist=1
+[20:49:19.938] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:19.939] [NODE_82] [RADIO] ACK seq=64 bat=78% hopDist=1
+[20:49:22.187] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:22.189] [NODE_82] [RADIO] ACK seq=65 bat=77% hopDist=1
+[20:49:25.873] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:25.875] [NODE_82] [RADIO] ACK seq=66 bat=75% hopDist=1
+[20:49:32.836] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:32.839] [NODE_82] [RADIO] ACK seq=67 bat=72% hopDist=1
+[20:49:34.065] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:34.067] [NODE_82] [RADIO] ACK seq=68 bat=71% hopDist=1
+[20:49:35.090] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:35.092] [NODE_82] [RADIO] ACK seq=69 bat=71% hopDist=1
+[20:49:37.957] [NODE_82] [NBR] --- Neighbor Table ---
+[20:49:37.958] [NODE_82] [NBR]   (empty)
+[20:49:37.960] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:49:38.161] [NODE_82] [NBR] -----------------------
+[20:49:38.571] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:38.574] [NODE_82] [RADIO] ACK seq=70 bat=69% hopDist=1
+[20:49:42.057] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:42.059] [NODE_82] [RADIO] ACK seq=71 bat=67% hopDist=1
+[20:49:43.077] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:43.079] [NODE_82] [RADIO] ACK seq=72 bat=67% hopDist=1
+[20:49:51.473] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:49:51.476] [NODE_82] [RADIO] ACK seq=73 bat=62% hopDist=1
+[20:49:52.499] [NODE_82] [RADIO] ACK seq=74 bat=62% hopDist=1
+[20:49:55.776] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:55.778] [NODE_82] [RADIO] ACK seq=75 bat=60% hopDist=1
+[20:49:55.979] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:49:55.980] [NODE_82] [RADIO] ACK seq=76 bat=60% hopDist=1
+[20:50:04.171] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:04.174] [NODE_82] [RADIO] ACK seq=77 bat=56% hopDist=1
+[20:50:08.064] [NODE_82] [NBR] --- Neighbor Table ---
+[20:50:08.066] [NODE_82] [NBR]   (empty)
+[20:50:08.068] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:50:08.266] [NODE_82] [NBR] -----------------------
+[20:50:13.387] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:50:13.390] [NODE_82] [RADIO] ACK seq=78 bat=51% hopDist=1
+[20:50:18.918] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:18.922] [NODE_82] [RADIO] ACK seq=79 bat=49% hopDist=1
+[20:50:22.602] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:22.604] [NODE_82] [RADIO] ACK seq=80 bat=47% hopDist=1
+[20:50:28.746] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:28.749] [NODE_82] [RADIO] ACK seq=81 bat=44% hopDist=1
+[20:50:33.252] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:33.253] [NODE_82] [RADIO] ACK seq=82 bat=42% hopDist=1
+[20:50:33.673] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:33.677] [NODE_82] [RADIO] ACK seq=83 bat=41% hopDist=1
+[20:50:36.733] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:36.736] [NODE_82] [RADIO] ACK seq=84 bat=40% hopDist=1
+[20:50:38.167] [NODE_82] [NBR] --- Neighbor Table ---
+[20:50:38.170] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:50:38.372] [NODE_82] [NBR] -----------------------
+[20:50:40.215] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:40.217] [NODE_82] [RADIO] ACK seq=85 bat=38% hopDist=1
+[20:50:49.432] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:50:49.434] [NODE_82] [RADIO] ACK seq=86 bat=33% hopDist=1
+[20:50:50.865] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:50.866] [NODE_82] [RADIO] ACK seq=87 bat=33% hopDist=1
+[20:50:51.274] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:51.276] [NODE_82] [RADIO] ACK seq=88 bat=33% hopDist=1
+[20:50:51.278] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:51.480] [NODE_82] [RADIO] ACK seq=89 bat=33% hopDist=1
+[20:50:51.684] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:51.686] [NODE_82] [RADIO] ACK seq=90 bat=32% hopDist=1
+[20:50:52.298] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:52.299] [NODE_82] [RADIO] ACK seq=91 bat=32% hopDist=1
+[20:50:53.527] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:53.529] [NODE_82] [RADIO] ACK seq=92 bat=31% hopDist=1
+[20:50:58.852] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:50:58.853] [NODE_82] [RADIO] ACK seq=93 bat=29% hopDist=1
+[20:51:01.749] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:01.759] [NODE_82] [RADIO] ACK seq=94 bat=27% hopDist=1
+[20:51:03.358] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:03.359] [NODE_82] [RADIO] ACK seq=95 bat=27% hopDist=1
+[20:51:08.272] [NODE_82] [NBR] --- Neighbor Table ---
+[20:51:08.274] [NODE_82] [NBR]   (empty)
+[20:51:08.276] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:51:08.478] [NODE_82] [NBR] -----------------------
+[20:51:11.549] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:51:11.551] [NODE_82] [RADIO] ACK seq=96 bat=22% hopDist=1
+[20:51:21.589] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:51:21.595] [NODE_82] [RADIO] ACK seq=97 bat=17% hopDist=1
+[20:51:30.391] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:30.393] [NODE_82] [RADIO] ACK seq=98 bat=13% hopDist=1
+[20:51:38.173] [NODE_82] [NBR] --- Neighbor Table ---
+[20:51:38.175] [NODE_82] [NBR]   (empty)
+[20:51:38.176] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:51:38.378] [NODE_82] [NBR] -----------------------
+[20:51:39.607] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:51:39.608] [NODE_82] [RADIO] ACK seq=99 bat=8% hopDist=1
+[20:51:40.426] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:40.428] [NODE_82] [RADIO] ACK seq=100 bat=8% hopDist=1
+[20:51:41.040] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:41.042] [NODE_82] [RADIO] ACK seq=101 bat=8% hopDist=1
+[20:51:43.703] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:43.705] [NODE_82] [RADIO] ACK seq=102 bat=6% hopDist=1
+[20:51:48.211] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:51:48.212] [NODE_82] [RADIO] ACK seq=103 bat=4% hopDist=1
+[20:52:08.279] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:08.280] [NODE_82] [RADIO] ACK seq=104 bat=94% hopDist=1
+[20:52:08.282] [NODE_82] [NBR] --- Neighbor Table ---
+[20:52:08.484] [NODE_82] [NBR]   (empty)
+[20:52:08.485] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:52:08.489] [NODE_82] [NBR] -----------------------
+[20:52:09.513] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:09.515] [NODE_82] [RADIO] ACK seq=105 bat=94% hopDist=1
+[20:52:10.532] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:10.533] [NODE_82] [RADIO] ACK seq=106 bat=93% hopDist=1
+[20:52:12.172] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:12.174] [NODE_82] [RADIO] ACK seq=107 bat=92% hopDist=1
+[20:52:12.785] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:12.786] [NODE_82] [RADIO] ACK seq=108 bat=92% hopDist=1
+[20:52:14.832] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:14.834] [NODE_82] [RADIO] ACK seq=109 bat=91% hopDist=1
+[20:52:15.241] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:15.244] [NODE_82] [RADIO] ACK seq=110 bat=91% hopDist=1
+[20:52:23.843] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:52:23.845] [NODE_82] [RADIO] ACK seq=111 bat=86% hopDist=1
+[20:52:29.373] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:29.375] [NODE_82] [RADIO] ACK seq=112 bat=84% hopDist=1
+[20:52:31.626] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:31.627] [NODE_82] [RADIO] ACK seq=113 bat=83% hopDist=1
+[20:52:38.384] [NODE_82] [NBR] --- Neighbor Table ---
+[20:52:38.385] [NODE_82] [NBR]   (empty)
+[20:52:38.387] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:52:38.589] [NODE_82] [NBR] -----------------------
+[20:52:39.819] [NODE_82] [RADIO] ACK seq=114 bat=78% hopDist=1
+[20:52:44.529] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:44.530] [NODE_82] [RADIO] ACK seq=115 bat=76% hopDist=1
+[20:52:48.217] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:52:48.218] [NODE_82] [RADIO] ACK seq=116 bat=74% hopDist=1
+[20:52:57.842] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:52:57.844] [NODE_82] [RADIO] ACK seq=117 bat=69% hopDist=1
+[20:53:07.881] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[20:53:07.889] [NODE_82] [RADIO] ACK seq=118 bat=64% hopDist=1
+[20:53:08.492] [NODE_82] [NBR] --- Neighbor Table ---
+[20:53:08.493] [NODE_82] [NBR]   (empty)
+[20:53:08.493] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[20:53:08.694] [NODE_82] [NBR] -----------------------
+[20:53:11.357] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:53:11.359] [NODE_82] [RADIO] ACK seq=119 bat=63% hopDist=1
+==================== Server side ====================
+[20:45:21.972] void/telemetry {"node_id":82, "battery":96, "cpu":15, "sos_alert":1, "seq":0, "uptime_ms":15346, "hops":1}
+[20:45:23.169] void/telemetry {"node_id":82, "battery":96, "cpu":25, "sos_alert":1, "seq":1, "uptime_ms":16551, "hops":1}
+[20:45:24.775] void/telemetry {"node_id":82, "battery":95, "cpu":17, "sos_alert":1, "seq":2, "uptime_ms":18157, "hops":1}
+[20:45:30.340] void/telemetry {"node_id":157, "battery":97, "cpu":13, "sos_alert":1, "seq":0, "uptime_ms":10840, "hops":1}
+[20:45:33.923] void/telemetry {"node_id":82, "battery":90, "cpu":18, "sos_alert":0, "seq":3, "uptime_ms":27272, "hops":1}
+[20:45:36.799] void/telemetry {"node_id":82, "battery":89, "cpu":17, "sos_alert":1, "seq":4, "uptime_ms":30183, "hops":1}
+[20:45:39.265] void/telemetry {"node_id":157, "battery":93, "cpu":17, "sos_alert":1, "seq":1, "uptime_ms":19756, "hops":1}
+[20:45:39.721] void/telemetry {"node_id":157, "battery":92, "cpu":27, "sos_alert":1, "seq":2, "uptime_ms":20060, "hops":1}
+[20:45:39.821] void/telemetry {"node_id":82, "battery":88, "cpu":14, "sos_alert":1, "seq":5, "uptime_ms":32989, "hops":1}
+[20:45:39.948] void/telemetry {"node_id":82, "battery":87, "cpu":28, "sos_alert":1, "seq":6, "uptime_ms":33312, "hops":1}
+[20:45:40.964] void/telemetry {"node_id":157, "battery":92, "cpu":15, "sos_alert":1, "seq":3, "uptime_ms":21470, "hops":1}
+[20:45:41.243] void/telemetry {"node_id":82, "battery":87, "cpu":11, "sos_alert":1, "seq":7, "uptime_ms":34627, "hops":1}
+[20:45:44.356] void/telemetry {"node_id":82, "battery":85, "cpu":14, "sos_alert":1, "seq":8, "uptime_ms":37735, "hops":1}
+[20:45:46.879] void/telemetry {"node_id":157, "battery":89, "cpu":29, "sos_alert":1, "seq":4, "uptime_ms":27381, "hops":1}
+[20:45:50.900] void/telemetry {"node_id":157, "battery":87, "cpu":12, "sos_alert":1, "seq":5, "uptime_ms":31392, "hops":1}
+[20:45:51.995] void/telemetry {"node_id":157, "battery":86, "cpu":21, "sos_alert":1, "seq":6, "uptime_ms":32497, "hops":1}
+[20:45:53.204] void/telemetry {"node_id":157, "battery":86, "cpu":24, "sos_alert":1, "seq":7, "uptime_ms":33702, "hops":1}
+[20:45:53.968] void/telemetry {"node_id":82, "battery":80, "cpu":17, "sos_alert":0, "seq":9, "uptime_ms":47351, "hops":1}
+[20:45:57.012] void/telemetry {"node_id":157, "battery":84, "cpu":10, "sos_alert":1, "seq":8, "uptime_ms":37510, "hops":1}
+[20:45:57.711] void/telemetry {"node_id":157, "battery":83, "cpu":14, "sos_alert":1, "seq":9, "uptime_ms":38214, "hops":1}
+[20:46:01.818] void/telemetry {"node_id":157, "battery":81, "cpu":16, "sos_alert":1, "seq":10, "uptime_ms":42323, "hops":1}
+[20:46:01.979] void/telemetry {"node_id":82, "battery":76, "cpu":15, "sos_alert":1, "seq":10, "uptime_ms":55363, "hops":1}
+[20:46:04.327] void/telemetry {"node_id":157, "battery":80, "cpu":23, "sos_alert":1, "seq":11, "uptime_ms":44830, "hops":1}
+[20:46:08.636] void/telemetry {"node_id":157, "battery":78, "cpu":19, "sos_alert":1, "seq":12, "uptime_ms":49138, "hops":1}
+[20:46:08.740] void/telemetry {"node_id":157, "battery":78, "cpu":25, "sos_alert":1, "seq":13, "uptime_ms":49242, "hops":1}
+[20:46:12.004] void/telemetry {"node_id":82, "battery":71, "cpu":29, "sos_alert":0, "seq":11, "uptime_ms":65381, "hops":1}
+[20:46:12.147] void/telemetry {"node_id":157, "battery":76, "cpu":24, "sos_alert":1, "seq":14, "uptime_ms":52650, "hops":1}
+[20:46:13.861] void/telemetry {"node_id":82, "battery":71, "cpu":10, "sos_alert":1, "seq":12, "uptime_ms":67187, "hops":1}
+[20:46:21.672] void/telemetry {"node_id":157, "battery":71, "cpu":20, "sos_alert":0, "seq":15, "uptime_ms":62167, "hops":1}
+[20:46:22.031] void/telemetry {"node_id":82, "battery":66, "cpu":21, "sos_alert":0, "seq":13, "uptime_ms":75410, "hops":1}
+[20:46:22.841] void/telemetry {"node_id":82, "battery":66, "cpu":26, "sos_alert":1, "seq":14, "uptime_ms":76216, "hops":1}
+[20:46:22.943] void/telemetry {"node_id":82, "battery":66, "cpu":24, "sos_alert":1, "seq":15, "uptime_ms":76319, "hops":1}
+[20:46:25.248] void/telemetry {"node_id":82, "battery":65, "cpu":24, "sos_alert":1, "seq":16, "uptime_ms":78625, "hops":1}
+[20:46:25.355] void/telemetry {"node_id":82, "battery":65, "cpu":12, "sos_alert":1, "seq":17, "uptime_ms":78728, "hops":1}
+[20:46:31.684] void/telemetry {"node_id":157, "battery":66, "cpu":13, "sos_alert":0, "seq":16, "uptime_ms":72184, "hops":1}
+[20:46:31.989] void/telemetry {"node_id":157, "battery":66, "cpu":13, "sos_alert":1, "seq":17, "uptime_ms":72487, "hops":1}
+[20:46:34.064] void/telemetry {"node_id":82, "battery":60, "cpu":18, "sos_alert":0, "seq":18, "uptime_ms":87442, "hops":1}
+[20:46:34.495] void/telemetry {"node_id":157, "battery":65, "cpu":29, "sos_alert":1, "seq":18, "uptime_ms":74994, "hops":1}
+[20:46:43.732] void/telemetry {"node_id":157, "battery":60, "cpu":17, "sos_alert":0, "seq":19, "uptime_ms":84209, "hops":1}
+[20:46:44.079] void/telemetry {"node_id":82, "battery":55, "cpu":10, "sos_alert":0, "seq":19, "uptime_ms":97459, "hops":1}
+[20:46:45.688] void/telemetry {"node_id":82, "battery":55, "cpu":25, "sos_alert":1, "seq":20, "uptime_ms":99063, "hops":1}
+[20:46:47.457] void/telemetry {"node_id":157, "battery":59, "cpu":16, "sos_alert":1, "seq":20, "uptime_ms":87933, "hops":1}
+[20:46:50.696] void/telemetry {"node_id":82, "battery":52, "cpu":13, "sos_alert":1, "seq":21, "uptime_ms":104073, "hops":1}
+[20:46:53.903] void/telemetry {"node_id":82, "battery":51, "cpu":13, "sos_alert":1, "seq":22, "uptime_ms":107281, "hops":1}
+[20:46:54.344] void/telemetry {"node_id":157, "battery":55, "cpu":28, "sos_alert":1, "seq":21, "uptime_ms":94848, "hops":1}
+[20:46:56.011] void/telemetry {"node_id":82, "battery":50, "cpu":20, "sos_alert":1, "seq":23, "uptime_ms":109387, "hops":1}
+[20:46:56.915] void/telemetry {"node_id":82, "battery":49, "cpu":22, "sos_alert":1, "seq":24, "uptime_ms":110291, "hops":1}
+[20:47:00.624] void/telemetry {"node_id":82, "battery":47, "cpu":21, "sos_alert":1, "seq":25, "uptime_ms":114000, "hops":1}
+[20:47:01.030] void/telemetry {"node_id":82, "battery":47, "cpu":20, "sos_alert":1, "seq":26, "uptime_ms":114403, "hops":1}
+[20:47:03.164] void/telemetry {"node_id":157, "battery":51, "cpu":16, "sos_alert":1, "seq":22, "uptime_ms":103663, "hops":1}
+[20:47:08.143] void/telemetry {"node_id":82, "battery":43, "cpu":11, "sos_alert":1, "seq":27, "uptime_ms":121522, "hops":1}
+[20:47:09.175] void/telemetry {"node_id":157, "battery":48, "cpu":26, "sos_alert":1, "seq":23, "uptime_ms":109675, "hops":1}
+[20:47:09.609] void/telemetry {"node_id":157, "battery":48, "cpu":20, "sos_alert":1, "seq":24, "uptime_ms":110080, "hops":1}
+[20:47:11.283] void/telemetry {"node_id":157, "battery":47, "cpu":18, "sos_alert":1, "seq":25, "uptime_ms":111785, "hops":1}
+[20:47:11.387] void/telemetry {"node_id":157, "battery":47, "cpu":16, "sos_alert":1, "seq":26, "uptime_ms":111889, "hops":1}
+[20:47:11.804] void/telemetry {"node_id":157, "battery":46, "cpu":18, "sos_alert":1, "seq":27, "uptime_ms":112292, "hops":1}
+[20:47:12.955] void/telemetry {"node_id":82, "battery":41, "cpu":17, "sos_alert":1, "seq":28, "uptime_ms":126332, "hops":1}
+[20:47:14.159] void/telemetry {"node_id":82, "battery":40, "cpu":18, "sos_alert":1, "seq":29, "uptime_ms":127536, "hops":1}
+[20:47:20.550] void/telemetry {"node_id":157, "battery":42, "cpu":20, "sos_alert":1, "seq":28, "uptime_ms":120811, "hops":1}
+[20:47:20.917] void/telemetry {"node_id":157, "battery":42, "cpu":16, "sos_alert":1, "seq":29, "uptime_ms":121324, "hops":1}
+[20:47:22.527] void/telemetry {"node_id":157, "battery":41, "cpu":28, "sos_alert":1, "seq":30, "uptime_ms":123030, "hops":1}
+[20:47:24.192] void/telemetry {"node_id":82, "battery":35, "cpu":24, "sos_alert":0, "seq":30, "uptime_ms":137553, "hops":1}
+[20:47:27.151] void/telemetry {"node_id":157, "battery":39, "cpu":20, "sos_alert":1, "seq":31, "uptime_ms":127641, "hops":1}
+[20:47:28.793] void/telemetry {"node_id":82, "battery":33, "cpu":29, "sos_alert":1, "seq":31, "uptime_ms":142161, "hops":1}
+[20:47:29.191] void/telemetry {"node_id":82, "battery":33, "cpu":18, "sos_alert":1, "seq":32, "uptime_ms":142565, "hops":1}
+[20:47:35.867] void/telemetry {"node_id":157, "battery":34, "cpu":14, "sos_alert":0, "seq":32, "uptime_ms":136368, "hops":1}
+[20:47:37.009] void/telemetry {"node_id":82, "battery":29, "cpu":18, "sos_alert":1, "seq":33, "uptime_ms":150380, "hops":1}
+[20:47:38.881] void/telemetry {"node_id":157, "battery":33, "cpu":23, "sos_alert":1, "seq":33, "uptime_ms":139376, "hops":1}
+[20:47:39.119] void/telemetry {"node_id":82, "battery":28, "cpu":16, "sos_alert":1, "seq":34, "uptime_ms":152490, "hops":1}
+[20:47:45.241] void/telemetry {"node_id":157, "battery":30, "cpu":13, "sos_alert":1, "seq":34, "uptime_ms":145687, "hops":1}
+[20:47:48.237] void/telemetry {"node_id":82, "battery":23, "cpu":26, "sos_alert":0, "seq":35, "uptime_ms":161606, "hops":1}
+[20:47:50.336] void/telemetry {"node_id":82, "battery":22, "cpu":13, "sos_alert":1, "seq":36, "uptime_ms":163713, "hops":1}
+[20:47:52.143] void/telemetry {"node_id":82, "battery":22, "cpu":18, "sos_alert":1, "seq":37, "uptime_ms":165519, "hops":1}
+[20:47:53.453] void/telemetry {"node_id":82, "battery":21, "cpu":22, "sos_alert":1, "seq":38, "uptime_ms":166824, "hops":1}
+[20:47:53.919] void/telemetry {"node_id":157, "battery":25, "cpu":28, "sos_alert":1, "seq":35, "uptime_ms":154418, "hops":1}
+[20:47:55.656] void/telemetry {"node_id":82, "battery":20, "cpu":27, "sos_alert":1, "seq":39, "uptime_ms":169030, "hops":1}
+[20:47:56.260] void/telemetry {"node_id":82, "battery":19, "cpu":15, "sos_alert":1, "seq":40, "uptime_ms":169634, "hops":1}
+[20:47:56.465] void/telemetry {"node_id":82, "battery":19, "cpu":10, "sos_alert":1, "seq":41, "uptime_ms":169837, "hops":1}
+[20:47:58.658] void/telemetry {"node_id":82, "battery":18, "cpu":14, "sos_alert":1, "seq":42, "uptime_ms":171944, "hops":1}
+[20:47:58.932] void/telemetry {"node_id":157, "battery":23, "cpu":15, "sos_alert":1, "seq":36, "uptime_ms":159427, "hops":1}
+[20:47:59.817] void/telemetry {"node_id":82, "battery":18, "cpu":28, "sos_alert":1, "seq":43, "uptime_ms":173190, "hops":1}
+[20:48:00.954] void/telemetry {"node_id":157, "battery":22, "cpu":14, "sos_alert":1, "seq":37, "uptime_ms":161433, "hops":1}
+[20:48:02.225] void/telemetry {"node_id":82, "battery":17, "cpu":16, "sos_alert":1, "seq":44, "uptime_ms":175598, "hops":1}
+[20:48:02.544] void/telemetry {"node_id":157, "battery":21, "cpu":28, "sos_alert":1, "seq":38, "uptime_ms":163045, "hops":1}
+[20:48:10.340] void/telemetry {"node_id":82, "battery":12, "cpu":12, "sos_alert":0, "seq":45, "uptime_ms":183714, "hops":1}
+[20:48:11.794] void/telemetry {"node_id":157, "battery":17, "cpu":28, "sos_alert":1, "seq":39, "uptime_ms":172063, "hops":1}
+[20:48:18.836] void/telemetry {"node_id":157, "battery":13, "cpu":10, "sos_alert":1, "seq":40, "uptime_ms":179289, "hops":1}
+[20:48:20.360] void/telemetry {"node_id":82, "battery":7, "cpu":13, "sos_alert":0, "seq":46, "uptime_ms":193730, "hops":1}
+[20:48:20.894] void/telemetry {"node_id":157, "battery":12, "cpu":19, "sos_alert":1, "seq":41, "uptime_ms":181400, "hops":1}
+[20:48:20.959] void/telemetry {"node_id":82, "battery":7, "cpu":14, "sos_alert":1, "seq":47, "uptime_ms":194334, "hops":1}
+[20:48:22.568] void/telemetry {"node_id":82, "battery":6, "cpu":14, "sos_alert":1, "seq":48, "uptime_ms":195939, "hops":1}
+[20:48:23.505] void/telemetry {"node_id":82, "battery":6, "cpu":20, "sos_alert":1, "seq":49, "uptime_ms":196844, "hops":1}
+[20:48:25.010] void/telemetry {"node_id":157, "battery":10, "cpu":21, "sos_alert":1, "seq":42, "uptime_ms":185509, "hops":1}
+[20:48:25.180] void/telemetry {"node_id":157, "battery":10, "cpu":14, "sos_alert":1, "seq":43, "uptime_ms":185613, "hops":1}
+[20:48:25.623] void/telemetry {"node_id":157, "battery":10, "cpu":16, "sos_alert":1, "seq":44, "uptime_ms":186125, "hops":1}
+[20:48:26.868] void/telemetry {"node_id":157, "battery":9, "cpu":14, "sos_alert":1, "seq":45, "uptime_ms":187334, "hops":1}
+[20:48:31.951] void/telemetry {"node_id":157, "battery":7, "cpu":29, "sos_alert":1, "seq":46, "uptime_ms":192455, "hops":1}
+[20:48:32.435] void/telemetry {"node_id":82, "battery":1, "cpu":20, "sos_alert":0, "seq":50, "uptime_ms":205760, "hops":1}
+[20:48:36.095] void/telemetry {"node_id":82, "battery":0, "cpu":19, "sos_alert":1, "seq":51, "uptime_ms":209468, "hops":1}
+[20:48:37.504] void/telemetry {"node_id":82, "battery":99, "cpu":11, "sos_alert":1, "seq":52, "uptime_ms":210875, "hops":1}
+[20:48:39.211] void/telemetry {"node_id":82, "battery":98, "cpu":11, "sos_alert":1, "seq":53, "uptime_ms":212581, "hops":1}
+[20:48:40.068] void/telemetry {"node_id":157, "battery":2, "cpu":22, "sos_alert":0, "seq":47, "uptime_ms":200570, "hops":1}
+[20:48:40.412] void/telemetry {"node_id":82, "battery":97, "cpu":26, "sos_alert":1, "seq":54, "uptime_ms":213786, "hops":1}
+[20:48:42.072] void/telemetry {"node_id":157, "battery":1, "cpu":15, "sos_alert":1, "seq":48, "uptime_ms":202575, "hops":1}
+[20:48:46.384] void/telemetry {"node_id":157, "battery":99, "cpu":26, "sos_alert":1, "seq":49, "uptime_ms":206884, "hops":1}
+[20:48:48.008] void/telemetry {"node_id":157, "battery":99, "cpu":13, "sos_alert":1, "seq":50, "uptime_ms":208490, "hops":1}
+[20:48:48.839] void/telemetry {"node_id":157, "battery":98, "cpu":28, "sos_alert":1, "seq":51, "uptime_ms":209300, "hops":1}
+[20:48:50.037] void/telemetry {"node_id":82, "battery":93, "cpu":15, "sos_alert":1, "seq":55, "uptime_ms":223402, "hops":1}
+[20:48:50.636] void/telemetry {"node_id":82, "battery":92, "cpu":28, "sos_alert":1, "seq":56, "uptime_ms":224006, "hops":1}
+[20:48:53.808] void/telemetry {"node_id":157, "battery":96, "cpu":29, "sos_alert":1, "seq":52, "uptime_ms":214311, "hops":1}
+[20:48:54.116] void/telemetry {"node_id":157, "battery":95, "cpu":28, "sos_alert":1, "seq":53, "uptime_ms":214615, "hops":1}
+[20:49:00.452] void/telemetry {"node_id":82, "battery":87, "cpu":26, "sos_alert":0, "seq":57, "uptime_ms":233823, "hops":1}
+[20:49:02.130] void/telemetry {"node_id":157, "battery":91, "cpu":20, "sos_alert":1, "seq":54, "uptime_ms":222629, "hops":1}
+[20:49:02.755] void/telemetry {"node_id":82, "battery":86, "cpu":23, "sos_alert":1, "seq":58, "uptime_ms":236129, "hops":1}
+[20:49:03.669] void/telemetry {"node_id":82, "battery":86, "cpu":25, "sos_alert":1, "seq":59, "uptime_ms":237034, "hops":1}
+[20:49:03.735] void/telemetry {"node_id":157, "battery":91, "cpu":12, "sos_alert":1, "seq":55, "uptime_ms":224234, "hops":1}
+[20:49:06.771] void/telemetry {"node_id":82, "battery":84, "cpu":24, "sos_alert":1, "seq":60, "uptime_ms":240142, "hops":1}
+[20:49:07.844] void/telemetry {"node_id":157, "battery":89, "cpu":21, "sos_alert":1, "seq":56, "uptime_ms":228343, "hops":1}
+[20:49:09.095] void/telemetry {"node_id":157, "battery":88, "cpu":29, "sos_alert":1, "seq":57, "uptime_ms":229549, "hops":1}
+[20:49:09.782] void/telemetry {"node_id":82, "battery":83, "cpu":10, "sos_alert":1, "seq":61, "uptime_ms":243151, "hops":1}
+[20:49:11.984] void/telemetry {"node_id":82, "battery":82, "cpu":17, "sos_alert":1, "seq":62, "uptime_ms":245356, "hops":1}
+[20:49:15.366] void/telemetry {"node_id":157, "battery":85, "cpu":14, "sos_alert":1, "seq":58, "uptime_ms":235872, "hops":1}
+[20:49:16.595] void/telemetry {"node_id":82, "battery":79, "cpu":15, "sos_alert":1, "seq":63, "uptime_ms":249966, "hops":1}
+[20:49:17.987] void/telemetry {"node_id":157, "battery":84, "cpu":11, "sos_alert":1, "seq":59, "uptime_ms":238478, "hops":1}
+[20:49:19.252] void/telemetry {"node_id":82, "battery":78, "cpu":23, "sos_alert":1, "seq":64, "uptime_ms":252573, "hops":1}
+[20:49:19.996] void/telemetry {"node_id":157, "battery":83, "cpu":25, "sos_alert":1, "seq":60, "uptime_ms":240498, "hops":1}
+[20:49:21.025] void/telemetry {"node_id":157, "battery":82, "cpu":11, "sos_alert":1, "seq":61, "uptime_ms":241507, "hops":1}
+[20:49:21.512] void/telemetry {"node_id":82, "battery":77, "cpu":25, "sos_alert":1, "seq":65, "uptime_ms":254879, "hops":1}
+[20:49:22.011] void/telemetry {"node_id":157, "battery":82, "cpu":11, "sos_alert":1, "seq":62, "uptime_ms":242512, "hops":1}
+[20:49:22.524] void/telemetry {"node_id":157, "battery":81, "cpu":16, "sos_alert":1, "seq":63, "uptime_ms":242916, "hops":1}
+[20:49:23.980] void/telemetry {"node_id":157, "battery":81, "cpu":13, "sos_alert":1, "seq":64, "uptime_ms":244484, "hops":1}
+[20:49:25.016] void/telemetry {"node_id":82, "battery":75, "cpu":15, "sos_alert":1, "seq":66, "uptime_ms":258387, "hops":1}
+[20:49:27.292] void/telemetry {"node_id":157, "battery":79, "cpu":19, "sos_alert":1, "seq":65, "uptime_ms":247792, "hops":1}
+[20:49:32.136] void/telemetry {"node_id":82, "battery":72, "cpu":28, "sos_alert":1, "seq":67, "uptime_ms":265500, "hops":1}
+[20:49:33.243] void/telemetry {"node_id":82, "battery":71, "cpu":27, "sos_alert":1, "seq":68, "uptime_ms":266605, "hops":1}
+[20:49:33.904] void/telemetry {"node_id":157, "battery":76, "cpu":11, "sos_alert":1, "seq":66, "uptime_ms":254404, "hops":1}
+[20:49:34.345] void/telemetry {"node_id":82, "battery":71, "cpu":18, "sos_alert":1, "seq":69, "uptime_ms":267710, "hops":1}
+[20:49:37.852] void/telemetry {"node_id":82, "battery":69, "cpu":23, "sos_alert":1, "seq":70, "uptime_ms":271220, "hops":1}
+[20:49:40.716] void/telemetry {"node_id":157, "battery":72, "cpu":18, "sos_alert":1, "seq":67, "uptime_ms":261217, "hops":1}
+[20:49:41.360] void/telemetry {"node_id":82, "battery":67, "cpu":10, "sos_alert":1, "seq":71, "uptime_ms":274728, "hops":1}
+[20:49:41.519] void/telemetry {"node_id":157, "battery":72, "cpu":22, "sos_alert":1, "seq":68, "uptime_ms":262022, "hops":1}
+[20:49:42.368] void/telemetry {"node_id":82, "battery":67, "cpu":27, "sos_alert":1, "seq":72, "uptime_ms":275733, "hops":1}
+[20:49:44.528] void/telemetry {"node_id":157, "battery":70, "cpu":15, "sos_alert":1, "seq":69, "uptime_ms":265029, "hops":1}
+[20:49:46.333] void/telemetry {"node_id":157, "battery":69, "cpu":29, "sos_alert":1, "seq":70, "uptime_ms":266835, "hops":1}
+[20:49:50.616] void/telemetry {"node_id":82, "battery":62, "cpu":13, "sos_alert":0, "seq":73, "uptime_ms":283948, "hops":1}
+[20:49:51.708] void/telemetry {"node_id":82, "battery":62, "cpu":12, "sos_alert":1, "seq":74, "uptime_ms":285073, "hops":1}
+[20:49:55.015] void/telemetry {"node_id":82, "battery":60, "cpu":13, "sos_alert":1, "seq":75, "uptime_ms":288380, "hops":1}
+[20:49:55.315] void/telemetry {"node_id":82, "battery":60, "cpu":13, "sos_alert":1, "seq":76, "uptime_ms":288684, "hops":1}
+[20:49:56.351] void/telemetry {"node_id":157, "battery":64, "cpu":27, "sos_alert":0, "seq":71, "uptime_ms":276853, "hops":1}
+[20:50:03.328] void/telemetry {"node_id":82, "battery":56, "cpu":10, "sos_alert":1, "seq":77, "uptime_ms":296696, "hops":1}
+[20:50:06.367] void/telemetry {"node_id":157, "battery":59, "cpu":21, "sos_alert":0, "seq":72, "uptime_ms":286870, "hops":1}
+[20:50:08.580] void/telemetry {"node_id":157, "battery":58, "cpu":14, "sos_alert":1, "seq":73, "uptime_ms":289076, "hops":1}
+[20:50:12.649] void/telemetry {"node_id":82, "battery":51, "cpu":21, "sos_alert":0, "seq":78, "uptime_ms":306014, "hops":1}
+[20:50:18.161] void/telemetry {"node_id":82, "battery":49, "cpu":20, "sos_alert":1, "seq":79, "uptime_ms":311524, "hops":1}
+[20:50:18.391] void/telemetry {"node_id":157, "battery":53, "cpu":20, "sos_alert":0, "seq":74, "uptime_ms":298893, "hops":1}
+[20:50:21.769] void/telemetry {"node_id":82, "battery":47, "cpu":19, "sos_alert":1, "seq":80, "uptime_ms":315135, "hops":1}
+[20:50:24.103] void/telemetry {"node_id":157, "battery":51, "cpu":11, "sos_alert":1, "seq":75, "uptime_ms":304606, "hops":1}
+[20:50:26.714] void/telemetry {"node_id":157, "battery":49, "cpu":11, "sos_alert":1, "seq":76, "uptime_ms":307213, "hops":1}
+[20:50:27.979] void/telemetry {"node_id":82, "battery":44, "cpu":18, "sos_alert":1, "seq":81, "uptime_ms":321347, "hops":1}
+[20:50:31.921] void/telemetry {"node_id":157, "battery":47, "cpu":22, "sos_alert":1, "seq":77, "uptime_ms":312423, "hops":1}
+[20:50:32.491] void/telemetry {"node_id":82, "battery":42, "cpu":10, "sos_alert":1, "seq":82, "uptime_ms":325855, "hops":1}
+[20:50:32.996] void/telemetry {"node_id":82, "battery":41, "cpu":15, "sos_alert":1, "seq":83, "uptime_ms":326359, "hops":1}
+[20:50:34.228] void/telemetry {"node_id":157, "battery":46, "cpu":11, "sos_alert":1, "seq":78, "uptime_ms":314730, "hops":1}
+[20:50:35.900] void/telemetry {"node_id":82, "battery":40, "cpu":22, "sos_alert":1, "seq":84, "uptime_ms":329266, "hops":1}
+[20:50:39.410] void/telemetry {"node_id":82, "battery":38, "cpu":28, "sos_alert":1, "seq":85, "uptime_ms":332775, "hops":1}
+[20:50:41.146] void/telemetry {"node_id":157, "battery":42, "cpu":18, "sos_alert":1, "seq":79, "uptime_ms":321642, "hops":1}
+[20:50:48.735] void/telemetry {"node_id":82, "battery":33, "cpu":29, "sos_alert":0, "seq":86, "uptime_ms":342091, "hops":1}
+[20:50:50.032] void/telemetry {"node_id":82, "battery":33, "cpu":15, "sos_alert":1, "seq":87, "uptime_ms":343395, "hops":1}
+[20:50:50.237] void/telemetry {"node_id":82, "battery":33, "cpu":19, "sos_alert":1, "seq":88, "uptime_ms":343599, "hops":1}
+[20:50:50.436] void/telemetry {"node_id":82, "battery":33, "cpu":12, "sos_alert":1, "seq":89, "uptime_ms":343802, "hops":1}
+[20:50:50.495] void/telemetry {"node_id":157, "battery":37, "cpu":20, "sos_alert":0, "seq":80, "uptime_ms":330960, "hops":1}
+[20:50:50.987] void/telemetry {"node_id":82, "battery":32, "cpu":25, "sos_alert":1, "seq":90, "uptime_ms":344307, "hops":1}
+[20:50:51.547] void/telemetry {"node_id":82, "battery":32, "cpu":16, "sos_alert":1, "seq":91, "uptime_ms":344913, "hops":1}
+[20:50:52.753] void/telemetry {"node_id":82, "battery":31, "cpu":19, "sos_alert":1, "seq":92, "uptime_ms":346117, "hops":1}
+[20:50:57.967] void/telemetry {"node_id":157, "battery":34, "cpu":24, "sos_alert":1, "seq":81, "uptime_ms":338472, "hops":1}
+[20:50:58.163] void/telemetry {"node_id":82, "battery":29, "cpu":26, "sos_alert":1, "seq":93, "uptime_ms":351528, "hops":1}
+[20:51:01.051] void/telemetry {"node_id":82, "battery":27, "cpu":21, "sos_alert":1, "seq":94, "uptime_ms":354335, "hops":1}
+[20:51:02.515] void/telemetry {"node_id":82, "battery":27, "cpu":22, "sos_alert":1, "seq":95, "uptime_ms":355882, "hops":1}
+[20:51:02.878] void/telemetry {"node_id":157, "battery":31, "cpu":10, "sos_alert":1, "seq":82, "uptime_ms":343383, "hops":1}
+[20:51:04.928] void/telemetry {"node_id":157, "battery":30, "cpu":18, "sos_alert":1, "seq":83, "uptime_ms":345389, "hops":1}
+[20:51:07.001] void/telemetry {"node_id":157, "battery":29, "cpu":16, "sos_alert":1, "seq":84, "uptime_ms":347496, "hops":1}
+[20:51:10.832] void/telemetry {"node_id":82, "battery":22, "cpu":20, "sos_alert":0, "seq":96, "uptime_ms":364198, "hops":1}
+[20:51:14.243] void/telemetry {"node_id":157, "battery":26, "cpu":16, "sos_alert":1, "seq":85, "uptime_ms":354709, "hops":1}
+[20:51:15.319] void/telemetry {"node_id":157, "battery":25, "cpu":18, "sos_alert":1, "seq":86, "uptime_ms":355815, "hops":1}
+[20:51:20.865] void/telemetry {"node_id":82, "battery":17, "cpu":12, "sos_alert":0, "seq":97, "uptime_ms":374214, "hops":1}
+[20:51:24.536] void/telemetry {"node_id":157, "battery":20, "cpu":28, "sos_alert":0, "seq":87, "uptime_ms":365038, "hops":1}
+[20:51:28.956] void/telemetry {"node_id":157, "battery":18, "cpu":23, "sos_alert":1, "seq":88, "uptime_ms":369446, "hops":1}
+[20:51:29.563] void/telemetry {"node_id":82, "battery":13, "cpu":16, "sos_alert":1, "seq":98, "uptime_ms":382929, "hops":1}
+[20:51:29.855] void/telemetry {"node_id":157, "battery":18, "cpu":14, "sos_alert":1, "seq":89, "uptime_ms":370355, "hops":1}
+[20:51:30.261] void/telemetry {"node_id":157, "battery":18, "cpu":23, "sos_alert":1, "seq":90, "uptime_ms":370759, "hops":1}
+[20:51:33.477] void/telemetry {"node_id":157, "battery":16, "cpu":14, "sos_alert":1, "seq":91, "uptime_ms":373967, "hops":1}
+[20:51:38.883] void/telemetry {"node_id":82, "battery":8, "cpu":24, "sos_alert":0, "seq":99, "uptime_ms":392247, "hops":1}
+[20:51:39.588] void/telemetry {"node_id":82, "battery":8, "cpu":10, "sos_alert":1, "seq":100, "uptime_ms":392951, "hops":1}
+[20:51:40.195] void/telemetry {"node_id":82, "battery":8, "cpu":15, "sos_alert":1, "seq":101, "uptime_ms":393555, "hops":1}
+[20:51:42.584] void/telemetry {"node_id":157, "battery":11, "cpu":18, "sos_alert":0, "seq":92, "uptime_ms":383085, "hops":1}
+[20:51:42.900] void/telemetry {"node_id":82, "battery":6, "cpu":22, "sos_alert":1, "seq":102, "uptime_ms":396261, "hops":1}
+[20:51:44.957] void/telemetry {"node_id":157, "battery":10, "cpu":28, "sos_alert":1, "seq":93, "uptime_ms":385391, "hops":1}
+[20:51:47.412] void/telemetry {"node_id":82, "battery":4, "cpu":24, "sos_alert":1, "seq":103, "uptime_ms":400770, "hops":1}
+[20:51:48.013] void/telemetry {"node_id":157, "battery":9, "cpu":23, "sos_alert":1, "seq":94, "uptime_ms":388508, "hops":1}
+[20:51:50.416] void/telemetry {"node_id":157, "battery":8, "cpu":17, "sos_alert":1, "seq":95, "uptime_ms":390916, "hops":1}
+[20:51:54.524] void/telemetry {"node_id":157, "battery":6, "cpu":14, "sos_alert":1, "seq":96, "uptime_ms":395025, "hops":1}
+[20:51:58.331] void/telemetry {"node_id":157, "battery":4, "cpu":24, "sos_alert":1, "seq":97, "uptime_ms":398834, "hops":1}
+[20:51:59.099] void/telemetry {"node_id":157, "battery":3, "cpu":11, "sos_alert":1, "seq":98, "uptime_ms":399538, "hops":1}
+[20:52:02.256] void/telemetry {"node_id":157, "battery":2, "cpu":25, "sos_alert":1, "seq":99, "uptime_ms":402753, "hops":1}
+[20:52:06.370] void/telemetry {"node_id":157, "battery":0, "cpu":23, "sos_alert":1, "seq":100, "uptime_ms":406861, "hops":1}
+[20:52:07.435] void/telemetry {"node_id":82, "battery":94, "cpu":14, "sos_alert":1, "seq":104, "uptime_ms":420800, "hops":1}
+[20:52:08.653] void/telemetry {"node_id":82, "battery":94, "cpu":21, "sos_alert":1, "seq":105, "uptime_ms":422007, "hops":1}
+[20:52:09.853] void/telemetry {"node_id":82, "battery":93, "cpu":25, "sos_alert":1, "seq":106, "uptime_ms":423212, "hops":1}
+[20:52:11.356] void/telemetry {"node_id":82, "battery":92, "cpu":12, "sos_alert":1, "seq":107, "uptime_ms":424717, "hops":1}
+[20:52:11.769] void/telemetry {"node_id":157, "battery":97, "cpu":20, "sos_alert":1, "seq":101, "uptime_ms":412271, "hops":1}
+[20:52:11.959] void/telemetry {"node_id":82, "battery":92, "cpu":11, "sos_alert":1, "seq":108, "uptime_ms":425322, "hops":1}
+[20:52:12.919] void/telemetry {"node_id":157, "battery":96, "cpu":26, "sos_alert":1, "seq":102, "uptime_ms":413376, "hops":1}
+[20:52:14.068] void/telemetry {"node_id":82, "battery":91, "cpu":24, "sos_alert":1, "seq":109, "uptime_ms":427429, "hops":1}
+[20:52:14.571] void/telemetry {"node_id":82, "battery":91, "cpu":28, "sos_alert":1, "seq":110, "uptime_ms":427933, "hops":1}
+[20:52:18.084] void/telemetry {"node_id":157, "battery":94, "cpu":21, "sos_alert":1, "seq":103, "uptime_ms":418586, "hops":1}
+[20:52:19.581] void/telemetry {"node_id":157, "battery":93, "cpu":23, "sos_alert":1, "seq":104, "uptime_ms":419992, "hops":1}
+[20:52:22.633] void/telemetry {"node_id":157, "battery":92, "cpu":23, "sos_alert":1, "seq":105, "uptime_ms":423134, "hops":1}
+[20:52:22.987] void/telemetry {"node_id":82, "battery":86, "cpu":24, "sos_alert":0, "seq":111, "uptime_ms":436347, "hops":1}
+[20:52:28.599] void/telemetry {"node_id":82, "battery":84, "cpu":26, "sos_alert":1, "seq":112, "uptime_ms":441960, "hops":1}
+[20:52:30.748] void/telemetry {"node_id":157, "battery":87, "cpu":21, "sos_alert":0, "seq":106, "uptime_ms":431247, "hops":1}
+[20:52:30.807] void/telemetry {"node_id":82, "battery":83, "cpu":11, "sos_alert":1, "seq":113, "uptime_ms":444166, "hops":1}
+[20:52:31.565] void/telemetry {"node_id":157, "battery":87, "cpu":22, "sos_alert":1, "seq":107, "uptime_ms":432052, "hops":1}
+[20:52:36.973] void/telemetry {"node_id":157, "battery":84, "cpu":18, "sos_alert":1, "seq":108, "uptime_ms":437464, "hops":1}
+[20:52:39.028] void/telemetry {"node_id":82, "battery":78, "cpu":25, "sos_alert":0, "seq":114, "uptime_ms":452385, "hops":1}
+[20:52:39.672] void/telemetry {"node_id":157, "battery":83, "cpu":17, "sos_alert":1, "seq":109, "uptime_ms":440173, "hops":1}
+[20:52:40.288] void/telemetry {"node_id":157, "battery":83, "cpu":29, "sos_alert":1, "seq":110, "uptime_ms":440777, "hops":1}
+[20:52:40.384] void/telemetry {"node_id":157, "battery":83, "cpu":10, "sos_alert":1, "seq":111, "uptime_ms":440888, "hops":1}
+[20:52:43.735] void/telemetry {"node_id":82, "battery":76, "cpu":17, "sos_alert":1, "seq":115, "uptime_ms":457094, "hops":1}
+[20:52:47.545] void/telemetry {"node_id":82, "battery":74, "cpu":27, "sos_alert":1, "seq":116, "uptime_ms":460902, "hops":1}
+[20:52:48.399] void/telemetry {"node_id":157, "battery":79, "cpu":16, "sos_alert":1, "seq":112, "uptime_ms":448902, "hops":1}
+[20:52:56.814] void/telemetry {"node_id":157, "battery":74, "cpu":24, "sos_alert":0, "seq":113, "uptime_ms":457319, "hops":1}
+[20:52:56.923] void/telemetry {"node_id":157, "battery":74, "cpu":22, "sos_alert":1, "seq":114, "uptime_ms":457422, "hops":1}
+[20:52:57.117] void/telemetry {"node_id":82, "battery":69, "cpu":14, "sos_alert":0, "seq":117, "uptime_ms":470418, "hops":1}
+[20:53:04.431] void/telemetry {"node_id":157, "battery":71, "cpu":28, "sos_alert":1, "seq":115, "uptime_ms":464935, "hops":1}
+[20:53:05.539] void/telemetry {"node_id":157, "battery":70, "cpu":26, "sos_alert":1, "seq":116, "uptime_ms":466040, "hops":1}
+[20:53:07.109] void/telemetry {"node_id":82, "battery":64, "cpu":19, "sos_alert":0, "seq":118, "uptime_ms":480452, "hops":1}
+[20:53:10.504] void/telemetry {"node_id":82, "battery":63, "cpu":24, "sos_alert":1, "seq":119, "uptime_ms":483864, "hops":1}
+
+ ====================================================================
+|    Trial-2 : Direct Single-Hop Baseline                            |
+ ====================================================================
+==================== Edge Nodes ====================
+[21:00:04.046] [NODE_157] [MESH] Direct gateway link confirmed. myHopDist=1
+[21:00:04.047] [NODE_157] [SYS] Node 157 armed. hopDist=1
+[21:00:06.294] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:06.296] [NODE_157] [RADIO] ACK seq=0 bat=98% hopDist=1
+[21:00:06.703] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:06.705] [NODE_157] [RADIO] ACK seq=1 bat=98% hopDist=1
+[21:00:15.919] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:00:15.921] [NODE_157] [RADIO] ACK seq=2 bat=93% hopDist=1
+[21:00:16.127] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:16.129] [NODE_157] [RADIO] ACK seq=3 bat=93% hopDist=1
+[21:00:16.538] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:16.540] [NODE_157] [RADIO] ACK seq=4 bat=93% hopDist=1
+[21:00:25.955] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:00:25.956] [NODE_157] [RADIO] ACK seq=5 bat=88% hopDist=1
+[21:00:26.374] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:26.569] [NODE_157] [RADIO] ACK seq=6 bat=88% hopDist=1
+[21:00:27.804] [NODE_157] [NBR] --- Neighbor Table ---
+[21:00:27.806] [NODE_157] [NBR]   (empty)
+[21:00:27.814] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:00:28.011] [NODE_157] [NBR] -----------------------
+[21:00:34.352] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:34.354] [NODE_157] [RADIO] ACK seq=7 bat=84% hopDist=1
+[21:00:36.400] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:36.402] [NODE_157] [RADIO] ACK seq=8 bat=83% hopDist=1
+[21:00:38.249] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:38.251] [NODE_157] [RADIO] ACK seq=9 bat=82% hopDist=1
+[21:00:42.139] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:42.339] [NODE_157] [RADIO] ACK seq=10 bat=80% hopDist=1
+[21:00:42.748] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:42.749] [NODE_157] [RADIO] ACK seq=11 bat=80% hopDist=1
+[21:00:51.555] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:51.558] [NODE_157] [RADIO] ACK seq=12 bat=76% hopDist=1
+[21:00:51.763] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:51.765] [NODE_157] [RADIO] ACK seq=13 bat=76% hopDist=1
+[21:00:57.905] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:57.906] [NODE_157] [RADIO] ACK seq=14 bat=73% hopDist=1
+[21:00:58.111] [NODE_157] [NBR] --- Neighbor Table ---
+[21:00:58.313] [NODE_157] [NBR]   (empty)
+[21:00:58.314] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:00:58.316] [NODE_157] [NBR] -----------------------
+[21:01:00.980] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:01.180] [NODE_157] [RADIO] ACK seq=15 bat=71% hopDist=1
+[21:01:06.300] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:06.302] [NODE_157] [RADIO] ACK seq=16 bat=68% hopDist=1
+[21:01:09.797] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:09.817] [NODE_157] [RADIO] ACK seq=17 bat=67% hopDist=1
+[21:01:11.834] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:11.837] [NODE_157] [RADIO] ACK seq=18 bat=66% hopDist=1
+[21:01:14.697] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:14.698] [NODE_157] [RADIO] ACK seq=19 bat=64% hopDist=1
+[21:01:24.121] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:01:24.123] [NODE_157] [RADIO] ACK seq=20 bat=59% hopDist=1
+[21:01:26.987] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:26.988] [NODE_157] [RADIO] ACK seq=21 bat=58% hopDist=1
+[21:01:28.224] [NODE_157] [NBR] --- Neighbor Table ---
+[21:01:28.226] [NODE_157] [NBR]   (empty)
+[21:01:28.425] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:01:28.425] [NODE_157] [NBR] -----------------------
+[21:01:31.285] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:31.288] [NODE_157] [RADIO] ACK seq=22 bat=56% hopDist=1
+[21:01:31.490] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:31.492] [NODE_157] [RADIO] ACK seq=23 bat=56% hopDist=1
+[21:01:32.308] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:32.316] [NODE_157] [RADIO] ACK seq=24 bat=55% hopDist=1
+[21:01:42.140] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:01:42.142] [NODE_157] [RADIO] ACK seq=25 bat=50% hopDist=1
+[21:01:47.267] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:47.466] [NODE_157] [RADIO] ACK seq=26 bat=48% hopDist=1
+[21:01:51.369] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:51.373] [NODE_157] [RADIO] ACK seq=27 bat=46% hopDist=1
+[21:01:57.909] [NODE_157] [NBR] --- Neighbor Table ---
+[21:01:57.910] [NODE_157] [NBR]   (empty)
+[21:01:57.912] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:01:58.114] [NODE_157] [NBR] -----------------------
+[21:01:58.115] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:58.117] [NODE_157] [RADIO] ACK seq=28 bat=42% hopDist=1
+[21:02:08.354] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:02:08.355] [NODE_157] [RADIO] ACK seq=29 bat=37% hopDist=1
+[21:02:12.450] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:12.452] [NODE_157] [RADIO] ACK seq=30 bat=35% hopDist=1
+[21:02:14.500] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:14.502] [NODE_157] [RADIO] ACK seq=31 bat=34% hopDist=1
+[21:02:21.052] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:21.053] [NODE_157] [RADIO] ACK seq=32 bat=31% hopDist=1
+[21:02:21.875] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:21.877] [NODE_157] [RADIO] ACK seq=33 bat=31% hopDist=1
+[21:02:28.031] [NODE_157] [NBR] --- Neighbor Table ---
+[21:02:28.037] [NODE_157] [NBR]   (empty)
+[21:02:28.045] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:02:28.224] [NODE_157] [NBR] -----------------------
+[21:02:30.268] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:02:30.270] [NODE_157] [RADIO] ACK seq=34 bat=26% hopDist=1
+[21:02:33.598] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:33.748] [NODE_157] [RADIO] ACK seq=35 bat=25% hopDist=1
+[21:02:35.592] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:35.594] [NODE_157] [RADIO] ACK seq=36 bat=24% hopDist=1
+[21:02:41.122] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:41.129] [NODE_157] [RADIO] ACK seq=37 bat=21% hopDist=1
+[21:02:46.653] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:46.656] [NODE_157] [RADIO] ACK seq=38 bat=18% hopDist=1
+[21:02:48.292] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:48.295] [NODE_157] [RADIO] ACK seq=39 bat=17% hopDist=1
+[21:02:57.917] [NODE_157] [NBR] --- Neighbor Table ---
+[21:02:57.923] [NODE_157] [NBR]   (empty)
+[21:02:57.923] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:02:58.119] [NODE_157] [NBR] -----------------------
+[21:02:58.325] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:02:58.326] [NODE_157] [RADIO] ACK seq=40 bat=12% hopDist=1
+[21:03:08.360] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:03:08.362] [NODE_157] [RADIO] ACK seq=41 bat=7% hopDist=1
+[21:03:08.773] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:08.974] [NODE_157] [RADIO] ACK seq=42 bat=7% hopDist=1
+[21:03:15.733] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:15.735] [NODE_157] [RADIO] ACK seq=43 bat=4% hopDist=1
+[21:03:21.057] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:21.060] [NODE_157] [RADIO] ACK seq=44 bat=1% hopDist=1
+[21:03:21.263] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:21.266] [NODE_157] [RADIO] ACK seq=45 bat=1% hopDist=1
+[21:03:23.518] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:23.520] [NODE_157] [RADIO] ACK seq=46 bat=0% hopDist=1
+[21:03:23.925] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:23.937] [NODE_157] [RADIO] ACK seq=47 bat=0% hopDist=1
+[21:03:27.815] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:27.817] [NODE_157] [RADIO] ACK seq=48 bat=98% hopDist=1
+[21:03:28.022] [NODE_157] [NBR] --- Neighbor Table ---
+[21:03:28.023] [NODE_157] [NBR]   (empty)
+[21:03:28.231] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:03:28.232] [NODE_157] [NBR] -----------------------
+[21:03:34.369] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:34.376] [NODE_157] [RADIO] ACK seq=49 bat=95% hopDist=1
+[21:03:42.361] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:03:42.561] [NODE_157] [RADIO] ACK seq=50 bat=90% hopDist=1
+[21:03:52.392] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:03:52.394] [NODE_157] [RADIO] ACK seq=51 bat=85% hopDist=1
+[21:03:58.126] [NODE_157] [NBR] --- Neighbor Table ---
+[21:03:58.330] [NODE_157] [NBR]   (empty)
+[21:03:58.332] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:03:58.333] [NODE_157] [NBR] -----------------------
+[21:03:59.974] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:59.975] [NODE_157] [RADIO] ACK seq=52 bat=82% hopDist=1
+[21:04:08.571] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:04:08.572] [NODE_157] [RADIO] ACK seq=53 bat=77% hopDist=1
+[21:04:18.606] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:04:18.609] [NODE_157] [RADIO] ACK seq=54 bat=72% hopDist=1
+[21:04:23.316] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:23.318] [NODE_157] [RADIO] ACK seq=55 bat=70% hopDist=1
+[21:04:28.237] [NODE_157] [NBR] --- Neighbor Table ---
+[21:04:28.240] [NODE_157] [NBR]   (empty)
+[21:04:28.242] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:04:28.438] [NODE_157] [NBR] -----------------------
+[21:04:29.665] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:29.667] [NODE_157] [RADIO] ACK seq=56 bat=67% hopDist=1
+[21:04:31.919] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:32.123] [NODE_157] [RADIO] ACK seq=57 bat=66% hopDist=1
+[21:04:36.638] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:36.833] [NODE_157] [RADIO] ACK seq=58 bat=63% hopDist=1
+[21:04:40.929] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:40.931] [NODE_157] [RADIO] ACK seq=59 bat=61% hopDist=1
+[21:04:50.555] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:04:50.556] [NODE_157] [RADIO] ACK seq=60 bat=56% hopDist=1
+[21:04:50.964] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:50.966] [NODE_157] [RADIO] ACK seq=61 bat=56% hopDist=1
+[21:04:55.883] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:55.885] [NODE_157] [RADIO] ACK seq=62 bat=54% hopDist=1
+[21:04:58.337] [NODE_157] [NBR] --- Neighbor Table ---
+[21:04:58.339] [NODE_157] [NBR]   (empty)
+[21:04:58.340] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:04:58.542] [NODE_157] [NBR] -----------------------
+[21:05:01.818] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:01.820] [NODE_157] [RADIO] ACK seq=63 bat=51% hopDist=1
+[21:05:05.505] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:05.508] [NODE_157] [RADIO] ACK seq=64 bat=49% hopDist=1
+[21:05:05.914] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:05.916] [NODE_157] [RADIO] ACK seq=65 bat=49% hopDist=1
+[21:05:13.492] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:13.494] [NODE_157] [RADIO] ACK seq=66 bat=45% hopDist=1
+[21:05:21.072] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:21.076] [NODE_157] [RADIO] ACK seq=67 bat=41% hopDist=1
+[21:05:22.913] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:22.919] [NODE_157] [RADIO] ACK seq=68 bat=40% hopDist=1
+[21:05:23.118] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:23.119] [NODE_157] [RADIO] ACK seq=69 bat=40% hopDist=1
+[21:05:24.348] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:24.357] [NODE_157] [RADIO] ACK seq=70 bat=40% hopDist=1
+[21:05:24.361] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:24.552] [NODE_157] [RADIO] ACK seq=71 bat=40% hopDist=1
+[21:05:25.170] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:25.172] [NODE_157] [RADIO] ACK seq=72 bat=39% hopDist=1
+[21:05:28.238] [NODE_157] [NBR] --- Neighbor Table ---
+[21:05:28.247] [NODE_157] [NBR]   (empty)
+[21:05:28.443] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:05:28.444] [NODE_157] [NBR] -----------------------
+[21:05:31.106] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:31.113] [NODE_157] [RADIO] ACK seq=73 bat=36% hopDist=1
+[21:05:36.638] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:36.641] [NODE_157] [RADIO] ACK seq=74 bat=34% hopDist=1
+[21:05:40.525] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:40.527] [NODE_157] [RADIO] ACK seq=75 bat=32% hopDist=1
+[21:05:48.718] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:05:48.720] [NODE_157] [RADIO] ACK seq=76 bat=27% hopDist=1
+[21:05:50.561] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:50.562] [NODE_157] [RADIO] ACK seq=77 bat=27% hopDist=1
+[21:05:51.585] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:51.588] [NODE_157] [RADIO] ACK seq=78 bat=26% hopDist=1
+[21:05:58.343] [NODE_157] [NBR] --- Neighbor Table ---
+[21:05:58.345] [NODE_157] [NBR]   (empty)
+[21:05:58.347] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:05:58.547] [NODE_157] [NBR] -----------------------
+[21:06:00.801] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:00.804] [NODE_157] [RADIO] ACK seq=79 bat=21% hopDist=1
+[21:06:10.839] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:11.040] [NODE_157] [RADIO] ACK seq=80 bat=16% hopDist=1
+[21:06:11.451] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:11.453] [NODE_157] [RADIO] ACK seq=81 bat=16% hopDist=1
+[21:06:13.498] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:13.500] [NODE_157] [RADIO] ACK seq=82 bat=15% hopDist=1
+[21:06:14.933] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:14.935] [NODE_157] [RADIO] ACK seq=83 bat=14% hopDist=1
+[21:06:17.390] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:17.392] [NODE_157] [RADIO] ACK seq=84 bat=13% hopDist=1
+[21:06:18.004] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:18.005] [NODE_157] [RADIO] ACK seq=85 bat=13% hopDist=1
+[21:06:20.871] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:20.872] [NODE_157] [RADIO] ACK seq=86 bat=11% hopDist=1
+[21:06:23.738] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:23.740] [NODE_157] [RADIO] ACK seq=87 bat=10% hopDist=1
+[21:06:28.449] [NODE_157] [NBR] --- Neighbor Table ---
+[21:06:28.451] [NODE_157] [NBR]   (empty)
+[21:06:28.452] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:06:28.653] [NODE_157] [NBR] -----------------------
+[21:06:30.498] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:30.500] [NODE_157] [RADIO] ACK seq=88 bat=7% hopDist=1
+[21:06:33.365] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:33.367] [NODE_157] [RADIO] ACK seq=89 bat=5% hopDist=1
+[21:06:42.989] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:42.991] [NODE_157] [RADIO] ACK seq=90 bat=0% hopDist=1
+[21:06:53.435] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:53.438] [NODE_157] [RADIO] ACK seq=91 bat=95% hopDist=1
+[21:06:57.329] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:57.531] [NODE_157] [RADIO] ACK seq=92 bat=93% hopDist=1
+[21:06:58.557] [NODE_157] [NBR] --- Neighbor Table ---
+[21:06:58.560] [NODE_157] [NBR]   (empty)
+[21:06:58.560] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:06:58.759] [NODE_157] [NBR] -----------------------
+[21:07:03.266] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:03.271] [NODE_157] [RADIO] ACK seq=93 bat=90% hopDist=1
+[21:07:04.084] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:04.085] [NODE_157] [RADIO] ACK seq=94 bat=90% hopDist=1
+[21:07:07.983] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:07.985] [NODE_157] [RADIO] ACK seq=95 bat=88% hopDist=1
+[21:07:16.986] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:07:16.988] [NODE_157] [RADIO] ACK seq=96 bat=83% hopDist=1
+[21:07:18.420] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:18.422] [NODE_157] [RADIO] ACK seq=97 bat=83% hopDist=1
+[21:07:20.468] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:20.470] [NODE_157] [RADIO] ACK seq=98 bat=82% hopDist=1
+[21:07:25.588] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:25.591] [NODE_157] [RADIO] ACK seq=99 bat=79% hopDist=1
+[21:07:28.661] [NODE_157] [NBR] --- Neighbor Table ---
+[21:07:28.663] [NODE_157] [NBR]   (empty)
+[21:07:28.663] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:07:28.864] [NODE_157] [NBR] -----------------------
+[20:59:55.041] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:59:55.235] [NODE_82] [RADIO] ACK seq=0 bat=97% hopDist=1
+[20:59:56.262] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[20:59:56.264] [NODE_82] [RADIO] ACK seq=1 bat=96% hopDist=1
+[21:00:01.994] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:01.996] [NODE_82] [RADIO] ACK seq=2 bat=94% hopDist=1
+[21:00:03.017] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:03.020] [NODE_82] [RADIO] ACK seq=3 bat=93% hopDist=1
+[21:00:12.646] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:00:12.848] [NODE_82] [RADIO] ACK seq=4 bat=88% hopDist=1
+[21:00:14.078] [NODE_82] [NBR] --- Neighbor Table ---
+[21:00:14.079] [NODE_82] [NBR]   (empty)
+[21:00:14.281] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:00:14.282] [NODE_82] [NBR] -----------------------
+[21:00:19.606] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:19.607] [NODE_82] [RADIO] ACK seq=5 bat=85% hopDist=1
+[21:00:20.017] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:20.019] [NODE_82] [RADIO] ACK seq=6 bat=85% hopDist=1
+[21:00:20.221] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:20.222] [NODE_82] [RADIO] ACK seq=7 bat=84% hopDist=1
+[21:00:28.617] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:28.619] [NODE_82] [RADIO] ACK seq=8 bat=80% hopDist=1
+[21:00:34.761] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:34.764] [NODE_82] [RADIO] ACK seq=9 bat=77% hopDist=1
+[21:00:44.181] [NODE_82] [NBR] --- Neighbor Table ---
+[21:00:44.183] [NODE_82] [NBR]   (empty)
+[21:00:44.185] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:00:44.386] [NODE_82] [NBR] -----------------------
+[21:00:44.388] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:00:44.390] [NODE_82] [RADIO] ACK seq=10 bat=72% hopDist=1
+[21:00:54.422] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:00:54.424] [NODE_82] [RADIO] ACK seq=11 bat=67% hopDist=1
+[21:00:57.289] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:57.298] [NODE_82] [RADIO] ACK seq=12 bat=66% hopDist=1
+[21:00:58.728] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:58.729] [NODE_82] [RADIO] ACK seq=13 bat=66% hopDist=1
+[21:00:59.748] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:59.750] [NODE_82] [RADIO] ACK seq=14 bat=65% hopDist=1
+[21:00:59.955] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:00:59.956] [NODE_82] [RADIO] ACK seq=15 bat=65% hopDist=1
+[21:01:03.842] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:03.844] [NODE_82] [RADIO] ACK seq=16 bat=63% hopDist=1
+[21:01:08.144] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:08.150] [NODE_82] [RADIO] ACK seq=17 bat=61% hopDist=1
+[21:01:13.469] [NODE_82] [RADIO] ACK seq=18 bat=58% hopDist=1
+[21:01:14.287] [NODE_82] [NBR] --- Neighbor Table ---
+[21:01:14.288] [NODE_82] [NBR]   (empty)
+[21:01:14.290] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:01:14.493] [NODE_82] [NBR] -----------------------
+[21:01:22.274] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:01:22.276] [NODE_82] [RADIO] ACK seq=19 bat=53% hopDist=1
+[21:01:22.684] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:22.685] [NODE_82] [RADIO] ACK seq=20 bat=53% hopDist=1
+[21:01:23.298] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:23.300] [NODE_82] [RADIO] ACK seq=21 bat=53% hopDist=1
+[21:01:25.350] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:25.551] [NODE_82] [RADIO] ACK seq=22 bat=52% hopDist=1
+[21:01:27.189] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:27.191] [NODE_82] [RADIO] ACK seq=23 bat=51% hopDist=1
+[21:01:30.057] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:30.059] [NODE_82] [RADIO] ACK seq=24 bat=50% hopDist=1
+[21:01:36.003] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:36.010] [NODE_82] [RADIO] ACK seq=25 bat=47% hopDist=1
+[21:01:40.092] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:40.095] [NODE_82] [RADIO] ACK seq=26 bat=45% hopDist=1
+[21:01:43.582] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:43.778] [NODE_82] [RADIO] ACK seq=27 bat=43% hopDist=1
+[21:01:44.401] [NODE_82] [NBR] --- Neighbor Table ---
+[21:01:44.597] [NODE_82] [NBR]   (empty)
+[21:01:44.598] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:01:44.600] [NODE_82] [NBR] -----------------------
+[21:01:46.442] [NODE_82] [RADIO] ACK seq=28 bat=41% hopDist=1
+[21:01:47.874] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:47.875] [NODE_82] [RADIO] ACK seq=29 bat=41% hopDist=1
+[21:01:52.379] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:52.381] [NODE_82] [RADIO] ACK seq=30 bat=38% hopDist=1
+[21:01:56.885] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:01:56.887] [NODE_82] [RADIO] ACK seq=31 bat=36% hopDist=1
+[21:02:00.572] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:00.575] [NODE_82] [RADIO] ACK seq=32 bat=34% hopDist=1
+[21:02:03.439] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:03.441] [NODE_82] [RADIO] ACK seq=33 bat=33% hopDist=1
+[21:02:08.357] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:08.559] [NODE_82] [RADIO] ACK seq=34 bat=31% hopDist=1
+[21:02:14.293] [NODE_82] [NBR] --- Neighbor Table ---
+[21:02:14.294] [NODE_82] [NBR]   (empty)
+[21:02:14.296] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:02:14.498] [NODE_82] [NBR] -----------------------
+[21:02:16.546] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:02:16.764] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:16.766] [NODE_82] [RADIO] ACK seq=36 bat=26% hopDist=1
+[21:02:17.160] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:17.161] [NODE_82] [RADIO] ACK seq=37 bat=26% hopDist=1
+[21:02:18.593] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:18.595] [NODE_82] [RADIO] ACK seq=38 bat=25% hopDist=1
+[21:02:23.922] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:24.133] [NODE_82] [RADIO] ACK seq=39 bat=23% hopDist=1
+[21:02:32.520] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:02:32.522] [NODE_82] [RADIO] ACK seq=40 bat=18% hopDist=1
+[21:02:36.002] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:36.003] [NODE_82] [RADIO] ACK seq=41 bat=17% hopDist=1
+[21:02:40.102] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:40.103] [NODE_82] [RADIO] ACK seq=42 bat=15% hopDist=1
+[21:02:44.407] [NODE_82] [NBR] --- Neighbor Table ---
+[21:02:44.410] [NODE_82] [NBR]   (empty)
+[21:02:44.418] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:02:44.609] [NODE_82] [NBR] -----------------------
+[21:02:48.296] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:48.494] [NODE_82] [RADIO] ACK seq=43 bat=11% hopDist=1
+[21:02:50.338] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:50.339] [NODE_82] [RADIO] ACK seq=44 bat=10% hopDist=1
+[21:02:50.542] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:50.544] [NODE_82] [RADIO] ACK seq=45 bat=10% hopDist=1
+[21:02:50.955] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:50.959] [NODE_82] [RADIO] ACK seq=46 bat=9% hopDist=1
+[21:02:50.961] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:51.160] [NODE_82] [RADIO] ACK seq=47 bat=9% hopDist=1
+[21:02:56.893] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:56.900] [NODE_82] [RADIO] ACK seq=48 bat=6% hopDist=1
+[21:02:57.097] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:02:57.099] [NODE_82] [RADIO] ACK seq=49 bat=6% hopDist=1
+[21:03:03.860] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:03.862] [NODE_82] [RADIO] ACK seq=50 bat=3% hopDist=1
+[21:03:08.770] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:08.771] [NODE_82] [RADIO] ACK seq=51 bat=0% hopDist=1
+[21:03:14.504] [NODE_82] [NBR] --- Neighbor Table ---
+[21:03:14.507] [NODE_82] [NBR]   (empty)
+[21:03:14.508] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:03:14.708] [NODE_82] [NBR] -----------------------
+[21:03:18.191] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:18.192] [NODE_82] [RADIO] ACK seq=52 bat=96% hopDist=1
+[21:03:24.334] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:24.336] [NODE_82] [RADIO] ACK seq=53 bat=93% hopDist=1
+[21:03:24.948] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:24.950] [NODE_82] [RADIO] ACK seq=54 bat=92% hopDist=1
+[21:03:25.567] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:25.569] [NODE_82] [RADIO] ACK seq=55 bat=92% hopDist=1
+[21:03:27.406] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:27.408] [NODE_82] [RADIO] ACK seq=56 bat=91% hopDist=1
+[21:03:27.819] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:28.020] [NODE_82] [RADIO] ACK seq=57 bat=91% hopDist=1
+[21:03:33.145] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:33.148] [NODE_82] [RADIO] ACK seq=58 bat=88% hopDist=1
+[21:03:38.260] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:38.262] [NODE_82] [RADIO] ACK seq=59 bat=86% hopDist=1
+[21:03:42.358] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:42.360] [NODE_82] [RADIO] ACK seq=60 bat=84% hopDist=1
+[21:03:44.404] [NODE_82] [NBR] --- Neighbor Table ---
+[21:03:44.406] [NODE_82] [NBR]   (empty)
+[21:03:44.407] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:03:44.609] [NODE_82] [NBR] -----------------------
+[21:03:50.753] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:03:50.755] [NODE_82] [RADIO] ACK seq=61 bat=79% hopDist=1
+[21:03:54.239] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:58.128] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:03:58.129] [NODE_82] [RADIO] ACK seq=63 bat=76% hopDist=1
+[21:04:05.294] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:05.295] [NODE_82] [RADIO] ACK seq=64 bat=72% hopDist=1
+[21:04:05.908] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:05.910] [NODE_82] [RADIO] ACK seq=65 bat=72% hopDist=1
+[21:04:07.341] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:07.344] [NODE_82] [RADIO] ACK seq=66 bat=71% hopDist=1
+[21:04:08.777] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:08.793] [NODE_82] [RADIO] ACK seq=67 bat=71% hopDist=1
+[21:04:12.464] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:12.466] [NODE_82] [RADIO] ACK seq=68 bat=69% hopDist=1
+[21:04:14.509] [NODE_82] [NBR] --- Neighbor Table ---
+[21:04:14.511] [NODE_82] [NBR]   (empty)
+[21:04:14.512] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:04:14.733] [NODE_82] [NBR] -----------------------
+[21:04:15.124] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:15.126] [NODE_82] [RADIO] ACK seq=69 bat=67% hopDist=1
+[21:04:24.346] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:24.348] [NODE_82] [RADIO] ACK seq=70 bat=63% hopDist=1
+[21:04:25.159] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:25.161] [NODE_82] [RADIO] ACK seq=71 bat=62% hopDist=1
+[21:04:29.255] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:29.257] [NODE_82] [RADIO] ACK seq=72 bat=60% hopDist=1
+[21:04:32.744] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:32.755] [NODE_82] [RADIO] ACK seq=73 bat=59% hopDist=1
+[21:04:39.495] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:39.497] [NODE_82] [RADIO] ACK seq=74 bat=55% hopDist=1
+[21:04:41.338] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:42.977] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:42.978] [NODE_82] [RADIO] ACK seq=76 bat=53% hopDist=1
+[21:04:44.684] [NODE_82] [NBR] --- Neighbor Table ---
+[21:04:44.685] [NODE_82] [NBR]   (empty)
+[21:04:44.687] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:04:44.823] [NODE_82] [NBR] -----------------------
+[21:04:47.688] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:47.689] [NODE_82] [RADIO] ACK seq=77 bat=51% hopDist=1
+[21:04:51.169] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:51.171] [NODE_82] [RADIO] ACK seq=78 bat=49% hopDist=1
+[21:04:51.578] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:51.580] [NODE_82] [RADIO] ACK seq=79 bat=49% hopDist=1
+[21:04:58.544] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:04:58.545] [NODE_82] [RADIO] ACK seq=80 bat=46% hopDist=1
+[21:05:07.143] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:05:07.145] [NODE_82] [RADIO] ACK seq=81 bat=41% hopDist=1
+[21:05:08.577] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:08.578] [NODE_82] [RADIO] ACK seq=82 bat=41% hopDist=1
+[21:05:08.580] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:08.781] [NODE_82] [RADIO] ACK seq=83 bat=41% hopDist=1
+[21:05:14.720] [NODE_82] [NBR] --- Neighbor Table ---
+[21:05:14.722] [NODE_82] [NBR]   (empty)
+[21:05:14.723] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:05:14.925] [NODE_82] [NBR] -----------------------
+[21:05:17.181] [NODE_82] [RADIO] ACK seq=84 bat=36% hopDist=1
+[21:05:27.009] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:05:27.010] [NODE_82] [RADIO] ACK seq=85 bat=31% hopDist=1
+[21:05:35.610] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:35.612] [NODE_82] [RADIO] ACK seq=86 bat=27% hopDist=1
+[21:05:37.048] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:37.050] [NODE_82] [RADIO] ACK seq=87 bat=27% hopDist=1
+[21:05:37.456] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:37.462] [NODE_82] [RADIO] ACK seq=88 bat=26% hopDist=1
+[21:05:37.658] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:37.660] [NODE_82] [RADIO] ACK seq=89 bat=26% hopDist=1
+[21:05:39.297] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:39.298] [NODE_82] [RADIO] ACK seq=90 bat=25% hopDist=1
+[21:05:44.826] [NODE_82] [NBR] --- Neighbor Table ---
+[21:05:44.829] [NODE_82] [NBR]   (empty)
+[21:05:44.829] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:05:45.035] [NODE_82] [NBR] -----------------------
+[21:05:49.127] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:05:49.130] [NODE_82] [RADIO] ACK seq=91 bat=20% hopDist=1
+[21:05:51.993] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:52.000] [NODE_82] [RADIO] ACK seq=92 bat=19% hopDist=1
+[21:05:55.890] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:55.893] [NODE_82] [RADIO] ACK seq=93 bat=17% hopDist=1
+[21:05:58.550] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:05:58.551] [NODE_82] [RADIO] ACK seq=94 bat=16% hopDist=1
+[21:06:07.150] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:07.152] [NODE_82] [RADIO] ACK seq=95 bat=11% hopDist=1
+[21:06:10.836] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:10.837] [NODE_82] [RADIO] ACK seq=96 bat=10% hopDist=1
+[21:06:12.065] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:12.066] [NODE_82] [RADIO] ACK seq=97 bat=9% hopDist=1
+[21:06:14.727] [NODE_82] [NBR] --- Neighbor Table ---
+[21:06:14.729] [NODE_82] [NBR]   (empty)
+[21:06:14.733] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:06:14.931] [NODE_82] [NBR] -----------------------
+[21:06:25.174] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:25.379] [NODE_82] [RADIO] ACK seq=99 bat=2% hopDist=1
+[21:06:37.257] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:06:37.259] [NODE_82] [RADIO] ACK seq=100 bat=96% hopDist=1
+[21:06:44.833] [NODE_82] [NBR] --- Neighbor Table ---
+[21:06:44.835] [NODE_82] [NBR]   (empty)
+[21:06:44.836] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:06:45.037] [NODE_82] [NBR] -----------------------
+[21:06:47.290] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:47.293] [NODE_82] [RADIO] ACK seq=101 bat=91% hopDist=1
+[21:06:57.326] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:06:57.327] [NODE_82] [RADIO] ACK seq=102 bat=86% hopDist=1
+[21:07:04.494] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:04.495] [NODE_82] [RADIO] ACK seq=103 bat=83% hopDist=1
+[21:07:07.770] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:07.772] [NODE_82] [RADIO] ACK seq=104 bat=81% hopDist=1
+[21:07:11.252] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:11.255] [NODE_82] [RADIO] ACK seq=105 bat=79% hopDist=1
+[21:07:14.938] [NODE_82] [NBR] --- Neighbor Table ---
+[21:07:14.939] [NODE_82] [NBR]   (empty)
+[21:07:14.941] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[21:07:15.143] [NODE_82] [NBR] -----------------------
+[21:07:16.990] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:17.191] [NODE_82] [RADIO] ACK seq=106 bat=77% hopDist=1
+[21:07:25.383] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[21:07:25.385] [NODE_82] [RADIO] ACK seq=107 bat=72% hopDist=1
+[21:07:27.636] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[21:07:27.637] [NODE_82] [RADIO] ACK seq=108 bat=71% hopDist=1
+==================== Server side ====================
+[20:59:54.267] void/telemetry {"node_id":82, "battery":97, "cpu":25, "sos_alert":1, "seq":0, "uptime_ms":11041, "hops":1}
+[20:59:55.476] void/telemetry {"node_id":82, "battery":96, "cpu":25, "sos_alert":1, "seq":1, "uptime_ms":12247, "hops":1}
+[21:00:01.188] void/telemetry {"node_id":82, "battery":94, "cpu":25, "sos_alert":1, "seq":2, "uptime_ms":17967, "hops":1}
+[21:00:02.202] void/telemetry {"node_id":82, "battery":93, "cpu":21, "sos_alert":1, "seq":3, "uptime_ms":18971, "hops":1}
+[21:00:05.598] void/telemetry {"node_id":157, "battery":98, "cpu":20, "sos_alert":1, "seq":0, "uptime_ms":8537, "hops":1}
+[21:00:05.956] void/telemetry {"node_id":157, "battery":98, "cpu":25, "sos_alert":1, "seq":1, "uptime_ms":8960, "hops":1}
+[21:00:11.320] void/telemetry {"node_id":82, "battery":88, "cpu":24, "sos_alert":0, "seq":4, "uptime_ms":28093, "hops":1}
+[21:00:15.073] void/telemetry {"node_id":157, "battery":93, "cpu":15, "sos_alert":0, "seq":2, "uptime_ms":18076, "hops":1}
+[21:00:15.326] void/telemetry {"node_id":157, "battery":93, "cpu":19, "sos_alert":1, "seq":3, "uptime_ms":18279, "hops":1}
+[21:00:15.720] void/telemetry {"node_id":157, "battery":93, "cpu":27, "sos_alert":1, "seq":4, "uptime_ms":18689, "hops":1}
+[21:00:18.831] void/telemetry {"node_id":82, "battery":85, "cpu":12, "sos_alert":1, "seq":5, "uptime_ms":35609, "hops":1}
+[21:00:19.205] void/telemetry {"node_id":82, "battery":85, "cpu":15, "sos_alert":1, "seq":6, "uptime_ms":35912, "hops":1}
+[21:00:19.523] void/telemetry {"node_id":82, "battery":84, "cpu":10, "sos_alert":1, "seq":7, "uptime_ms":36246, "hops":1}
+[21:00:25.131] void/telemetry {"node_id":157, "battery":88, "cpu":29, "sos_alert":0, "seq":5, "uptime_ms":28109, "hops":1}
+[21:00:25.615] void/telemetry {"node_id":157, "battery":88, "cpu":28, "sos_alert":1, "seq":6, "uptime_ms":28618, "hops":1}
+[21:00:27.892] void/telemetry {"node_id":82, "battery":80, "cpu":15, "sos_alert":1, "seq":8, "uptime_ms":44668, "hops":1}
+[21:00:33.643] void/telemetry {"node_id":157, "battery":84, "cpu":22, "sos_alert":1, "seq":7, "uptime_ms":36634, "hops":1}
+[21:00:34.015] void/telemetry {"node_id":82, "battery":77, "cpu":19, "sos_alert":1, "seq":9, "uptime_ms":50780, "hops":1}
+[21:00:35.536] void/telemetry {"node_id":157, "battery":83, "cpu":19, "sos_alert":1, "seq":8, "uptime_ms":38539, "hops":1}
+[21:00:37.650] void/telemetry {"node_id":157, "battery":82, "cpu":22, "sos_alert":1, "seq":9, "uptime_ms":40545, "hops":1}
+[21:00:41.279] void/telemetry {"node_id":157, "battery":80, "cpu":29, "sos_alert":1, "seq":10, "uptime_ms":44283, "hops":1}
+[21:00:41.883] void/telemetry {"node_id":157, "battery":80, "cpu":18, "sos_alert":1, "seq":11, "uptime_ms":44887, "hops":1}
+[21:00:43.436] void/telemetry {"node_id":82, "battery":72, "cpu":11, "sos_alert":0, "seq":10, "uptime_ms":60212, "hops":1}
+[21:00:50.800] void/telemetry {"node_id":157, "battery":76, "cpu":17, "sos_alert":1, "seq":12, "uptime_ms":53802, "hops":1}
+[21:00:50.999] void/telemetry {"node_id":157, "battery":76, "cpu":10, "sos_alert":1, "seq":13, "uptime_ms":54006, "hops":1}
+[21:00:53.456] void/telemetry {"node_id":82, "battery":67, "cpu":23, "sos_alert":0, "seq":11, "uptime_ms":70229, "hops":1}
+[21:00:56.459] void/telemetry {"node_id":82, "battery":66, "cpu":19, "sos_alert":1, "seq":12, "uptime_ms":73237, "hops":1}
+[21:00:56.912] void/telemetry {"node_id":157, "battery":73, "cpu":18, "sos_alert":1, "seq":14, "uptime_ms":59918, "hops":1}
+[21:00:57.363] void/telemetry {"node_id":82, "battery":66, "cpu":12, "sos_alert":1, "seq":13, "uptime_ms":74141, "hops":1}
+[21:00:58.680] void/telemetry {"node_id":82, "battery":65, "cpu":26, "sos_alert":1, "seq":14, "uptime_ms":75447, "hops":1}
+[21:00:59.200] void/telemetry {"node_id":82, "battery":65, "cpu":19, "sos_alert":1, "seq":15, "uptime_ms":75955, "hops":1}
+[21:01:00.224] void/telemetry {"node_id":157, "battery":71, "cpu":22, "sos_alert":1, "seq":15, "uptime_ms":63028, "hops":1}
+[21:01:02.988] void/telemetry {"node_id":82, "battery":63, "cpu":24, "sos_alert":1, "seq":16, "uptime_ms":79764, "hops":1}
+[21:01:05.435] void/telemetry {"node_id":157, "battery":68, "cpu":27, "sos_alert":1, "seq":16, "uptime_ms":68443, "hops":1}
+[21:01:07.731] void/telemetry {"node_id":82, "battery":61, "cpu":20, "sos_alert":1, "seq":17, "uptime_ms":84173, "hops":1}
+[21:01:09.513] void/telemetry {"node_id":157, "battery":67, "cpu":27, "sos_alert":1, "seq":17, "uptime_ms":71953, "hops":1}
+[21:01:11.139] void/telemetry {"node_id":157, "battery":66, "cpu":10, "sos_alert":1, "seq":18, "uptime_ms":74060, "hops":1}
+[21:01:12.716] void/telemetry {"node_id":82, "battery":58, "cpu":21, "sos_alert":1, "seq":18, "uptime_ms":89488, "hops":1}
+[21:01:13.987] void/telemetry {"node_id":157, "battery":64, "cpu":25, "sos_alert":1, "seq":19, "uptime_ms":76994, "hops":1}
+[21:01:21.537] void/telemetry {"node_id":82, "battery":53, "cpu":16, "sos_alert":0, "seq":19, "uptime_ms":98306, "hops":1}
+[21:01:21.840] void/telemetry {"node_id":82, "battery":53, "cpu":19, "sos_alert":1, "seq":20, "uptime_ms":98609, "hops":1}
+[21:01:22.540] void/telemetry {"node_id":82, "battery":53, "cpu":11, "sos_alert":1, "seq":21, "uptime_ms":99314, "hops":1}
+[21:01:23.376] void/telemetry {"node_id":157, "battery":59, "cpu":15, "sos_alert":0, "seq":20, "uptime_ms":86311, "hops":1}
+[21:01:24.649] void/telemetry {"node_id":82, "battery":52, "cpu":21, "sos_alert":1, "seq":22, "uptime_ms":101420, "hops":1}
+[21:01:26.116] void/telemetry {"node_id":157, "battery":58, "cpu":26, "sos_alert":1, "seq":21, "uptime_ms":89119, "hops":1}
+[21:01:26.172] void/telemetry {"node_id":82, "battery":51, "cpu":10, "sos_alert":1, "seq":23, "uptime_ms":102925, "hops":1}
+[21:01:29.264] void/telemetry {"node_id":82, "battery":50, "cpu":23, "sos_alert":1, "seq":24, "uptime_ms":106031, "hops":1}
+[21:01:30.441] void/telemetry {"node_id":157, "battery":56, "cpu":17, "sos_alert":1, "seq":22, "uptime_ms":93430, "hops":1}
+[21:01:30.676] void/telemetry {"node_id":157, "battery":56, "cpu":19, "sos_alert":1, "seq":23, "uptime_ms":93641, "hops":1}
+[21:01:31.715] void/telemetry {"node_id":157, "battery":55, "cpu":24, "sos_alert":1, "seq":24, "uptime_ms":94545, "hops":1}
+[21:01:35.317] void/telemetry {"node_id":82, "battery":47, "cpu":17, "sos_alert":1, "seq":25, "uptime_ms":111942, "hops":1}
+[21:01:39.288] void/telemetry {"node_id":82, "battery":45, "cpu":24, "sos_alert":1, "seq":26, "uptime_ms":116058, "hops":1}
+[21:01:41.363] void/telemetry {"node_id":157, "battery":50, "cpu":26, "sos_alert":0, "seq":25, "uptime_ms":104364, "hops":1}
+[21:01:42.896] void/telemetry {"node_id":82, "battery":43, "cpu":13, "sos_alert":1, "seq":27, "uptime_ms":119666, "hops":1}
+[21:01:45.703] void/telemetry {"node_id":82, "battery":41, "cpu":11, "sos_alert":1, "seq":28, "uptime_ms":122476, "hops":1}
+[21:01:46.268] void/telemetry {"node_id":157, "battery":48, "cpu":24, "sos_alert":1, "seq":26, "uptime_ms":109274, "hops":1}
+[21:01:47.132] void/telemetry {"node_id":82, "battery":41, "cpu":11, "sos_alert":1, "seq":29, "uptime_ms":123881, "hops":1}
+[21:01:50.337] void/telemetry {"node_id":157, "battery":46, "cpu":23, "sos_alert":1, "seq":27, "uptime_ms":113283, "hops":1}
+[21:01:51.648] void/telemetry {"node_id":82, "battery":38, "cpu":12, "sos_alert":1, "seq":30, "uptime_ms":128414, "hops":1}
+[21:01:56.152] void/telemetry {"node_id":82, "battery":36, "cpu":21, "sos_alert":1, "seq":31, "uptime_ms":132924, "hops":1}
+[21:01:57.424] void/telemetry {"node_id":157, "battery":42, "cpu":25, "sos_alert":1, "seq":28, "uptime_ms":120427, "hops":1}
+[21:01:59.760] void/telemetry {"node_id":82, "battery":34, "cpu":14, "sos_alert":1, "seq":32, "uptime_ms":136532, "hops":1}
+[21:02:02.667] void/telemetry {"node_id":82, "battery":33, "cpu":24, "sos_alert":1, "seq":33, "uptime_ms":139439, "hops":1}
+[21:02:07.467] void/telemetry {"node_id":157, "battery":37, "cpu":15, "sos_alert":0, "seq":29, "uptime_ms":130444, "hops":1}
+[21:02:07.607] void/telemetry {"node_id":82, "battery":31, "cpu":22, "sos_alert":1, "seq":34, "uptime_ms":144348, "hops":1}
+[21:02:11.748] void/telemetry {"node_id":157, "battery":35, "cpu":17, "sos_alert":1, "seq":30, "uptime_ms":134753, "hops":1}
+[21:02:13.755] void/telemetry {"node_id":157, "battery":34, "cpu":10, "sos_alert":1, "seq":31, "uptime_ms":136759, "hops":1}
+[21:02:15.732] void/telemetry {"node_id":82, "battery":26, "cpu":24, "sos_alert":0, "seq":35, "uptime_ms":152498, "hops":1}
+[21:02:15.832] void/telemetry {"node_id":82, "battery":26, "cpu":24, "sos_alert":1, "seq":36, "uptime_ms":152602, "hops":1}
+[21:02:16.342] void/telemetry {"node_id":82, "battery":26, "cpu":19, "sos_alert":1, "seq":37, "uptime_ms":153106, "hops":1}
+[21:02:17.839] void/telemetry {"node_id":82, "battery":25, "cpu":11, "sos_alert":1, "seq":38, "uptime_ms":154612, "hops":1}
+[21:02:20.367] void/telemetry {"node_id":157, "battery":31, "cpu":11, "sos_alert":1, "seq":32, "uptime_ms":143371, "hops":1}
+[21:02:21.069] void/telemetry {"node_id":157, "battery":31, "cpu":26, "sos_alert":1, "seq":33, "uptime_ms":144075, "hops":1}
+[21:02:23.155] void/telemetry {"node_id":82, "battery":23, "cpu":25, "sos_alert":1, "seq":39, "uptime_ms":159922, "hops":1}
+[21:02:29.484] void/telemetry {"node_id":157, "battery":26, "cpu":17, "sos_alert":0, "seq":34, "uptime_ms":152492, "hops":1}
+[21:02:31.768] void/telemetry {"node_id":82, "battery":18, "cpu":16, "sos_alert":0, "seq":40, "uptime_ms":168539, "hops":1}
+[21:02:32.596] void/telemetry {"node_id":157, "battery":25, "cpu":18, "sos_alert":1, "seq":35, "uptime_ms":155600, "hops":1}
+[21:02:34.800] void/telemetry {"node_id":157, "battery":24, "cpu":25, "sos_alert":1, "seq":36, "uptime_ms":157806, "hops":1}
+[21:02:35.280] void/telemetry {"node_id":82, "battery":17, "cpu":18, "sos_alert":1, "seq":41, "uptime_ms":172048, "hops":1}
+[21:02:39.390] void/telemetry {"node_id":82, "battery":15, "cpu":11, "sos_alert":1, "seq":42, "uptime_ms":176155, "hops":1}
+[21:02:40.316] void/telemetry {"node_id":157, "battery":21, "cpu":11, "sos_alert":1, "seq":37, "uptime_ms":163316, "hops":1}
+[21:02:45.926] void/telemetry {"node_id":157, "battery":18, "cpu":18, "sos_alert":1, "seq":38, "uptime_ms":168927, "hops":1}
+[21:02:47.527] void/telemetry {"node_id":157, "battery":17, "cpu":13, "sos_alert":1, "seq":39, "uptime_ms":170534, "hops":1}
+[21:02:47.608] void/telemetry {"node_id":82, "battery":11, "cpu":25, "sos_alert":1, "seq":43, "uptime_ms":184371, "hops":1}
+[21:02:49.512] void/telemetry {"node_id":82, "battery":10, "cpu":19, "sos_alert":1, "seq":44, "uptime_ms":186277, "hops":1}
+[21:02:49.717] void/telemetry {"node_id":82, "battery":10, "cpu":16, "sos_alert":1, "seq":45, "uptime_ms":186480, "hops":1}
+[21:02:50.138] void/telemetry {"node_id":82, "battery":9, "cpu":18, "sos_alert":1, "seq":46, "uptime_ms":186884, "hops":1}
+[21:02:50.261] void/telemetry {"node_id":82, "battery":9, "cpu":20, "sos_alert":1, "seq":47, "uptime_ms":186987, "hops":1}
+[21:02:56.031] void/telemetry {"node_id":82, "battery":6, "cpu":19, "sos_alert":1, "seq":48, "uptime_ms":192798, "hops":1}
+[21:02:56.235] void/telemetry {"node_id":82, "battery":6, "cpu":12, "sos_alert":1, "seq":49, "uptime_ms":193002, "hops":1}
+[21:02:57.547] void/telemetry {"node_id":157, "battery":12, "cpu":18, "sos_alert":0, "seq":40, "uptime_ms":180552, "hops":1}
+[21:03:03.148] void/telemetry {"node_id":82, "battery":3, "cpu":29, "sos_alert":1, "seq":50, "uptime_ms":199913, "hops":1}
+[21:03:07.559] void/telemetry {"node_id":157, "battery":7, "cpu":20, "sos_alert":0, "seq":41, "uptime_ms":190568, "hops":1}
+[21:03:07.956] void/telemetry {"node_id":82, "battery":0, "cpu":25, "sos_alert":1, "seq":51, "uptime_ms":204723, "hops":1}
+[21:03:08.063] void/telemetry {"node_id":157, "battery":7, "cpu":13, "sos_alert":1, "seq":42, "uptime_ms":190972, "hops":1}
+[21:03:14.880] void/telemetry {"node_id":157, "battery":4, "cpu":28, "sos_alert":1, "seq":43, "uptime_ms":197883, "hops":1}
+[21:03:17.471] void/telemetry {"node_id":82, "battery":96, "cpu":26, "sos_alert":1, "seq":52, "uptime_ms":214241, "hops":1}
+[21:03:20.288] void/telemetry {"node_id":157, "battery":1, "cpu":19, "sos_alert":1, "seq":44, "uptime_ms":203294, "hops":1}
+[21:03:20.393] void/telemetry {"node_id":157, "battery":1, "cpu":22, "sos_alert":1, "seq":45, "uptime_ms":203397, "hops":1}
+[21:03:22.706] void/telemetry {"node_id":157, "battery":0, "cpu":17, "sos_alert":1, "seq":46, "uptime_ms":205603, "hops":1}
+[21:03:23.234] void/telemetry {"node_id":157, "battery":0, "cpu":18, "sos_alert":1, "seq":47, "uptime_ms":206212, "hops":1}
+[21:03:23.484] void/telemetry {"node_id":82, "battery":93, "cpu":14, "sos_alert":1, "seq":53, "uptime_ms":220252, "hops":1}
+[21:03:24.193] void/telemetry {"node_id":82, "battery":92, "cpu":29, "sos_alert":1, "seq":54, "uptime_ms":220956, "hops":1}
+[21:03:24.872] void/telemetry {"node_id":82, "battery":92, "cpu":13, "sos_alert":1, "seq":55, "uptime_ms":221560, "hops":1}
+[21:03:26.717] void/telemetry {"node_id":82, "battery":91, "cpu":20, "sos_alert":1, "seq":56, "uptime_ms":223482, "hops":1}
+[21:03:27.024] void/telemetry {"node_id":157, "battery":98, "cpu":12, "sos_alert":1, "seq":48, "uptime_ms":210028, "hops":1}
+[21:03:27.119] void/telemetry {"node_id":82, "battery":91, "cpu":27, "sos_alert":1, "seq":57, "uptime_ms":223886, "hops":1}
+[21:03:32.450] void/telemetry {"node_id":82, "battery":88, "cpu":18, "sos_alert":1, "seq":58, "uptime_ms":229097, "hops":1}
+[21:03:33.540] void/telemetry {"node_id":157, "battery":95, "cpu":19, "sos_alert":1, "seq":49, "uptime_ms":216542, "hops":1}
+[21:03:37.504] void/telemetry {"node_id":82, "battery":86, "cpu":23, "sos_alert":1, "seq":59, "uptime_ms":234271, "hops":1}
+[21:03:41.634] void/telemetry {"node_id":82, "battery":84, "cpu":12, "sos_alert":1, "seq":60, "uptime_ms":238380, "hops":1}
+[21:03:41.724] void/telemetry {"node_id":157, "battery":90, "cpu":13, "sos_alert":0, "seq":50, "uptime_ms":224654, "hops":1}
+[21:03:50.033] void/telemetry {"node_id":82, "battery":79, "cpu":10, "sos_alert":0, "seq":61, "uptime_ms":246796, "hops":1}
+[21:03:51.687] void/telemetry {"node_id":157, "battery":85, "cpu":13, "sos_alert":0, "seq":51, "uptime_ms":234672, "hops":1}
+[21:03:53.545] void/telemetry {"node_id":82, "battery":78, "cpu":13, "sos_alert":1, "seq":62, "uptime_ms":250204, "hops":1}
+[21:03:57.399] void/telemetry {"node_id":82, "battery":76, "cpu":25, "sos_alert":1, "seq":63, "uptime_ms":254162, "hops":1}
+[21:03:59.254] void/telemetry {"node_id":157, "battery":82, "cpu":21, "sos_alert":1, "seq":52, "uptime_ms":242204, "hops":1}
+[21:04:04.512] void/telemetry {"node_id":82, "battery":72, "cpu":26, "sos_alert":1, "seq":64, "uptime_ms":261275, "hops":1}
+[21:04:05.112] void/telemetry {"node_id":82, "battery":72, "cpu":26, "sos_alert":1, "seq":65, "uptime_ms":261879, "hops":1}
+[21:04:06.616] void/telemetry {"node_id":82, "battery":71, "cpu":16, "sos_alert":1, "seq":66, "uptime_ms":263384, "hops":1}
+[21:04:07.775] void/telemetry {"node_id":157, "battery":77, "cpu":10, "sos_alert":0, "seq":53, "uptime_ms":250725, "hops":1}
+[21:04:08.308] void/telemetry {"node_id":82, "battery":71, "cpu":27, "sos_alert":1, "seq":67, "uptime_ms":264789, "hops":1}
+[21:04:11.747] void/telemetry {"node_id":82, "battery":69, "cpu":10, "sos_alert":1, "seq":68, "uptime_ms":268501, "hops":1}
+[21:04:14.258] void/telemetry {"node_id":82, "battery":67, "cpu":13, "sos_alert":1, "seq":69, "uptime_ms":271021, "hops":1}
+[21:04:17.817] void/telemetry {"node_id":157, "battery":72, "cpu":22, "sos_alert":0, "seq":54, "uptime_ms":260742, "hops":1}
+[21:04:22.472] void/telemetry {"node_id":157, "battery":70, "cpu":21, "sos_alert":1, "seq":55, "uptime_ms":265474, "hops":1}
+[21:04:23.691] void/telemetry {"node_id":82, "battery":63, "cpu":29, "sos_alert":1, "seq":70, "uptime_ms":280238, "hops":1}
+[21:04:24.286] void/telemetry {"node_id":82, "battery":62, "cpu":12, "sos_alert":1, "seq":71, "uptime_ms":281053, "hops":1}
+[21:04:28.399] void/telemetry {"node_id":82, "battery":60, "cpu":29, "sos_alert":1, "seq":72, "uptime_ms":285162, "hops":1}
+[21:04:28.982] void/telemetry {"node_id":157, "battery":67, "cpu":22, "sos_alert":1, "seq":56, "uptime_ms":271988, "hops":1}
+[21:04:31.201] void/telemetry {"node_id":157, "battery":66, "cpu":28, "sos_alert":1, "seq":57, "uptime_ms":274194, "hops":1}
+[21:04:32.039] void/telemetry {"node_id":82, "battery":59, "cpu":28, "sos_alert":1, "seq":73, "uptime_ms":288770, "hops":1}
+[21:04:35.900] void/telemetry {"node_id":157, "battery":63, "cpu":22, "sos_alert":1, "seq":58, "uptime_ms":278906, "hops":1}
+[21:04:38.628] void/telemetry {"node_id":82, "battery":55, "cpu":29, "sos_alert":1, "seq":74, "uptime_ms":295389, "hops":1}
+[21:04:40.118] void/telemetry {"node_id":157, "battery":61, "cpu":22, "sos_alert":1, "seq":59, "uptime_ms":283116, "hops":1}
+[21:04:40.635] void/telemetry {"node_id":82, "battery":54, "cpu":21, "sos_alert":1, "seq":75, "uptime_ms":297398, "hops":1}
+[21:04:42.241] void/telemetry {"node_id":82, "battery":53, "cpu":13, "sos_alert":1, "seq":76, "uptime_ms":299003, "hops":1}
+[21:04:46.851] void/telemetry {"node_id":82, "battery":51, "cpu":15, "sos_alert":1, "seq":77, "uptime_ms":303614, "hops":1}
+[21:04:49.849] void/telemetry {"node_id":157, "battery":56, "cpu":17, "sos_alert":0, "seq":60, "uptime_ms":292831, "hops":1}
+[21:04:50.228] void/telemetry {"node_id":157, "battery":56, "cpu":24, "sos_alert":1, "seq":61, "uptime_ms":293236, "hops":1}
+[21:04:50.465] void/telemetry {"node_id":82, "battery":49, "cpu":20, "sos_alert":1, "seq":78, "uptime_ms":307222, "hops":1}
+[21:04:50.863] void/telemetry {"node_id":82, "battery":49, "cpu":26, "sos_alert":1, "seq":79, "uptime_ms":307626, "hops":1}
+[21:04:55.156] void/telemetry {"node_id":157, "battery":54, "cpu":28, "sos_alert":1, "seq":62, "uptime_ms":298144, "hops":1}
+[21:04:57.575] void/telemetry {"node_id":82, "battery":46, "cpu":24, "sos_alert":1, "seq":80, "uptime_ms":314339, "hops":1}
+[21:05:01.058] void/telemetry {"node_id":157, "battery":51, "cpu":10, "sos_alert":1, "seq":63, "uptime_ms":304058, "hops":1}
+[21:05:04.663] void/telemetry {"node_id":157, "battery":49, "cpu":26, "sos_alert":1, "seq":64, "uptime_ms":307668, "hops":1}
+[21:05:05.069] void/telemetry {"node_id":157, "battery":49, "cpu":21, "sos_alert":1, "seq":65, "uptime_ms":308073, "hops":1}
+[21:05:06.296] void/telemetry {"node_id":82, "battery":41, "cpu":14, "sos_alert":0, "seq":81, "uptime_ms":323053, "hops":1}
+[21:05:07.800] void/telemetry {"node_id":82, "battery":41, "cpu":29, "sos_alert":1, "seq":82, "uptime_ms":324559, "hops":1}
+[21:05:07.900] void/telemetry {"node_id":82, "battery":41, "cpu":23, "sos_alert":1, "seq":83, "uptime_ms":324662, "hops":1}
+[21:05:12.784] void/telemetry {"node_id":157, "battery":45, "cpu":18, "sos_alert":1, "seq":66, "uptime_ms":315787, "hops":1}
+[21:05:16.315] void/telemetry {"node_id":82, "battery":36, "cpu":12, "sos_alert":0, "seq":84, "uptime_ms":333079, "hops":1}
+[21:05:20.295] void/telemetry {"node_id":157, "battery":41, "cpu":12, "sos_alert":1, "seq":67, "uptime_ms":323302, "hops":1}
+[21:05:22.208] void/telemetry {"node_id":157, "battery":40, "cpu":21, "sos_alert":1, "seq":68, "uptime_ms":325209, "hops":1}
+[21:05:22.308] void/telemetry {"node_id":157, "battery":40, "cpu":18, "sos_alert":1, "seq":69, "uptime_ms":325313, "hops":1}
+[21:05:23.610] void/telemetry {"node_id":157, "battery":40, "cpu":27, "sos_alert":1, "seq":70, "uptime_ms":326517, "hops":1}
+[21:05:24.327] void/telemetry {"node_id":157, "battery":40, "cpu":23, "sos_alert":1, "seq":71, "uptime_ms":326630, "hops":1}
+[21:05:24.655] void/telemetry {"node_id":157, "battery":39, "cpu":26, "sos_alert":1, "seq":72, "uptime_ms":327336, "hops":1}
+[21:05:26.336] void/telemetry {"node_id":82, "battery":31, "cpu":15, "sos_alert":0, "seq":85, "uptime_ms":343095, "hops":1}
+[21:05:30.314] void/telemetry {"node_id":157, "battery":36, "cpu":17, "sos_alert":1, "seq":73, "uptime_ms":333260, "hops":1}
+[21:05:34.850] void/telemetry {"node_id":82, "battery":27, "cpu":24, "sos_alert":1, "seq":86, "uptime_ms":351609, "hops":1}
+[21:05:35.926] void/telemetry {"node_id":157, "battery":34, "cpu":17, "sos_alert":1, "seq":74, "uptime_ms":338773, "hops":1}
+[21:05:36.309] void/telemetry {"node_id":82, "battery":27, "cpu":15, "sos_alert":1, "seq":87, "uptime_ms":353014, "hops":1}
+[21:05:36.759] void/telemetry {"node_id":82, "battery":26, "cpu":15, "sos_alert":1, "seq":88, "uptime_ms":353523, "hops":1}
+[21:05:36.968] void/telemetry {"node_id":82, "battery":26, "cpu":28, "sos_alert":1, "seq":89, "uptime_ms":353727, "hops":1}
+[21:05:38.572] void/telemetry {"node_id":82, "battery":25, "cpu":25, "sos_alert":1, "seq":90, "uptime_ms":355332, "hops":1}
+[21:05:39.685] void/telemetry {"node_id":157, "battery":32, "cpu":11, "sos_alert":1, "seq":75, "uptime_ms":342690, "hops":1}
+[21:05:47.996] void/telemetry {"node_id":157, "battery":27, "cpu":19, "sos_alert":0, "seq":76, "uptime_ms":351002, "hops":1}
+[21:05:48.388] void/telemetry {"node_id":82, "battery":20, "cpu":21, "sos_alert":0, "seq":91, "uptime_ms":365150, "hops":1}
+[21:05:49.804] void/telemetry {"node_id":157, "battery":27, "cpu":12, "sos_alert":1, "seq":77, "uptime_ms":352809, "hops":1}
+[21:05:50.729] void/telemetry {"node_id":157, "battery":26, "cpu":24, "sos_alert":1, "seq":78, "uptime_ms":353713, "hops":1}
+[21:05:51.299] void/telemetry {"node_id":82, "battery":19, "cpu":17, "sos_alert":1, "seq":92, "uptime_ms":368057, "hops":1}
+[21:05:55.104] void/telemetry {"node_id":82, "battery":17, "cpu":26, "sos_alert":1, "seq":93, "uptime_ms":371865, "hops":1}
+[21:05:57.737] void/telemetry {"node_id":82, "battery":16, "cpu":12, "sos_alert":1, "seq":94, "uptime_ms":374471, "hops":1}
+[21:06:00.029] void/telemetry {"node_id":157, "battery":21, "cpu":14, "sos_alert":0, "seq":79, "uptime_ms":363033, "hops":1}
+[21:06:06.429] void/telemetry {"node_id":82, "battery":11, "cpu":24, "sos_alert":0, "seq":95, "uptime_ms":383186, "hops":1}
+[21:06:10.035] void/telemetry {"node_id":82, "battery":10, "cpu":12, "sos_alert":1, "seq":96, "uptime_ms":386794, "hops":1}
+[21:06:10.095] void/telemetry {"node_id":157, "battery":16, "cpu":29, "sos_alert":0, "seq":80, "uptime_ms":373049, "hops":1}
+[21:06:10.734] void/telemetry {"node_id":157, "battery":16, "cpu":24, "sos_alert":1, "seq":81, "uptime_ms":373655, "hops":1}
+[21:06:11.273] void/telemetry {"node_id":82, "battery":9, "cpu":18, "sos_alert":1, "seq":97, "uptime_ms":387999, "hops":1}
+[21:06:12.755] void/telemetry {"node_id":157, "battery":15, "cpu":14, "sos_alert":1, "seq":82, "uptime_ms":375761, "hops":1}
+[21:06:14.071] void/telemetry {"node_id":157, "battery":14, "cpu":29, "sos_alert":1, "seq":83, "uptime_ms":377066, "hops":1}
+[21:06:15.483] void/telemetry {"node_id":82, "battery":7, "cpu":25, "sos_alert":1, "seq":98, "uptime_ms":392110, "hops":1}
+[21:06:16.664] void/telemetry {"node_id":157, "battery":13, "cpu":10, "sos_alert":1, "seq":84, "uptime_ms":379673, "hops":1}
+[21:06:17.167] void/telemetry {"node_id":157, "battery":13, "cpu":11, "sos_alert":1, "seq":85, "uptime_ms":380177, "hops":1}
+[21:06:20.179] void/telemetry {"node_id":157, "battery":11, "cpu":12, "sos_alert":1, "seq":86, "uptime_ms":383185, "hops":1}
+[21:06:22.888] void/telemetry {"node_id":157, "battery":10, "cpu":23, "sos_alert":1, "seq":87, "uptime_ms":385891, "hops":1}
+[21:06:24.468] void/telemetry {"node_id":82, "battery":2, "cpu":18, "sos_alert":0, "seq":99, "uptime_ms":401229, "hops":1}
+[21:06:29.805] void/telemetry {"node_id":157, "battery":7, "cpu":24, "sos_alert":1, "seq":88, "uptime_ms":392807, "hops":1}
+[21:06:32.503] void/telemetry {"node_id":157, "battery":5, "cpu":14, "sos_alert":1, "seq":89, "uptime_ms":395512, "hops":1}
+[21:06:36.497] void/telemetry {"node_id":82, "battery":96, "cpu":27, "sos_alert":1, "seq":100, "uptime_ms":413248, "hops":1}
+[21:06:42.179] void/telemetry {"node_id":157, "battery":0, "cpu":15, "sos_alert":0, "seq":90, "uptime_ms":405128, "hops":1}
+[21:06:46.511] void/telemetry {"node_id":82, "battery":91, "cpu":21, "sos_alert":0, "seq":101, "uptime_ms":423268, "hops":1}
+[21:06:52.663] void/telemetry {"node_id":157, "battery":95, "cpu":11, "sos_alert":1, "seq":91, "uptime_ms":415669, "hops":1}
+[21:06:56.529] void/telemetry {"node_id":82, "battery":86, "cpu":12, "sos_alert":0, "seq":102, "uptime_ms":433284, "hops":1}
+[21:06:56.579] void/telemetry {"node_id":157, "battery":93, "cpu":28, "sos_alert":1, "seq":92, "uptime_ms":419578, "hops":1}
+[21:07:02.583] void/telemetry {"node_id":157, "battery":90, "cpu":26, "sos_alert":1, "seq":93, "uptime_ms":425591, "hops":1}
+[21:07:03.293] void/telemetry {"node_id":157, "battery":90, "cpu":22, "sos_alert":1, "seq":94, "uptime_ms":426295, "hops":1}
+[21:07:03.744] void/telemetry {"node_id":82, "battery":83, "cpu":10, "sos_alert":1, "seq":103, "uptime_ms":440497, "hops":1}
+[21:07:07.056] void/telemetry {"node_id":82, "battery":81, "cpu":29, "sos_alert":1, "seq":104, "uptime_ms":443805, "hops":1}
+[21:07:07.304] void/telemetry {"node_id":157, "battery":88, "cpu":12, "sos_alert":1, "seq":95, "uptime_ms":430304, "hops":1}
+[21:07:10.560] void/telemetry {"node_id":82, "battery":79, "cpu":12, "sos_alert":1, "seq":105, "uptime_ms":447313, "hops":1}
+[21:07:16.212] void/telemetry {"node_id":157, "battery":83, "cpu":27, "sos_alert":0, "seq":96, "uptime_ms":439219, "hops":1}
+[21:07:16.272] void/telemetry {"node_id":82, "battery":77, "cpu":16, "sos_alert":1, "seq":106, "uptime_ms":453026, "hops":1}
+[21:07:17.719] void/telemetry {"node_id":157, "battery":83, "cpu":20, "sos_alert":1, "seq":97, "uptime_ms":440725, "hops":1}
+[21:07:19.750] void/telemetry {"node_id":157, "battery":82, "cpu":23, "sos_alert":1, "seq":98, "uptime_ms":442730, "hops":1}
+[21:07:24.584] void/telemetry {"node_id":82, "battery":72, "cpu":23, "sos_alert":0, "seq":107, "uptime_ms":461338, "hops":1}
+[21:07:24.840] void/telemetry {"node_id":157, "battery":79, "cpu":17, "sos_alert":1, "seq":99, "uptime_ms":447846, "hops":1}
+[21:07:26.889] void/telemetry {"node_id":82, "battery":71, "cpu":21, "sos_alert":1, "seq":108, "uptime_ms":463644, "hops":1}

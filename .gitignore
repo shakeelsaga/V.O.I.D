@@ -1,7 +1,5 @@
-/edge_nodes/.DS_Store
-/edge_nodes/.DS_Store
-/edge_nodes/.DS_Store
-/.DS_Store
+# macOS
+.DS_Store
 
 # Security:
 secrets.h
@@ -11,12 +9,10 @@ secrets.h
 # Allowed templates
 !example_secrets.h
 
-/diagnostics
+# Private tooling & drafts
+/utils
+/PrePrint
 
-serial_monitor.py
-
-/logs
-
-/upcoming_changes
-
-/V.O.I.D_Experiments
+# Experiment environment (data is tracked, venv/logs are not)
+/V.O.I.D_Experiments/venv/
+/V.O.I.D_Experiments/logs/

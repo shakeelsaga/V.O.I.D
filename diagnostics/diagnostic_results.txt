@@ -1,0 +1,318 @@
+
+=== V.O.I.D. RSSI Promiscuous Diagnostic ===
+    ..............................
+[WIFI] Not connected (OK — sidecar test still valid).
+[WIFI] Re-enabling promiscuous after WiFi.begin()...
+[PROMISC-INIT] ESP8266 Promiscuous mode enabled.
+[SELF-TX #1] seq=0 result=-3
+
+[SYS] Diagnostic running. Counters dumped every 5s. Frame dump after first MGMT capture.
+
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 1  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #2] seq=1 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 2  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 2  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #3] seq=2 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 3  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 3  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #4] seq=3 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 4  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 4  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #5] seq=4 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 5  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 5  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #6] seq=5 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 6  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 6  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #7] seq=6 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 7  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 7  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #8] seq=7 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 8  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 8  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #9] seq=8 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 9  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 9  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #10] seq=9 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 0
+[TICK] promiscMgmt     = 0  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 10  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[FRAME] First MGMT frame captured (64 bytes), RSSI=-70 dBm
+[FRAME] Raw hex: 40 00 00 00 FF FF FF FF FF FF BA ED 16 8B 92 01 
+               FF FF FF FF FF FF 50 21 00 00 01 04 02 04 0B 16 
+               32 08 0C 12 18 24 30 48 60 6C 03 01 01 2D 1A 6F 
+               09 13 FF 00 00 00 00 00 00 00 00 00 00 00 00 00 
+               
+[FRAME] frame[0]    = 0x40  (expect 0xD0 for action frame)
+[FRAME] addr2[10-15]= BA:ED:16:8B:92:01  (src)
+[FRAME] frame[24]   = 0x00  (expect 0x7F for vendor-specific)
+[FRAME] frame[25-27]= 00 01 04  (expect 18 FE 34 = Espressif)
+[FRAME] First MGMT frame captured (64 bytes), RSSI=-71 dBm
+[FRAME] Raw hex: 40 00 00 00 FF FF FF FF FF FF BA ED 16 8B 92 01 
+               FF FF FF FF FF FF 80 21 00 00 01 04 02 04 0B 16 
+               32 08 0C 12 18 24 30 48 60 6C 03 01 02 2D 1A 6F 
+               09 13 FF 00 00 00 00 00 00 00 00 00 00 00 00 00 
+               
+[FRAME] frame[0]    = 0x40  (expect 0xD0 for action frame)
+[FRAME] addr2[10-15]= BA:ED:16:8B:92:01  (src)
+[FRAME] frame[24]   = 0x00  (expect 0x7F for vendor-specific)
+[FRAME] frame[25-27]= 00 01 04  (expect 18 FE 34 = Espressif)
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 3
+[TICK] promiscMgmt     = 3  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 10  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #11] seq=10 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 3
+[TICK] promiscMgmt     = 3  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 11  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 3
+[TICK] promiscMgmt     = 3  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 11  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #12] seq=11 result=-3
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 3
+[TICK] promiscMgmt     = 3  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 12  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+
+[TICK] ============ Promiscuous Counter Dump ============
+[TICK] promiscTotal    = 3
+[TICK] promiscMgmt     = 3  (type==WIFI_PKT_MGMT passed)
+[TICK] promiscAction   = 0  (frame[0]==0xD0 passed)
+[TICK] promiscCategory = 0  (frame[24]==0x7F passed)
+[TICK] promiscOui      = 0  (Espressif OUI passed)
+[TICK] promiscCached   = 0  (RSSI written to cache)
+[TICK] espnowRecvCount = 0  (OnDataRecv fired)
+[TICK] selfTxCount     = 12  (self-stimulus sends)
+[TICK] rssiCacheIdx    = 0
+[TICK] =======================================================
+[SELF-TX #13] seq=12 result=-3

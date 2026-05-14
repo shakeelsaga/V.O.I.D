@@ -75,6 +75,22 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - **ESP8266 peer not registered before relay ACK** - on ESP8266, `esp_now_send()` requires the target to be registered as a peer. The relay ACK was sent without first calling `esp_now_add_peer()`, causing the ACK to be silently dropped. Fixed by adding `esp_now_del_peer()` + `esp_now_add_peer()` before the ACK send on ESP8266.
 
+### Fixed - Gateway (`gateway_node.ino`)
+
+- **`HaPayload` misclassified as `SurvivorPayload`** — `sizeof(HaPayload)` was 11 bytes, identical to `sizeof(SurvivorPayload)`. The gateway's `OnDataRecv` classifies packets by length, so HA election pings and heartbeats were silently processed as edge telemetry. Added a 1-byte `_pad` field to `HaPayload`, bringing its size to **12 bytes** and preventing misclassification. ⚠️ Gateway-only wire-format change — does not affect edge nodes (they never receive `HaPayload`).
+
+### Changed - Repository Structure
+
+- **Experimental data shipped in-repo.** `V.O.I.D_Experiments/raw/` contains the raw serial logs for all four experiments (E1–E4). `V.O.I.D_Experiments/processed/` contains `table1.csv` (summary results) and `latency_data.csv` (per-packet timing data). Venv and local logs remain gitignored.
+
+- **`diagnostics/` added to repository.** Contains `diagnostics.ino` (standalone ESP8266 promiscuous-mode verification sketch) and `diagnostic_results.txt`. This sketch documents the hardware limitation that prevents RSSI extraction on ESP8266.
+
+- **`.gitignore` cleaned up.** Consolidated triplicate `.DS_Store` entries into a single global pattern. Removed stale ignores for `serial_monitor.py`, `/logs`, `/upcoming_changes`. Added `/PrePrint` (preprint drafts) and `/utils` (private tooling) to ignore.
+
+### Removed
+
+- **`infrastructure/void_command_centre_v1.json`** — stale Grafana dashboard export. The observability stack is now documented in the README and the preprint rather than shipped as a versioned JSON file.
+
 ---
 
 ## [v2.2.0] — 2026-04-26

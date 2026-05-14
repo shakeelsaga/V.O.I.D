@@ -1,0 +1,2118 @@
+====================================================================
+|    Trial-1 : Two-Hop Relay Path Convergence                        |
+ ====================================================================
+==================== Edge Nodes ====================
+[09:23:54.184] [NODE_157] [SYS] No gateway at boot. Probing mesh peers immediately.
+[09:23:54.186] [NODE_157] [MESH] Channel sweep across 3 channels...
+[09:23:54.385] [NODE_157] [MESH] Peer found on Ch 11 -> C45BBE554B52
+[09:23:54.386] [NODE_157] [MESH] myHopDist set to 2 (relay peer not yet in table)
+[09:23:54.388] [NODE_157] [SYS] Boot probe ACK'd by peer — mesh path active.
+[09:23:54.590] [NODE_157] [SYS] Node 157 armed. hopDist=2
+[09:24:02.167] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:02.168] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:02.371] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:02.373] [NODE_157] [RADIO] ACK seq=0 bat=95% hopDist=2
+[09:24:05.855] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:05.856] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:06.057] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:06.059] [NODE_157] [RADIO] ACK seq=1 bat=94% hopDist=2
+[09:24:08.515] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:08.520] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:08.720] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:08.721] [NODE_157] [RADIO] ACK seq=2 bat=92% hopDist=2
+[09:24:15.478] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:15.480] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:15.685] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:15.686] [NODE_157] [RADIO] ACK seq=3 bat=89% hopDist=2
+[09:24:17.936] [NODE_157] [NBR] --- Neighbor Table ---
+[09:24:17.937] [NODE_157] [NBR]   (empty)
+[09:24:17.939] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:24:18.141] [NODE_157] [NBR] -----------------------
+[09:24:24.288] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:24:24.290] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:24.494] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:24.495] [NODE_157] [RADIO] ACK seq=4 bat=84% hopDist=2
+[09:24:26.539] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:26.540] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:26.743] [NODE_157] [RADIO] ACK seq=5 bat=83% hopDist=2
+[09:24:32.688] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:32.690] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:33.096] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:33.098] [NODE_157] [RADIO] ACK seq=6 bat=80% hopDist=2
+[09:24:35.958] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:35.959] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:36.162] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:36.164] [NODE_157] [RADIO] ACK seq=7 bat=79% hopDist=2
+[09:24:36.779] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:36.780] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:36.984] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:36.985] [NODE_157] [RADIO] ACK seq=8 bat=78% hopDist=2
+[09:24:41.897] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:41.900] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:42.112] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:42.115] [NODE_157] [RADIO] ACK seq=9 bat=76% hopDist=2
+[09:24:42.307] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:42.309] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:42.512] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:42.513] [NODE_157] [RADIO] ACK seq=10 bat=76% hopDist=2
+[09:24:44.562] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:44.567] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:44.764] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:44.765] [NODE_157] [RADIO] ACK seq=11 bat=75% hopDist=2
+[09:24:48.040] [NODE_157] [NBR] --- Neighbor Table ---
+[09:24:48.042] [NODE_157] [NBR]   (empty)
+[09:24:48.044] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:24:48.246] [NODE_157] [NBR] -----------------------
+[09:24:49.475] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:24:49.475] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:49.679] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:49.680] [NODE_157] [RADIO] ACK seq=12 bat=72% hopDist=2
+[09:24:59.101] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:24:59.104] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:24:59.306] [NODE_157] [MESH] Cached peer ACK'd.
+[09:24:59.308] [NODE_157] [RADIO] ACK seq=13 bat=67% hopDist=2
+[09:25:04.424] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:04.426] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:04.630] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:04.631] [NODE_157] [RADIO] ACK seq=14 bat=65% hopDist=2
+[09:25:07.292] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:07.293] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:07.496] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:07.497] [NODE_157] [RADIO] ACK seq=15 bat=63% hopDist=2
+[09:25:10.588] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:10.773] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:10.779] [NODE_157] [RADIO] ACK seq=16 bat=62% hopDist=2
+[09:25:11.388] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:11.391] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:11.592] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:11.593] [NODE_157] [RADIO] ACK seq=17 bat=61% hopDist=2
+[09:25:14.670] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:14.671] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:14.870] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:14.871] [NODE_157] [RADIO] ACK seq=18 bat=60% hopDist=2
+[09:25:18.145] [NODE_157] [NBR] --- Neighbor Table ---
+[09:25:18.147] [NODE_157] [NBR]   (empty)
+[09:25:18.148] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:25:18.350] [NODE_157] [NBR] -----------------------
+[09:25:18.555] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:18.557] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:18.559] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:18.760] [NODE_157] [RADIO] ACK seq=19 bat=58% hopDist=2
+[09:25:18.763] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:18.966] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:18.968] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:19.170] [NODE_157] [RADIO] ACK seq=20 bat=58% hopDist=2
+[09:25:22.651] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:22.653] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:22.856] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:22.858] [NODE_157] [RADIO] ACK seq=21 bat=56% hopDist=2
+[09:25:22.859] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:23.061] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:23.064] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:23.269] [NODE_157] [RADIO] ACK seq=22 bat=56% hopDist=2
+[09:25:23.675] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:23.677] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:23.678] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:23.880] [NODE_157] [RADIO] ACK seq=23 bat=55% hopDist=2
+[09:25:23.883] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:24.085] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:24.088] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:24.293] [NODE_157] [RADIO] ACK seq=24 bat=55% hopDist=2
+[09:25:24.494] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:24.496] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:29.617] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:29.625] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:29.821] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:29.822] [NODE_157] [RADIO] ACK seq=26 bat=53% hopDist=2
+[09:25:32.689] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:32.691] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:32.695] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:33.097] [NODE_157] [RADIO] ACK seq=27 bat=51% hopDist=2
+[09:25:34.939] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:34.941] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:35.146] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:35.148] [NODE_157] [RADIO] ACK seq=28 bat=50% hopDist=2
+[09:25:35.553] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:35.555] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:35.557] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:35.758] [NODE_157] [RADIO] ACK seq=29 bat=50% hopDist=2
+[09:25:43.129] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:43.132] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:43.337] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:43.338] [NODE_157] [RADIO] ACK seq=30 bat=46% hopDist=2
+[09:25:46.205] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:46.207] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:46.208] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:46.409] [NODE_157] [RADIO] ACK seq=31 bat=44% hopDist=2
+[09:25:48.045] [NODE_157] [NBR] --- Neighbor Table ---
+[09:25:48.047] [NODE_157] [NBR]   (empty)
+[09:25:48.048] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:25:48.250] [NODE_157] [NBR] -----------------------
+[09:25:55.828] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:25:55.830] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:25:55.831] [NODE_157] [MESH] Cached peer ACK'd.
+[09:25:56.034] [NODE_157] [RADIO] ACK seq=32 bat=40% hopDist=2
+[09:26:01.362] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:01.378] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:01.562] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:01.564] [NODE_157] [RADIO] ACK seq=33 bat=37% hopDist=2
+[09:26:07.911] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:07.912] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:08.117] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:08.118] [NODE_157] [RADIO] ACK seq=34 bat=34% hopDist=2
+[09:26:16.307] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:26:16.309] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:16.512] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:16.514] [NODE_157] [RADIO] ACK seq=35 bat=29% hopDist=2
+[09:26:18.153] [NODE_157] [NBR] --- Neighbor Table ---
+[09:26:18.155] [NODE_157] [NBR]   (empty)
+[09:26:18.156] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:26:18.356] [NODE_157] [NBR] -----------------------
+[09:26:21.019] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:21.023] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:21.225] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:21.226] [NODE_157] [RADIO] ACK seq=36 bat=27% hopDist=2
+[09:26:22.451] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:22.454] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:22.657] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:22.659] [NODE_157] [RADIO] ACK seq=37 bat=26% hopDist=2
+[09:26:32.489] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:26:32.491] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:32.691] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:32.692] [NODE_157] [RADIO] ACK seq=38 bat=21% hopDist=2
+[09:26:34.126] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:34.128] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:34.132] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:34.329] [NODE_157] [RADIO] ACK seq=39 bat=21% hopDist=2
+[09:26:41.907] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:41.909] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:41.910] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:42.113] [NODE_157] [RADIO] ACK seq=40 bat=17% hopDist=2
+[09:26:47.641] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:47.643] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:47.845] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:47.847] [NODE_157] [RADIO] ACK seq=41 bat=14% hopDist=2
+[09:26:48.050] [NODE_157] [NBR] --- Neighbor Table ---
+[09:26:48.052] [NODE_157] [NBR]   (empty)
+[09:26:48.053] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:26:48.255] [NODE_157] [NBR] -----------------------
+[09:26:50.508] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:50.510] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:50.713] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:50.714] [NODE_157] [RADIO] ACK seq=42 bat=13% hopDist=2
+[09:26:52.351] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:52.353] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:52.559] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:54.194] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:54.196] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:54.401] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:54.403] [NODE_157] [RADIO] ACK seq=44 bat=11% hopDist=2
+[09:26:54.808] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:54.810] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:55.018] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:55.019] [NODE_157] [RADIO] ACK seq=45 bat=11% hopDist=2
+[09:26:55.218] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:26:55.220] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:26:55.423] [NODE_157] [MESH] Cached peer ACK'd.
+[09:26:55.424] [NODE_157] [RADIO] ACK seq=46 bat=11% hopDist=2
+[09:27:01.362] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:01.364] [NODE_157] [RADIO] ACK seq=47 bat=8% hopDist=2
+[09:27:07.506] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:07.508] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:07.711] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:07.713] [NODE_157] [RADIO] ACK seq=48 bat=4% hopDist=2
+[09:27:11.602] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:11.604] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:11.809] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:11.810] [NODE_157] [RADIO] ACK seq=49 bat=2% hopDist=2
+[09:27:18.157] [NODE_157] [NBR] --- Neighbor Table ---
+[09:27:18.158] [NODE_157] [NBR]   (empty)
+[09:27:18.160] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:27:18.360] [NODE_157] [NBR] -----------------------
+[09:27:27.576] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:27.578] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:27.781] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:27.783] [NODE_157] [RADIO] ACK seq=50 bat=94% hopDist=2
+[09:27:31.879] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:31.880] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:31.880] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:32.083] [NODE_157] [RADIO] ACK seq=51 bat=92% hopDist=2
+[09:27:32.491] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:32.494] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:32.696] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:32.697] [NODE_157] [RADIO] ACK seq=52 bat=92% hopDist=2
+[09:27:38.430] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:38.432] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:38.635] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:38.636] [NODE_157] [RADIO] ACK seq=53 bat=89% hopDist=2
+[09:27:39.659] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:39.660] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:39.862] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:39.865] [NODE_157] [RADIO] ACK seq=54 bat=88% hopDist=2
+[09:27:47.032] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:47.033] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:47.236] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:47.238] [NODE_157] [RADIO] ACK seq=55 bat=85% hopDist=2
+[09:27:48.260] [NODE_157] [NBR] --- Neighbor Table ---
+[09:27:48.262] [NODE_157] [NBR]   (empty)
+[09:27:48.263] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:27:48.465] [NODE_157] [NBR] -----------------------
+[09:27:49.694] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:49.696] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:49.901] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:49.902] [NODE_157] [RADIO] ACK seq=56 bat=83% hopDist=2
+[09:27:50.105] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:27:50.106] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:27:50.308] [NODE_157] [MESH] Cached peer ACK'd.
+[09:27:50.310] [NODE_157] [RADIO] ACK seq=57 bat=83% hopDist=2
+[09:27:59.934] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:27:59.935] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:00.138] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:00.140] [NODE_157] [RADIO] ACK seq=58 bat=78% hopDist=2
+[09:28:02.596] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:02.598] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:02.804] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:02.805] [NODE_157] [RADIO] ACK seq=59 bat=77% hopDist=2
+[09:28:03.825] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:04.029] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:04.031] [NODE_157] [RADIO] ACK seq=60 bat=77% hopDist=2
+[09:28:05.465] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:05.467] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:05.673] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:05.675] [NODE_157] [RADIO] ACK seq=61 bat=76% hopDist=2
+[09:28:07.102] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:07.103] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:07.308] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:07.309] [NODE_157] [RADIO] ACK seq=62 bat=75% hopDist=2
+[09:28:13.860] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:13.862] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:14.064] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:14.270] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:14.271] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:14.476] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:14.477] [NODE_157] [RADIO] ACK seq=64 bat=71% hopDist=2
+[09:28:17.548] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:17.751] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:17.754] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:18.365] [NODE_157] [NBR] --- Neighbor Table ---
+[09:28:18.366] [NODE_157] [NBR]   (empty)
+[09:28:18.368] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:28:18.570] [NODE_157] [NBR] -----------------------
+[09:28:23.895] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:23.897] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:24.099] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:24.101] [NODE_157] [RADIO] ACK seq=66 bat=67% hopDist=2
+[09:28:29.630] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:29.631] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:30.038] [NODE_157] [RADIO] ACK seq=68 bat=64% hopDist=2
+[09:28:34.954] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:34.956] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:35.158] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:35.160] [NODE_157] [RADIO] ACK seq=69 bat=61% hopDist=2
+[09:28:43.146] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:43.148] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:43.352] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:43.353] [NODE_157] [RADIO] ACK seq=70 bat=57% hopDist=2
+[09:28:48.265] [NODE_157] [NBR] --- Neighbor Table ---
+[09:28:48.266] [NODE_157] [NBR]   (empty)
+[09:28:48.268] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:28:48.474] [NODE_157] [NBR] -----------------------
+[09:28:49.700] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:49.701] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:49.905] [NODE_157] [RADIO] ACK seq=71 bat=54% hopDist=2
+[09:28:51.542] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:51.544] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:51.749] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:51.750] [NODE_157] [RADIO] ACK seq=72 bat=53% hopDist=2
+[09:28:59.121] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:28:59.124] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:28:59.324] [NODE_157] [MESH] Cached peer ACK'd.
+[09:28:59.326] [NODE_157] [RADIO] ACK seq=73 bat=49% hopDist=2
+[09:29:00.757] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:00.759] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:00.964] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:00.966] [NODE_157] [RADIO] ACK seq=74 bat=48% hopDist=2
+[09:29:02.396] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:02.398] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:02.601] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:02.605] [NODE_157] [RADIO] ACK seq=75 bat=48% hopDist=2
+[09:29:04.653] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:04.654] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:04.855] [NODE_157] [RADIO] ACK seq=76 bat=46% hopDist=2
+[09:29:08.552] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:08.553] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:08.745] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:08.749] [NODE_157] [RADIO] ACK seq=77 bat=44% hopDist=2
+[09:29:13.257] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:13.259] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:13.460] [NODE_157] [RADIO] ACK seq=78 bat=42% hopDist=2
+[09:29:15.506] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:15.507] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:15.708] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:15.709] [NODE_157] [RADIO] ACK seq=79 bat=41% hopDist=2
+[09:29:18.370] [NODE_157] [NBR] --- Neighbor Table ---
+[09:29:18.372] [NODE_157] [NBR]   (empty)
+[09:29:18.373] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:29:18.575] [NODE_157] [NBR] -----------------------
+[09:29:20.623] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:20.625] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:20.828] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:20.829] [NODE_157] [RADIO] ACK seq=80 bat=39% hopDist=2
+[09:29:23.490] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:23.492] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:23.697] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:23.698] [NODE_157] [RADIO] ACK seq=81 bat=37% hopDist=2
+[09:29:32.710] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:29:32.718] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:32.912] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:32.914] [NODE_157] [RADIO] ACK seq=82 bat=32% hopDist=2
+[09:29:38.031] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:38.032] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:38.236] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:46.021] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:29:46.022] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:46.025] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:46.225] [NODE_157] [RADIO] ACK seq=84 bat=26% hopDist=2
+[09:29:48.480] [NODE_157] [NBR] --- Neighbor Table ---
+[09:29:48.481] [NODE_157] [NBR]   (empty)
+[09:29:48.483] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:29:48.687] [NODE_157] [NBR] -----------------------
+[09:29:55.038] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:29:55.041] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:29:55.041] [NODE_157] [MESH] Cached peer ACK'd.
+[09:29:55.248] [NODE_157] [RADIO] ACK seq=85 bat=21% hopDist=2
+[09:30:05.078] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:30:05.081] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:05.282] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:05.284] [NODE_157] [RADIO] ACK seq=86 bat=16% hopDist=2
+[09:30:15.115] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:30:15.117] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:15.320] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:15.321] [NODE_157] [RADIO] ACK seq=87 bat=11% hopDist=2
+[09:30:18.597] [NODE_157] [NBR] --- Neighbor Table ---
+[09:30:18.599] [NODE_157] [NBR]   (empty)
+[09:30:18.600] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:30:18.804] [NODE_157] [NBR] -----------------------
+[09:30:19.416] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:30:19.420] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:19.621] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:19.622] [NODE_157] [RADIO] ACK seq=88 bat=9% hopDist=2
+[09:30:29.249] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:30:29.254] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:29.452] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:29.453] [NODE_157] [RADIO] ACK seq=89 bat=4% hopDist=2
+[09:30:36.007] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:30:36.008] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:36.210] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:36.212] [NODE_157] [RADIO] ACK seq=90 bat=1% hopDist=2
+[09:30:46.044] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:30:46.047] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:46.246] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:46.247] [NODE_157] [RADIO] ACK seq=91 bat=96% hopDist=2
+[09:30:46.249] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:30:46.451] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:46.453] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:46.454] [NODE_157] [RADIO] ACK seq=92 bat=96% hopDist=2
+[09:30:48.502] [NODE_157] [NBR] --- Neighbor Table ---
+[09:30:48.706] [NODE_157] [NBR]   (empty)
+[09:30:48.708] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:30:48.710] [NODE_157] [NBR] -----------------------
+[09:30:55.463] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:30:55.466] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:30:55.667] [NODE_157] [MESH] Cached peer ACK'd.
+[09:30:55.668] [NODE_157] [RADIO] ACK seq=93 bat=91% hopDist=2
+[09:31:05.497] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:31:05.500] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:05.702] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:05.703] [NODE_157] [RADIO] ACK seq=94 bat=86% hopDist=2
+[09:31:09.186] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:09.187] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:09.187] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:09.388] [NODE_157] [RADIO] ACK seq=95 bat=85% hopDist=2
+[09:31:17.582] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:31:17.584] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:17.786] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:17.788] [NODE_157] [RADIO] ACK seq=96 bat=80% hopDist=2
+[09:31:18.399] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:18.401] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:18.604] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:18.606] [NODE_157] [RADIO] ACK seq=97 bat=80% hopDist=2
+[09:31:18.809] [NODE_157] [NBR] --- Neighbor Table ---
+[09:31:18.811] [NODE_157] [NBR]   (empty)
+[09:31:18.812] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:31:19.013] [NODE_157] [NBR] -----------------------
+[09:31:25.567] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:25.569] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:25.570] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:25.772] [NODE_157] [RADIO] ACK seq=98 bat=77% hopDist=2
+[09:31:26.805] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:27.000] [NODE_157] [RADIO] ACK seq=99 bat=76% hopDist=2
+[09:31:35.807] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:31:35.809] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:36.014] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:36.014] [NODE_157] [RADIO] ACK seq=100 bat=71% hopDist=2
+[09:31:45.842] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:31:45.845] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:46.047] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:46.048] [NODE_157] [RADIO] ACK seq=101 bat=66% hopDist=2
+[09:31:48.711] [NODE_157] [NBR] --- Neighbor Table ---
+[09:31:48.712] [NODE_157] [NBR]   (empty)
+[09:31:48.712] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:31:48.913] [NODE_157] [NBR] -----------------------
+[09:31:51.580] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:51.583] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:51.781] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:51.782] [NODE_157] [RADIO] ACK seq=102 bat=64% hopDist=2
+[09:31:55.468] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:55.489] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:55.490] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:55.674] [NODE_157] [RADIO] ACK seq=103 bat=62% hopDist=2
+[09:31:56.287] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:56.289] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:56.493] [NODE_157] [RADIO] ACK seq=104 bat=61% hopDist=2
+[09:31:56.698] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:56.700] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:56.901] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:56.902] [NODE_157] [RADIO] ACK seq=105 bat=61% hopDist=2
+[09:31:57.316] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:31:57.515] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:31:57.516] [NODE_157] [MESH] Cached peer ACK'd.
+[09:31:57.720] [NODE_157] [RADIO] ACK seq=106 bat=61% hopDist=2
+[09:32:04.071] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:32:04.074] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:32:04.273] [NODE_157] [MESH] Cached peer ACK'd.
+[09:32:04.275] [NODE_157] [RADIO] ACK seq=107 bat=57% hopDist=2
+[09:23:42.312] [NODE_82] [MESH] Direct gateway link confirmed. myHopDist=1
+[09:23:42.315] [NODE_82] [SYS] Node 82 armed. hopDist=1
+[09:24:01.552] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:01.554] [NODE_82] [RADIO] ACK seq=0 bat=90% hopDist=1
+[09:24:02.781] [NODE_82] [NBR] --- Neighbor Table ---
+[09:24:02.782] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:24:02.986] [NODE_82] [NBR] -----------------------
+[09:24:05.856] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:07.901] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:07.903] [NODE_82] [RADIO] ACK seq=1 bat=87% hopDist=1
+[09:24:08.517] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:12.202] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:12.204] [NODE_82] [RADIO] ACK seq=2 bat=84% hopDist=1
+[09:24:14.250] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:14.252] [NODE_82] [RADIO] ACK seq=4 bat=83% hopDist=1
+[09:24:15.482] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:17.322] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:17.323] [NODE_82] [RADIO] ACK seq=5 bat=82% hopDist=1
+[09:24:24.491] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:24:26.130] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:24:26.132] [NODE_82] [RADIO] ACK seq=6 bat=77% hopDist=1
+[09:24:26.542] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:31.452] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:31.454] [NODE_82] [RADIO] ACK seq=7 bat=75% hopDist=1
+[09:24:32.889] [NODE_82] [NBR] --- Neighbor Table ---
+[09:24:32.891] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:24:32.893] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:24:33.095] [NODE_82] [NBR] -----------------------
+[09:24:33.295] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:35.343] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:35.345] [NODE_82] [RADIO] ACK seq=8 bat=73% hopDist=1
+[09:24:35.961] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:36.982] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:42.156] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:42.515] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:44.150] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:24:44.151] [NODE_82] [RADIO] ACK seq=9 bat=68% hopDist=1
+[09:24:44.565] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:24:51.932] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:24:51.934] [NODE_82] [RADIO] ACK seq=10 bat=65% hopDist=1
+[09:24:59.104] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:25:00.328] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:25:00.330] [NODE_82] [RADIO] ACK seq=11 bat=60% hopDist=1
+[09:25:02.173] [NODE_82] [RADIO] ACK seq=12 bat=60% hopDist=1
+[09:25:02.786] [NODE_82] [NBR] --- Neighbor Table ---
+[09:25:02.788] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:25:02.789] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:25:02.992] [NODE_82] [NBR] -----------------------
+[09:25:04.428] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:07.295] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:10.363] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:25:10.365] [NODE_82] [RADIO] ACK seq=13 bat=55% hopDist=1
+[09:25:11.390] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:14.671] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:18.761] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:18.967] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:20.398] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:25:20.400] [NODE_82] [RADIO] ACK seq=14 bat=50% hopDist=1
+[09:25:22.655] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:23.062] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:23.881] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:24.086] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:24.699] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:29.624] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:30.230] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:30.231] [NODE_82] [RADIO] ACK seq=15 bat=46% hopDist=1
+[09:25:32.693] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:32.891] [NODE_82] [NBR] --- Neighbor Table ---
+[09:25:32.892] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:25:32.894] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:25:33.096] [NODE_82] [NBR] -----------------------
+[09:25:34.943] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:35.759] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:38.420] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:38.422] [NODE_82] [RADIO] ACK seq=16 bat=42% hopDist=1
+[09:25:41.902] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:41.903] [NODE_82] [RADIO] ACK seq=17 bat=40% hopDist=1
+[09:25:43.335] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:43.745] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:46.407] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:50.299] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:50.300] [NODE_82] [RADIO] ACK seq=19 bat=36% hopDist=1
+[09:25:51.118] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:51.119] [NODE_82] [RADIO] ACK seq=20 bat=36% hopDist=1
+[09:25:53.781] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:53.782] [NODE_82] [RADIO] ACK seq=21 bat=34% hopDist=1
+[09:25:56.033] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:25:57.057] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:25:57.058] [NODE_82] [RADIO] ACK seq=22 bat=33% hopDist=1
+[09:26:01.378] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:01.767] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:01.768] [NODE_82] [RADIO] ACK seq=23 bat=30% hopDist=1
+[09:26:02.794] [NODE_82] [NBR] --- Neighbor Table ---
+[09:26:02.796] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:26:02.799] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:26:02.995] [NODE_82] [NBR] -----------------------
+[09:26:04.634] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:04.636] [NODE_82] [RADIO] ACK seq=24 bat=29% hopDist=1
+[09:26:05.044] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:05.045] [NODE_82] [RADIO] ACK seq=25 bat=29% hopDist=1
+[09:26:07.914] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:13.440] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:26:13.442] [NODE_82] [RADIO] ACK seq=26 bat=24% hopDist=1
+[09:26:15.898] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:15.900] [NODE_82] [RADIO] ACK seq=27 bat=23% hopDist=1
+[09:26:16.310] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:26:17.946] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:17.947] [NODE_82] [RADIO] ACK seq=28 bat=22% hopDist=1
+[09:26:21.223] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:22.656] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:27.571] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:26:27.572] [NODE_82] [RADIO] ACK seq=29 bat=17% hopDist=1
+[09:26:32.491] [NODE_82] [REPEATER] Gossip gate: dropped non-SOS payload from Node 157
+[09:26:32.896] [NODE_82] [NBR] --- Neighbor Table ---
+[09:26:32.898] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:26:32.899] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:26:34.129] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:38.220] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:26:38.222] [NODE_82] [RADIO] ACK seq=30 bat=12% hopDist=1
+[09:26:39.655] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:39.656] [NODE_82] [RADIO] ACK seq=31 bat=12% hopDist=1
+[09:26:39.859] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:39.861] [NODE_82] [RADIO] ACK seq=32 bat=12% hopDist=1
+[09:26:41.292] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:41.497] [NODE_82] [RADIO] ACK seq=33 bat=11% hopDist=1
+[09:26:42.112] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:47.644] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:50.307] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:50.308] [NODE_82] [RADIO] ACK seq=34 bat=7% hopDist=1
+[09:26:50.512] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:51.737] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:52.556] [NODE_82] [RADIO] ACK seq=35 bat=6% hopDist=1
+[09:26:52.557] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:54.399] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:55.015] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:55.222] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:26:56.242] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:57.676] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:26:57.677] [NODE_82] [RADIO] ACK seq=37 bat=3% hopDist=1
+[09:27:03.000] [NODE_82] [NBR] --- Neighbor Table ---
+[09:27:03.004] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:27:03.004] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:27:03.205] [NODE_82] [NBR] -----------------------
+[09:27:06.892] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:06.893] [NODE_82] [RADIO] ACK seq=38 bat=99% hopDist=1
+[09:27:07.509] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:11.606] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:13.036] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:13.037] [NODE_82] [RADIO] ACK seq=39 bat=96% hopDist=1
+[09:27:18.362] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:18.565] [NODE_82] [RADIO] ACK seq=40 bat=93% hopDist=1
+[09:27:27.372] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:27:30.034] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:30.035] [NODE_82] [RADIO] ACK seq=42 bat=87% hopDist=1
+[09:27:32.082] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:32.496] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:33.105] [NODE_82] [NBR] --- Neighbor Table ---
+[09:27:33.108] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:27:33.310] [NODE_82] [NBR] -----------------------
+[09:27:34.949] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:34.950] [NODE_82] [RADIO] ACK seq=43 bat=85% hopDist=1
+[09:27:38.434] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:39.870] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:43.346] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:27:43.347] [NODE_82] [RADIO] ACK seq=44 bat=80% hopDist=1
+[09:27:45.189] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:45.190] [NODE_82] [RADIO] ACK seq=45 bat=80% hopDist=1
+[09:27:47.035] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:49.697] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:50.107] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:27:50.923] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:50.924] [NODE_82] [RADIO] ACK seq=46 bat=77% hopDist=1
+[09:27:52.561] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:27:52.563] [NODE_82] [RADIO] ACK seq=47 bat=76% hopDist=1
+[09:27:58.504] [NODE_82] [RADIO] ACK seq=48 bat=73% hopDist=1
+[09:27:59.937] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:28:01.982] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:01.984] [NODE_82] [RADIO] ACK seq=49 bat=71% hopDist=1
+[09:28:02.803] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:03.006] [NODE_82] [NBR] --- Neighbor Table ---
+[09:28:03.007] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:28:03.009] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:28:03.215] [NODE_82] [NBR] -----------------------
+[09:28:03.829] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:04.439] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:04.441] [NODE_82] [RADIO] ACK seq=50 bat=70% hopDist=1
+[09:28:05.672] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:07.105] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:13.041] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:13.043] [NODE_82] [RADIO] ACK seq=51 bat=66% hopDist=1
+[09:28:13.863] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:14.474] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:14.679] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:14.681] [NODE_82] [RADIO] ACK seq=52 bat=65% hopDist=1
+[09:28:17.753] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:18.161] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:18.164] [NODE_82] [RADIO] ACK seq=54 bat=63% hopDist=1
+[09:28:20.209] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:20.211] [NODE_82] [RADIO] ACK seq=55 bat=62% hopDist=1
+[09:28:21.029] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:21.031] [NODE_82] [RADIO] ACK seq=56 bat=62% hopDist=1
+[09:28:23.898] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:29.836] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:29.838] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:28:30.040] [NODE_82] [RADIO] ACK seq=57 bat=57% hopDist=1
+[09:28:33.110] [NODE_82] [NBR] --- Neighbor Table ---
+[09:28:33.112] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:28:33.114] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:28:33.315] [NODE_82] [NBR] -----------------------
+[09:28:34.957] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:37.821] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:37.823] [NODE_82] [RADIO] ACK seq=58 bat=53% hopDist=1
+[09:28:40.688] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:40.689] [NODE_82] [RADIO] ACK seq=59 bat=52% hopDist=1
+[09:28:43.150] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:44.784] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:44.786] [NODE_82] [RADIO] ACK seq=60 bat=50% hopDist=1
+[09:28:46.013] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:46.014] [NODE_82] [RADIO] ACK seq=61 bat=49% hopDist=1
+[09:28:49.703] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:51.135] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:28:51.135] [NODE_82] [RADIO] ACK seq=62 bat=47% hopDist=1
+[09:28:51.546] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:59.124] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:28:59.942] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:28:59.944] [NODE_82] [RADIO] ACK seq=63 bat=42% hopDist=1
+[09:29:00.348] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:00.350] [NODE_82] [RADIO] ACK seq=64 bat=42% hopDist=1
+[09:29:00.963] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:02.400] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:03.010] [NODE_82] [NBR] --- Neighbor Table ---
+[09:29:03.012] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:29:03.014] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:29:03.215] [NODE_82] [NBR] -----------------------
+[09:29:04.656] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:06.492] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:06.494] [NODE_82] [RADIO] ACK seq=66 bat=39% hopDist=1
+[09:29:06.697] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:06.698] [NODE_82] [RADIO] ACK seq=67 bat=39% hopDist=1
+[09:29:08.747] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:13.259] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:15.299] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:15.300] [NODE_82] [RADIO] ACK seq=68 bat=35% hopDist=1
+[09:29:15.509] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:18.987] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:18.987] [NODE_82] [RADIO] ACK seq=69 bat=33% hopDist=1
+[09:29:20.627] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:21.444] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:21.445] [NODE_82] [RADIO] ACK seq=70 bat=32% hopDist=1
+[09:29:21.648] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:21.649] [NODE_82] [RADIO] ACK seq=71 bat=32% hopDist=1
+[09:29:23.494] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:23.698] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:23.900] [NODE_82] [RADIO] ACK seq=72 bat=31% hopDist=1
+[09:29:27.604] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:27.611] [NODE_82] [RADIO] ACK seq=73 bat=29% hopDist=1
+[09:29:27.791] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:27.793] [NODE_82] [RADIO] ACK seq=74 bat=29% hopDist=1
+[09:29:32.911] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:29:33.115] [NODE_82] [NBR] --- Neighbor Table ---
+[09:29:33.117] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:29:33.119] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:29:33.320] [NODE_82] [NBR] -----------------------
+[09:29:35.778] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:35.780] [NODE_82] [RADIO] ACK seq=75 bat=25% hopDist=1
+[09:29:37.826] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:37.827] [NODE_82] [RADIO] ACK seq=76 bat=24% hopDist=1
+[09:29:38.034] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:40.488] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:40.491] [NODE_82] [RADIO] ACK seq=77 bat=22% hopDist=1
+[09:29:42.536] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:42.538] [NODE_82] [RADIO] ACK seq=78 bat=21% hopDist=1
+[09:29:46.227] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:29:48.275] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:48.277] [NODE_82] [RADIO] ACK seq=79 bat=18% hopDist=1
+[09:29:50.122] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:50.123] [NODE_82] [RADIO] ACK seq=80 bat=18% hopDist=1
+[09:29:55.247] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:29:58.522] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:29:58.523] [NODE_82] [RADIO] ACK seq=81 bat=13% hopDist=1
+[09:29:58.727] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:29:58.729] [NODE_82] [RADIO] ACK seq=82 bat=13% hopDist=1
+[09:30:03.236] [NODE_82] [NBR] --- Neighbor Table ---
+[09:30:03.238] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:30:03.238] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:30:03.440] [NODE_82] [NBR] -----------------------
+[09:30:03.849] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:03.850] [NODE_82] [RADIO] ACK seq=83 bat=11% hopDist=1
+[09:30:05.082] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:30:07.536] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:07.537] [NODE_82] [RADIO] ACK seq=84 bat=9% hopDist=1
+[09:30:10.199] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:10.200] [NODE_82] [RADIO] ACK seq=85 bat=8% hopDist=1
+[09:30:13.681] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:13.683] [NODE_82] [RADIO] ACK seq=86 bat=6% hopDist=1
+[09:30:15.118] [NODE_82] [REPEATER] Gossip gate: dropped non-SOS payload from Node 157
+[09:30:16.754] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:16.756] [NODE_82] [RADIO] ACK seq=87 bat=4% hopDist=1
+[09:30:19.212] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:19.213] [NODE_82] [RADIO] ACK seq=88 bat=3% hopDist=1
+[09:30:19.419] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:30:29.255] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:30:30.681] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:30.684] [NODE_82] [RADIO] ACK seq=89 bat=98% hopDist=1
+[09:30:31.500] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:31.502] [NODE_82] [RADIO] ACK seq=90 bat=97% hopDist=1
+[09:30:33.343] [NODE_82] [NBR] --- Neighbor Table ---
+[09:30:33.345] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:30:33.346] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:30:33.548] [NODE_82] [NBR] -----------------------
+[09:30:36.011] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:30:39.692] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:39.694] [NODE_82] [RADIO] ACK seq=91 bat=93% hopDist=1
+[09:30:46.048] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:30:46.655] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:30:46.860] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:46.862] [NODE_82] [RADIO] ACK seq=92 bat=90% hopDist=1
+[09:30:47.887] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:47.889] [NODE_82] [RADIO] ACK seq=93 bat=89% hopDist=1
+[09:30:48.499] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:48.500] [NODE_82] [RADIO] ACK seq=94 bat=89% hopDist=1
+[09:30:55.466] [NODE_82] [REPEATER] Gossip gate: dropped non-SOS payload from Node 157
+[09:30:56.281] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:56.283] [NODE_82] [RADIO] ACK seq=95 bat=85% hopDist=1
+[09:30:56.486] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:30:56.487] [NODE_82] [RADIO] ACK seq=96 bat=85% hopDist=1
+[09:31:03.451] [NODE_82] [NBR] --- Neighbor Table ---
+[09:31:03.453] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:31:03.453] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:31:03.661] [NODE_82] [NBR] -----------------------
+[09:31:03.859] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:03.860] [NODE_82] [RADIO] ACK seq=97 bat=81% hopDist=1
+[09:31:05.502] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:31:09.390] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:13.689] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:31:13.691] [NODE_82] [RADIO] ACK seq=98 bat=76% hopDist=1
+[09:31:16.351] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:16.353] [NODE_82] [RADIO] ACK seq=99 bat=75% hopDist=1
+[09:31:17.585] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:31:18.608] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:25.977] [NODE_82] [RADIO] ACK seq=100 bat=70% hopDist=1
+[09:31:26.803] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:33.350] [NODE_82] [NBR] --- Neighbor Table ---
+[09:31:33.353] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:31:33.353] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:31:33.554] [NODE_82] [NBR] -----------------------
+[09:31:34.988] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:34.990] [NODE_82] [RADIO] ACK seq=101 bat=66% hopDist=1
+[09:31:35.810] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:31:38.470] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:38.472] [NODE_82] [RADIO] ACK seq=102 bat=64% hopDist=1
+[09:31:45.846] [NODE_82] [REPEATER] Gossip gate: dropped non-SOS payload from Node 157
+[09:31:46.662] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:46.663] [NODE_82] [RADIO] ACK seq=103 bat=60% hopDist=1
+[09:31:49.121] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:49.123] [NODE_82] [RADIO] ACK seq=104 bat=59% hopDist=1
+[09:31:51.585] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:55.672] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:56.491] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:56.701] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:57.312] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:57.316] [NODE_82] [RADIO] ACK seq=105 bat=55% hopDist=1
+[09:31:57.518] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:31:59.563] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:31:59.565] [NODE_82] [RADIO] ACK seq=106 bat=54% hopDist=1
+[09:32:00.178] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:32:00.179] [NODE_82] [RADIO] ACK seq=107 bat=53% hopDist=1
+[09:32:03.457] [NODE_82] [NBR] --- Neighbor Table ---
+[09:32:03.459] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:32:03.461] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:32:03.663] [NODE_82] [NBR] -----------------------
+[09:32:04.075] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:32:07.551] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:32:07.554] [NODE_82] [RADIO] ACK seq=108 bat=50% hopDist=1
+[09:32:07.755] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:32:07.757] [NODE_82] [RADIO] ACK seq=109 bat=50% hopDist=1
+==================== Server side ====================
+[09:23:55.093] void/telemetry {"node_id":157, "battery":100, "cpu":0, "sos_alert":1, "seq":0, "uptime_ms":6130, "hops":255}
+[09:24:02.506] void/telemetry {"node_id":82, "battery":90, "cpu":20, "sos_alert":1, "seq":0, "uptime_ms":28877, "hops":1}
+[09:24:06.928] void/telemetry {"node_id":157, "battery":94, "cpu":11, "sos_alert":1, "seq":1, "uptime_ms":17875, "hops":2}
+[09:24:08.832] void/telemetry {"node_id":82, "battery":87, "cpu":24, "sos_alert":1, "seq":1, "uptime_ms":35200, "hops":1}
+[09:24:09.540] void/telemetry {"node_id":157, "battery":92, "cpu":14, "sos_alert":1, "seq":2, "uptime_ms":20585, "hops":2}
+[09:24:13.249] void/telemetry {"node_id":82, "battery":84, "cpu":15, "sos_alert":1, "seq":2, "uptime_ms":39622, "hops":1}
+[09:24:14.661] void/telemetry {"node_id":82, "battery":84, "cpu":18, "sos_alert":1, "seq":3, "uptime_ms":41027, "hops":1}
+[09:24:15.266] void/telemetry {"node_id":82, "battery":83, "cpu":20, "sos_alert":1, "seq":4, "uptime_ms":41631, "hops":1}
+[09:24:16.492] void/telemetry {"node_id":157, "battery":89, "cpu":27, "sos_alert":1, "seq":3, "uptime_ms":27504, "hops":2}
+[09:24:18.382] void/telemetry {"node_id":82, "battery":82, "cpu":13, "sos_alert":1, "seq":5, "uptime_ms":44745, "hops":1}
+[09:24:25.411] void/telemetry {"node_id":157, "battery":84, "cpu":22, "sos_alert":0, "seq":4, "uptime_ms":36342, "hops":2}
+[09:24:27.099] void/telemetry {"node_id":82, "battery":77, "cpu":27, "sos_alert":0, "seq":6, "uptime_ms":53422, "hops":1}
+[09:24:27.569] void/telemetry {"node_id":157, "battery":83, "cpu":24, "sos_alert":1, "seq":5, "uptime_ms":38553, "hops":2}
+[09:24:32.363] void/telemetry {"node_id":82, "battery":75, "cpu":23, "sos_alert":1, "seq":7, "uptime_ms":58736, "hops":1}
+[09:24:33.953] void/telemetry {"node_id":157, "battery":80, "cpu":10, "sos_alert":1, "seq":6, "uptime_ms":44825, "hops":2}
+[09:24:36.315] void/telemetry {"node_id":82, "battery":73, "cpu":18, "sos_alert":1, "seq":8, "uptime_ms":62684, "hops":1}
+[09:24:37.024] void/telemetry {"node_id":157, "battery":79, "cpu":14, "sos_alert":1, "seq":7, "uptime_ms":48041, "hops":2}
+[09:24:37.957] void/telemetry {"node_id":157, "battery":78, "cpu":24, "sos_alert":1, "seq":8, "uptime_ms":48880, "hops":2}
+[09:24:43.057] void/telemetry {"node_id":157, "battery":76, "cpu":16, "sos_alert":1, "seq":9, "uptime_ms":53989, "hops":2}
+[09:24:43.444] void/telemetry {"node_id":157, "battery":76, "cpu":16, "sos_alert":1, "seq":10, "uptime_ms":54397, "hops":2}
+[09:24:45.152] void/telemetry {"node_id":82, "battery":68, "cpu":23, "sos_alert":0, "seq":9, "uptime_ms":71516, "hops":1}
+[09:24:45.672] void/telemetry {"node_id":157, "battery":75, "cpu":13, "sos_alert":1, "seq":11, "uptime_ms":56704, "hops":2}
+[09:24:50.487] void/telemetry {"node_id":157, "battery":72, "cpu":29, "sos_alert":1, "seq":12, "uptime_ms":61527, "hops":2}
+[09:24:52.888] void/telemetry {"node_id":82, "battery":65, "cpu":27, "sos_alert":1, "seq":10, "uptime_ms":79259, "hops":1}
+[09:25:00.029] void/telemetry {"node_id":157, "battery":67, "cpu":24, "sos_alert":0, "seq":13, "uptime_ms":71048, "hops":2}
+[09:25:01.275] void/telemetry {"node_id":82, "battery":60, "cpu":26, "sos_alert":0, "seq":11, "uptime_ms":87637, "hops":1}
+[09:25:03.094] void/telemetry {"node_id":82, "battery":60, "cpu":17, "sos_alert":1, "seq":12, "uptime_ms":89543, "hops":1}
+[09:25:05.304] void/telemetry {"node_id":157, "battery":65, "cpu":24, "sos_alert":1, "seq":14, "uptime_ms":76373, "hops":2}
+[09:25:08.228] void/telemetry {"node_id":157, "battery":63, "cpu":14, "sos_alert":1, "seq":15, "uptime_ms":79352, "hops":2}
+[09:25:11.228] void/telemetry {"node_id":82, "battery":55, "cpu":12, "sos_alert":0, "seq":13, "uptime_ms":97681, "hops":1}
+[09:25:11.546] void/telemetry {"node_id":157, "battery":62, "cpu":26, "sos_alert":1, "seq":16, "uptime_ms":82669, "hops":2}
+[09:25:12.260] void/telemetry {"node_id":157, "battery":61, "cpu":15, "sos_alert":1, "seq":17, "uptime_ms":83384, "hops":2}
+[09:25:15.739] void/telemetry {"node_id":157, "battery":60, "cpu":19, "sos_alert":1, "seq":18, "uptime_ms":86700, "hops":2}
+[09:25:19.533] void/telemetry {"node_id":157, "battery":58, "cpu":20, "sos_alert":1, "seq":19, "uptime_ms":90629, "hops":2}
+[09:25:19.817] void/telemetry {"node_id":157, "battery":58, "cpu":10, "sos_alert":1, "seq":20, "uptime_ms":90862, "hops":2}
+[09:25:21.325] void/telemetry {"node_id":82, "battery":50, "cpu":12, "sos_alert":0, "seq":14, "uptime_ms":107780, "hops":1}
+[09:25:23.544] void/telemetry {"node_id":157, "battery":56, "cpu":11, "sos_alert":1, "seq":21, "uptime_ms":94671, "hops":2}
+[09:25:23.844] void/telemetry {"node_id":157, "battery":56, "cpu":25, "sos_alert":1, "seq":22, "uptime_ms":94884, "hops":2}
+[09:25:24.657] void/telemetry {"node_id":157, "battery":55, "cpu":22, "sos_alert":1, "seq":23, "uptime_ms":95689, "hops":2}
+[09:25:24.973] void/telemetry {"node_id":157, "battery":55, "cpu":11, "sos_alert":1, "seq":24, "uptime_ms":95995, "hops":2}
+[09:25:25.556] void/telemetry {"node_id":157, "battery":55, "cpu":27, "sos_alert":1, "seq":25, "uptime_ms":96600, "hops":2}
+[09:25:30.596] void/telemetry {"node_id":157, "battery":53, "cpu":26, "sos_alert":1, "seq":26, "uptime_ms":101712, "hops":2}
+[09:25:31.184] void/telemetry {"node_id":82, "battery":46, "cpu":13, "sos_alert":1, "seq":15, "uptime_ms":117636, "hops":1}
+[09:25:33.731] void/telemetry {"node_id":157, "battery":51, "cpu":13, "sos_alert":1, "seq":27, "uptime_ms":104729, "hops":2}
+[09:25:35.910] void/telemetry {"node_id":157, "battery":50, "cpu":19, "sos_alert":1, "seq":28, "uptime_ms":107039, "hops":2}
+[09:25:36.529] void/telemetry {"node_id":157, "battery":50, "cpu":16, "sos_alert":1, "seq":29, "uptime_ms":107554, "hops":2}
+[09:25:37.264] void/telemetry {"node_id":157, "battery":50, "cpu":16, "sos_alert":1, "seq":29, "uptime_ms":107554, "hops":2}
+[09:25:39.365] void/telemetry {"node_id":82, "battery":42, "cpu":21, "sos_alert":1, "seq":16, "uptime_ms":125821, "hops":1}
+[09:25:42.776] void/telemetry {"node_id":82, "battery":40, "cpu":22, "sos_alert":1, "seq":17, "uptime_ms":129230, "hops":1}
+[09:25:44.180] void/telemetry {"node_id":157, "battery":46, "cpu":12, "sos_alert":1, "seq":30, "uptime_ms":115269, "hops":2}
+[09:25:44.689] void/telemetry {"node_id":82, "battery":39, "cpu":16, "sos_alert":1, "seq":18, "uptime_ms":131140, "hops":1}
+[09:25:47.220] void/telemetry {"node_id":157, "battery":44, "cpu":29, "sos_alert":1, "seq":31, "uptime_ms":118333, "hops":2}
+[09:25:51.312] void/telemetry {"node_id":82, "battery":36, "cpu":22, "sos_alert":1, "seq":19, "uptime_ms":137760, "hops":1}
+[09:25:52.012] void/telemetry {"node_id":82, "battery":36, "cpu":14, "sos_alert":1, "seq":20, "uptime_ms":138464, "hops":1}
+[09:25:54.722] void/telemetry {"node_id":82, "battery":34, "cpu":26, "sos_alert":1, "seq":21, "uptime_ms":141172, "hops":1}
+[09:25:56.734] void/telemetry {"node_id":157, "battery":40, "cpu":21, "sos_alert":1, "seq":32, "uptime_ms":127859, "hops":2}
+[09:25:58.049] void/telemetry {"node_id":82, "battery":33, "cpu":15, "sos_alert":1, "seq":22, "uptime_ms":144494, "hops":1}
+[09:26:02.369] void/telemetry {"node_id":157, "battery":37, "cpu":18, "sos_alert":1, "seq":33, "uptime_ms":133479, "hops":2}
+[09:26:02.760] void/telemetry {"node_id":82, "battery":30, "cpu":29, "sos_alert":1, "seq":23, "uptime_ms":149207, "hops":1}
+[09:26:05.477] void/telemetry {"node_id":82, "battery":29, "cpu":18, "sos_alert":1, "seq":24, "uptime_ms":151924, "hops":1}
+[09:26:05.980] void/telemetry {"node_id":82, "battery":29, "cpu":20, "sos_alert":1, "seq":25, "uptime_ms":152428, "hops":1}
+[09:26:08.788] void/telemetry {"node_id":157, "battery":34, "cpu":28, "sos_alert":1, "seq":34, "uptime_ms":139906, "hops":2}
+[09:26:14.297] void/telemetry {"node_id":82, "battery":24, "cpu":10, "sos_alert":0, "seq":26, "uptime_ms":160747, "hops":1}
+[09:26:16.909] void/telemetry {"node_id":82, "battery":23, "cpu":11, "sos_alert":1, "seq":27, "uptime_ms":163355, "hops":1}
+[09:26:17.222] void/telemetry {"node_id":157, "battery":29, "cpu":28, "sos_alert":0, "seq":35, "uptime_ms":148342, "hops":2}
+[09:26:18.874] void/telemetry {"node_id":82, "battery":22, "cpu":13, "sos_alert":1, "seq":28, "uptime_ms":165316, "hops":1}
+[09:26:22.080] void/telemetry {"node_id":157, "battery":27, "cpu":19, "sos_alert":1, "seq":36, "uptime_ms":153163, "hops":2}
+[09:26:23.496] void/telemetry {"node_id":157, "battery":26, "cpu":29, "sos_alert":1, "seq":37, "uptime_ms":154524, "hops":2}
+[09:26:28.400] void/telemetry {"node_id":82, "battery":17, "cpu":18, "sos_alert":0, "seq":29, "uptime_ms":174850, "hops":1}
+[09:26:35.160] void/telemetry {"node_id":157, "battery":21, "cpu":24, "sos_alert":1, "seq":39, "uptime_ms":166159, "hops":2}
+[09:26:35.872] void/telemetry {"node_id":157, "battery":21, "cpu":24, "sos_alert":1, "seq":39, "uptime_ms":166159, "hops":2}
+[09:26:39.181] void/telemetry {"node_id":82, "battery":12, "cpu":23, "sos_alert":0, "seq":30, "uptime_ms":185632, "hops":1}
+[09:26:40.588] void/telemetry {"node_id":82, "battery":12, "cpu":12, "sos_alert":1, "seq":31, "uptime_ms":187040, "hops":1}
+[09:26:40.704] void/telemetry {"node_id":82, "battery":12, "cpu":23, "sos_alert":1, "seq":32, "uptime_ms":187145, "hops":1}
+[09:26:42.302] void/telemetry {"node_id":82, "battery":11, "cpu":17, "sos_alert":1, "seq":33, "uptime_ms":188752, "hops":1}
+[09:26:42.818] void/telemetry {"node_id":157, "battery":17, "cpu":10, "sos_alert":1, "seq":40, "uptime_ms":173876, "hops":2}
+[09:26:48.564] void/telemetry {"node_id":157, "battery":14, "cpu":12, "sos_alert":1, "seq":41, "uptime_ms":179666, "hops":2}
+[09:26:51.176] void/telemetry {"node_id":82, "battery":7, "cpu":10, "sos_alert":1, "seq":34, "uptime_ms":197605, "hops":1}
+[09:26:51.467] void/telemetry {"node_id":157, "battery":13, "cpu":17, "sos_alert":1, "seq":42, "uptime_ms":182501, "hops":2}
+[09:26:52.696] void/telemetry {"node_id":82, "battery":6, "cpu":28, "sos_alert":1, "seq":35, "uptime_ms":199134, "hops":1}
+[09:26:53.438] void/telemetry {"node_id":82, "battery":6, "cpu":28, "sos_alert":1, "seq":35, "uptime_ms":199134, "hops":1}
+[09:26:53.555] void/telemetry {"node_id":157, "battery":12, "cpu":17, "sos_alert":1, "seq":43, "uptime_ms":184410, "hops":2}
+[09:26:55.243] void/telemetry {"node_id":157, "battery":11, "cpu":21, "sos_alert":1, "seq":44, "uptime_ms":186287, "hops":2}
+[09:26:55.878] void/telemetry {"node_id":157, "battery":11, "cpu":14, "sos_alert":1, "seq":45, "uptime_ms":186893, "hops":2}
+[09:26:56.080] void/telemetry {"node_id":157, "battery":11, "cpu":24, "sos_alert":1, "seq":46, "uptime_ms":187198, "hops":2}
+[09:26:57.081] void/telemetry {"node_id":82, "battery":4, "cpu":29, "sos_alert":1, "seq":36, "uptime_ms":203522, "hops":1}
+[09:26:58.583] void/telemetry {"node_id":82, "battery":3, "cpu":15, "sos_alert":1, "seq":37, "uptime_ms":205031, "hops":1}
+[09:27:02.108] void/telemetry {"node_id":157, "battery":8, "cpu":18, "sos_alert":1, "seq":47, "uptime_ms":193223, "hops":2}
+[09:27:07.828] void/telemetry {"node_id":82, "battery":99, "cpu":21, "sos_alert":1, "seq":38, "uptime_ms":214272, "hops":1}
+[09:27:08.437] void/telemetry {"node_id":157, "battery":4, "cpu":11, "sos_alert":1, "seq":48, "uptime_ms":199550, "hops":2}
+[09:27:12.451] void/telemetry {"node_id":157, "battery":2, "cpu":20, "sos_alert":1, "seq":49, "uptime_ms":203582, "hops":2}
+[09:27:13.866] void/telemetry {"node_id":82, "battery":96, "cpu":27, "sos_alert":1, "seq":39, "uptime_ms":220308, "hops":1}
+[09:27:19.374] void/telemetry {"node_id":82, "battery":93, "cpu":13, "sos_alert":1, "seq":40, "uptime_ms":225819, "hops":1}
+[09:27:28.211] void/telemetry {"node_id":82, "battery":88, "cpu":22, "sos_alert":0, "seq":41, "uptime_ms":234636, "hops":1}
+[09:27:28.539] void/telemetry {"node_id":157, "battery":94, "cpu":14, "sos_alert":1, "seq":50, "uptime_ms":219617, "hops":2}
+[09:27:30.929] void/telemetry {"node_id":82, "battery":87, "cpu":23, "sos_alert":1, "seq":42, "uptime_ms":237380, "hops":1}
+[09:27:32.861] void/telemetry {"node_id":157, "battery":92, "cpu":15, "sos_alert":1, "seq":51, "uptime_ms":223971, "hops":2}
+[09:27:33.377] void/telemetry {"node_id":157, "battery":92, "cpu":28, "sos_alert":1, "seq":52, "uptime_ms":224488, "hops":2}
+[09:27:35.770] void/telemetry {"node_id":82, "battery":85, "cpu":29, "sos_alert":1, "seq":43, "uptime_ms":242219, "hops":1}
+[09:27:39.298] void/telemetry {"node_id":157, "battery":89, "cpu":20, "sos_alert":1, "seq":53, "uptime_ms":230410, "hops":2}
+[09:27:40.702] void/telemetry {"node_id":157, "battery":88, "cpu":22, "sos_alert":1, "seq":54, "uptime_ms":231732, "hops":2}
+[09:27:44.298] void/telemetry {"node_id":82, "battery":80, "cpu":24, "sos_alert":0, "seq":44, "uptime_ms":250745, "hops":1}
+[09:27:46.006] void/telemetry {"node_id":82, "battery":80, "cpu":23, "sos_alert":1, "seq":45, "uptime_ms":252453, "hops":1}
+[09:27:48.026] void/telemetry {"node_id":157, "battery":85, "cpu":20, "sos_alert":1, "seq":55, "uptime_ms":239147, "hops":2}
+[09:27:50.646] void/telemetry {"node_id":157, "battery":83, "cpu":12, "sos_alert":1, "seq":56, "uptime_ms":241769, "hops":2}
+[09:27:51.055] void/telemetry {"node_id":157, "battery":83, "cpu":20, "sos_alert":1, "seq":57, "uptime_ms":242093, "hops":2}
+[09:27:51.874] void/telemetry {"node_id":82, "battery":77, "cpu":27, "sos_alert":1, "seq":46, "uptime_ms":258309, "hops":1}
+[09:27:53.395] void/telemetry {"node_id":82, "battery":76, "cpu":12, "sos_alert":1, "seq":47, "uptime_ms":259817, "hops":1}
+[09:27:59.495] void/telemetry {"node_id":82, "battery":73, "cpu":16, "sos_alert":1, "seq":48, "uptime_ms":265930, "hops":1}
+[09:28:00.810] void/telemetry {"node_id":157, "battery":78, "cpu":12, "sos_alert":0, "seq":58, "uptime_ms":251910, "hops":2}
+[09:28:02.859] void/telemetry {"node_id":82, "battery":71, "cpu":10, "sos_alert":1, "seq":49, "uptime_ms":269299, "hops":1}
+[09:28:03.687] void/telemetry {"node_id":157, "battery":77, "cpu":16, "sos_alert":1, "seq":59, "uptime_ms":254742, "hops":2}
+[09:28:04.778] void/telemetry {"node_id":157, "battery":77, "cpu":18, "sos_alert":1, "seq":60, "uptime_ms":255908, "hops":2}
+[09:28:05.297] void/telemetry {"node_id":82, "battery":70, "cpu":11, "sos_alert":1, "seq":50, "uptime_ms":271733, "hops":1}
+[09:28:06.543] void/telemetry {"node_id":157, "battery":76, "cpu":27, "sos_alert":1, "seq":61, "uptime_ms":257622, "hops":2}
+[09:28:08.026] void/telemetry {"node_id":157, "battery":75, "cpu":25, "sos_alert":1, "seq":62, "uptime_ms":259147, "hops":2}
+[09:28:14.040] void/telemetry {"node_id":82, "battery":66, "cpu":15, "sos_alert":1, "seq":51, "uptime_ms":280484, "hops":1}
+[09:28:14.758] void/telemetry {"node_id":157, "battery":72, "cpu":19, "sos_alert":1, "seq":63, "uptime_ms":265871, "hops":2}
+[09:28:15.355] void/telemetry {"node_id":157, "battery":71, "cpu":24, "sos_alert":1, "seq":64, "uptime_ms":266393, "hops":2}
+[09:28:15.468] void/telemetry {"node_id":82, "battery":65, "cpu":22, "sos_alert":1, "seq":52, "uptime_ms":281908, "hops":1}
+[09:28:17.974] void/telemetry {"node_id":82, "battery":64, "cpu":16, "sos_alert":1, "seq":53, "uptime_ms":284417, "hops":1}
+[09:28:18.587] void/telemetry {"node_id":157, "battery":70, "cpu":24, "sos_alert":1, "seq":65, "uptime_ms":269702, "hops":2}
+[09:28:19.090] void/telemetry {"node_id":82, "battery":63, "cpu":12, "sos_alert":1, "seq":54, "uptime_ms":285534, "hops":1}
+[09:28:21.199] void/telemetry {"node_id":82, "battery":62, "cpu":22, "sos_alert":1, "seq":55, "uptime_ms":287642, "hops":1}
+[09:28:21.902] void/telemetry {"node_id":82, "battery":62, "cpu":24, "sos_alert":1, "seq":56, "uptime_ms":288351, "hops":1}
+[09:28:24.832] void/telemetry {"node_id":157, "battery":67, "cpu":25, "sos_alert":1, "seq":66, "uptime_ms":275935, "hops":2}
+[09:28:29.493] void/telemetry {"node_id":157, "battery":64, "cpu":25, "sos_alert":1, "seq":67, "uptime_ms":280572, "hops":2}
+[09:28:30.658] void/telemetry {"node_id":157, "battery":64, "cpu":21, "sos_alert":1, "seq":68, "uptime_ms":281784, "hops":2}
+[09:28:30.713] void/telemetry {"node_id":82, "battery":57, "cpu":28, "sos_alert":0, "seq":57, "uptime_ms":297111, "hops":1}
+[09:28:35.902] void/telemetry {"node_id":157, "battery":61, "cpu":27, "sos_alert":1, "seq":69, "uptime_ms":287007, "hops":2}
+[09:28:38.826] void/telemetry {"node_id":82, "battery":53, "cpu":11, "sos_alert":1, "seq":58, "uptime_ms":305266, "hops":1}
+[09:28:41.638] void/telemetry {"node_id":82, "battery":52, "cpu":22, "sos_alert":1, "seq":59, "uptime_ms":308074, "hops":1}
+[09:28:44.055] void/telemetry {"node_id":157, "battery":57, "cpu":29, "sos_alert":1, "seq":70, "uptime_ms":295153, "hops":2}
+[09:28:45.761] void/telemetry {"node_id":82, "battery":50, "cpu":22, "sos_alert":1, "seq":60, "uptime_ms":312202, "hops":1}
+[09:28:46.870] void/telemetry {"node_id":82, "battery":49, "cpu":20, "sos_alert":1, "seq":61, "uptime_ms":313307, "hops":1}
+[09:28:50.582] void/telemetry {"node_id":157, "battery":54, "cpu":18, "sos_alert":1, "seq":71, "uptime_ms":301696, "hops":2}
+[09:28:52.090] void/telemetry {"node_id":82, "battery":47, "cpu":11, "sos_alert":1, "seq":62, "uptime_ms":318529, "hops":1}
+[09:28:52.410] void/telemetry {"node_id":157, "battery":53, "cpu":29, "sos_alert":1, "seq":72, "uptime_ms":303525, "hops":2}
+[09:29:00.143] void/telemetry {"node_id":157, "battery":49, "cpu":11, "sos_alert":1, "seq":73, "uptime_ms":311249, "hops":2}
+[09:29:00.851] void/telemetry {"node_id":82, "battery":42, "cpu":10, "sos_alert":0, "seq":63, "uptime_ms":327288, "hops":1}
+[09:29:01.298] void/telemetry {"node_id":82, "battery":42, "cpu":29, "sos_alert":1, "seq":64, "uptime_ms":327697, "hops":1}
+[09:29:01.794] void/telemetry {"node_id":157, "battery":48, "cpu":23, "sos_alert":1, "seq":74, "uptime_ms":312870, "hops":2}
+[09:29:03.330] void/telemetry {"node_id":157, "battery":48, "cpu":10, "sos_alert":1, "seq":75, "uptime_ms":314444, "hops":2}
+[09:29:05.643] void/telemetry {"node_id":157, "battery":46, "cpu":19, "sos_alert":1, "seq":76, "uptime_ms":316760, "hops":2}
+[09:29:05.946] void/telemetry {"node_id":82, "battery":40, "cpu":21, "sos_alert":1, "seq":65, "uptime_ms":332386, "hops":1}
+[09:29:07.355] void/telemetry {"node_id":82, "battery":39, "cpu":25, "sos_alert":1, "seq":66, "uptime_ms":333793, "hops":1}
+[09:29:07.654] void/telemetry {"node_id":82, "battery":39, "cpu":13, "sos_alert":1, "seq":67, "uptime_ms":334097, "hops":1}
+[09:29:09.570] void/telemetry {"node_id":157, "battery":44, "cpu":27, "sos_alert":1, "seq":77, "uptime_ms":320681, "hops":2}
+[09:29:14.239] void/telemetry {"node_id":157, "battery":42, "cpu":21, "sos_alert":1, "seq":78, "uptime_ms":325215, "hops":2}
+[09:29:16.210] void/telemetry {"node_id":82, "battery":35, "cpu":16, "sos_alert":1, "seq":68, "uptime_ms":342652, "hops":1}
+[09:29:16.542] void/telemetry {"node_id":157, "battery":41, "cpu":16, "sos_alert":1, "seq":79, "uptime_ms":327644, "hops":2}
+[09:29:19.935] void/telemetry {"node_id":82, "battery":33, "cpu":11, "sos_alert":1, "seq":69, "uptime_ms":346377, "hops":1}
+[09:29:21.563] void/telemetry {"node_id":157, "battery":39, "cpu":20, "sos_alert":1, "seq":80, "uptime_ms":332672, "hops":2}
+[09:29:22.362] void/telemetry {"node_id":82, "battery":32, "cpu":26, "sos_alert":1, "seq":70, "uptime_ms":348793, "hops":1}
+[09:29:22.461] void/telemetry {"node_id":82, "battery":32, "cpu":20, "sos_alert":1, "seq":71, "uptime_ms":348899, "hops":1}
+[09:29:24.370] void/telemetry {"node_id":157, "battery":37, "cpu":18, "sos_alert":1, "seq":81, "uptime_ms":335492, "hops":2}
+[09:29:24.430] void/telemetry {"node_id":82, "battery":31, "cpu":18, "sos_alert":1, "seq":72, "uptime_ms":350821, "hops":1}
+[09:29:28.595] void/telemetry {"node_id":82, "battery":29, "cpu":22, "sos_alert":1, "seq":73, "uptime_ms":354937, "hops":1}
+[09:29:28.662] void/telemetry {"node_id":82, "battery":29, "cpu":15, "sos_alert":1, "seq":74, "uptime_ms":355043, "hops":1}
+[09:29:33.738] void/telemetry {"node_id":157, "battery":32, "cpu":13, "sos_alert":0, "seq":82, "uptime_ms":344827, "hops":2}
+[09:29:36.616] void/telemetry {"node_id":82, "battery":25, "cpu":17, "sos_alert":1, "seq":75, "uptime_ms":363042, "hops":1}
+[09:29:38.818] void/telemetry {"node_id":82, "battery":24, "cpu":10, "sos_alert":1, "seq":76, "uptime_ms":365257, "hops":1}
+[09:29:39.038] void/telemetry {"node_id":157, "battery":30, "cpu":18, "sos_alert":1, "seq":83, "uptime_ms":350094, "hops":2}
+[09:29:41.354] void/telemetry {"node_id":82, "battery":22, "cpu":15, "sos_alert":1, "seq":77, "uptime_ms":367783, "hops":1}
+[09:29:43.454] void/telemetry {"node_id":82, "battery":21, "cpu":11, "sos_alert":1, "seq":78, "uptime_ms":369890, "hops":1}
+[09:29:46.870] void/telemetry {"node_id":157, "battery":26, "cpu":17, "sos_alert":1, "seq":84, "uptime_ms":357977, "hops":2}
+[09:29:49.275] void/telemetry {"node_id":82, "battery":18, "cpu":11, "sos_alert":1, "seq":79, "uptime_ms":375708, "hops":1}
+[09:29:51.074] void/telemetry {"node_id":82, "battery":18, "cpu":29, "sos_alert":1, "seq":80, "uptime_ms":377515, "hops":1}
+[09:29:55.906] void/telemetry {"node_id":157, "battery":21, "cpu":22, "sos_alert":0, "seq":85, "uptime_ms":367021, "hops":2}
+[09:29:59.378] void/telemetry {"node_id":82, "battery":13, "cpu":22, "sos_alert":0, "seq":81, "uptime_ms":385813, "hops":1}
+[09:29:59.711] void/telemetry {"node_id":82, "battery":13, "cpu":27, "sos_alert":1, "seq":82, "uptime_ms":386117, "hops":1}
+[09:30:04.703] void/telemetry {"node_id":82, "battery":11, "cpu":20, "sos_alert":1, "seq":83, "uptime_ms":391131, "hops":1}
+[09:30:06.021] void/telemetry {"node_id":157, "battery":16, "cpu":22, "sos_alert":0, "seq":86, "uptime_ms":377053, "hops":2}
+[09:30:08.466] void/telemetry {"node_id":82, "battery":9, "cpu":14, "sos_alert":1, "seq":84, "uptime_ms":394904, "hops":1}
+[09:30:11.177] void/telemetry {"node_id":82, "battery":8, "cpu":26, "sos_alert":1, "seq":85, "uptime_ms":397611, "hops":1}
+[09:30:14.582] void/telemetry {"node_id":82, "battery":6, "cpu":23, "sos_alert":1, "seq":86, "uptime_ms":401021, "hops":1}
+[09:30:17.604] void/telemetry {"node_id":82, "battery":4, "cpu":24, "sos_alert":1, "seq":87, "uptime_ms":404033, "hops":1}
+[09:30:20.210] void/telemetry {"node_id":82, "battery":3, "cpu":15, "sos_alert":1, "seq":88, "uptime_ms":406641, "hops":1}
+[09:30:20.332] void/telemetry {"node_id":157, "battery":9, "cpu":19, "sos_alert":1, "seq":88, "uptime_ms":391444, "hops":2}
+[09:30:30.260] void/telemetry {"node_id":157, "battery":4, "cpu":20, "sos_alert":0, "seq":89, "uptime_ms":401272, "hops":2}
+[09:30:30.985] void/telemetry {"node_id":157, "battery":4, "cpu":20, "sos_alert":0, "seq":89, "uptime_ms":401272, "hops":2}
+[09:30:31.636] void/telemetry {"node_id":82, "battery":98, "cpu":17, "sos_alert":1, "seq":89, "uptime_ms":418074, "hops":1}
+[09:30:32.351] void/telemetry {"node_id":82, "battery":97, "cpu":29, "sos_alert":1, "seq":90, "uptime_ms":418779, "hops":1}
+[09:30:36.855] void/telemetry {"node_id":157, "battery":1, "cpu":25, "sos_alert":1, "seq":90, "uptime_ms":407988, "hops":2}
+[09:30:40.585] void/telemetry {"node_id":82, "battery":93, "cpu":25, "sos_alert":1, "seq":91, "uptime_ms":427018, "hops":1}
+[09:30:47.014] void/telemetry {"node_id":157, "battery":96, "cpu":26, "sos_alert":1, "seq":91, "uptime_ms":418116, "hops":2}
+[09:30:47.114] void/telemetry {"node_id":157, "battery":96, "cpu":24, "sos_alert":1, "seq":92, "uptime_ms":418243, "hops":2}
+[09:30:47.718] void/telemetry {"node_id":82, "battery":90, "cpu":10, "sos_alert":1, "seq":92, "uptime_ms":434153, "hops":1}
+[09:30:48.829] void/telemetry {"node_id":82, "battery":89, "cpu":18, "sos_alert":1, "seq":93, "uptime_ms":435259, "hops":1}
+[09:30:49.338] void/telemetry {"node_id":82, "battery":89, "cpu":14, "sos_alert":1, "seq":94, "uptime_ms":435771, "hops":1}
+[09:30:57.163] void/telemetry {"node_id":82, "battery":85, "cpu":21, "sos_alert":1, "seq":95, "uptime_ms":443589, "hops":1}
+[09:30:57.361] void/telemetry {"node_id":82, "battery":85, "cpu":14, "sos_alert":1, "seq":96, "uptime_ms":443793, "hops":1}
+[09:31:04.699] void/telemetry {"node_id":82, "battery":81, "cpu":22, "sos_alert":1, "seq":97, "uptime_ms":451115, "hops":1}
+[09:31:06.396] void/telemetry {"node_id":157, "battery":86, "cpu":28, "sos_alert":0, "seq":94, "uptime_ms":437509, "hops":2}
+[09:31:10.062] void/telemetry {"node_id":157, "battery":85, "cpu":10, "sos_alert":1, "seq":95, "uptime_ms":441147, "hops":2}
+[09:31:14.586] void/telemetry {"node_id":82, "battery":76, "cpu":13, "sos_alert":0, "seq":98, "uptime_ms":461010, "hops":1}
+[09:31:17.196] void/telemetry {"node_id":82, "battery":75, "cpu":28, "sos_alert":1, "seq":99, "uptime_ms":463621, "hops":1}
+[09:31:18.497] void/telemetry {"node_id":157, "battery":80, "cpu":17, "sos_alert":0, "seq":96, "uptime_ms":449617, "hops":2}
+[09:31:19.476] void/telemetry {"node_id":157, "battery":80, "cpu":10, "sos_alert":1, "seq":97, "uptime_ms":450542, "hops":2}
+[09:31:26.477] void/telemetry {"node_id":157, "battery":77, "cpu":16, "sos_alert":1, "seq":98, "uptime_ms":457515, "hops":2}
+[09:31:26.684] void/telemetry {"node_id":82, "battery":70, "cpu":20, "sos_alert":0, "seq":100, "uptime_ms":473111, "hops":1}
+[09:31:27.797] void/telemetry {"node_id":157, "battery":76, "cpu":28, "sos_alert":1, "seq":99, "uptime_ms":458921, "hops":2}
+[09:31:35.915] void/telemetry {"node_id":82, "battery":66, "cpu":13, "sos_alert":1, "seq":101, "uptime_ms":482346, "hops":1}
+[09:31:36.714] void/telemetry {"node_id":157, "battery":71, "cpu":21, "sos_alert":0, "seq":100, "uptime_ms":467848, "hops":2}
+[09:31:39.294] void/telemetry {"node_id":82, "battery":64, "cpu":22, "sos_alert":1, "seq":102, "uptime_ms":485717, "hops":1}
+[09:31:47.538] void/telemetry {"node_id":82, "battery":60, "cpu":24, "sos_alert":1, "seq":103, "uptime_ms":493937, "hops":1}
+[09:31:50.013] void/telemetry {"node_id":82, "battery":59, "cpu":14, "sos_alert":1, "seq":104, "uptime_ms":496446, "hops":1}
+[09:31:52.520] void/telemetry {"node_id":157, "battery":64, "cpu":11, "sos_alert":1, "seq":102, "uptime_ms":483657, "hops":2}
+[09:31:56.457] void/telemetry {"node_id":157, "battery":62, "cpu":24, "sos_alert":1, "seq":103, "uptime_ms":487575, "hops":2}
+[09:31:57.264] void/telemetry {"node_id":157, "battery":61, "cpu":13, "sos_alert":1, "seq":104, "uptime_ms":488390, "hops":2}
+[09:31:57.688] void/telemetry {"node_id":157, "battery":61, "cpu":21, "sos_alert":1, "seq":105, "uptime_ms":488707, "hops":2}
+[09:31:58.185] void/telemetry {"node_id":82, "battery":55, "cpu":10, "sos_alert":1, "seq":105, "uptime_ms":504614, "hops":1}
+[09:31:58.297] void/telemetry {"node_id":157, "battery":61, "cpu":23, "sos_alert":1, "seq":106, "uptime_ms":489423, "hops":2}
+[09:32:00.412] void/telemetry {"node_id":82, "battery":54, "cpu":17, "sos_alert":1, "seq":106, "uptime_ms":506843, "hops":1}
+[09:32:01.117] void/telemetry {"node_id":82, "battery":53, "cpu":17, "sos_alert":1, "seq":107, "uptime_ms":507549, "hops":1}
+[09:32:05.036] void/telemetry {"node_id":157, "battery":57, "cpu":13, "sos_alert":1, "seq":107, "uptime_ms":496143, "hops":2}
+[09:32:08.353] void/telemetry {"node_id":82, "battery":50, "cpu":24, "sos_alert":1, "seq":108, "uptime_ms":514777, "hops":1}
+[09:32:08.560] void/telemetry {"node_id":82, "battery":50, "cpu":21, "sos_alert":1, "seq":109, "uptime_ms":514982, "hops":1}
+[09:32:10.566] void/telemetry {"node_id":157, "battery":55, "cpu":20, "sos_alert":1, "seq":108, "uptime_ms":501685, "hops":2}
+[09:32:11.164] void/telemetry {"node_id":157, "battery":54, "cpu":11, "sos_alert":1, "seq":109, "uptime_ms":502206, "hops":2}
+
+ ====================================================================
+|    Trial-2 : Two-Hop Relay Path Convergence                        |
+ ====================================================================
+==================== Edge Nodes ====================
+[09:37:01.285] [NODE_157] [SYS] No gateway at boot. Probing mesh peers immediately.
+[09:37:01.317] [NODE_157] [MESH] Channel sweep across 3 channels...
+[09:37:01.351] [NODE_157] [MESH] Peer found on Ch 11 -> C45BBE554B52
+[09:37:01.351] [NODE_157] [MESH] myHopDist set to 2 (relay peer not yet in table)
+[09:37:01.351] [NODE_157] [SYS] Boot probe ACK'd by peer — mesh path active.
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:01.547] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:01.644] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:01.644] [NODE_157] [RADIO] ACK seq=0 bat=99% hopDist=2
+[09:37:11.345] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:37:11.345] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:11.378] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:11.378] [NODE_157] [RADIO] ACK seq=1 bat=94% hopDist=2
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:21.300] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:21.500] [NODE_157] [RADIO] ACK seq=4 bat=90% hopDist=2
+[09:37:23.142] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:23.143] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:23.145] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:23.344] [NODE_157] [RADIO] ACK seq=5 bat=89% hopDist=2
+[09:37:25.392] [NODE_157] [NBR]   (empty)
+[09:37:31.334] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:31.335] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:31.536] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:31.538] [NODE_157] [RADIO] ACK seq=6 bat=85% hopDist=2
+[09:37:38.910] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:38.916] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:39.114] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:39.115] [NODE_157] [RADIO] ACK seq=7 bat=81% hopDist=2
+[09:37:39.730] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:39.732] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:39.933] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:39.934] [NODE_157] [RADIO] ACK seq=8 bat=80% hopDist=2
+[09:37:47.512] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:47.514] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:52.221] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:37:52.223] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:37:52.425] [NODE_157] [MESH] Cached peer ACK'd.
+[09:37:52.427] [NODE_157] [RADIO] ACK seq=10 bat=74% hopDist=2
+[09:37:55.294] [NODE_157] [NBR] --- Neighbor Table ---
+[09:37:55.296] [NODE_157] [NBR]   (empty)
+[09:37:55.296] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:37:55.497] [NODE_157] [NBR] -----------------------
+[09:38:00.006] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:00.208] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:00.209] [NODE_157] [RADIO] ACK seq=11 bat=70% hopDist=2
+[09:38:01.849] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:01.849] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:02.053] [NODE_157] [RADIO] ACK seq=12 bat=69% hopDist=2
+[09:38:04.304] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:04.510] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:04.511] [NODE_157] [RADIO] ACK seq=13 bat=68% hopDist=2
+[09:38:09.424] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:09.428] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:09.429] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:09.628] [NODE_157] [RADIO] ACK seq=14 bat=66% hopDist=2
+[09:38:14.753] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:14.755] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:14.958] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:14.960] [NODE_157] [RADIO] ACK seq=15 bat=63% hopDist=2
+[09:38:24.171] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:38:24.172] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:25.398] [NODE_157] [NBR] --- Neighbor Table ---
+[09:38:25.399] [NODE_157] [NBR]   (empty)
+[09:38:25.401] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:38:29.699] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:29.903] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:29.906] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:30.112] [NODE_157] [RADIO] ACK seq=17 bat=56% hopDist=2
+[09:38:32.775] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:32.777] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:32.977] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:32.978] [NODE_157] [RADIO] ACK seq=18 bat=54% hopDist=2
+[09:38:35.233] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:35.236] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:36.252] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:36.256] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:38.709] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:38.713] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:40.759] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:40.965] [NODE_157] [RADIO] ACK seq=23 bat=50% hopDist=2
+[09:38:50.591] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:38:50.592] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:50.792] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:50.794] [NODE_157] [RADIO] ACK seq=24 bat=45% hopDist=2
+[09:38:53.457] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:53.458] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:53.660] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:53.661] [NODE_157] [RADIO] ACK seq=25 bat=44% hopDist=2
+[09:38:55.503] [NODE_157] [NBR] --- Neighbor Table ---
+[09:38:55.504] [NODE_157] [NBR]   (empty)
+[09:38:55.505] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:38:58.779] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:38:58.781] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:38:58.984] [NODE_157] [MESH] Cached peer ACK'd.
+[09:38:58.986] [NODE_157] [RADIO] ACK seq=26 bat=41% hopDist=2
+[09:38:59.601] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:02.056] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:02.058] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:02.261] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:02.262] [NODE_157] [RADIO] ACK seq=28 bat=40% hopDist=2
+[09:39:06.357] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:06.358] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:12.296] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:12.298] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:12.501] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:12.502] [NODE_157] [RADIO] ACK seq=30 bat=35% hopDist=2
+[09:39:15.576] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:15.577] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:15.781] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:18.031] [NODE_157] [RADIO] ACK seq=32 bat=32% hopDist=2
+[09:39:25.607] [NODE_157] [NBR] --- Neighbor Table ---
+[09:39:25.609] [NODE_157] [NBR]   (empty)
+[09:39:25.610] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:39:25.812] [NODE_157] [NBR] -----------------------
+[09:39:26.636] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:26.637] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:26.836] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:26.838] [NODE_157] [RADIO] ACK seq=33 bat=28% hopDist=2
+[09:39:28.680] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:28.681] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:28.884] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:28.886] [NODE_157] [RADIO] ACK seq=34 bat=27% hopDist=2
+[09:39:32.167] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:32.375] [NODE_157] [RADIO] ACK seq=35 bat=25% hopDist=2
+[09:39:35.439] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:35.441] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:35.648] [NODE_157] [RADIO] ACK seq=36 bat=23% hopDist=2
+[09:39:36.672] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:36.674] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:36.675] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:36.876] [NODE_157] [RADIO] ACK seq=37 bat=23% hopDist=2
+[09:39:40.967] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:40.970] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:41.172] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:41.173] [NODE_157] [RADIO] ACK seq=38 bat=21% hopDist=2
+[09:39:49.161] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:49.164] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:49.364] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:49.365] [NODE_157] [RADIO] ACK seq=39 bat=16% hopDist=2
+[09:39:51.822] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:51.823] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:52.026] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:52.028] [NODE_157] [RADIO] ACK seq=40 bat=15% hopDist=2
+[09:39:53.462] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:53.463] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:54.485] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:54.487] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:54.712] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:54.715] [NODE_157] [RADIO] ACK seq=42 bat=14% hopDist=2
+[09:39:55.714] [NODE_157] [NBR]   (empty)
+[09:39:55.716] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:39:55.917] [NODE_157] [NBR] -----------------------
+[09:39:56.941] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:39:56.943] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:39:57.146] [NODE_157] [MESH] Cached peer ACK'd.
+[09:39:57.148] [NODE_157] [RADIO] ACK seq=43 bat=13% hopDist=2
+[09:40:02.271] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:40:02.272] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:02.471] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:02.472] [NODE_157] [RADIO] ACK seq=44 bat=10% hopDist=2
+[09:40:04.314] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:40:04.317] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:04.523] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:04.723] [NODE_157] [RADIO] ACK seq=45 bat=9% hopDist=2
+[09:40:13.530] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:40:13.533] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:13.735] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:13.736] [NODE_157] [RADIO] ACK seq=46 bat=4% hopDist=2
+[09:40:20.703] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:20.902] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:20.909] [NODE_157] [RADIO] ACK seq=47 bat=1% hopDist=2
+[09:40:25.817] [NODE_157] [NBR] --- Neighbor Table ---
+[09:40:25.819] [NODE_157] [NBR]   (empty)
+[09:40:26.026] [NODE_157] [NBR] -----------------------
+[09:40:36.058] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:40:36.060] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:36.262] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:36.264] [NODE_157] [RADIO] ACK seq=48 bat=93% hopDist=2
+[09:40:36.674] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:36.880] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:37.081] [NODE_157] [RADIO] ACK seq=49 bat=93% hopDist=2
+[09:40:45.894] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:53.056] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:40:53.262] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:53.264] [NODE_157] [RADIO] ACK seq=51 bat=85% hopDist=2
+[09:40:55.717] [NODE_157] [NBR] --- Neighbor Table ---
+[09:40:55.719] [NODE_157] [NBR]   (empty)
+[09:40:55.721] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:40:55.927] [NODE_157] [NBR] -----------------------
+[09:40:59.203] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:40:59.405] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:40:59.407] [NODE_157] [MESH] Cached peer ACK'd.
+[09:40:59.609] [NODE_157] [RADIO] ACK seq=52 bat=82% hopDist=2
+[09:41:08.005] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:41:08.008] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:41:08.210] [NODE_157] [MESH] Cached peer ACK'd.
+[09:41:08.212] [NODE_157] [RADIO] ACK seq=53 bat=77% hopDist=2
+[09:41:13.126] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:41:13.127] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:41:13.330] [NODE_157] [MESH] Cached peer ACK'd.
+[09:41:13.331] [NODE_157] [RADIO] ACK seq=54 bat=75% hopDist=2
+[09:41:13.740] [NODE_157] [MESH] Cached peer ACK'd.
+[09:41:13.743] [NODE_157] [RADIO] ACK seq=55 bat=75% hopDist=2
+[09:41:22.136] [NODE_157] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=2 ---
+[09:41:25.825] [NODE_157] [NBR] --- Neighbor Table ---
+[09:41:25.828] [NODE_157] [NBR]   (empty)
+[09:41:25.828] [NODE_157] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:41:26.027] [NODE_157] [NBR] -----------------------
+[09:41:31.147] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:41:31.150] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:41:31.355] [NODE_157] [MESH] Cached peer ACK'd.
+[09:41:31.356] [NODE_157] [RADIO] ACK seq=58 bat=66% hopDist=2
+[09:41:33.196] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:41:33.197] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:41:33.400] [NODE_157] [MESH] Cached peer ACK'd.
+[09:41:33.402] [NODE_157] [RADIO] ACK seq=59 bat=65% hopDist=2
+[09:41:38.483] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:41:38.483] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:41:38.483] [NODE_157] [MESH] Cached peer ACK'd.
+[09:41:38.483] [NODE_157] [RADIO] ACK seq=60 bat=62% hopDist=2
+[09:41:42.981] [NODE_157] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=2 ---
+[09:41:43.014] [NODE_157] [MESH] Trying cached peer C45BBE554B52
+[09:41:43.014] [NODE_157] [MESH] Cached peer ACK'd.
+[09:36:41.367] [NODE_82] [MESH] Direct gateway link confirmed. myHopDist=1
+[09:36:41.369] [NODE_82] [SYS] Node 82 armed. hopDist=1
+[09:36:43.615] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:36:43.617] [NODE_82] [RADIO] ACK seq=0 bat=98% hopDist=1
+[09:36:52.011] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=255) — forwarding
+[09:36:52.422] [NODE_82] [REPEATER] Duplicate suppressed: Node 157 seq=0
+[09:36:52.834] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:36:53.651] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:36:59.183] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:36:59.185] [NODE_82] [RADIO] ACK seq=2 bat=91% hopDist=1
+[09:37:01.431] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:01.434] [NODE_82] [RADIO] ACK seq=3 bat=90% hopDist=1
+[09:37:01.640] [NODE_82] [REPEATER] Duplicate suppressed: Node 157 seq=0
+[09:37:02.049] [NODE_82] [REPEATER] Duplicate suppressed: Node 157 seq=0
+[09:37:02.456] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:02.458] [NODE_82] [RADIO] ACK seq=4 bat=89% hopDist=1
+[09:37:03.279] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:37:03.483] [NODE_82] [NBR] -----------------------
+[09:37:11.466] [NODE_82] [REPEATER] Duplicate suppressed: Node 157 seq=1
+[09:37:11.468] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:37:11.471] [NODE_82] [RADIO] ACK seq=5 bat=84% hopDist=1
+[09:37:12.695] [NODE_82] [REPEATER] Duplicate suppressed: Node 157 seq=2
+[09:37:14.949] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:18.432] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:18.433] [NODE_82] [RADIO] ACK seq=7 bat=81% hopDist=1
+[09:37:21.297] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:23.346] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:27.441] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:27.442] [NODE_82] [RADIO] ACK seq=8 bat=77% hopDist=1
+[09:37:31.335] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:33.384] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:37:33.386] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:37:33.587] [NODE_82] [NBR] -----------------------
+[09:37:33.590] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:33.594] [NODE_82] [RADIO] ACK seq=9 bat=74% hopDist=1
+[09:37:34.203] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:34.204] [NODE_82] [RADIO] ACK seq=10 bat=73% hopDist=1
+[09:37:34.609] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:34.610] [NODE_82] [RADIO] ACK seq=11 bat=73% hopDist=1
+[09:37:36.247] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:36.248] [NODE_82] [RADIO] ACK seq=12 bat=72% hopDist=1
+[09:37:37.478] [NODE_82] [RADIO] ACK seq=13 bat=72% hopDist=1
+[09:37:38.918] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:39.936] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:46.487] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:46.488] [NODE_82] [RADIO] ACK seq=15 bat=67% hopDist=1
+[09:37:47.516] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:52.225] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:37:56.318] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:56.320] [NODE_82] [RADIO] ACK seq=17 bat=62% hopDist=1
+[09:37:58.570] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:37:58.571] [NODE_82] [RADIO] ACK seq=18 bat=61% hopDist=1
+[09:38:00.008] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:01.852] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:03.280] [NODE_82] [NBR] --- Neighbor Table ---
+[09:38:03.281] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:38:03.283] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:38:03.484] [NODE_82] [NBR] -----------------------
+[09:38:04.308] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:07.990] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:38:07.993] [NODE_82] [RADIO] ACK seq=19 bat=56% hopDist=1
+[09:38:09.630] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:13.110] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:13.929] [NODE_82] [RADIO] ACK seq=20 bat=54% hopDist=1
+[09:38:14.956] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:19.254] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:19.255] [NODE_82] [RADIO] ACK seq=21 bat=51% hopDist=1
+[09:38:20.691] [NODE_82] [RADIO] ACK seq=22 bat=51% hopDist=1
+[09:38:22.736] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:22.737] [NODE_82] [RADIO] ACK seq=23 bat=50% hopDist=1
+[09:38:24.172] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:38:25.606] [NODE_82] [RADIO] ACK seq=24 bat=49% hopDist=1
+[09:38:25.807] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:25.809] [NODE_82] [RADIO] ACK seq=25 bat=48% hopDist=1
+[09:38:29.905] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:32.976] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:33.384] [NODE_82] [NBR] --- Neighbor Table ---
+[09:38:33.386] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:38:33.388] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:38:33.589] [NODE_82] [NBR] -----------------------
+[09:38:33.591] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:33.593] [NODE_82] [RADIO] ACK seq=26 bat=45% hopDist=1
+[09:38:35.642] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:36.254] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:37.686] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:38.306] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:38.505] [NODE_82] [RADIO] ACK seq=27 bat=42% hopDist=1
+[09:38:38.711] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:41.167] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:41.169] [NODE_82] [RADIO] ACK seq=28 bat=41% hopDist=1
+[09:38:47.516] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:47.517] [NODE_82] [RADIO] ACK seq=29 bat=38% hopDist=1
+[09:38:47.721] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:47.722] [NODE_82] [RADIO] ACK seq=30 bat=38% hopDist=1
+[09:38:48.745] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:38:48.747] [NODE_82] [RADIO] ACK seq=31 bat=37% hopDist=1
+[09:38:50.590] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:38:53.459] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:57.961] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:38:57.962] [NODE_82] [RADIO] ACK seq=32 bat=32% hopDist=1
+[09:38:58.783] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:38:59.599] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:01.442] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:01.443] [NODE_82] [RADIO] ACK seq=33 bat=31% hopDist=1
+[09:39:02.060] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:03.493] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:39:03.694] [NODE_82] [NBR] -----------------------
+[09:39:06.152] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:06.154] [NODE_82] [RADIO] ACK seq=34 bat=28% hopDist=1
+[09:39:06.360] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:10.453] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:10.455] [NODE_82] [RADIO] ACK seq=35 bat=26% hopDist=1
+[09:39:12.300] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:15.780] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:17.006] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:17.008] [NODE_82] [RADIO] ACK seq=36 bat=23% hopDist=1
+[09:39:17.621] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:26.634] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:28.683] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:30.934] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:30.936] [NODE_82] [RADIO] ACK seq=38 bat=16% hopDist=1
+[09:39:32.164] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:32.377] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:32.570] [NODE_82] [RADIO] ACK seq=39 bat=15% hopDist=1
+[09:39:33.393] [NODE_82] [NBR] --- Neighbor Table ---
+[09:39:33.395] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:39:33.395] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:39:33.599] [NODE_82] [NBR] -----------------------
+[09:39:35.441] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:38.512] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:38.514] [NODE_82] [RADIO] ACK seq=40 bat=12% hopDist=1
+[09:39:40.971] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:42.811] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:42.813] [NODE_82] [RADIO] ACK seq=41 bat=10% hopDist=1
+[09:39:46.087] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:46.090] [NODE_82] [RADIO] ACK seq=42 bat=9% hopDist=1
+[09:39:49.166] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:49.367] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:39:54.714] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:56.945] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:39:57.761] [NODE_82] [RADIO] ACK seq=44 bat=3% hopDist=1
+[09:40:03.497] [NODE_82] [NBR] --- Neighbor Table ---
+[09:40:03.499] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:40:03.500] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:40:03.700] [NODE_82] [NBR] -----------------------
+[09:40:04.317] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:04.519] [NODE_82] [RADIO] ACK seq=45 bat=100% hopDist=1
+[09:40:04.521] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:40:12.301] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:40:12.303] [NODE_82] [RADIO] ACK seq=46 bat=95% hopDist=1
+[09:40:13.534] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:40:20.701] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:40:22.541] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:40:22.543] [NODE_82] [RADIO] ACK seq=47 bat=90% hopDist=1
+[09:40:29.095] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:29.098] [NODE_82] [RADIO] ACK seq=48 bat=87% hopDist=1
+[09:40:29.299] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:29.301] [NODE_82] [RADIO] ACK seq=49 bat=87% hopDist=1
+[09:40:33.395] [NODE_82] [NBR] --- Neighbor Table ---
+[09:40:33.397] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:40:33.398] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:40:36.061] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:40:36.879] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:40:38.515] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:38.517] [NODE_82] [RADIO] ACK seq=50 bat=83% hopDist=1
+[09:40:39.543] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:45.683] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:45.686] [NODE_82] [RADIO] ACK seq=52 bat=79% hopDist=1
+[09:40:45.893] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:40:53.260] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:40:54.694] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:40:54.696] [NODE_82] [RADIO] ACK seq=53 bat=74% hopDist=1
+[09:40:57.154] [NODE_82] [RADIO] ACK seq=54 bat=73% hopDist=1
+[09:40:59.200] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:40:59.408] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:03.500] [NODE_82] [NBR] --- Neighbor Table ---
+[09:41:03.501] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:41:03.503] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:41:03.705] [NODE_82] [NBR] -----------------------
+[09:41:08.009] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:41:13.129] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:13.539] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:20.908] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:41:20.911] [NODE_82] [RADIO] ACK seq=59 bat=61% hopDist=1
+[09:41:22.140] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:41:24.799] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:31.352] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:33.199] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:33.605] [NODE_82] [NBR] --- Neighbor Table ---
+[09:41:33.607] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:41:33.608] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:41:33.810] [NODE_82] [NBR] -----------------------
+[09:41:38.525] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:40.978] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:41:40.979] [NODE_82] [RADIO] ACK seq=61 bat=51% hopDist=1
+[09:41:41.184] [NODE_82] [RADIO] ACK seq=62 bat=51% hopDist=1
+[09:41:44.872] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:47.736] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:41:49.375] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:41:55.930] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:41:55.933] [NODE_82] [RADIO] ACK seq=64 bat=44% hopDist=1
+[09:41:59.204] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:00.433] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:03.508] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:03.511] [NODE_82] [RADIO] ACK seq=65 bat=41% hopDist=1
+[09:42:03.511] [NODE_82] [NBR] --- Neighbor Table ---
+[09:42:03.714] [NODE_82] [NBR] -----------------------
+[09:42:07.602] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:12.107] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:42:12.108] [NODE_82] [RADIO] ACK seq=66 bat=36% hopDist=1
+[09:42:15.179] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:16.613] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:16.614] [NODE_82] [RADIO] ACK seq=67 bat=34% hopDist=1
+[09:42:23.370] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:23.372] [NODE_82] [RADIO] ACK seq=68 bat=31% hopDist=1
+[09:42:25.623] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:32.177] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:42:32.178] [NODE_82] [RADIO] ACK seq=69 bat=26% hopDist=1
+[09:42:33.610] [NODE_82] [NBR] --- Neighbor Table ---
+[09:42:33.612] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:42:33.613] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:42:33.815] [NODE_82] [NBR] -----------------------
+[09:42:35.044] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:42:35.863] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:42.213] [NODE_82] 
+--- Telemetry Triggered: BATTERY DROP EXCEPTION | hopDist=1 ---
+[09:42:42.215] [NODE_82] [RADIO] ACK seq=70 bat=21% hopDist=1
+[09:42:42.625] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:43.260] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:44.262] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:44.265] [NODE_82] [RADIO] ACK seq=71 bat=21% hopDist=1
+[09:42:45.695] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:45.696] [NODE_82] [RADIO] ACK seq=72 bat=20% hopDist=1
+[09:42:50.405] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:50.406] [NODE_82] [RADIO] ACK seq=73 bat=17% hopDist=1
+[09:42:52.656] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:53.887] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:53.889] [NODE_82] [RADIO] ACK seq=74 bat=16% hopDist=1
+[09:42:54.295] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:54.909] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:55.114] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:55.115] [NODE_82] [RADIO] ACK seq=75 bat=15% hopDist=1
+[09:42:56.138] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:56.139] [NODE_82] [RADIO] ACK seq=76 bat=15% hopDist=1
+[09:42:56.752] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:42:56.753] [NODE_82] [RADIO] ACK seq=77 bat=15% hopDist=1
+[09:42:57.573] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:42:57.780] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:03.102] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:03.715] [NODE_82] [NBR] --- Neighbor Table ---
+[09:43:03.716] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:43:03.718] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:43:03.920] [NODE_82] [NBR] -----------------------
+[09:43:04.944] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:06.379] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:06.380] [NODE_82] [RADIO] ACK seq=79 bat=10% hopDist=1
+[09:43:07.405] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:07.406] [NODE_82] [RADIO] ACK seq=80 bat=9% hopDist=1
+[09:43:13.546] [NODE_82] [REPEATER] Normal payload from Node 157 (hopDist=2) queued
+[09:43:14.775] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:14.776] [NODE_82] [RADIO] ACK seq=81 bat=6% hopDist=1
+[09:43:17.028] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:17.042] [NODE_82] [RADIO] ACK seq=82 bat=5% hopDist=1
+[09:43:19.282] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:19.283] [NODE_82] [RADIO] ACK seq=83 bat=3% hopDist=1
+[09:43:26.448] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:28.498] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:28.501] [NODE_82] [RADIO] ACK seq=85 bat=99% hopDist=1
+[09:43:30.953] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:33.410] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:33.412] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:33.413] [NODE_82] [RADIO] ACK seq=87 bat=97% hopDist=1
+[09:43:33.823] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:43:34.025] [NODE_82] [NBR] -----------------------
+[09:43:40.579] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:42.422] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:44.063] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:46.313] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:48.975] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:49.999] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:50.001] [NODE_82] [RADIO] ACK seq=89 bat=89% hopDist=1
+[09:43:57.579] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:43:59.010] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:43:59.012] [NODE_82] [RADIO] ACK seq=90 bat=85% hopDist=1
+[09:44:01.678] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:01.680] [NODE_82] [RADIO] ACK seq=91 bat=84% hopDist=1
+[09:44:02.696] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:03.720] [NODE_82] [NBR] --- Neighbor Table ---
+[09:44:03.722] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:44:03.724] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:44:03.925] [NODE_82] [NBR] -----------------------
+[09:44:05.973] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:05.974] [NODE_82] [RADIO] ACK seq=93 bat=81% hopDist=1
+[09:44:07.200] [NODE_82] [REPEATER] Duplicate suppressed: Node 157 seq=100
+[09:44:11.300] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:11.302] [NODE_82] [RADIO] ACK seq=94 bat=79% hopDist=1
+[09:44:11.912] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:44:17.448] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:44:18.875] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:18.879] [NODE_82] [RADIO] ACK seq=95 bat=76% hopDist=1
+[09:44:20.317] [NODE_82] [REPEATER] Priority SOS from Node 157 (hopDist=2) — forwarding
+[09:44:23.790] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:23.792] [NODE_82] [RADIO] ACK seq=96 bat=74% hopDist=1
+[09:44:29.529] [NODE_82] [REPEATER] Gossip gate: dropped non-SOS payload from Node 157
+[09:44:30.549] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:30.550] [NODE_82] [RADIO] ACK seq=97 bat=70% hopDist=1
+[09:44:33.012] [NODE_82] 
+--- Telemetry Triggered: EMERGENCY SOS BURST | hopDist=1 ---
+[09:44:33.017] [NODE_82] [RADIO] ACK seq=98 bat=69% hopDist=1
+[09:44:33.912] [NODE_82] [NBR] --- Neighbor Table ---
+[09:44:33.913] [NODE_82] [NBR]   BCDDC279E19D  RSSI=0dBm  hopDist=2  score=80
+[09:44:33.945] [NODE_82] [NBR] RSSI sidecar: DISABLED (ESP8266 hw limit)
+[09:44:34.037] [NODE_82] [NBR] -----------------------
+==================== Server side ====================
+[09:36:44.472] void/telemetry {"node_id":82, "battery":98, "cpu":24, "sos_alert":1, "seq":0, "uptime_ms":10344, "hops":1}
+[09:36:52.677] void/telemetry {"node_id":157, "battery":100, "cpu":0, "sos_alert":1, "seq":0, "uptime_ms":6130, "hops":255}
+[09:36:54.273] void/telemetry {"node_id":82, "battery":93, "cpu":14, "sos_alert":0, "seq":1, "uptime_ms":20143, "hops":1}
+[09:37:00.051] void/telemetry {"node_id":82, "battery":91, "cpu":16, "sos_alert":1, "seq":2, "uptime_ms":25865, "hops":1}
+[09:37:02.226] void/telemetry {"node_id":82, "battery":90, "cpu":10, "sos_alert":1, "seq":3, "uptime_ms":28101, "hops":1}
+[09:37:03.340] void/telemetry {"node_id":82, "battery":89, "cpu":25, "sos_alert":1, "seq":4, "uptime_ms":29214, "hops":1}
+[09:37:12.375] void/telemetry {"node_id":82, "battery":84, "cpu":25, "sos_alert":0, "seq":5, "uptime_ms":38239, "hops":1}
+[09:37:12.581] void/telemetry {"node_id":82, "battery":84, "cpu":16, "sos_alert":1, "seq":6, "uptime_ms":38448, "hops":1}
+[09:37:15.789] void/telemetry {"node_id":157, "battery":93, "cpu":22, "sos_alert":1, "seq":3, "uptime_ms":19530, "hops":2}
+[09:37:19.309] void/telemetry {"node_id":82, "battery":81, "cpu":17, "sos_alert":1, "seq":7, "uptime_ms":45175, "hops":1}
+[09:37:22.117] void/telemetry {"node_id":157, "battery":90, "cpu":12, "sos_alert":1, "seq":4, "uptime_ms":25933, "hops":2}
+[09:37:24.114] void/telemetry {"node_id":157, "battery":89, "cpu":16, "sos_alert":1, "seq":5, "uptime_ms":27757, "hops":2}
+[09:37:28.393] void/telemetry {"node_id":82, "battery":77, "cpu":13, "sos_alert":1, "seq":8, "uptime_ms":54262, "hops":1}
+[09:37:32.205] void/telemetry {"node_id":157, "battery":85, "cpu":26, "sos_alert":1, "seq":6, "uptime_ms":35996, "hops":2}
+[09:37:34.455] void/telemetry {"node_id":82, "battery":74, "cpu":17, "sos_alert":1, "seq":9, "uptime_ms":60291, "hops":1}
+[09:37:35.068] void/telemetry {"node_id":82, "battery":73, "cpu":16, "sos_alert":1, "seq":10, "uptime_ms":60904, "hops":1}
+[09:37:35.537] void/telemetry {"node_id":82, "battery":73, "cpu":19, "sos_alert":1, "seq":11, "uptime_ms":61413, "hops":1}
+[09:37:37.256] void/telemetry {"node_id":82, "battery":72, "cpu":23, "sos_alert":1, "seq":12, "uptime_ms":63120, "hops":1}
+[09:37:38.350] void/telemetry {"node_id":82, "battery":72, "cpu":29, "sos_alert":1, "seq":13, "uptime_ms":64126, "hops":1}
+[09:37:39.942] void/telemetry {"node_id":157, "battery":81, "cpu":25, "sos_alert":1, "seq":7, "uptime_ms":43749, "hops":2}
+[09:37:40.765] void/telemetry {"node_id":157, "battery":80, "cpu":18, "sos_alert":1, "seq":8, "uptime_ms":44559, "hops":2}
+[09:37:46.668] void/telemetry {"node_id":82, "battery":67, "cpu":14, "sos_alert":0, "seq":14, "uptime_ms":72526, "hops":1}
+[09:37:47.465] void/telemetry {"node_id":82, "battery":67, "cpu":29, "sos_alert":1, "seq":15, "uptime_ms":73331, "hops":1}
+[09:37:48.474] void/telemetry {"node_id":157, "battery":77, "cpu":18, "sos_alert":1, "seq":9, "uptime_ms":52284, "hops":2}
+[09:37:53.151] void/telemetry {"node_id":157, "battery":74, "cpu":13, "sos_alert":1, "seq":10, "uptime_ms":56915, "hops":2}
+[09:37:56.754] void/telemetry {"node_id":82, "battery":62, "cpu":23, "sos_alert":0, "seq":16, "uptime_ms":82615, "hops":1}
+[09:37:57.248] void/telemetry {"node_id":82, "battery":62, "cpu":29, "sos_alert":1, "seq":17, "uptime_ms":83120, "hops":1}
+[09:37:59.505] void/telemetry {"node_id":82, "battery":61, "cpu":24, "sos_alert":1, "seq":18, "uptime_ms":85328, "hops":1}
+[09:38:00.940] void/telemetry {"node_id":157, "battery":70, "cpu":15, "sos_alert":1, "seq":11, "uptime_ms":64741, "hops":2}
+[09:38:02.845] void/telemetry {"node_id":157, "battery":69, "cpu":15, "sos_alert":1, "seq":12, "uptime_ms":66658, "hops":2}
+[09:38:05.162] void/telemetry {"node_id":157, "battery":68, "cpu":22, "sos_alert":1, "seq":13, "uptime_ms":68975, "hops":2}
+[09:38:08.923] void/telemetry {"node_id":82, "battery":56, "cpu":15, "sos_alert":0, "seq":19, "uptime_ms":94745, "hops":1}
+[09:38:10.416] void/telemetry {"node_id":157, "battery":66, "cpu":25, "sos_alert":1, "seq":14, "uptime_ms":74201, "hops":2}
+[09:38:14.022] void/telemetry {"node_id":82, "battery":54, "cpu":20, "sos_alert":1, "seq":20, "uptime_ms":99887, "hops":1}
+[09:38:14.770] void/telemetry {"node_id":82, "battery":54, "cpu":20, "sos_alert":1, "seq":20, "uptime_ms":99887, "hops":1}
+[09:38:15.824] void/telemetry {"node_id":157, "battery":63, "cpu":13, "sos_alert":1, "seq":15, "uptime_ms":79545, "hops":2}
+[09:38:20.147] void/telemetry {"node_id":82, "battery":51, "cpu":24, "sos_alert":1, "seq":21, "uptime_ms":105976, "hops":1}
+[09:38:21.664] void/telemetry {"node_id":82, "battery":51, "cpu":27, "sos_alert":1, "seq":22, "uptime_ms":106784, "hops":1}
+[09:38:23.573] void/telemetry {"node_id":82, "battery":50, "cpu":17, "sos_alert":1, "seq":23, "uptime_ms":109444, "hops":1}
+[09:38:25.089] void/telemetry {"node_id":157, "battery":58, "cpu":28, "sos_alert":0, "seq":16, "uptime_ms":88842, "hops":2}
+[09:38:26.453] void/telemetry {"node_id":82, "battery":49, "cpu":13, "sos_alert":1, "seq":24, "uptime_ms":112318, "hops":1}
+[09:38:26.554] void/telemetry {"node_id":82, "battery":48, "cpu":11, "sos_alert":1, "seq":25, "uptime_ms":112422, "hops":1}
+[09:38:30.769] void/telemetry {"node_id":157, "battery":56, "cpu":27, "sos_alert":1, "seq":17, "uptime_ms":94528, "hops":2}
+[09:38:33.804] void/telemetry {"node_id":157, "battery":54, "cpu":20, "sos_alert":1, "seq":18, "uptime_ms":97604, "hops":2}
+[09:38:34.304] void/telemetry {"node_id":82, "battery":45, "cpu":19, "sos_alert":1, "seq":26, "uptime_ms":120163, "hops":1}
+[09:38:36.208] void/telemetry {"node_id":157, "battery":53, "cpu":17, "sos_alert":1, "seq":19, "uptime_ms":99924, "hops":2}
+[09:38:37.086] void/telemetry {"node_id":157, "battery":53, "cpu":26, "sos_alert":1, "seq":20, "uptime_ms":100904, "hops":2}
+[09:38:38.625] void/telemetry {"node_id":157, "battery":52, "cpu":18, "sos_alert":1, "seq":21, "uptime_ms":102425, "hops":2}
+[09:38:39.237] void/telemetry {"node_id":82, "battery":42, "cpu":21, "sos_alert":1, "seq":27, "uptime_ms":125099, "hops":1}
+[09:38:39.637] void/telemetry {"node_id":157, "battery":51, "cpu":25, "sos_alert":1, "seq":22, "uptime_ms":103460, "hops":2}
+[09:38:41.857] void/telemetry {"node_id":157, "battery":50, "cpu":20, "sos_alert":1, "seq":23, "uptime_ms":105579, "hops":2}
+[09:38:42.165] void/telemetry {"node_id":82, "battery":41, "cpu":11, "sos_alert":1, "seq":28, "uptime_ms":128020, "hops":1}
+[09:38:48.479] void/telemetry {"node_id":82, "battery":38, "cpu":25, "sos_alert":1, "seq":29, "uptime_ms":134335, "hops":1}
+[09:38:48.584] void/telemetry {"node_id":82, "battery":38, "cpu":23, "sos_alert":1, "seq":30, "uptime_ms":134443, "hops":1}
+[09:38:49.681] void/telemetry {"node_id":82, "battery":37, "cpu":23, "sos_alert":1, "seq":31, "uptime_ms":135549, "hops":1}
+[09:38:51.499] void/telemetry {"node_id":157, "battery":45, "cpu":13, "sos_alert":0, "seq":24, "uptime_ms":115297, "hops":2}
+[09:38:54.369] void/telemetry {"node_id":157, "battery":44, "cpu":10, "sos_alert":1, "seq":25, "uptime_ms":118130, "hops":2}
+[09:38:58.873] void/telemetry {"node_id":82, "battery":32, "cpu":15, "sos_alert":0, "seq":32, "uptime_ms":144733, "hops":1}
+[09:38:59.781] void/telemetry {"node_id":157, "battery":41, "cpu":29, "sos_alert":1, "seq":26, "uptime_ms":123598, "hops":2}
+[09:39:00.485] void/telemetry {"node_id":157, "battery":41, "cpu":16, "sos_alert":1, "seq":27, "uptime_ms":124312, "hops":2}
+[09:39:02.397] void/telemetry {"node_id":82, "battery":31, "cpu":27, "sos_alert":1, "seq":33, "uptime_ms":148264, "hops":1}
+[09:39:02.909] void/telemetry {"node_id":157, "battery":40, "cpu":17, "sos_alert":1, "seq":28, "uptime_ms":126726, "hops":2}
+[09:39:07.117] void/telemetry {"node_id":82, "battery":28, "cpu":26, "sos_alert":1, "seq":34, "uptime_ms":152984, "hops":1}
+[09:39:07.336] void/telemetry {"node_id":157, "battery":38, "cpu":13, "sos_alert":1, "seq":29, "uptime_ms":131146, "hops":2}
+[09:39:11.449] void/telemetry {"node_id":82, "battery":26, "cpu":22, "sos_alert":1, "seq":35, "uptime_ms":157314, "hops":1}
+[09:39:13.176] void/telemetry {"node_id":157, "battery":35, "cpu":29, "sos_alert":1, "seq":30, "uptime_ms":136971, "hops":2}
+[09:39:16.652] void/telemetry {"node_id":157, "battery":33, "cpu":27, "sos_alert":1, "seq":31, "uptime_ms":140296, "hops":2}
+[09:39:17.924] void/telemetry {"node_id":82, "battery":23, "cpu":17, "sos_alert":1, "seq":36, "uptime_ms":163789, "hops":1}
+[09:39:18.652] void/telemetry {"node_id":157, "battery":32, "cpu":23, "sos_alert":1, "seq":32, "uptime_ms":142457, "hops":2}
+[09:39:25.345] void/telemetry {"node_id":82, "battery":19, "cpu":12, "sos_alert":1, "seq":37, "uptime_ms":171210, "hops":1}
+[09:39:27.572] void/telemetry {"node_id":157, "battery":28, "cpu":22, "sos_alert":1, "seq":33, "uptime_ms":151379, "hops":2}
+[09:39:29.601] void/telemetry {"node_id":157, "battery":27, "cpu":19, "sos_alert":1, "seq":34, "uptime_ms":153392, "hops":2}
+[09:39:31.789] void/telemetry {"node_id":82, "battery":16, "cpu":13, "sos_alert":1, "seq":38, "uptime_ms":177656, "hops":1}
+[09:39:33.112] void/telemetry {"node_id":157, "battery":25, "cpu":13, "sos_alert":1, "seq":35, "uptime_ms":156923, "hops":2}
+[09:39:33.309] void/telemetry {"node_id":82, "battery":15, "cpu":20, "sos_alert":1, "seq":39, "uptime_ms":179178, "hops":1}
+[09:39:36.335] void/telemetry {"node_id":157, "battery":23, "cpu":27, "sos_alert":1, "seq":36, "uptime_ms":160139, "hops":2}
+[09:39:37.664] void/telemetry {"node_id":157, "battery":23, "cpu":25, "sos_alert":1, "seq":37, "uptime_ms":161363, "hops":2}
+[09:39:39.436] void/telemetry {"node_id":82, "battery":12, "cpu":28, "sos_alert":1, "seq":40, "uptime_ms":185302, "hops":1}
+[09:39:41.849] void/telemetry {"node_id":157, "battery":21, "cpu":23, "sos_alert":1, "seq":38, "uptime_ms":165672, "hops":2}
+[09:39:43.756] void/telemetry {"node_id":82, "battery":10, "cpu":29, "sos_alert":1, "seq":41, "uptime_ms":189621, "hops":1}
+[09:39:46.966] void/telemetry {"node_id":82, "battery":9, "cpu":12, "sos_alert":1, "seq":42, "uptime_ms":192829, "hops":1}
+[09:39:50.076] void/telemetry {"node_id":157, "battery":16, "cpu":22, "sos_alert":1, "seq":39, "uptime_ms":173896, "hops":2}
+[09:39:50.186] void/telemetry {"node_id":82, "battery":7, "cpu":21, "sos_alert":1, "seq":43, "uptime_ms":196044, "hops":1}
+[09:39:52.689] void/telemetry {"node_id":157, "battery":15, "cpu":11, "sos_alert":1, "seq":40, "uptime_ms":176514, "hops":2}
+[09:39:54.513] void/telemetry {"node_id":157, "battery":14, "cpu":13, "sos_alert":1, "seq":41, "uptime_ms":178227, "hops":2}
+[09:39:55.520] void/telemetry {"node_id":157, "battery":14, "cpu":22, "sos_alert":1, "seq":42, "uptime_ms":179233, "hops":2}
+[09:39:57.929] void/telemetry {"node_id":157, "battery":13, "cpu":19, "sos_alert":1, "seq":43, "uptime_ms":181743, "hops":2}
+[09:39:58.728] void/telemetry {"node_id":82, "battery":3, "cpu":21, "sos_alert":1, "seq":44, "uptime_ms":204594, "hops":1}
+[09:40:03.348] void/telemetry {"node_id":157, "battery":10, "cpu":15, "sos_alert":1, "seq":44, "uptime_ms":187069, "hops":2}
+[09:40:05.269] void/telemetry {"node_id":82, "battery":100, "cpu":26, "sos_alert":1, "seq":45, "uptime_ms":211118, "hops":1}
+[09:40:05.366] void/telemetry {"node_id":157, "battery":9, "cpu":19, "sos_alert":1, "seq":45, "uptime_ms":189084, "hops":2}
+[09:40:13.280] void/telemetry {"node_id":82, "battery":95, "cpu":13, "sos_alert":0, "seq":46, "uptime_ms":219138, "hops":1}
+[09:40:14.513] void/telemetry {"node_id":157, "battery":4, "cpu":26, "sos_alert":0, "seq":46, "uptime_ms":198308, "hops":2}
+[09:40:21.676] void/telemetry {"node_id":157, "battery":1, "cpu":16, "sos_alert":1, "seq":47, "uptime_ms":205431, "hops":2}
+[09:40:23.418] void/telemetry {"node_id":82, "battery":90, "cpu":26, "sos_alert":0, "seq":47, "uptime_ms":229229, "hops":1}
+[09:40:29.998] void/telemetry {"node_id":82, "battery":87, "cpu":13, "sos_alert":1, "seq":48, "uptime_ms":235855, "hops":1}
+[09:40:30.311] void/telemetry {"node_id":82, "battery":87, "cpu":26, "sos_alert":1, "seq":49, "uptime_ms":236159, "hops":1}
+[09:40:36.925] void/telemetry {"node_id":157, "battery":93, "cpu":29, "sos_alert":1, "seq":48, "uptime_ms":220714, "hops":2}
+[09:40:37.549] void/telemetry {"node_id":157, "battery":93, "cpu":18, "sos_alert":1, "seq":49, "uptime_ms":221353, "hops":2}
+[09:40:39.348] void/telemetry {"node_id":82, "battery":83, "cpu":18, "sos_alert":1, "seq":50, "uptime_ms":245206, "hops":1}
+[09:40:40.580] void/telemetry {"node_id":82, "battery":82, "cpu":14, "sos_alert":1, "seq":51, "uptime_ms":246412, "hops":1}
+[09:40:46.505] void/telemetry {"node_id":82, "battery":79, "cpu":29, "sos_alert":1, "seq":52, "uptime_ms":252362, "hops":1}
+[09:40:46.778] void/telemetry {"node_id":157, "battery":88, "cpu":10, "sos_alert":0, "seq":50, "uptime_ms":230482, "hops":2}
+[09:40:54.101] void/telemetry {"node_id":157, "battery":85, "cpu":27, "sos_alert":1, "seq":51, "uptime_ms":237856, "hops":2}
+[09:40:55.600] void/telemetry {"node_id":82, "battery":74, "cpu":18, "sos_alert":0, "seq":53, "uptime_ms":261461, "hops":1}
+[09:40:58.121] void/telemetry {"node_id":82, "battery":73, "cpu":19, "sos_alert":1, "seq":54, "uptime_ms":263971, "hops":1}
+[09:41:00.016] void/telemetry {"node_id":82, "battery":72, "cpu":19, "sos_alert":1, "seq":55, "uptime_ms":265878, "hops":1}
+[09:41:00.134] void/telemetry {"node_id":157, "battery":82, "cpu":16, "sos_alert":1, "seq":52, "uptime_ms":243936, "hops":2}
+[09:41:04.232] void/telemetry {"node_id":82, "battery":70, "cpu":21, "sos_alert":1, "seq":56, "uptime_ms":270097, "hops":1}
+[09:41:07.360] void/telemetry {"node_id":82, "battery":69, "cpu":18, "sos_alert":1, "seq":57, "uptime_ms":273210, "hops":1}
+[09:41:08.869] void/telemetry {"node_id":157, "battery":77, "cpu":24, "sos_alert":0, "seq":53, "uptime_ms":252674, "hops":2}
+[09:41:13.423] void/telemetry {"node_id":82, "battery":66, "cpu":28, "sos_alert":1, "seq":58, "uptime_ms":279280, "hops":1}
+[09:41:14.124] void/telemetry {"node_id":157, "battery":75, "cpu":10, "sos_alert":1, "seq":54, "uptime_ms":257901, "hops":2}
+[09:41:14.447] void/telemetry {"node_id":157, "battery":75, "cpu":20, "sos_alert":1, "seq":55, "uptime_ms":258263, "hops":2}
+[09:41:21.767] void/telemetry {"node_id":82, "battery":61, "cpu":25, "sos_alert":0, "seq":59, "uptime_ms":287612, "hops":1}
+[09:41:22.986] void/telemetry {"node_id":157, "battery":70, "cpu":28, "sos_alert":0, "seq":56, "uptime_ms":266782, "hops":2}
+[09:41:25.646] void/telemetry {"node_id":157, "battery":69, "cpu":17, "sos_alert":1, "seq":57, "uptime_ms":269422, "hops":2}
+[09:41:31.858] void/telemetry {"node_id":82, "battery":56, "cpu":23, "sos_alert":0, "seq":60, "uptime_ms":297712, "hops":1}
+[09:41:32.269] void/telemetry {"node_id":157, "battery":66, "cpu":15, "sos_alert":1, "seq":58, "uptime_ms":275987, "hops":2}
+[09:41:34.185] void/telemetry {"node_id":157, "battery":65, "cpu":23, "sos_alert":1, "seq":59, "uptime_ms":277998, "hops":2}
+[09:41:39.523] void/telemetry {"node_id":157, "battery":62, "cpu":25, "sos_alert":1, "seq":60, "uptime_ms":283317, "hops":2}
+[09:41:41.914] void/telemetry {"node_id":82, "battery":51, "cpu":15, "sos_alert":0, "seq":61, "uptime_ms":307769, "hops":1}
+[09:41:42.013] void/telemetry {"node_id":82, "battery":51, "cpu":23, "sos_alert":1, "seq":62, "uptime_ms":307874, "hops":1}
+[09:41:50.213] void/telemetry {"node_id":82, "battery":47, "cpu":10, "sos_alert":1, "seq":63, "uptime_ms":316070, "hops":1}
+[09:41:56.837] void/telemetry {"node_id":82, "battery":44, "cpu":23, "sos_alert":1, "seq":64, "uptime_ms":322685, "hops":1}
+[09:42:04.385] void/telemetry {"node_id":82, "battery":41, "cpu":17, "sos_alert":1, "seq":65, "uptime_ms":330243, "hops":1}
+[09:42:12.925] void/telemetry {"node_id":82, "battery":36, "cpu":16, "sos_alert":0, "seq":66, "uptime_ms":338783, "hops":1}
+[09:42:17.566] void/telemetry {"node_id":82, "battery":34, "cpu":21, "sos_alert":1, "seq":67, "uptime_ms":343426, "hops":1}
+[09:42:24.251] void/telemetry {"node_id":82, "battery":31, "cpu":26, "sos_alert":1, "seq":68, "uptime_ms":350046, "hops":1}
+[09:42:33.041] void/telemetry {"node_id":82, "battery":26, "cpu":14, "sos_alert":0, "seq":69, "uptime_ms":358893, "hops":1}
+[09:42:43.134] void/telemetry {"node_id":82, "battery":21, "cpu":18, "sos_alert":0, "seq":70, "uptime_ms":368987, "hops":1}
+[09:42:45.118] void/telemetry {"node_id":82, "battery":21, "cpu":17, "sos_alert":1, "seq":71, "uptime_ms":370970, "hops":1}
+[09:42:46.630] void/telemetry {"node_id":82, "battery":20, "cpu":28, "sos_alert":1, "seq":72, "uptime_ms":372476, "hops":1}
+[09:42:51.338] void/telemetry {"node_id":82, "battery":17, "cpu":25, "sos_alert":1, "seq":73, "uptime_ms":377188, "hops":1}
+[09:42:54.900] void/telemetry {"node_id":82, "battery":16, "cpu":18, "sos_alert":1, "seq":74, "uptime_ms":380751, "hops":1}
+[09:42:56.113] void/telemetry {"node_id":82, "battery":15, "cpu":18, "sos_alert":1, "seq":75, "uptime_ms":381965, "hops":1}
+[09:42:57.016] void/telemetry {"node_id":82, "battery":15, "cpu":15, "sos_alert":1, "seq":76, "uptime_ms":382871, "hops":1}
+[09:42:57.621] void/telemetry {"node_id":82, "battery":15, "cpu":10, "sos_alert":1, "seq":77, "uptime_ms":383474, "hops":1}
+[09:42:58.774] void/telemetry {"node_id":82, "battery":14, "cpu":16, "sos_alert":1, "seq":78, "uptime_ms":384594, "hops":1}
+[09:43:07.293] void/telemetry {"node_id":82, "battery":10, "cpu":27, "sos_alert":1, "seq":79, "uptime_ms":393147, "hops":1}
+[09:43:08.321] void/telemetry {"node_id":82, "battery":9, "cpu":11, "sos_alert":1, "seq":80, "uptime_ms":394154, "hops":1}
+[09:43:15.720] void/telemetry {"node_id":82, "battery":6, "cpu":13, "sos_alert":1, "seq":81, "uptime_ms":401538, "hops":1}
+[09:43:17.927] void/telemetry {"node_id":82, "battery":5, "cpu":12, "sos_alert":1, "seq":82, "uptime_ms":403749, "hops":1}
+[09:43:20.200] void/telemetry {"node_id":82, "battery":3, "cpu":13, "sos_alert":1, "seq":83, "uptime_ms":406056, "hops":1}
+[09:43:28.669] void/telemetry {"node_id":82, "battery":0, "cpu":22, "sos_alert":1, "seq":84, "uptime_ms":414516, "hops":1}
+[09:43:29.469] void/telemetry {"node_id":82, "battery":99, "cpu":12, "sos_alert":1, "seq":85, "uptime_ms":415323, "hops":1}
+[09:43:31.732] void/telemetry {"node_id":82, "battery":98, "cpu":22, "sos_alert":1, "seq":86, "uptime_ms":417530, "hops":1}
+[09:43:34.376] void/telemetry {"node_id":82, "battery":97, "cpu":22, "sos_alert":1, "seq":87, "uptime_ms":420174, "hops":1}
+[09:43:43.921] void/telemetry {"node_id":82, "battery":92, "cpu":19, "sos_alert":0, "seq":88, "uptime_ms":429772, "hops":1}
+[09:43:50.920] void/telemetry {"node_id":82, "battery":89, "cpu":24, "sos_alert":1, "seq":89, "uptime_ms":436771, "hops":1}
+[09:43:59.872] void/telemetry {"node_id":82, "battery":85, "cpu":10, "sos_alert":1, "seq":90, "uptime_ms":445706, "hops":1}
+[09:44:02.602] void/telemetry {"node_id":82, "battery":84, "cpu":28, "sos_alert":1, "seq":91, "uptime_ms":448434, "hops":1}
+[09:44:03.597] void/telemetry {"node_id":82, "battery":83, "cpu":18, "sos_alert":1, "seq":92, "uptime_ms":449443, "hops":1}
+[09:44:06.813] void/telemetry {"node_id":82, "battery":81, "cpu":10, "sos_alert":1, "seq":93, "uptime_ms":452661, "hops":1}
+[09:44:12.185] void/telemetry {"node_id":82, "battery":79, "cpu":13, "sos_alert":1, "seq":94, "uptime_ms":458031, "hops":1}
+[09:44:19.713] void/telemetry {"node_id":82, "battery":76, "cpu":23, "sos_alert":1, "seq":95, "uptime_ms":465559, "hops":1}
+[09:44:24.781] void/telemetry {"node_id":82, "battery":74, "cpu":21, "sos_alert":1, "seq":96, "uptime_ms":470624, "hops":1}
+[09:44:31.489] void/telemetry {"node_id":82, "battery":70, "cpu":11, "sos_alert":1, "seq":97, "uptime_ms":477340, "hops":1}
+[09:44:33.978] void/telemetry {"node_id":82, "battery":69, "cpu":19, "sos_alert":1, "seq":98, "uptime_ms":479749, "hops":1}

@@ -228,7 +228,8 @@ typedef struct __attribute__((packed)) HaPayload {
     uint8_t  msgType;        // 0 = election ping, 1 = heartbeat
     uint8_t  mac[6];         // sender's STA MAC
     uint32_t senderUptimeMs; // millis() - used as uptime tiebreaker
-} HaPayload;                 // sizeof = 11 bytes
+    uint8_t  _pad;           // Disambiguator to ensure sizeof != sizeof(SurvivorPayload)
+} HaPayload;                 // sizeof = 12 bytes
 ```
 
 ---
@@ -594,7 +595,7 @@ See [CHANGELOG.md](CHANGELOG.md) for full per-commit detail.
 
 | Version | Date | Summary |
 |---|---|---|
-| `v2.3.0` | 2026-05-11 | Hop-distance vector routing, probabilistic gossip gate, passive neighbor table, RSSI-composite peer scoring (ESP32), ESP32 promiscuous RSSI sidecar, ESP8266 baseband limitation workaround, ACK encryption fix, duplicate suppression lockout fix, `hops` in MQTT output |
+| `v2.3.0` | 2026-05-11 | Hop-distance vector routing, probabilistic gossip gate, passive neighbor table, RSSI-composite peer scoring (ESP32), ESP32 promiscuous RSSI sidecar, ESP8266 baseband limitation workaround, ACK encryption fix, duplicate suppression lockout fix, `HaPayload` `_pad` byte disambiguator, `hops` in MQTT output, raw experiment data + diagnostics shipped in-repo |
 | `v2.2.0` | 2026-04-26 | 12 critical bug fixes: mesh ACK miss, ESP32 race condition, WDT overflow, MQTT keepalive starvation, mid-flush duplicate protection, shadow ACK, RAM overflow guard |
 | `v2.0.0` | 2026-04-25 | HA Active-Passive gateway election, multi-hop relay routing, encrypted unicast 2-way handshake, `ttl` and `uptimeMs` in payload |
 | `v1.1.0` | 2026-04-10 | E2E ESP-NOW encryption (PMK/LMK), adaptive RBE telemetry, dynamic hardware node IDs, central node registry, 256dpi MQTT library |
@@ -613,7 +614,7 @@ Documented for research reproducibility and academic honesty.
 - **Single Wi-Fi channel constraint.** ESP-NOW and the gateway AP must share the same channel as the upstream router. Channel reassignment by the router breaks all ESP-NOW links until nodes re-scan. The firmware detects and corrects this but there is a disruption window.
 - **Indoor testing only.** All experiments conducted indoors at ~5 m inter-node distance. Outdoor RF propagation and interference were not characterised.
 - **No formal security audit.** The PMK/LMK architecture follows Espressif's ESP-NOW security model. No formal cryptographic analysis against a defined threat model has been performed.
-- **Scalability untested beyond 3 nodes.** Logic supports up to 256 node IDs, but practical testing used 2 edge nodes and 2 gateways.
+- **Scalability untested beyond 3 nodes.** Logic supports up to 256 node IDs, but practical testing used 2 edge nodes and 1 active gateway (3 physical devices total).
 - **ESP8266 promiscuous mode incompatible with ESP-NOW.** Hardware testing confirmed that enabling promiscuous mode on ESP8266 intercepts all packets at the baseband level, completely severing ESP-NOW receive callbacks and crashing the Station interface. The RSSI sidecar is therefore disabled on ESP8266 (`#if 0` guarded). Neighbor table entries from ESP8266 nodes carry `rssi = 0` (a safe sentinel above `RSSI_FLOOR`), causing peer scoring to degrade gracefully to pure `hopDist` ordering. ESP32 is unaffected - promiscuous mode coexists with ESP-NOW.
 
 ---
@@ -634,7 +635,7 @@ If you use V.O.I.D. in academic work, please cite:
 }
 ```
 
-*A preprint describing the system architecture and experimental evaluation is in preparation.*
+*A preprint describing the system architecture and experimental evaluation is available. Raw experiment logs and processed data are included in `V.O.I.D_Experiments/`.*
 
 ---
 

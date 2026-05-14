@@ -1,0 +1,31 @@
+====================================================================
+|    Trial-1 : High-Availability Failover Convergence                |
+ ====================================================================
+[10:23:47.812] void/telemetry {"node_id":82, "battery":84, "cpu":16, "sos_alert":1, "seq":6, "uptime_ms":38315, "hops":1}
+[10:23:53.626] void/telemetry {"node_id":82, "battery":81, "cpu":14, "sos_alert":1, "seq":7, "uptime_ms":44126, "hops":1}
+GATEWAY_KILLED 10:23:53.317
+GATEWAY_RECOVERED 10:24:22.707
+[10:24:22.707] void/telemetry {"node_id":82, "battery":77, "cpu":28, "sos_alert":1, "seq":9, "uptime_ms":73205, "hops":1}
+[10:24:25.412] void/telemetry {"node_id":82, "battery":76, "cpu":21, "sos_alert":1, "seq":10, "uptime_ms":75913, "hops":1}
+
+ ====================================================================
+|    Trial-2 : High-Availability Failover Convergence                |
+ ====================================================================
+==================== Server side ====================
+[10:30:31.803] void/telemetry {"node_id":82, "battery":82, "cpu":12, "sos_alert":0, "seq":9, "uptime_ms":40137, "hops":1}
+[10:30:33.605] void/telemetry {"node_id":82, "battery":82, "cpu":11, "sos_alert":1, "seq":10, "uptime_ms":41943, "hops":1}
+GATEWAY_KILLED 10:30:33.075
+GATEWAY_RECOVERED 10:30:59.682
+[10:30:59.682] void/telemetry {"node_id":82, "battery":79, "cpu":24, "sos_alert":1, "seq":12, "uptime_ms":68017, "hops":1}
+[10:31:01.793] void/telemetry {"node_id":82, "battery":77, "cpu":29, "sos_alert":1, "seq":13, "uptime_ms":70128, "hops":1}
+
+ ====================================================================
+|    Trial-3 : High-Availability Failover Convergence                |
+ ====================================================================
+==================== Server side ====================
+[10:36:21.469] void/telemetry {"node_id":82, "battery":70, "cpu":17, "sos_alert":1, "seq":10, "uptime_ms":65865, "hops":1}
+[10:36:29.781] void/telemetry {"node_id":82, "battery":65, "cpu":29, "sos_alert":0, "seq":11, "uptime_ms":74188, "hops":1}
+GATEWAY_KILLED 10:36:28.219
+GATEWAY_RECOVERED 10:37:06.401
+[10:37:06.401] void/telemetry {"node_id":82, "battery":59, "cpu":28, "sos_alert":1, "seq":16, "uptime_ms":110802, "hops":1}
+[10:37:14.818] void/telemetry {"node_id":82, "battery":54, "cpu":17, "sos_alert":0, "seq":17, "uptime_ms":119218, "hops":1}

@@ -1,0 +1,28 @@
+Experiment,Metric,Value,Unit,Notes
+E1 Direct GW,PDR (edge ACK),98.4,%,"n=446 pkts, 1-hop, 2 trials"
+E1 Direct GW,PDR (server MQTT),100.0,%,ground truth
+E1 Direct GW,Latency edge avg,19.7,ms,Trigger→ACK
+E1 Direct GW,Latency edge median,2,ms,bimodal dist — median=typical; avg inflated by retransmission tail
+E1 Direct GW,Latency edge max,211.0,ms,
+E1 Direct GW,Latency edge p95,200.0,ms,
+E1 Direct GW,Latency E2E,N/A,-,Server logs lack sequence context
+E2 Relay Path,PDR (edge ACK),88.1,%,"n=378 pkts, 2-hop, 2 trials"
+E2 Relay Path,PDR (server MQTT),98.9,%,ground truth
+E2 Relay Path,Latency edge avg,156.2,ms,Trigger→ACK
+E2 Relay Path,Latency edge max,8394.0,ms,
+E2 Relay Path,Latency edge p95 (combined),252.0,ms,Node 82 + Node 157 mixed; Node 82 mostly direct path — diluted metric
+E2 Relay Path,Latency edge p95 (Node 157 only),408.1,ms,true 2-hop relay data point; use this for Figure 1 annotation
+E2 Relay Path,Latency E2E avg,999.5,ms,Trigger→MQTT
+E2 Relay Path,Latency E2E max,9361.0,ms,
+E2 Relay Path,Latency E2E p95,1091.0,ms,
+E2 Relay Path,Relay overhead (edge diluted),136.5,ms,avg(E2 all nodes)−avg(E1); inflated by Node 82 direct path
+E2 Relay Path,Relay overhead Node 157 (true),248.7,ms,avg(E2 Node157)−avg(E1); Node 157 is the actual 2-hop relay node
+E3 HA Failover,Failover avg,31393,ms,"n=3 trials; full system recovery (ESP-NOW re-acquisition included); gateway election alone ≈4s"
+E3 HA Failover,Failover min,26607,ms,
+E3 HA Failover,Failover max,38182,ms,
+E3 HA Failover,Trial 1,29390,ms,
+E3 HA Failover,Trial 2,26607,ms,
+E3 HA Failover,Trial 3,38182,ms,
+E4 Gossip Gate,Relay count (OFF),75,count,per window
+E4 Gossip Gate,Relay count (ON),53,count,per window
+E4 Gossip Gate,Flood reduction,29.3,%,(off−on)/off
