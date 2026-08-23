@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "void-observability.fullname" . }}-grafana
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "void-observability.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: grafana
+  template:
+    metadata:
+      labels:
+        {{- include "void-observability.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: "{{ .Values.grafana.image }}:{{ .Values.grafana.tag }}"
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+          env:
+            - name: GF_SECURITY_ADMIN_USER
+              value: {{ .Values.grafana.adminUser | quote }}
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: {{ .Values.grafana.adminPassword | quote }}
+          volumeMounts:
+            # Datasource provisioning
+            - name: datasource
+              mountPath: /etc/grafana/provisioning/datasources
+            # Dashboard provider (tells Grafana where to find JSON files)
+            - name: dashboard-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+            # Dashboard JSON files
+            - name: dashboards
+              mountPath: /var/lib/grafana/dashboards
+      volumes:
+        - name: datasource
+          configMap:
+            name: {{ include "void-observability.fullname" . }}-grafana-datasource
+        - name: dashboard-provider
+          configMap:
+            name: {{ include "void-observability.fullname" . }}-grafana-dashboard-provider
+        - name: dashboards
+          configMap:
+            name: {{ include "void-observability.fullname" . }}-grafana-dashboard

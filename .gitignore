@@ -16,3 +16,9 @@ secrets.h
 # Experiment environment (data is tracked, venv/logs are not)
 /V.O.I.D_Experiments/venv/
 /V.O.I.D_Experiments/logs/
+
+# Local project virtual environment
+/voidenv/
+
+# Test deployments
+/old_manifests/

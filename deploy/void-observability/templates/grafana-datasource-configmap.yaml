@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "void-observability.fullname" . }}-grafana-datasource
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+data:
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: InfluxDB
+        type: influxdb
+        access: proxy
+        url: http://{{ include "void-observability.fullname" . }}-influxdb:{{ .Values.influxdb.service.port }}
+        jsonData:
+          version: Flux
+          organization: {{ .Values.influxdb.auth.org }}
+          defaultBucket: {{ .Values.influxdb.auth.bucket }}
+        secureJsonData:
+          token: {{ .Values.influxdb.auth.adminToken }}
+        isDefault: true

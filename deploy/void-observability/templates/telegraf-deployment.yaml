@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "void-observability.fullname" . }}-telegraf
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: telegraf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "void-observability.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: telegraf
+  template:
+    metadata:
+      labels:
+        {{- include "void-observability.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: telegraf
+    spec:
+      containers:
+        - name: telegraf
+          image: "{{ .Values.telegraf.image }}:{{ .Values.telegraf.tag }}"
+          volumeMounts:
+            - name: config
+              mountPath: /etc/telegraf/telegraf.conf
+              subPath: telegraf.conf
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "void-observability.fullname" . }}-telegraf

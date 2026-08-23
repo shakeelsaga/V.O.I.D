@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "void-observability.fullname" . }}-mosquitto
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: mosquitto
+spec:
+  type: {{ .Values.mosquitto.service.type }}
+  ports:
+    - port: {{ .Values.mosquitto.service.port }}
+      targetPort: mqtt
+      protocol: TCP
+      name: mqtt
+      {{- if eq .Values.mosquitto.service.type "NodePort" }}
+      nodePort: {{ .Values.mosquitto.service.nodePort }}
+      {{- end }}
+  selector:
+    {{- include "void-observability.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: mosquitto

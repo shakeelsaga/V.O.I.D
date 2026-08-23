@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "void-observability.fullname" . }}-mosquitto
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: mosquitto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "void-observability.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: mosquitto
+  template:
+    metadata:
+      labels:
+        {{- include "void-observability.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: mosquitto
+    spec:
+      containers:
+        - name: mosquitto
+          image: "{{ .Values.mosquitto.image }}:{{ .Values.mosquitto.tag }}"
+          ports:
+            - containerPort: 1883
+              name: mqtt
+              protocol: TCP
+          volumeMounts:
+            - name: config
+              mountPath: /mosquitto/config/mosquitto.conf
+              subPath: mosquitto.conf
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "void-observability.fullname" . }}-mosquitto

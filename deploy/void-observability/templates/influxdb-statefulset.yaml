@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "void-observability.fullname" . }}-influxdb
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: influxdb
+spec:
+  serviceName: {{ include "void-observability.fullname" . }}-influxdb
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "void-observability.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: influxdb
+  template:
+    metadata:
+      labels:
+        {{- include "void-observability.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: influxdb
+    spec:
+      containers:
+        - name: influxdb
+          image: "{{ .Values.influxdb.image }}:{{ .Values.influxdb.tag }}"
+          ports:
+            - containerPort: 8086
+              name: http
+              protocol: TCP
+          env:
+            # InfluxDB 2.x auto-setup on first boot
+            - name: DOCKER_INFLUXDB_INIT_MODE
+              value: setup
+            - name: DOCKER_INFLUXDB_INIT_USERNAME
+              value: {{ .Values.influxdb.auth.adminUser | quote }}
+            - name: DOCKER_INFLUXDB_INIT_PASSWORD
+              value: {{ .Values.influxdb.auth.adminPassword | quote }}
+            - name: DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
+              value: {{ .Values.influxdb.auth.adminToken | quote }}
+            - name: DOCKER_INFLUXDB_INIT_ORG
+              value: {{ .Values.influxdb.auth.org | quote }}
+            - name: DOCKER_INFLUXDB_INIT_BUCKET
+              value: {{ .Values.influxdb.auth.bucket | quote }}
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/influxdb2
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: {{ .Values.influxdb.storage.className | quote }}
+        resources:
+          requests:
+            storage: {{ .Values.influxdb.storage.size }}

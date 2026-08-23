@@ -1,0 +1,62 @@
+# =============================================================================
+# V.O.I.D. Observability Stack — Default Values
+# =============================================================================
+# Override any value at install time with:
+#   helm install void-obs ./deploy/void-observability --set influxdb.adminToken=my-secret
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Mosquitto MQTT Broker
+# ---------------------------------------------------------------------------
+# The primary gateway node publishes to void/telemetry on port 1883.
+# Service type defaults to LoadBalancer to expose the broker on the
+# local network at <external-ip>:1883.
+mosquitto:
+  image: eclipse-mosquitto
+  tag: "2.0"
+  service:
+    type: LoadBalancer
+    port: 1883
+
+# ---------------------------------------------------------------------------
+# InfluxDB 2.x (Time-Series Database)
+# ---------------------------------------------------------------------------
+# Auto-initialises on first boot using DOCKER_INFLUXDB_INIT_* env vars.
+# Uses a StatefulSet with a PVC for data persistence.
+influxdb:
+  image: influxdb
+  tag: "2.7"
+  service:
+    port: 8086
+  storage:
+    size: 5Gi
+    className: local-path    # K3s default provisioner
+  auth:
+    adminUser: admin
+    adminPassword: void-admin-pass
+    adminToken: void-admin-token
+    org: void
+    bucket: void_telemetry
+
+# ---------------------------------------------------------------------------
+# Telegraf (Metrics Pipeline)
+# ---------------------------------------------------------------------------
+# Subscribes to Mosquitto, parses the JSON telemetry, writes to InfluxDB.
+# No Kubernetes Service needed — Telegraf only makes outbound connections.
+telegraf:
+  image: telegraf
+  tag: "1.31"
+
+# ---------------------------------------------------------------------------
+# Grafana (Dashboards)
+# ---------------------------------------------------------------------------
+# Datasource and dashboards are auto-provisioned via ConfigMaps.
+# Service type defaults to LoadBalancer for external browser access.
+grafana:
+  image: grafana/grafana
+  tag: "11.1.0"
+  service:
+    type: LoadBalancer
+    port: 3000
+  adminUser: admin
+  adminPassword: admin

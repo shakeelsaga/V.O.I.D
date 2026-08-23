@@ -1,0 +1,233 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "void-observability.fullname" . }}-grafana-dashboard
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+data:
+  void-telemetry.json: |
+    {
+      "annotations": { "list": [] },
+      "editable": true,
+      "fiscalYearStartMonth": 0,
+      "graphTooltip": 1,
+      "links": [],
+      "panels": [
+        {
+          "id": 1,
+          "title": "Battery Level",
+          "description": "Per-node battery percentage (last reported value)",
+          "type": "gauge",
+          "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "thresholds" },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  { "color": "red",    "value": null },
+                  { "color": "orange", "value": 20 },
+                  { "color": "yellow", "value": 40 },
+                  { "color": "green",  "value": 60 }
+                ]
+              },
+              "min": 0,
+              "max": 100,
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"battery\")\n  |> last()\n  |> group(columns: [\"node_id\"])",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "SOS Alert",
+          "description": "Emergency distress — red if any node triggered SOS in the last 30 seconds",
+          "type": "stat",
+          "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "thresholds" },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  { "color": "green", "value": null },
+                  { "color": "red",   "value": 1 }
+                ]
+              },
+              "mappings": [
+                { "type": "value", "options": { "0": { "text": "ALL CLEAR", "color": "green" } } },
+                { "type": "range", "options": { "from": 1, "to": 999, "result": { "text": "SOS ACTIVE", "color": "red" } } }
+              ]
+            },
+            "overrides": []
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: -30s)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"sos_alert\")\n  |> max()",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "CPU Load",
+          "description": "Per-node CPU load comparison (last reported value)",
+          "type": "bargauge",
+          "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "thresholds" },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  { "color": "green",  "value": null },
+                  { "color": "yellow", "value": 50 },
+                  { "color": "red",    "value": 80 }
+                ]
+              },
+              "min": 0,
+              "max": 100,
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "options": {
+            "orientation": "horizontal",
+            "displayMode": "gradient",
+            "reduceOptions": { "calcs": ["lastNotNull"] }
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"cpu\")\n  |> last()\n  |> group(columns: [\"node_id\"])",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Battery Drain Over Time",
+          "description": "Per-node battery level over time — watch for discharge curves",
+          "type": "timeseries",
+          "gridPos": { "h": 9, "w": 12, "x": 0, "y": 8 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "palette-classic" },
+              "custom": {
+                "lineWidth": 2,
+                "fillOpacity": 10,
+                "pointSize": 5,
+                "showPoints": "auto"
+              },
+              "min": 0,
+              "max": 100,
+              "unit": "percent"
+            },
+            "overrides": []
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"battery\")\n  |> group(columns: [\"node_id\"])",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Hop Distance (Topology Depth)",
+          "description": "Per-node hop count to gateway — 1=direct, 2+=relay, 255=unknown",
+          "type": "timeseries",
+          "gridPos": { "h": 9, "w": 12, "x": 12, "y": 8 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "palette-classic" },
+              "custom": {
+                "lineWidth": 2,
+                "fillOpacity": 10,
+                "drawStyle": "points",
+                "pointSize": 8
+              },
+              "decimals": 0
+            },
+            "overrides": []
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"hops\")\n  |> filter(fn: (r) => r._value != 255)\n  |> group(columns: [\"node_id\"])",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Message Throughput",
+          "description": "Total telemetry messages received in the last minute",
+          "type": "stat",
+          "gridPos": { "h": 5, "w": 8, "x": 0, "y": 17 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "thresholds" },
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  { "color": "blue", "value": null }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"seq\")\n  |> count()",
+              "refId": "A"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Node Uptime",
+          "description": "Per-node uptime in milliseconds — detect reboots as drops to zero",
+          "type": "timeseries",
+          "gridPos": { "h": 5, "w": 16, "x": 8, "y": 17 },
+          "datasource": { "type": "influxdb", "uid": "" },
+          "fieldConfig": {
+            "defaults": {
+              "color": { "mode": "palette-classic" },
+              "custom": {
+                "lineWidth": 1,
+                "fillOpacity": 5
+              },
+              "unit": "ms"
+            },
+            "overrides": []
+          },
+          "targets": [
+            {
+              "query": "from(bucket: \"{{ .Values.influxdb.auth.bucket }}\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r._measurement == \"void_telemetry\" and r._field == \"uptime_ms\")\n  |> group(columns: [\"node_id\"])",
+              "refId": "A"
+            }
+          ]
+        }
+      ],
+      "schemaVersion": 39,
+      "tags": ["void", "iot", "esp-now", "mesh"],
+      "templating": { "list": [] },
+      "time": { "from": "now-15m", "to": "now" },
+      "timepicker": {},
+      "timezone": "browser",
+      "title": "V.O.I.D. Survivor Telemetry",
+      "uid": "void-telemetry-main",
+      "version": 1
+    }
