@@ -9,6 +9,19 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [v2.4.0] - 2026-08-23
+
+### Added - Cloud-Native Observability Deployment
+
+- **Helm Chart for Kubernetes**
+  - Packaged the entire observability stack (Mosquitto, Telegraf, InfluxDB 2.x, Grafana) into a single Helm chart located in `deploy/void-observability/`.
+  - Enables one-command deployment (`helm install`) to K3s or any standard Kubernetes cluster.
+  - Automatically provisions the InfluxDB storage (StatefulSet + PVC), configures the Telegraf pipeline, and pre-loads the updated **V.O.I.D. Dashboard 2.0**.
+  - Exposes Grafana and Mosquitto natively via Kubernetes LoadBalancer services for easy local network access.
+  - *Note: This is an infrastructure release. No changes were made to the ESP32/ESP8266 mesh protocol. Firmware reflashing is NOT required if upgrading from v2.3.0.*
+
+---
+
 ## [v2.3.0] - 2026-05-11
 
 ### Added - Hop-Distance Vector Routing

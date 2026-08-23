@@ -3,9 +3,10 @@
 > A delay-tolerant, multi-hop ESP-NOW mesh network for disaster-scenario survivor telemetry,  
 > with hop-distance vector routing, highly available gateway failover, and cloud-native observability.
 
-**Current stable release:** `v2.3.0` &nbsp;|&nbsp; Hop-distance vector routing, passive RSSI peer scoring (ESP32), multi-hop relay verified  
+**Current stable release:** `v2.4.0` &nbsp;|&nbsp; Cloud-native Helm chart deployment, Hop-distance vector routing, passive RSSI peer scoring (ESP32)  
 **Hardware targets:** ESP32 (Arduino Core v3.x) · ESP8266  
 **Upstream stack:** Mosquitto MQTT → Telegraf → InfluxDB → Grafana on K3s  
+**Deployment:** [Kubernetes Helm Chart included (`deploy/void-observability/`)](deploy/void-observability/README.md)  
 **License:** MIT
 
 ---
@@ -399,6 +400,8 @@ Wi-Fi sleep modes are explicitly disabled on all devices (`WIFI_NONE_SLEEP` / `W
 
 ## Project Setup
 
+> **Note on Infrastructure:** V.O.I.D. requires an upstream MQTT broker and time-series database. If you have a Kubernetes cluster (like K3s), you can skip manual infrastructure setup and deploy the entire stack in one command using the included Helm chart. See the [**Deployment Guide**](deploy/void-observability/README.md).
+
 ### Prerequisites
 
 - Arduino IDE 2.x or PlatformIO
@@ -547,6 +550,10 @@ Open Serial Monitor at **115200 baud** on each device.
 ---
 
 ## Observability Stack
+
+![V.O.I.D. Dashboard 2.0](assets/V.O.I.D%20Dashboard%202.0.png)
+
+Sur> **Note:** A complete Kubernetes Helm chart to deploy this stack is now included. The "Dashboard 2.0" configuration shown above comes pre-loaded and built-in automatically. See [`deploy/void-observability/README.md`](deploy/void-observability/README.md) for full deployment instructions.
 
 ### MQTT payload (V2.3)
 
