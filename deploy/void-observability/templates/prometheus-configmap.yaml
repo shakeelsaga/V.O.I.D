@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "void-observability.fullname" . }}-prometheus
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: prometheus
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: {{ .Values.prometheus.scrapeInterval }}
+      evaluation_interval: {{ .Values.prometheus.evaluationInterval }}
+
+    rule_files:
+      - /etc/prometheus/rules/*.yml
+
+    alerting:
+      alertmanagers:
+        - static_configs:
+            - targets:
+                - {{ include "void-observability.fullname" . }}-alertmanager:{{ .Values.alertmanager.service.port }}
+
+    scrape_configs:
+      # --- Prometheus self-monitoring ---
+      - job_name: prometheus
+        static_configs:
+          - targets: ["localhost:9090"]
+
+      # --- node-exporter (host metrics) ---
+      - job_name: node-exporter
+        static_configs:
+          - targets:
+              - {{ include "void-observability.fullname" . }}-node-exporter:{{ .Values.nodeExporter.service.port }}
+
+      # --- kube-state-metrics ---
+      - job_name: kube-state-metrics
+        static_configs:
+          - targets:
+              - {{ include "void-observability.fullname" . }}-kube-state-metrics:{{ .Values.kubeStateMetrics.service.port }}
+
+      # --- InfluxDB native /metrics ---
+      - job_name: influxdb
+        static_configs:
+          - targets:
+              - {{ include "void-observability.fullname" . }}-influxdb:{{ .Values.influxdb.service.port }}
+        metrics_path: /metrics
+
+      # --- Grafana native /metrics ---
+      - job_name: grafana
+        static_configs:
+          - targets:
+              - {{ include "void-observability.fullname" . }}-grafana:{{ .Values.grafana.service.port }}
+        metrics_path: /metrics

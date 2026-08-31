@@ -2,9 +2,9 @@ apiVersion: v2
 name: void-observability
 description: >-
   Observability stack for V.O.I.D. (Vital Offline Information Dispatch) —
-  packages Mosquitto MQTT broker, Telegraf, InfluxDB 2.x, and Grafana to
-  ingest, store, and visualise survivor telemetry from the delay-tolerant
-  ESP-NOW mesh network. Designed for K3s but runs on any Kubernetes distribution.
+  packages Mosquitto MQTT broker, Telegraf, InfluxDB 2.x, Grafana, and Prometheus
+  infrastructure monitoring to ingest, store, and visualise survivor telemetry
+  from the delay-tolerant ESP-NOW mesh network. Designed for K3s but runs on any Kubernetes distribution.
 type: application
 version: 0.1.0
-appVersion: "2.3.0"
+appVersion: "2.5.0"
