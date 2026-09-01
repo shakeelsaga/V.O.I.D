@@ -9,6 +9,24 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [v2.5.0] - 2026-09-01
+
+### Added - Infrastructure Observability Stack
+
+- **Prometheus Integration in Helm Chart**
+  - Layered Prometheus onto the existing TIG (Telegraf, InfluxDB, Grafana) stack in `deploy/void-observability/`.
+  - Added `node-exporter` (DaemonSet) for host-level K3s node metrics.
+  - Added `kube-state-metrics` for Kubernetes object health.
+  - Automatically provisions Prometheus scraping for Mosquitto, Telegraf, InfluxDB, and Grafana's `/metrics` endpoints.
+- **Alertmanager Integration**
+  - Pre-configured infrastructure alert rules (Pod crash looping, Node CPU/Memory high, InfluxDB storage high, component down).
+  - Dynamic Slack webhook receiver configurable via `values.yaml` (`alertmanager.slackWebhookUrl`).
+- **Grafana Enhancements**
+  - Added Prometheus as a secondary auto-provisioned datasource alongside InfluxDB.
+  - Added new **V.O.I.D. Infrastructure Health** dashboard tracking cluster, pod, and service status alongside the existing survivor telemetry dashboard.
+
+---
+
 ## [v2.4.0] - 2026-08-23
 
 ### Added - Cloud-Native Observability Deployment

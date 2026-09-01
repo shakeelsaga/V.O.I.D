@@ -3,9 +3,9 @@
 > A delay-tolerant, multi-hop ESP-NOW mesh network for disaster-scenario survivor telemetry,  
 > with hop-distance vector routing, highly available gateway failover, and cloud-native observability.
 
-**Current stable release:** `v2.4.0` &nbsp;|&nbsp; Cloud-native Helm chart deployment, Hop-distance vector routing, passive RSSI peer scoring (ESP32)  
+**Current stable release:** `v2.5.0` &nbsp;|&nbsp; Cloud-native Helm chart deployment, Prometheus infrastructure monitoring, Hop-distance vector routing, passive RSSI peer scoring (ESP32)  
 **Hardware targets:** ESP32 (Arduino Core v3.x) · ESP8266  
-**Upstream stack:** Mosquitto MQTT → Telegraf → InfluxDB → Grafana on K3s  
+**Upstream stack:** Mosquitto MQTT → Telegraf → InfluxDB → Grafana (w/ Prometheus) on K3s  
 **Deployment:** [Kubernetes Helm Chart included (`deploy/void-observability/`)](deploy/void-observability/README.md)  
 **License:** MIT
 
@@ -81,13 +81,13 @@ Every subsystem in this repository has been built for and tested on physical har
                                                   ║  upstream Wi-Fi / LAN
                                                   ▼
                                       ┌───────────────────────┐
-                                      │  Mosquitto MQTT :1883 │
-                                      └───────────┬───────────┘
-                                                  │
-                                      ┌───────────▼───────────┐
-                                      │  Telegraf → InfluxDB  │
-                                      │  Grafana on K3s       │
-                                      │  (Command Centre)     │
+                                      │  Mosquitto MQTT :1883 │◄┐
+                                      └───────────┬───────────┘ │
+                                                  │             │
+                                      ┌───────────▼───────────┐ │
+                                      │  Telegraf → InfluxDB  │◄┤ Prometheus
+                                      │  Grafana on K3s       │ │ (Infra metrics)
+                                      │  (Command Centre)     │◄┘
                                       └───────────────────────┘
 ```
 

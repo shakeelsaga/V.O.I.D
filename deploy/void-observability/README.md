@@ -8,6 +8,11 @@ InfluxDB 2.x, and Grafana — into a single deployable unit for Kubernetes.
 ```
 ESP32 Gateway ──► Mosquitto (MQTT) ──► Telegraf ──► InfluxDB 2.x ──► Grafana
                   (LoadBalancer)                     (StatefulSet)    (LoadBalancer)
+                                                          ▲
+                                                          │ (metrics scrape)
+                                                          │
+      node-exporter ──► Prometheus ◄── kube-state-metrics
+                       (ClusterIP)
 ```
 
 | Component  | Role | Kubernetes Resource |
@@ -16,6 +21,8 @@ ESP32 Gateway ──► Mosquitto (MQTT) ──► Telegraf ──► InfluxDB 2
 | Telegraf   | Subscribes to `void/telemetry`, parses JSON, writes to InfluxDB | Deployment (no Service) |
 | InfluxDB   | Persistent time-series storage with auto-initialised org/bucket | StatefulSet + PVC + ClusterIP Service |
 | Grafana    | Dashboard UI with auto-provisioned datasource and panels | Deployment + LoadBalancer Service |
+| Prometheus | Infrastructure monitoring and `/metrics` scraping | StatefulSet + PVC + ClusterIP Service |
+| Alertmanager | Alert routing and Slack notifications | Deployment + ClusterIP Service |
 
 ## Prerequisites
 
@@ -45,8 +52,10 @@ kubectl get svc -n void
 
 | Service   | Default Port | URL |
 |-----------|-------------|-----|
-| Grafana   | 3000 | `http://<external-ip>:3000` (admin / admin) |
-| Mosquitto | 1883 | `tcp://<external-ip>:1883` |
+| Grafana    | 3000 | `http://<external-ip>:3000` (admin / admin) |
+| Mosquitto  | 1883 | `tcp://<external-ip>:1883` |
+| Prometheus | 9090 | `http://<external-ip>:9090` (port-forward) |
+| Alertmanager| 9093 | `http://<external-ip>:9093` (port-forward) |
 
 The pre-loaded **V.O.I.D. Survivor Telemetry** dashboard is available under
 Dashboards in Grafana immediately after deployment.
@@ -75,6 +84,8 @@ helm install void-obs deploy/void-observability/ \
 | `grafana.service.port` | Grafana UI port | `3000` |
 | `grafana.adminUser` | Grafana admin username | `admin` |
 | `grafana.adminPassword` | Grafana admin password | `admin` |
+| `prometheus.storage.size` | PVC size for Prometheus time-series data | `2Gi` |
+| `alertmanager.slackWebhookUrl`| Slack Webhook URL for alert routing | `""` |
 
 See [`values.yaml`](values.yaml) for the full reference.
 
