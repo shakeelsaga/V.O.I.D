@@ -19,3 +19,8 @@ data:
         secureJsonData:
           token: {{ .Values.influxdb.auth.adminToken }}
         isDefault: true
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://{{ include "void-observability.fullname" . }}-prometheus:{{ .Values.prometheus.service.port }}
+        isDefault: false

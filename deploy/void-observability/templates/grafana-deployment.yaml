@@ -47,5 +47,9 @@ spec:
           configMap:
             name: {{ include "void-observability.fullname" . }}-grafana-dashboard-provider
         - name: dashboards
-          configMap:
-            name: {{ include "void-observability.fullname" . }}-grafana-dashboard
+          projected:
+            sources:
+              - configMap:
+                  name: {{ include "void-observability.fullname" . }}-grafana-dashboard
+              - configMap:
+                  name: {{ include "void-observability.fullname" . }}-grafana-infra-dashboard
