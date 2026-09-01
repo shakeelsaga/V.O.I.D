@@ -51,3 +51,9 @@ data:
           - targets:
               - {{ include "void-observability.fullname" . }}-grafana:{{ .Values.grafana.service.port }}
         metrics_path: /metrics
+
+      # --- Telegraf internal metrics ---
+      - job_name: telegraf
+        static_configs:
+          - targets:
+              - {{ include "void-observability.fullname" . }}-telegraf:9273

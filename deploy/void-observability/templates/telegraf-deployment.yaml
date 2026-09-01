@@ -20,6 +20,10 @@ spec:
       containers:
         - name: telegraf
           image: "{{ .Values.telegraf.image }}:{{ .Values.telegraf.tag }}"
+          ports:
+            - containerPort: 9273
+              name: metrics
+              protocol: TCP
           volumeMounts:
             - name: config
               mountPath: /etc/telegraf/telegraf.conf
