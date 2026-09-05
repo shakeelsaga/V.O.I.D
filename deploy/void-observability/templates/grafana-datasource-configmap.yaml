@@ -21,6 +21,7 @@ data:
         isDefault: true
       - name: Prometheus
         type: prometheus
+        uid: prometheus_ds
         access: proxy
         url: http://{{ include "void-observability.fullname" . }}-prometheus:{{ .Values.prometheus.service.port }}
         isDefault: false
