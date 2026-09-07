@@ -32,3 +32,8 @@ data:
       token        = "{{ .Values.influxdb.auth.adminToken }}"
       organization = "{{ .Values.influxdb.auth.org }}"
       bucket       = "{{ .Values.influxdb.auth.bucket }}"
+
+    # --- Expose Telegraf internal metrics for Prometheus scraping -----------
+    [[outputs.prometheus_client]]
+      listen = ":9273"
+      metric_version = 2

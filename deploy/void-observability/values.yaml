@@ -58,5 +58,61 @@ grafana:
   service:
     type: LoadBalancer
     port: 3000
-  adminUser: admin
   adminPassword: admin
+
+# ---------------------------------------------------------------------------
+# Prometheus (Infrastructure Metrics)
+# ---------------------------------------------------------------------------
+# Scrapes /metrics endpoints from all stack components and Kubernetes
+# infrastructure. Does NOT replace InfluxDB for survivor telemetry —
+# Prometheus monitors the health of the stack itself.
+prometheus:
+  image: prom/prometheus
+  tag: "v2.53.0"
+  service:
+    port: 9090
+  storage:
+    size: 2Gi
+    className: local-path
+  scrapeInterval: 15s
+  evaluationInterval: 15s
+  retention: 15d
+
+# ---------------------------------------------------------------------------
+# Alertmanager (Alert Routing & Notification)
+# ---------------------------------------------------------------------------
+alertmanager:
+  enabled: true
+  image: prom/alertmanager
+  tag: "v0.27.0"
+  service:
+    port: 9093
+  # Slack webhook URL for notifications (leave empty to disable)
+  slackWebhookUrl: ""
+  slackChannel: "#void-alerts"
+
+# ---------------------------------------------------------------------------
+# node-exporter (Host-Level Metrics)
+# ---------------------------------------------------------------------------
+# Runs as a DaemonSet — one pod per node. Exports CPU, memory, disk,
+# and network metrics from the underlying host.
+# Note: Requires cluster-wide RBAC permissions, which is fine for personal/K3s clusters.
+nodeExporter:
+  enabled: true
+  image: prom/node-exporter
+  tag: "v1.8.1"
+  service:
+    port: 9100
+
+# ---------------------------------------------------------------------------
+# kube-state-metrics (Kubernetes Object Metrics)
+# ---------------------------------------------------------------------------
+# Single-replica Deployment. Exports pod status, restart counts,
+# deployment health, PVC usage, and other Kubernetes object state.
+# Note: Requires cluster-wide RBAC permissions.
+kubeStateMetrics:
+  enabled: true
+  image: registry.k8s.io/kube-state-metrics/kube-state-metrics
+  tag: "v2.12.0"
+  service:
+    port: 8080

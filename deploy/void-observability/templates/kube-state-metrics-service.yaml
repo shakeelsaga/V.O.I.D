@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "void-observability.fullname" . }}-kube-state-metrics
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: kube-state-metrics
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.kubeStateMetrics.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "void-observability.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: kube-state-metrics

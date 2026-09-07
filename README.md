@@ -3,9 +3,9 @@
 > A delay-tolerant, multi-hop ESP-NOW mesh network for disaster-scenario survivor telemetry,  
 > with hop-distance vector routing, highly available gateway failover, and cloud-native observability.
 
-**Current stable release:** `v2.4.0` &nbsp;|&nbsp; Cloud-native Helm chart deployment, Hop-distance vector routing, passive RSSI peer scoring (ESP32)  
+**Current stable release:** `v2.5.0` &nbsp;|&nbsp; Cloud-native Helm chart deployment, Prometheus infrastructure monitoring, Hop-distance vector routing, passive RSSI peer scoring (ESP32)  
 **Hardware targets:** ESP32 (Arduino Core v3.x) · ESP8266  
-**Upstream stack:** Mosquitto MQTT → Telegraf → InfluxDB → Grafana on K3s  
+**Upstream stack:** Mosquitto MQTT → Telegraf → InfluxDB → Grafana (w/ Prometheus) on K3s  
 **Deployment:** [Kubernetes Helm Chart included (`deploy/void-observability/`)](deploy/void-observability/README.md)  
 **License:** MIT
 
@@ -81,13 +81,13 @@ Every subsystem in this repository has been built for and tested on physical har
                                                   ║  upstream Wi-Fi / LAN
                                                   ▼
                                       ┌───────────────────────┐
-                                      │  Mosquitto MQTT :1883 │
-                                      └───────────┬───────────┘
-                                                  │
-                                      ┌───────────▼───────────┐
-                                      │  Telegraf → InfluxDB  │
-                                      │  Grafana on K3s       │
-                                      │  (Command Centre)     │
+                                      │  Mosquitto MQTT :1883 │◄┐
+                                      └───────────┬───────────┘ │
+                                                  │             │
+                                      ┌───────────▼───────────┐ │
+                                      │  Telegraf → InfluxDB  │◄┤ Prometheus
+                                      │  Grafana on K3s       │ │ (Infra metrics)
+                                      │  (Command Centre)     │◄┘
                                       └───────────────────────┘
 ```
 
@@ -551,9 +551,15 @@ Open Serial Monitor at **115200 baud** on each device.
 
 ## Observability Stack
 
-![V.O.I.D. Dashboard 2.0](assets/V.O.I.D%20Dashboard%202.0.png)
+### Survivor Telemetry Dashboard
 
-Sur> **Note:** A complete Kubernetes Helm chart to deploy this stack is now included. The "Dashboard 2.0" configuration shown above comes pre-loaded and built-in automatically. See [`deploy/void-observability/README.md`](deploy/void-observability/README.md) for full deployment instructions.
+![V.O.I.D. Survivor Telemetry Dashboard](assets/V.O.I.D%20Survivor%20Telemetry%20Dashboard.png)
+
+### Infrastructure Health Dashboard
+
+![V.O.I.D. Infrastructure Dashboard](assets/V.O.I.D%20Infrastructure%20Dashboard.png)
+
+> **Note:** A complete Kubernetes Helm chart to deploy this stack is included. Both dashboards come pre-loaded and auto-provisioned via ConfigMaps. The telemetry dashboard uses InfluxDB (Flux) as its datasource; the infrastructure dashboard uses Prometheus. See [`deploy/void-observability/README.md`](deploy/void-observability/README.md) for full deployment instructions.
 
 ### MQTT payload (V2.3)
 
@@ -602,6 +608,8 @@ See [CHANGELOG.md](CHANGELOG.md) for full per-commit detail.
 
 | Version | Date | Summary |
 |---|---|---|
+| `v2.5.0` | 2026-09-07 | Prometheus infrastructure monitoring, Alertmanager with Slack integration, node-exporter, kube-state-metrics, cAdvisor container metrics, Infrastructure Health dashboard in Grafana |
+| `v2.4.0` | 2026-08-23 | Cloud-native Kubernetes Helm chart deployment, one-command `helm install` for TIG stack, auto-provisioned Dashboard 2.0 |
 | `v2.3.0` | 2026-05-11 | Hop-distance vector routing, probabilistic gossip gate, passive neighbor table, RSSI-composite peer scoring (ESP32), ESP32 promiscuous RSSI sidecar, ESP8266 baseband limitation workaround, ACK encryption fix, duplicate suppression lockout fix, `HaPayload` `_pad` byte disambiguator, `hops` in MQTT output, raw experiment data + diagnostics shipped in-repo |
 | `v2.2.0` | 2026-04-26 | 12 critical bug fixes: mesh ACK miss, ESP32 race condition, WDT overflow, MQTT keepalive starvation, mid-flush duplicate protection, shadow ACK, RAM overflow guard |
 | `v2.0.0` | 2026-04-25 | HA Active-Passive gateway election, multi-hop relay routing, encrypted unicast 2-way handshake, `ttl` and `uptimeMs` in payload |
@@ -638,7 +646,7 @@ If you use V.O.I.D. in academic work, please cite:
                   Disaster-Scenario Survivor Telemetry},
   year         = {2026},
   howpublished = {\url{https://github.com/shakeelsaga/V.O.I.D}},
-  note         = {Version 2.3.0}
+  note         = {Version 2.5.0}
 }
 ```
 

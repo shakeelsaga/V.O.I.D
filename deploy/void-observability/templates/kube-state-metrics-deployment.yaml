@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "void-observability.fullname" . }}-kube-state-metrics
+  labels:
+    {{- include "void-observability.labels" . | nindent 4 }}
+    app.kubernetes.io/component: kube-state-metrics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "void-observability.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: kube-state-metrics
+  template:
+    metadata:
+      labels:
+        {{- include "void-observability.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: kube-state-metrics
+    spec:
+      serviceAccountName: {{ include "void-observability.fullname" . }}-kube-state-metrics
+      containers:
+        - name: kube-state-metrics
+          image: "{{ .Values.kubeStateMetrics.image }}:{{ .Values.kubeStateMetrics.tag }}"
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
