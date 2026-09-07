@@ -1,7 +1,8 @@
 # V.O.I.D. Observability Helm Chart
 
 Helm chart that packages the V.O.I.D. observability stack — Mosquitto, Telegraf,
-InfluxDB 2.x, and Grafana — into a single deployable unit for Kubernetes.
+InfluxDB 2.x, Grafana, Prometheus, and Alertmanager — into a single deployable
+unit for Kubernetes.
 
 ## Architecture
 
@@ -18,11 +19,13 @@ ESP32 Gateway ──► Mosquitto (MQTT) ──► Telegraf ──► InfluxDB 2
 | Component  | Role | Kubernetes Resource |
 |------------|------|---------------------|
 | Mosquitto  | MQTT broker — ingestion endpoint for the gateway node | Deployment + LoadBalancer Service |
-| Telegraf   | Subscribes to `void/telemetry`, parses JSON, writes to InfluxDB | Deployment (no Service) |
+| Telegraf   | Subscribes to `void/telemetry`, parses JSON, writes to InfluxDB. Exposes pipeline metrics on `:9273` for Prometheus | Deployment + ClusterIP Service |
 | InfluxDB   | Persistent time-series storage with auto-initialised org/bucket | StatefulSet + PVC + ClusterIP Service |
 | Grafana    | Dashboard UI with auto-provisioned datasource and panels | Deployment + LoadBalancer Service |
 | Prometheus | Infrastructure monitoring and `/metrics` scraping | StatefulSet + PVC + ClusterIP Service |
 | Alertmanager | Alert routing and Slack notifications | Deployment + ClusterIP Service |
+| node-exporter | Host-level CPU, memory, disk, network metrics | DaemonSet + ClusterIP Service |
+| kube-state-metrics | Kubernetes object health (pod status, restarts, PVC usage) | Deployment + ClusterIP Service |
 
 ## Prerequisites
 
@@ -57,8 +60,8 @@ kubectl get svc -n void
 | Prometheus | 9090 | `http://<external-ip>:9090` (port-forward) |
 | Alertmanager| 9093 | `http://<external-ip>:9093` (port-forward) |
 
-The pre-loaded **V.O.I.D. Survivor Telemetry** dashboard is available under
-Dashboards in Grafana immediately after deployment.
+The pre-loaded **V.O.I.D. Survivor Telemetry** and **V.O.I.D. Infrastructure Health**
+dashboards are available under Dashboards in Grafana immediately after deployment.
 
 ## Configuration
 
@@ -95,5 +98,5 @@ See [`values.yaml`](values.yaml) for the full reference.
 helm uninstall void-obs -n void
 ```
 
-> **Note:** The InfluxDB PVC is retained after uninstall to prevent data loss.
+> **Note:** The InfluxDB and Prometheus PVCs are retained after uninstall to prevent data loss.
 > To fully clean up: `kubectl delete pvc -l app.kubernetes.io/instance=void-obs -n void`

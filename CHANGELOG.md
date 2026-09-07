@@ -9,21 +9,37 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [v2.5.0] - 2026-09-01
+## [v2.5.0] - 2026-09-07
 
 ### Added - Infrastructure Observability Stack
 
-- **Prometheus Integration in Helm Chart**
+- **Prometheus Server (StatefulSet + PVC)**
   - Layered Prometheus onto the existing TIG (Telegraf, InfluxDB, Grafana) stack in `deploy/void-observability/`.
-  - Added `node-exporter` (DaemonSet) for host-level K3s node metrics.
-  - Added `kube-state-metrics` for Kubernetes object health.
-  - Automatically provisions Prometheus scraping for Mosquitto, Telegraf, InfluxDB, and Grafana's `/metrics` endpoints.
-- **Alertmanager Integration**
-  - Pre-configured infrastructure alert rules (Pod crash looping, Node CPU/Memory high, InfluxDB storage high, component down).
-  - Dynamic Slack webhook receiver configurable via `values.yaml` (`alertmanager.slackWebhookUrl`).
+  - ServiceAccount, ClusterRole, and ClusterRoleBinding for Kubernetes API and metrics endpoint access.
+  - Scrape configuration for all stack components: Prometheus self-monitoring, InfluxDB, Grafana, Telegraf, node-exporter, kube-state-metrics, and kubelet cAdvisor.
+  - Persistent TSDB storage with configurable retention (`prometheus.retention`, default 15 days).
+- **node-exporter (DaemonSet)**
+  - One pod per node. Exports CPU, memory, disk, and network metrics from the underlying K3s host via `/host/proc` and `/host/sys` bind mounts.
+- **kube-state-metrics (Deployment)**
+  - Dedicated ServiceAccount and ClusterRole. Exports pod status, restart counts, deployment health, PVC usage, and other Kubernetes object state.
+- **Alertmanager (Deployment)**
+  - Pre-configured infrastructure alert rules: `VoidPodCrashLooping`, `VoidPodNotReady`, `VoidInfluxDBStorageHigh`, `VoidNodeHighCPU`, `VoidNodeHighMemory`, `VoidNodeDiskPressure`, `VoidInfluxDBDown`, `VoidGrafanaDown`.
+  - Optional Slack webhook receiver — configurable via `values.yaml` (`alertmanager.slackWebhookUrl`). Leave empty to disable; Alertmanager silently skips Slack routing when no URL is set.
+- **Telegraf Prometheus Exporter**
+  - Added `[[outputs.prometheus_client]]` on `:9273` to Telegraf config, exposing pipeline health metrics to Prometheus.
+  - Created a ClusterIP Service for the new metrics port so Prometheus can scrape Telegraf.
 - **Grafana Enhancements**
-  - Added Prometheus as a secondary auto-provisioned datasource alongside InfluxDB.
-  - Added new **V.O.I.D. Infrastructure Health** dashboard tracking cluster, pod, and service status alongside the existing survivor telemetry dashboard.
+  - Added Prometheus as a secondary auto-provisioned datasource (UID: `prometheus_ds`) alongside InfluxDB.
+  - Switched the Grafana dashboard volume from a single ConfigMap to a `projected` volume, mounting both the survivor telemetry and infrastructure dashboards side by side.
+  - Added **V.O.I.D. Infrastructure Health** dashboard — 6 panels: Cluster CPU gauge, Cluster Memory gauge, Pod Restarts stat, Prometheus Targets UP stat, Container CPU time-series, Container Memory time-series.
+- **cAdvisor Scraping**
+  - Added `kubernetes-cadvisor` scrape job via the Kubernetes API proxy (`/api/v1/nodes/{node}/proxy/metrics/cadvisor`) for per-container CPU and memory metrics.
+- **Documentation**
+  - Updated root `README.md` architecture diagram and upstream stack description.
+  - Updated `deploy/void-observability/README.md` with Prometheus, Alertmanager, node-exporter, and kube-state-metrics component details, configuration parameters, and access instructions.
+  - Updated Helm `NOTES.txt` post-install output with Prometheus and Alertmanager port-forward commands.
+
+- *Note: This is an infrastructure release. No changes were made to the ESP32/ESP8266 mesh protocol or wire format. Firmware reflashing is NOT required if upgrading from v2.4.0.*
 
 ---
 
